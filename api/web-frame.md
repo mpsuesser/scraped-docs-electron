@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame
 title: "Web Frame"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 > Customize the rendering of the current web page.

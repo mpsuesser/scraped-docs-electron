@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/asar-archives
 title: "Asar Archives"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 After creating an [application distribution](application-distribution.md), the app's source code is usually bundled into an [ASAR archive](https://github.com/electron/asar), which is a simple extensive archive format designed for Electron apps. By bundling the app we can mitigate issues around long path names on Windows, speed up `require` and conceal your source code from cursory inspection.

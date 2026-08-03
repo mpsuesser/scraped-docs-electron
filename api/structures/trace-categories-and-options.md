@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/trace-categories-and-options
 title: "Trace Categories And Options"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `categoryFilter` string - A filter to control what category groups should be traced. A filter can have an optional '-' prefix to exclude category groups that contain a matching category. Having both included and excluded category patterns in the same list is not supported. Examples: `test_MyTest*`, `test_MyTest*,test_OtherStuff`, `-excluded_category1,-excluded_category2`.

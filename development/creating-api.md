@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/creating-api
 title: "Creating Api"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 Welcome to the Electron API guide! If you are unfamiliar with creating a new Electron API module within the [`browser`](https://github.com/electron/electron/tree/main/shell/browser) directory, this guide serves as a checklist for some of the necessary steps that you will need to implement.

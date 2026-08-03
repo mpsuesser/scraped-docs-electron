@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/extensions
 title: "Extensions"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 Electron supports a subset of the [Chrome Extensions API](https://developer.chrome.com/extensions/api_index), primarily to support DevTools extensions and Chromium-internal extensions, but it also happens to support some other extension capabilities.

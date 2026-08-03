@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron-cpp-linux
 title: "Native Code And Electron Cpp Linux"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 This tutorial builds on the [general introduction to Native Code and Electron](native-code-and-electron.md) and focuses on creating a native addon for Linux using C++ and GTK3. To illustrate how you can embed native Linux code in your Electron app, we'll be building a basic native GTK3 GUI that communicates with Electron's JavaScript.

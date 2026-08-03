@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/navigation-history
 title: "Navigation History"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 > Manage a list of navigation entries, representing the user's browsing history within the application.

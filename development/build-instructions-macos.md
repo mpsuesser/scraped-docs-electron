@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/build-instructions-macos
 title: "Build Instructions Macos"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 Follow the guidelines below for building **Electron itself** on macOS, for the purposes of creating custom Electron binaries. For bundling and distributing your app code with the prebuilt Electron binaries, see the [application distribution](../tutorial/application-distribution.md) guide.

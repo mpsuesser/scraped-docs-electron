@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/clang-tidy
 title: "Clang Tidy"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 [`clang-tidy`](https://clang.llvm.org/extra/clang-tidy/) is a tool to automatically check C/C++/Objective-C code for style violations, programming errors, and best practices.

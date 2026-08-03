@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/notification-response
 title: "Notification Response"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `actionIdentifier` string - The identifier string of the action that the user selected.

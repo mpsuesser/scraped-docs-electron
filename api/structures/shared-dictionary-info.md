@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/shared-dictionary-info
 title: "Shared Dictionary Info"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `match` string - The matching path pattern for the dictionary which was declared in 'use-as-dictionary' response header's `match` option.

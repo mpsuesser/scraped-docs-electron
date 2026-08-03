@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/distribution-overview
 title: "Distribution Overview"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 Once your app is ready for production, there are a couple steps you need to take before you can deliver it to your users.

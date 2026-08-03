@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/browser-window-options
 title: "Browser Window Options"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `webPreferences` [WebPreferences](web-preferences.md) (optional) - Settings of web page's features.

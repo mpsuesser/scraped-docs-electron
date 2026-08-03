@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/usb-device
 title: "Usb Device"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `configuration` Object (optional) - A [USBConfiguration](https://developer.mozilla.org/en-US/docs/Web/API/USBConfiguration) object containing information about the currently selected configuration of a USB device.

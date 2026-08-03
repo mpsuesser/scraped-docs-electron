@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/ipc-main-service-worker
 title: "Ipc Main Service Worker"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 > Communicate asynchronously from the main process to service workers.

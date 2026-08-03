@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar-button
 title: "Touch Bar Button"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 > Create a button in the touch bar for native macOS applications

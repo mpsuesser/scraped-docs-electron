@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/asar-integrity
 title: "Asar Integrity"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 ASAR integrity is a security feature that validates the contents of your app's [ASAR archives](asar-archives.md) at runtime.

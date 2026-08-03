@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/style-guide
 title: "Style Guide"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 These are the guidelines for writing Electron documentation.

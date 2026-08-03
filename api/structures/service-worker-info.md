@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/service-worker-info
 title: "Service Worker Info"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `scriptUrl` string - The full URL to the script that this service worker runs

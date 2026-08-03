@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/trace-config
 title: "Trace Config"
 description: ""
-access_date: 2026-08-03T19:00:42.552Z
-current_date: 2026-08-03T19:00:42.552Z
+access_date: 2026-08-03T19:08:43.151Z
+current_date: 2026-08-03T19:08:43.151Z
 ---
 
 - `recording_mode` string (optional) - Can be `record-until-full`, `record-continuously`, `record-as-much-as-possible` or `trace-to-console`. Defaults to `record-until-full`.
