@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/desktop-capturer
 title: "Desktop Capturer"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 > Access information about media sources that can be used to capture audio and video from the desktop using the [`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en/docs/Web/API/MediaDevices/getUserMedia) API.

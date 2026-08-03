@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/snapcraft
 title: "Snapcraft"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 This guide provides information on how to package your Electron application for any Snapcraft environment, including the Ubuntu Software Center.

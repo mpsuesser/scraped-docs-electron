@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/task
 title: "Task"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `program` string - Path of the program to execute, usually you should specify `process.execPath` which opens the current program.

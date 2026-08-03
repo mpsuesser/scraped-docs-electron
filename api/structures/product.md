@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/product
 title: "Product"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `productIdentifier` string - The string that identifies the product to the Apple App Store.

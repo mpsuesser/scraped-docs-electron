@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/enable-heap-profiling-options
 title: "Enable Heap Profiling Options"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `mode` string (optional) - Controls which processes are profiled. Equivalent to `--memlog` in Chrome. Default is `all`.

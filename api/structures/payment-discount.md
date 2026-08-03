@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/payment-discount
 title: "Payment Discount"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `identifier` string - A string used to uniquely identify a discount offer for a product.

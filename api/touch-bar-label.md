@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar-label
 title: "Touch Bar Label"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 > Create a label in the touch bar for native macOS applications

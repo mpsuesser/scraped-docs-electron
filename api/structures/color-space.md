@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/color-space
 title: "Color Space"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `primaries` string - The color primaries of the color space. Can be one of the following values:

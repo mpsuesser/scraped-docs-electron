@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/spellchecker
 title: "Spellchecker"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 Electron has built-in support for Chromium's spellchecker since Electron 8. On Windows and Linux this is powered by Hunspell dictionaries, and on macOS it makes use of the native spellchecker APIs.

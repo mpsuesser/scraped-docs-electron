@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/process-model
 title: "Process Model"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 Electron inherits its multi-process architecture from Chromium, which makes the framework architecturally very similar to a modern web browser. This guide will expand on the concepts applied in the [Tutorial](tutorial-prerequisites.md).

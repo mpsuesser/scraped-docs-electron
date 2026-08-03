@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/desktop-capturer-source
 title: "Desktop Capturer Source"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `id` string - The identifier of a window or screen that can be used as a `chromeMediaSourceId` constraint when calling [`navigator.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia). The format of the identifier will be `window:XX:YY` or `screen:ZZ:0`. XX is the windowID/handle. YY is 1 for the current process, and 0 for all others. ZZ is a sequential number that represents the screen, and it does not equal to the index in the source's name.

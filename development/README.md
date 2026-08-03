@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/README
 title: "README"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 These guides are intended for people working on the Electron project itself. For guides on Electron app development, see [/docs/README.md](../README.md#guides-and-tutorials).

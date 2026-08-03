@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/v8-development
 title: "V8 Development"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 > A collection of resources for learning and using V8

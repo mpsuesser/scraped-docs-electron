@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/notification-action
 title: "Notification Action"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `type` string - The type of action, can be `button` or `selection`. `selection` is only supported on Windows.

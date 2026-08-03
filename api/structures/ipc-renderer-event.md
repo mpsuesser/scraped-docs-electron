@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/ipc-renderer-event
 title: "Ipc Renderer Event"
 description: ""
-access_date: 2026-08-03T18:22:54.625Z
-current_date: 2026-08-03T18:22:54.625Z
+access_date: 2026-08-03T18:54:45.323Z
+current_date: 2026-08-03T18:54:45.323Z
 ---
 
 - `sender` [IpcRenderer](../ipc-renderer.md) - The `IpcRenderer` instance that emitted the event originally
