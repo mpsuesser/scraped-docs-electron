@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/download-item
 title: "Download Item"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Control file downloads from remote sources.
@@ -110,8 +110,7 @@ Returns `boolean` - Whether the download is paused.
 
 Resumes the download that has been paused.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > To enable resumable downloads the server you are downloading from must support range requests and provide both `Last-Modified` and `ETag` header values. Otherwise `resume()` will dismiss previously received bytes and restart the download from the beginning.
 
@@ -139,8 +138,7 @@ Returns `boolean` - Whether the download has user gesture.
 
 Returns `string` - The file name of the download item.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The file name is not always the same as the actual one saved in local disk. If user changes the file name in a prompted download saving dialog, the actual name of saved file will be different.
 
@@ -170,8 +168,7 @@ Returns `string` - The Content-Disposition field from the response header.
 
 Returns `string` - The current state. Can be `progressing`, `completed`, `cancelled` or `interrupted`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The following methods are useful specifically to resume a `cancelled` item when session is restarted.
 

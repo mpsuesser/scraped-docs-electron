@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/notifications
 title: "Notifications"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Each operating system has its own mechanism to display notifications to users. Electron's notification APIs are cross-platform, but are different for each process type.
@@ -32,8 +32,7 @@ new Notification({
 
 Here's a full example that you can open with Electron Fiddle:
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow, Notification } = require('electron/main')
@@ -69,6 +68,23 @@ app.on('activate', () => {
 })
 ```
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>After launching this application, you should see the system notification.</p>
+</body>
+</html>
+```
+
 ### Show notifications in the renderer process
 
 Notifications can be displayed directly from the renderer process with the [web Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API).
@@ -85,9 +101,56 @@ new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY }).onclick =
 
 Here's a full example that you can open with Electron Fiddle:
 
-- main.js
-- index.html
-- renderer.js
+#### main.js
+
+```js
+const { app, BrowserWindow } = require('electron/main')
+
+function createWindow () {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600
+  })
+
+  win.loadFile('index.html')
+}
+
+app.whenReady().then(createWindow)
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>After launching this application, you should see the system notification.</p>
+    <p id="output">Click it to see the effect in this interface.</p>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
+```
+
+#### renderer.js
 
 ```js
 const NOTIFICATION_TITLE = 'Title'
@@ -110,8 +173,7 @@ Electron attempts to automate the work around the AppUserModelID and ToastActiva
 
 In production, Electron will also detect that Squirrel was used and will automatically call `app.setAppUserModelId()` with the correct value. During development, you may have to call [`app.setAppUserModelId()`](../api/app.md#appsetappusermodelidid-windows) yourself.
 
-> [!-info] -info
-> Notifications in development
+> **Notifications in development:**
 > 
 > To quickly bootstrap notifications during development, adding `node_modules\electron\dist\electron.exe` to your Start Menu also does the trick. Navigate to the file in Explorer, right-click and 'Pin to Start Menu'. Then, call `app.setAppUserModelId(process.execPath)` in the main process to see notifications.
 

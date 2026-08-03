@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/context-menu
 title: "Context Menu"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Context menus are pop-up menus that appear when right-clicking (or pressing a shortcut such as Shift + F10 on Windows) somewhere in an app's interface.
@@ -18,8 +18,7 @@ Whenever a right-click is detected within the bounds of a specific `WebContents`
 
 For example, if you want to provide a context menu for links, check for the `linkURL` parameter. If you want to check for editable elements such as `<textarea/>`, check for the `isEditable` parameter.
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow, Menu } = require('electron/main')
@@ -54,18 +53,75 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Context Menu Demo</title>
+  </head>
+  <body>
+    <h1>Context Menu Demo</h1>
+    <textarea></textarea>
+  </body>
+</html>
+```
+
 ## Using the contextmenu event (renderer)
 
 Alternatively, you can also listen to the [`contextmenu`](https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event) event available on DOM elements in the renderer process and call the `menu.popup` function via IPC.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > To learn more about IPC basics in Electron, see the [Inter-Process Communication](ipc.md) guide.
 
-- main.js
-- preload.js
-- index.html
+#### main.js
+
+```js
+// Modules to control application life and create native browser window
+const { app, BrowserWindow, ipcMain, Menu } = require('electron/main')
+const path = require('node:path')
+
+function createWindow () {
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
+
+  mainWindow.loadFile('index.html')
+  const menu = Menu.buildFromTemplate([
+    { role: 'copy' },
+    { role: 'cut' },
+    { role: 'paste' },
+    { role: 'selectall' }
+  ])
+
+  ipcMain.on('context-menu', (event) => {
+    menu.popup({
+      window: BrowserWindow.fromWebContents(event.sender)
+    })
+  })
+}
+
+app.whenReady().then(() => {
+  createWindow()
+
+  app.on('activate', function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+})
+
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
+})
+```
+
+#### preload.js
 
 ```js
 const { ipcRenderer } = require('electron/renderer')
@@ -77,6 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
     ipcRenderer.send('context-menu')
   })
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Context Menu Demo</title>
+  </head>
+  <body>
+    <h1>Context Menu Demo</h1>
+    <textarea id="editable"></textarea>
+  </body>
+</html>
 ```
 
 ## Additional macOS menu items (e.g. Writing Tools)

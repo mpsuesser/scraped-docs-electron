@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tray
 title: "Tray"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This guide will take you through the process of creating an icon with its own context menu to the system tray.
@@ -16,8 +16,7 @@ This guide will take you through the process of creating an icon with its own co
 
 The tray icon for your Electron app needs to be created programmatically with an instance of the [Tray](../api/tray.md#new-trayimage-guid) class. The class constructor requires a single instance of a [NativeImage](../api/native-image.md#class-nativeimage) or a path to a compatible icon file.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > File formats vary per operating system. For more details, see the [Platform Considerations](../api/tray.md#platform-considerations) section of the Tray API documentation.
 
@@ -35,8 +34,7 @@ app.on('window-all-closed', () => {
 
 You can attach a context menu to the Tray object by passing in a [Menu](../api/menu.md) instance into the [`tray.setContextMenu`](../api/tray.md#traysetcontextmenumenu) function.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Unlike with regular [context menus](context-menu.md), Tray context menus don't need to be manually instrumented using the `menu.popup` API. Instead, the Tray object handles click events for you (although various click-related events exist on the API for advanced use cases).
 
@@ -60,13 +58,11 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > To learn more about crafting menus in Electron, see the [Menus](menus.md#building-menus) guide.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > The `enabled` and `visibility` properties are not available for top-level menu items in the tray on macOS.
 
@@ -74,8 +70,7 @@ app.whenReady().then(() => {
 
 Below is a runnable example of attaching various menu items to the Tray's context menu that help control app state and interact with the Tray API itself.
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow, Menu, Tray } = require('electron/main')
@@ -138,4 +133,28 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Tray Menu Demo</title>
+  </head>
+  <body>
+    <h1>Tray Menu Demo</h1>
+    <p>This app will stay running even after all windows are closed.</p>
+    <ul>
+      <li>Use the "Open App" menu item to focus the main window (or open one if it does not exist).</li>
+      <li>Change between red and green Tray icons with the "Set Green Icon" checkbox.</li>
+      <li>Give the Tray icon a title using the "Set Title" checkbox.</li>
+      <li>Quit the app using the "Quit" menu item.</li>
+    </ul>
+  </body>
+</html>
 ```

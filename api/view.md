@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/view
 title: "View"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Create and layout native views.
@@ -31,8 +31,7 @@ Process: [Main](../glossary.md#main-process)
 
 `View` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -109,8 +108,7 @@ Examples of valid `color` values:
 		- Similar to CSS Color Module Level 3 keywords, but case-sensitive.
 		- e.g. `blueviolet` or `red`
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Hex format with alpha takes `AARRGGBB` or `ARGB`, *not* `RRGGBBAA` or `RGB`.
 
@@ -118,8 +116,7 @@ Examples of valid `color` values:
 
 - `radius` Integer - Border radius size in pixels.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The area cutout of the view's border still captures clicks.
 
@@ -127,8 +124,7 @@ Examples of valid `color` values:
 
 - `blurRadius` Integer - The radius of the background blur effect (in pixels).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > You must set a background color with an alpha channel (e.g. `#80ffffff`) in order for the blur effect to be visible.
 

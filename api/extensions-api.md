@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/extensions-api
 title: "Extensions Api"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Load and interact with extensions.
@@ -85,13 +85,11 @@ app.whenReady().then(async () => {
 
 This API does not support loading packed (.crx) extensions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Loading extensions into in-memory (non-persistent) sessions is not supported and will throw an error.
 
@@ -101,8 +99,7 @@ This API does not support loading packed (.crx) extensions.
 
 Unloads an extension.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
@@ -112,8 +109,7 @@ Unloads an extension.
 
 Returns `Extension | null` - The loaded extension with the given ID.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
@@ -121,7 +117,6 @@ Returns `Extension | null` - The loaded extension with the given ID.
 
 Returns `Extension[]` - A list of all loaded extensions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.

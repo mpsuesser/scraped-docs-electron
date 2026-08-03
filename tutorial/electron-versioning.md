@@ -2,22 +2,38 @@
 url: https://www.electronjs.org/docs/latest/tutorial/electron-versioning
 title: "Electron Versioning"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > A detailed look at our versioning policy and implementation.
 
 As of version 2.0.0, Electron follows the [SemVer](#semver) spec. The following command will install the most recent stable build of Electron:
 
+#### npm
+
 ```sh
 npm install --save-dev electron
 ```
 
+#### Yarn
+
+```sh
+yarn add --dev electron
+```
+
 To update an existing project to use the latest stable version:
+
+#### npm
 
 ```sh
 npm install --save-dev electron@latest
+```
+
+#### Yarn
+
+```sh
+yarn add --dev electron@latest
 ```
 
 ## SemVer
@@ -42,8 +58,7 @@ Since Electron 8, stabilization branches are always **major** version lines, and
 
 We allow for multiple stabilization branches to exist simultaneously, one for each supported version.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For more details on which versions are supported, see our [Electron Releases](electron-timelines.md) doc.
 

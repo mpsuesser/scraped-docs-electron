@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
 title: "Offscreen Rendering"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -39,7 +39,7 @@ To enable this mode, GPU acceleration has to be disabled by calling the [`app.di
 
 ## Example
 
-- main.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')

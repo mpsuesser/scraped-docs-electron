@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/command-line
 title: "Command Line"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Manipulate the command line arguments for your app that Chromium reads
@@ -30,8 +30,7 @@ For more information on what kinds of flags and switches you can use, check out 
 
 Append a switch (with optional `value`) to Chromium's command line.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This will not affect `process.argv`. The intended usage of this function is to control Chromium's behavior.
 
@@ -55,8 +54,7 @@ const { app } = require('electron')
 app.commandLine.appendArgument('--enable-experimental-web-platform-features')
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This will not affect `process.argv`. The intended usage of this function is to control Chromium's behavior.
 
@@ -90,8 +88,7 @@ const portValue = app.commandLine.getSwitchValue('remote-debugging-port')
 console.log(portValue) // '8315'
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > When the switch is not present or has no value, it returns empty string.
 
@@ -111,7 +108,6 @@ app.commandLine.removeSwitch('remote-debugging-port')
 console.log(app.commandLine.hasSwitch('remote-debugging-port')) // false
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This will not affect `process.argv`. The intended usage of this function is to control Chromium's behavior.

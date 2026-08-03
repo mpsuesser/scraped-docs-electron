@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/installation
 title: "Installation"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 To install prebuilt Electron binaries, use [`npm`](https://docs.npmjs.com/). The preferred method is to install Electron as a development dependency in your app:
@@ -41,8 +41,7 @@ npm install electron@alpha --save-dev
 npm install electron@beta --save-dev
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For more information on available Electron releases, see the [Release Status dashboard](https://releases.electronjs.org/).
 
@@ -86,8 +85,7 @@ Supported platforms are Node-like [platform strings](https://nodejs.org/api/proc
 - `win32`
 - `linux`
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > To see all available platform/architecture combinations for a particular release, see the artifacts on [Electron's GitHub Releases](https://github.com/electron/electron/releases).
 

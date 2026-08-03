@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/jump-list-category
 title: "Jump List Category"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 - `type` string (optional) - One of the following:
@@ -14,12 +14,10 @@ current_date: 2026-08-03T17:26:37.553Z
 - `name` string (optional) - Must be set if `type` is `custom`, otherwise it should be omitted.
 - `items` JumpListItem\[\] (optional) - Array of [JumpListItem](jump-list-item.md) objects if `type` is `tasks` or `custom`, otherwise it should be omitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If a `JumpListCategory` object has neither the `type` nor the `name` property set then its `type` is assumed to be `tasks`. If the `name` property is set but the `type` property is omitted then the `type` is assumed to be `custom`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The maximum length of a Jump List item's `description` property is 260 characters. Beyond this limit, the item will not be added to the Jump List, nor will it be displayed.

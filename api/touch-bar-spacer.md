@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar-spacer
 title: "Touch Bar Spacer"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Create a spacer between two items in the touch bar for native macOS applications

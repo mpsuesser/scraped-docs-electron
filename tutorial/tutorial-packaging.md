@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 title: "Tutorial Packaging"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 5** of the Electron tutorial.
 
 ## Learning goals
 
@@ -20,12 +24,18 @@ Electron Forge is an all-in-one tool that handles the packaging and distribution
 
 You can install Electron Forge's CLI in your project's `devDependencies` and import your existing project with a handy conversion script.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install --save-dev @electron-forge/cli
 npx electron-forge import
+```
+
+#### Yarn
+
+```sh
+yarn add --dev @electron-forge/cli
+yarn electron-forge import
 ```
 
 Once the conversion script is done, Forge should have added a few scripts to your `package.json` file.
@@ -40,8 +50,7 @@ Once the conversion script is done, Forge should have added a few scripts to you
 //...
 ```
 
-> [!-info] -info
-> CLI documentation
+> **CLI documentation:**
 > 
 > For more information on `make` and other Forge APIs, check out the [Electron Forge CLI documentation](https://www.electronforge.io/cli#commands).
 
@@ -51,11 +60,16 @@ You should also notice that your package.json now has a few more packages instal
 
 To create a distributable, use your project's new `make` script, which runs the `electron-forge make` command.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm run make
+```
+
+#### Yarn
+
+```sh
+yarn make
 ```
 
 This `make` command contains two steps:
@@ -74,18 +88,15 @@ out/
 
 The distributable in the `out/make` folder should be ready to launch! You have now created your first bundled Electron application.
 
-> [!-success] -success
-> Distributable formats
+> **Distributable formats:**
 > 
 > Electron Forge can be configured to create distributables in different OS-specific formats (e.g. DMG, deb, MSI, etc.). See Forge's [Makers](https://www.electronforge.io/config/makers) documentation for all configuration options.
 
-> [!-success] -success
-> Creating and adding application icons
+> **Creating and adding application icons:**
 > 
 > Setting custom application icons requires a few additions to your config. Check out [Forge's icon tutorial](https://www.electronforge.io/guides/create-and-add-icons) for more information.
 
-> [!-info] -info
-> Packaging without Electron Forge
+> **Packaging without Electron Forge:**
 > 
 > If you want to manually package your code, or if you're just interested understanding the mechanics behind packaging an Electron app, check out the full [Application Packaging](application-distribution.md) documentation.
 
@@ -97,13 +108,11 @@ Code signing is a security technology that you use to certify that a desktop app
 
 On macOS, code signing is done at the app packaging level. On Windows, distributable installers are signed instead. If you already have code signing certificates for Windows and macOS, you can set your credentials in your Forge configuration.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For more information on code signing, check out the [Signing macOS Apps](https://www.electronforge.io/guides/code-signing) guide in the Forge docs.
 
-- macOS
-- Windows
+#### macOS
 
 ```js
 module.exports = {
@@ -118,6 +127,24 @@ module.exports = {
     }
     // ...
   }
+}
+```
+
+#### Windows
+
+```js
+module.exports = {
+  // ...
+  makers: [
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        certificateFile: './cert.pfx',
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
+    }
+  ]
+  // ...
 }
 ```
 

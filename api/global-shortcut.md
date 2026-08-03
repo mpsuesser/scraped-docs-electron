@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/global-shortcut
 title: "Global Shortcut"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Detect keyboard events when the application does not have keyboard focus.
@@ -12,8 +12,7 @@ Process: [Main](../glossary.md#main-process)
 
 The `globalShortcut` module can register/unregister a global keyboard shortcut with the operating system so that you can customize the operations for various shortcuts.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The shortcut is global; it will work even if the app does not have the keyboard focus. This module cannot be used before the `ready` event of the app module is emitted. Please also note that it is also possible to use Chromium's `GlobalShortcutsPortal` implementation, which allows apps to bind global shortcuts when running within a Wayland session.
 
@@ -47,8 +46,7 @@ app.on('will-quit', () => {
 })
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > See also: [A detailed guide on Keyboard Shortcuts](../tutorial/keyboard-shortcuts.md).
 

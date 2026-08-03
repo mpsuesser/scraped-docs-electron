@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/README
 title: "README"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Please make sure that you use the documents that match your Electron version. The version number should be a part of the page URL. If it's not, you are probably using the documentation of a development branch which may contain API changes that are not compatible with your Electron version. To view older versions of the documentation, you can [browse by tag](https://github.com/electron/electron/tree/v1.4.0) on GitHub by opening the "Switch branches/tags" dropdown and selecting the tag that matches your version.
@@ -113,12 +113,12 @@ These individual tutorials expand on topics discussed in the guide above.
 - [ImageView](api/image-view.md)
 - [ipcMain](api/ipc-main.md)
 - [Menu](api/menu.md)
-- [MenuItem](api/menu.md-item)
+- [MenuItem](api/menu-item.md)
 - [MessageChannelMain](api/message-channel-main.md)
 - [MessagePortMain](api/message-port-main.md)
 - [nativeTheme](api/native-theme.md)
 - [net](api/net.md)
-- [netLog](api/net.md-log)
+- [netLog](api/net-log.md)
 - [Notification](api/notification.md)
 - [powerMonitor](api/power-monitor.md)
 - [powerSaveBlocker](api/power-save-blocker.md)
@@ -136,7 +136,7 @@ These individual tutorials expand on topics discussed in the guide above.
 - [View](api/view.md)
 - [webContents](api/web-contents.md)
 - [webFrameMain](api/web-frame-main.md)
-- [WebContentsView](api/web-contents.md-view)
+- [WebContentsView](api/web-contents-view.md)
 
 ### Modules for the Renderer Process (Web Page):
 

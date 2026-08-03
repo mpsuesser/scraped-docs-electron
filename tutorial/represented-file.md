@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/represented-file
 title: "Represented File"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -20,8 +20,7 @@ To set the represented file of window, you can use the [BrowserWindow.setReprese
 
 ## Example
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -54,6 +53,28 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>
+      Click on the title with the <pre>Command</pre> or <pre>Control</pre> key pressed.
+      You should see a popup with the represented file at the top.
+    </p>
+  </body>
+</body>
+</html>
 ```
 
 After launching the Electron application, click on the title with `Command` or `Control` key pressed. You should see a popup with the represented file at the top. In this guide, this is the current user's home directory:

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/power-save-blocker
 title: "Power Save Blocker"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Block the system from entering low-power (sleep) mode.
@@ -35,8 +35,7 @@ Returns `Integer` - The blocker ID that is assigned to this power blocker.
 
 Starts preventing the system from entering lower-power mode. Returns an integer identifying the power save blocker.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `prevent-display-sleep` has higher precedence over `prevent-app-suspension`. Only the highest precedence type takes effect. In other words, `prevent-display-sleep` always takes precedence over `prevent-app-suspension`.
 

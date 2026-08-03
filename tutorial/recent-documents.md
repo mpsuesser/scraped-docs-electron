@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/recent-documents
 title: "Recent Documents"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -21,6 +21,8 @@ Windows and macOS provide access to a list of recent documents opened by the app
 ## Example
 
 ### Managing recent documents
+
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -55,6 +57,26 @@ app.on('activate', () => {
     createWindow()
   }
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recent Documents</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Recent Documents</h1>
+    <p>
+        Right click on the app icon to see recent documents.
+        You should see \`recently-used.md\` added to the list of recent files
+    </p>
+</body>
+</html>
 ```
 
 #### Adding a recent document

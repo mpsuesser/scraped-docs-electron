@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/api-history-migration-guide
 title: "Api History Migration Guide"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This document demonstrates how to add API History blocks to existing APIs.
@@ -24,8 +24,7 @@ Here are some resources you can use to find information on the history of an API
 
 ## Example
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The associated API is already removed, we will ignore that for the purpose of this example.
 
@@ -69,8 +68,7 @@ Date:   Thu Apr 6 21:23:29 2023 -0700
 
 Verify that the Pull Request is correct and make a corresponding entry in the API History:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Refer to the [API History section of `style-guide.md`](style-guide.md#api-history) for information on how to create API History blocks.
 

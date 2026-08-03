@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/debugging-vscode
 title: "Debugging Vscode"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This guide goes over how to set up VSCode debugging for both your own Electron project as well as the native Electron codebase.

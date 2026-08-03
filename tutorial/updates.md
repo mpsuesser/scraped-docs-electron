@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/updates
 title: "Updates"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 There are several ways to provide automatic updates to your Electron application. The easiest and officially supported one is taking advantage of the built-in [Squirrel](https://github.com/Squirrel) framework and Electron's [autoUpdater](../api/auto-updater.md) module.
@@ -113,11 +113,16 @@ The easiest way to use this service is by installing [update-electron-app](https
 
 Install the module using your Node.js package manager of choice:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install update-electron-app
+```
+
+#### Yarn
+
+```sh
+yarn add update-electron-app
 ```
 
 Then, invoke the updater from your app's main process file:
@@ -149,8 +154,7 @@ Once you've deployed your update server, you can instrument your app code to rec
 
 First, import the required modules in your main process code. The following code might vary for different server software, but it works like described when using [Hazel](https://github.com/vercel/hazel).
 
-> [!-warning] -warning
-> Check your execution environment!
+> **Check your execution environment!:**
 > 
 > Please ensure that the code below will only be executed in your packaged app, and not in development. You can use the [app.isPackaged](../api/app.md#appispackaged-readonly) API to check the environment.
 
@@ -207,8 +211,7 @@ autoUpdater.on('error', (message) => {
 })
 ```
 
-> [!-info] -info
-> Handling updates manually
+> **Handling updates manually:**
 > 
 > Because the requests made by autoUpdate aren't under your direct control, you may find situations that are difficult to handle (such as if the update server is behind authentication). The `url` field supports the `file://` protocol, which means that with some effort, you can sidestep the server-communication aspect of the process by loading your update from a local directory. [Here's an example of how this could work](https://github.com/electron/electron/issues/5020#issuecomment-477636990).
 

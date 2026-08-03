@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/shared-texture-handle
 title: "Shared Texture Handle"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 - `ntHandle` Buffer (optional) *Windows* - NT HANDLE holds the shared texture. Note that this NT HANDLE is local to current process. Output textures of `rgba`, `bgra`, `rgbaf16` formats don't have a keyed mutex on the texture handle, but `nv12` format texture handles do have a keyed mutex.

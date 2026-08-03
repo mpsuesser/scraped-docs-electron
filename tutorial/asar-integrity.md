@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/asar-integrity
 title: "Asar Integrity"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ASAR integrity is a security feature that validates the contents of your app's [ASAR archives](asar-archives.md) at runtime.
@@ -15,8 +15,7 @@ Currently, ASAR integrity checking is supported on:
 - macOS as of `electron>=16.0.0`
 - Windows as of `electron>=30.0.0`
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > ASAR integrity is fully supported in Mac App Store (MAS) builds and is recommended as a best practice. While MAS-installed applications have their `Resources/` folder protected by the system (owned by root), ASAR integrity still provides an additional layer of security. It is especially important if you use Electron's MAS build but distribute your app through channels other than the Mac App Store (such as direct download), since those installations won't have the system-level read-only protections.
 
@@ -61,8 +60,7 @@ flipFuses(
 )
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > With Electron Forge, you can configure your app's fuses with [@electron-forge/plugin-fuses](https://www.electronforge.io/config/plugins/fuses) in your Forge configuration file.
 
@@ -112,7 +110,6 @@ When packaging for Windows, you must populate a valid [resource](https://learn.m
 ]
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > For an implementation example, see [`src/resedit.ts`](https://github.com/electron/packager/blob/main/src/resedit.ts) in the Electron Packager code.

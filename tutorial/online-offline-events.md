@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/online-offline-events
 title: "Online Offline Events"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -35,8 +35,7 @@ console.log('Online status:', net.online)
 
 Both `net.isOnline()` and `net.online` return the same boolean value with the same reliability characteristics as `navigator.onLine` - they provide a strong indicator when offline (`false`), but a `true` value doesn't guarantee successful internet connectivity.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The `net` module is only available after the app emits the `ready` event.
 
@@ -104,7 +103,6 @@ After launching the Electron application, you should see the notification:
 
 ![Connection status](https://www.electronjs.org/assets/images/connection-status-5cafe8cb88bae305085f0c7cd5dc1e6d.png)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you need to check the connection status in the main process, you can use [`net.isOnline()`](../api/net.md#netisonline) directly instead of communicating from the renderer process via [IPC](../api/ipc-renderer.md).

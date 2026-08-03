@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron-objc-macos
 title: "Native Code And Electron Objc Macos"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This tutorial builds on the [general introduction to Native Code and Electron](native-code-and-electron.md) and focuses on creating a native addon for macOS using Objective-C, Objective-C++, and Cocoa frameworks. To illustrate how you can embed native macOS code in your Electron app, we'll be building a basic native macOS GUI (using AppKit) that communicates with Electron's JavaScript.
@@ -15,8 +15,7 @@ Specifically, we'll be integrating with two macOS frameworks:
 
 This tutorial will be most useful to those who already have some familiarity with Objective-C and Cocoa development. You should understand basic concepts like delegates, NSObjects, and the target-action pattern commonly used in macOS development.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you're not already familiar with these concepts, Apple's [documentation on Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html) is an excellent starting point.
 
@@ -1163,8 +1162,7 @@ This wrapper:
 6. Provides a `destroy()` method to release native resources
 7. Parses JSON payloads and converts timestamps to JavaScript Date objects
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > You must call `destroy()` before the app quits (e.g. in the `will-quit` or `before-quit` event handler). Without this, persistent references to callbacks and the threadsafe function will prevent the native addon's destructor from running, causing Electron to hang on quit.
 

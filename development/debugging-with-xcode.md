@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/debugging-with-xcode
 title: "Debugging With Xcode"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ### Generate xcode project for debugging sources (cannot build code from xcode)

@@ -2,11 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/menu
 title: "Menu"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Class: Menu
+
+> Create application menus and context menus.
 
 Process: [Main](../glossary.md#main-process)
 
@@ -15,13 +17,11 @@ The presentation of menus varies depending on the operating system:
 - Under Windows and Linux, menus are visually similar to Chromium.
 - Under macOS, these will be native menus.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > See also: [A detailed guide about how to implement menus in your application](../tutorial/menus.md).
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -45,8 +45,7 @@ In order to escape the `&` character in an item name, add a preceding `&`. For e
 
 Passing `null` will suppress the default menu. On Windows and Linux, this has the additional effect of removing the menu bar from the window.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The default menu will be created automatically if the app does not set one. It contains standard items such as `File`, `Edit`, `View`, and `Window`.
 
@@ -54,8 +53,7 @@ Passing `null` will suppress the default menu. On Windows and Linux, this has th
 
 Returns `Menu | null` - The application menu, if set, or `null`, if not set.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The returned `Menu` instance doesn't support dynamic addition or removal of menu items. [Instance properties](#instance-properties) can still be dynamically modified.
 
@@ -63,17 +61,17 @@ Returns `Menu | null` - The application menu, if set, or `null`, if not set.
 
 - `action` string
 
-Sends the `action` to the first responder of application. This is used for emulating default macOS menu behaviors. Usually you would use the [`role`](../tutorial/menus.md#roles) property of a [`MenuItem`](menu.md-item).
+Sends the `action` to the first responder of application. This is used for emulating default macOS menu behaviors. Usually you would use the [`role`](../tutorial/menus.md#roles) property of a [`MenuItem`](menu-item.md).
 
 See the [macOS Cocoa Event Handling Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/EventArchitecture/EventArchitecture.html#//apple_ref/doc/uid/10000060i-CH3-SW7) for more information on macOS' native actions.
 
 #### Menu.buildFromTemplate(template)
 
-- `template` ([MenuItemConstructorOptions](menu.md-item#new-menuitemoptions) | [MenuItem](menu.md-item))\[\]
+- `template` ([MenuItemConstructorOptions](menu-item.md#new-menuitemoptions) | [MenuItem](menu-item.md))\[\]
 
 Returns [`Menu`](menu.md)
 
-Generally, the `template` is an array of `options` for constructing a [MenuItem](menu.md-item). The usage can be referenced above.
+Generally, the `template` is an array of `options` for constructing a [MenuItem](menu-item.md). The usage can be referenced above.
 
 You can also attach other fields to the element of the `template` and they will become properties of the constructed menu items.
 
@@ -94,6 +92,10 @@ The `menu` object has the following instance methods:
 
 Pops up this menu as a context menu in the [`BaseWindow`](base-window.md).
 
+> **Tip:**
+> 
+> For more details, see the [Context Menu](../tutorial/context-menu.md) guide.
+
 #### menu.closePopup(\[window\])
 
 - `window` [BaseWindow](base-window.md) (optional) - Default is the focused window.
@@ -102,7 +104,7 @@ Closes the context menu in the `window`.
 
 #### menu.append(menuItem)
 
-- `menuItem` [MenuItem](menu.md-item)
+- `menuItem` [MenuItem](menu-item.md)
 
 Appends the `menuItem` to the menu.
 
@@ -110,12 +112,12 @@ Appends the `menuItem` to the menu.
 
 - `id` string
 
-Returns [`MenuItem | null`](menu.md-item) - the item with the specified `id`
+Returns [`MenuItem | null`](menu-item.md) - the item with the specified `id`
 
 #### menu.insert(pos, menuItem)
 
 - `pos` Integer
-- `menuItem` [MenuItem](menu.md-item)
+- `menuItem` [MenuItem](menu-item.md)
 
 Inserts the `menuItem` to the `pos` position of the menu.
 
@@ -123,8 +125,7 @@ Inserts the `menuItem` to the `pos` position of the menu.
 
 Objects created with `new Menu` or returned by `Menu.buildFromTemplate` emit the following events:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Some events are only available on specific operating systems and are labeled as such.
 
@@ -150,6 +151,6 @@ Emitted when a popup is closed either manually or with `menu.closePopup()`.
 
 #### menu.items
 
-A [`MenuItem[]`](menu.md-item) array containing the menu's items.
+A [`MenuItem[]`](menu-item.md) array containing the menu's items.
 
-Each `Menu` consists of multiple [`MenuItem`](menu.md-item) instances and each `MenuItem` can nest a `Menu` into its `submenu` property.
+Each `Menu` consists of multiple [`MenuItem`](menu-item.md) instances and each `MenuItem` can nest a `Menu` into its `submenu` property.

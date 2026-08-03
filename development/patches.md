@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/patches
 title: "Patches"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron is built on two major upstream projects: Chromium and Node.js. Each of these projects has several of their own dependencies, too. We try our best to use these dependencies exactly as they are but sometimes we can't achieve our goals without patching those upstream dependencies to fit our use cases.
@@ -55,8 +55,7 @@ $ git commit
 $ ../../electron/script/git-export-patches -o ../../electron/patches/node
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `git-export-patches` ignores any uncommitted files, so you must create a commit if you want your changes to be exported. The subject line of the commit message will be used to derive the patch file name, and the body of the commit message should include the reason for the patch's existence.
 

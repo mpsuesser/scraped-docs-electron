@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Render and control web pages.
@@ -393,8 +393,7 @@ win.webContents.on('will-prevent-unload', (event) => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This will be emitted for `BrowserViews` but will *not* be respected - this is because we have chosen not to tie the `BrowserView` lifecycle to its owning BrowserWindow should one exist per the [specification](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event).
 
@@ -1330,8 +1329,7 @@ Returns `number` - the current zoom factor.
 
 Changes the zoom level to the specified level. The original size is 0 and each increment above or below represents zooming 20% larger or smaller to default limits of 300% and 50% of original size, respectively. The formula for this is `scale := 1.2 ^ level`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The zoom policy at the Chromium level is same-origin, meaning that the zoom level for a specific domain propagates across all instances of windows with the same domain. Differentiating the window URLs will make zoom work per-window.
 
@@ -1348,8 +1346,7 @@ Returns `Promise<void>`
 
 Sets the maximum and minimum pinch-to-zoom level.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Visual zoom is disabled by default in Electron. To re-enable it, call:
 > 
@@ -1770,8 +1767,7 @@ Opens the developer tools for the service worker context.
 
 Send an asynchronous message to the renderer process via `channel`, along with arguments. Arguments will be serialized with the [Structured Clone Algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm), just like [`postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage), so prototype chains will not be included. Sending Functions, Promises, Symbols, WeakMaps, or WeakSets will throw an exception.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Sending non-standard JavaScript types such as DOM objects or special Electron objects will throw an exception.
 
@@ -1854,8 +1850,7 @@ Disable device emulation enabled by `webContents.enableDeviceEmulation`.
 
 Sends an input `event` to the page.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The [`BrowserWindow`](browser-window.md) containing the contents needs to be focused for `sendInputEvent()` to work.
 
@@ -1978,8 +1973,7 @@ By default this value is `{ min: 0, max: 0 }`, which would apply no restriction 
 
 Setting the WebRTC UDP Port Range allows you to restrict the udp port range used by WebRTC. By default the port range is unrestricted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > To reset to an unrestricted port range this value should be set to `{ min: 0, max: 0 }`.
 
@@ -1993,8 +1987,7 @@ Returns `string` - The identifier of a WebContents stream. This identifier can b
 
 Returns `string` - The Chrome DevTools Protocol [TargetID](https://chromedevtools.github.io/devtools-protocol/tot/Target/#type-TargetID) associated with this WebContents. This is the reverse of [`webContents.fromDevToolsTargetId()`](#webcontentsfromdevtoolstargetidtargetid).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method creates a new DevTools agent for this WebContents if one does not already exist.
 
@@ -2122,8 +2115,7 @@ A `WebContents | null` property that represents a [`WebContents`](web-contents.m
 
 A `WebContents | null` property that represents the DevTools `WebContents` associated with a given `WebContents`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Users should never store this object because it may become `null` when the DevTools has been closed.
 

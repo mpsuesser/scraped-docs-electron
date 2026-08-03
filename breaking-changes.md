@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/breaking-changes
 title: "Breaking Changes"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Breaking changes will be documented here, and deprecation warnings added to JS code where possible, at least [one major version](tutorial/electron-versioning.md#semver) before the change is made.
@@ -636,7 +636,7 @@ This switch was never formally documented but its removal is being noted here re
 
 ### Behavior Changed: BrowserView.setAutoResize behavior on macOS
 
-In Electron 30, BrowserView is now a wrapper around the new [WebContentsView](api/web-contents.md-view) API.
+In Electron 30, BrowserView is now a wrapper around the new [WebContentsView](api/web-contents-view.md) API.
 
 Previously, the `setAutoResize` function of the `BrowserView` API was backed by [autoresizing](https://developer.apple.com/documentation/appkit/nsview/1483281-autoresizingmask?language=objc) on macOS, and by a custom algorithm on Windows and Linux. For simple use cases such as making a BrowserView fill the entire window, the behavior of these two approaches was identical. However, in more advanced cases, BrowserViews would be autoresized differently on macOS than they would be on other platforms, as the custom resizing algorithm for Windows and Linux did not perfectly match the behavior of macOS's autoresizing API. The autoresizing behavior is now standardized across all platforms.
 
@@ -644,7 +644,7 @@ If your app uses `BrowserView.setAutoResize` to do anything more complex than ma
 
 ### Deprecated: BrowserView
 
-The [`BrowserView`](api/browser-view.md) class has been deprecated and replaced by the new [`WebContentsView`](api/web-contents.md-view) class.
+The [`BrowserView`](api/browser-view.md) class has been deprecated and replaced by the new [`WebContentsView`](api/web-contents-view.md) class.
 
 `BrowserView` related methods in [`BrowserWindow`](api/browser-window.md) have also been deprecated:
 

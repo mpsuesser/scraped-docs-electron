@@ -2,16 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/web-utils
 title: "Web Utils"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > A utility layer to interact with Web API objects (Files, Blobs, etc.)
 
 Process: [Renderer](../glossary.md#renderer-process)
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > If you want to call this API from a renderer process with context isolation enabled, place the API call in your preload script and [expose](../tutorial/context-isolation.md#after-context-isolation-enabled) it using the [`contextBridge`](context-bridge.md) API.
 

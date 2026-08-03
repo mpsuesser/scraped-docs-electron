@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/esm
 title: "Esm"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Introduction
@@ -14,8 +14,7 @@ Chromium and Node.js have their own implementations of the ESM specification, an
 
 This document serves to outline the limitations of ESM in Electron and the differences between ESM in Electron and ESM in Node.js and Chromium.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This feature was added in `electron@28.0.0`.
 
@@ -60,8 +59,7 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-warning] -warning
-> Transpiler translations
+> **Transpiler translations:**
 > 
 > JavaScript transpilers (e.g. Babel, TypeScript) have historically supported ES Module syntax before Node.js supported ESM imports by turning these calls to CommonJS `require` calls.
 > 

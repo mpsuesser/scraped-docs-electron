@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.
@@ -12,8 +12,7 @@ Process: [Main](../glossary.md#main-process)
 
 This module does not include a web interface. To view recorded traces, use [trace viewer](https://chromium.googlesource.com/catapult/+/HEAD/tracing/README.md), available at `chrome://tracing` in Chrome.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > You should not use this module until the `ready` event of the app module is emitted.
 

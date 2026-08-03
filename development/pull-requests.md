@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/pull-requests
 title: "Pull Requests"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Setting up your local environment
@@ -23,8 +23,7 @@ e init --fork my-org/electron --bootstrap testing
 
 This will create a new `electron` folder in your working directory and initialize the project. Once the build completes, navigate to `electron/src/electron`, where your fork is actually cloned.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Your Electron project has a complex folder structure with nested repositories. See the [Build Instructions](build-instructions-gn.md) docs for detailed Build Tools usage instructions (e.g. how to sync dependencies or how to recompile the binary) and platform-specific notices.
 

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/product-subscription-period
 title: "Product Subscription Period"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 - `numberOfUnits` number - The number of units per subscription period.

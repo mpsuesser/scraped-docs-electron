@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/protocol
 title: "Protocol"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Register a custom protocol and intercept existing protocol requests.
@@ -26,8 +26,7 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > All methods unless specified can only be used after the `ready` event of the `app` module gets emitted.
 
@@ -70,8 +69,7 @@ The `protocol` module has the following methods:
 
 - `customSchemes` [CustomScheme\[\]](structures/custom-scheme.md)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method can only be used before the `ready` event of the `app` module gets emitted and can be called only once.
 

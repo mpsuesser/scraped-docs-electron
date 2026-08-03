@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/menu-item
 title: "Menu Item"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Class: MenuItem
@@ -12,8 +12,7 @@ current_date: 2026-08-03T17:26:37.553Z
 
 Process: [Main](../glossary.md#main-process)
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -52,8 +51,7 @@ Process: [Main](../glossary.md#main-process)
 		- `beforeGroupContaining` string\[\] (optional) - Provides a means for a single context menu to declare the placement of their containing group before the containing group of the item with the specified id.
 		- `afterGroupContaining` string\[\] (optional) - Provides a means for a single context menu to declare the placement of their containing group after the containing group of the item with the specified id.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `acceleratorWorksWhenHidden` is specified as being macOS-only because accelerators always work when items are hidden on Windows and Linux. The option is exposed to users to give them the option to turn it off, as this is possible in native macOS development.
 
@@ -93,8 +91,7 @@ A `Function` that is fired when the MenuItem receives a click event. It can be c
 
 A `string` indicating the type of the item. Can be `normal`, `separator`, `submenu`, `checkbox`, `radio`, `header` or `palette`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `header` and `palette` are only available on macOS 14 and up.
 
@@ -110,8 +107,7 @@ An [`Accelerator | null`](../tutorial/keyboard-shortcuts.md#accelerators) indica
 
 An [`Accelerator | null`](../tutorial/keyboard-shortcuts.md#accelerators) indicating the item's [user-assigned accelerator](https://developer.apple.com/documentation/appkit/nsmenuitem/1514850-userkeyequivalent?language=objc) for the menu item.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This property is only initialized after the `MenuItem` has been added to a `Menu`. Either via `Menu.buildFromTemplate` or via `Menu.append()/insert()`. Accessing before initialization will just return `null`.
 

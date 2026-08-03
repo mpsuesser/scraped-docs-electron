@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/gpu-feature-status
 title: "Gpu Feature Status"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 - `2d_canvas` string - Canvas.

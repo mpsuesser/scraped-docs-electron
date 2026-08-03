@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-preload
 title: "Tutorial Preload"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 3** of the Electron tutorial.
 
 ## Learning goals
 
@@ -20,8 +24,7 @@ To bridge Electron's different process types together, we will need to use a spe
 
 A BrowserWindow's preload script runs in a context that has access to both the HTML DOM and a limited subset of Node.js and Electron APIs.
 
-> [!-info] -info
-> Preload script sandboxing
+> **Preload script sandboxing:**
 > 
 > From Electron 20 onwards, preload scripts are **sandboxed** by default and no longer have access to a full Node.js environment. Practically, this means that you have a polyfilled `require` function that only has access to a limited set of APIs.
 > 
@@ -74,8 +77,7 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > There are two Node.js concepts that are used here:
 > 
@@ -121,10 +123,7 @@ After following the above steps, your app should look something like this:
 
 And the code should look like this:
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -159,6 +158,51 @@ app.on('window-all-closed', () => {
 })
 ```
 
+#### preload.js
+
+```js
+const { contextBridge } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('versions', {
+  node: () => process.versions.node,
+  chrome: () => process.versions.chrome,
+  electron: () => process.versions.electron
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hello from Electron renderer!</title>
+  </head>
+  <body>
+    <h1>Hello from Electron renderer!</h1>
+    <p>👋</p>
+    <p id="info"></p>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
+```
+
+#### renderer.js
+
+```js
+const information = document.getElementById('info')
+information.innerText = \`This app is using Chrome (v${window.versions.chrome()}), Node.js (v${window.versions.node()}), and Electron (v${window.versions.electron()})\`
+```
+
 ## Communicating between processes
 
 As we have mentioned above, Electron's main and renderer process have distinct responsibilities and are not interchangeable. This means it is not possible to access the Node.js APIs directly from the renderer process, nor the HTML Document Object Model (DOM) from the main process.
@@ -181,8 +225,7 @@ contextBridge.exposeInMainWorld('versions', {
 })
 ```
 
-> [!-warning] -warning
-> IPC security
+> **IPC security:**
 > 
 > Notice how we wrap the `ipcRenderer.invoke('ping')` call in a helper function rather than expose the `ipcRenderer` module directly via context bridge. You **never** want to directly expose the entire `ipcRenderer` module via preload. This would give your renderer the ability to send arbitrary IPC messages to the main process, which becomes a powerful attack vector for malicious code.
 
@@ -220,8 +263,7 @@ const func = async () => {
 func()
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For more in-depth explanations on using the `ipcRenderer` and `ipcMain` modules, check out the full [Inter-Process Communication](ipc.md) guide.
 

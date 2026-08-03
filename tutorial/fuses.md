@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/fuses
 title: "Fuses"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Package time feature toggles
@@ -151,15 +151,13 @@ You can validate the fuses that have been flipped or check the fuse status of an
 npx @electron/fuses read --app /Applications/Foo.app
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you are using Electron Forge to distribute your application, you can flip fuses using [`@electron-forge/plugin-fuses`](https://www.electronforge.io/config/plugins/fuses), which comes pre-installed with all templates.
 
 ### The hard way
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Glossary:
 > 

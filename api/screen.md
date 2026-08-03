@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/screen
 title: "Screen"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Retrieve information about screen size, displays, cursor position, etc.
@@ -14,14 +14,13 @@ This module cannot be used until the `ready` event of the `app` module is emitte
 
 `screen` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > In the renderer / DevTools, `window.screen` is a reserved DOM property, so writing `let { screen } = require('electron')` will not work.
 
 An example of creating a window that fills the whole screen:
 
-- main.js
+#### main.js
 
 ```js
 // Retrieve information about screen size, displays, cursor position, etc.
@@ -66,8 +65,7 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Screen coordinates used by this module are [Point](structures/point.md) structures. There are two kinds of coordinates available to the process:
 > 
@@ -118,8 +116,7 @@ The current absolute position of the mouse pointer.
 
 Not supported on Wayland (Linux).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The return value is a DIP point, not a screen physical point.
 

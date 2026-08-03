@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/net-log
 title: "Net Log"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Logging network events for a session.
@@ -23,8 +23,7 @@ app.whenReady().then(async () => {
 
 See [`--log-net-log`](command-line-switches.md#--log-net-logpath) to log network events throughout the app's lifecycle.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > All methods unless specified can only be used after the `ready` event of the `app` module gets emitted.
 

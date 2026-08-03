@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/progress-bar
 title: "Progress Bar"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -36,8 +36,7 @@ See the [API documentation for more options and modes](../api/browser-window.md#
 
 In this example, we add a progress bar to the main window that increments over time using Node.js timers.
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -88,6 +87,26 @@ app.on('activate', () => {
     createWindow()
   }
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Keep an eye on the dock (Mac) or taskbar (Windows, Unity) for this application!</p>
+    <p>It should indicate a progress that advances from 0 to 100%.</p>
+    <p>It should then show indeterminate (Windows) or pin at 100% (other operating systems)
+      briefly and then loop.</p>
+</body>
+</html>
 ```
 
 After launching the Electron application, the dock (macOS) or taskbar (Windows, Unity) should show a progress bar that starts at zero and progresses through 100% to completion. It should then show indeterminate (Windows) or pin to 100% (other operating systems) briefly and then loop.

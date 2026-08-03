@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/multithreading
 title: "Multithreading"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 With [Web Workers](https://developer.mozilla.org/en/docs/Web/API/Web_Workers_API/Using_web_workers), it is possible to run JavaScript in OS-level threads.
@@ -22,8 +22,7 @@ const win = new BrowserWindow({
 
 The `nodeIntegrationInWorker` can be used independent of `nodeIntegration`, but `sandbox` must not be set to `true`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This option is not available in [`SharedWorker` s](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker) or [`Service Worker` s](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker) owing to incompatibilities in sandboxing policies.
 

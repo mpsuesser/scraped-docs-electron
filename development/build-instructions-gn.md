@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/build-instructions-gn
 title: "Build Instructions Gn"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Follow the guidelines below for building **Electron itself**, for the purposes of creating custom Electron binaries. For bundling and distributing your app code with the prebuilt Electron binaries, see the [application distribution](../tutorial/application-distribution.md) guide.
@@ -20,8 +20,7 @@ Check the build prerequisites for your platform before proceeding:
 
 [Electron Build Tools](https://github.com/electron/build-tools) automate much of the setup for compiling Electron from source with different configurations and build targets. Most of the [manual setup](#manual-setup-advanced) instructions can be replaced by simpler Build Tools commands.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Build Tools also gives you access to [remote execution and caching of build actions](reclient.md), which will dramatically improve build times.
 
@@ -44,8 +43,7 @@ e init --root=~/electron --bootstrap testing
 
 The `--bootstrap` flag also runs `e sync` (synchronizes source code branches from [`DEPS`](https://github.com/electron/electron/blob/v43.2.0/DEPS) using [`gclient`](https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/HEAD/README.gclient.md)) and `e build` (compiles the Electron binary into the `${root}/src/out` folder).
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Sometime after the initial `e sync` phase, you will be asked to run `e d rbe login` to auth into remote build execution and proceed into the build. This may take about 20-30 minutes!
 
@@ -60,18 +58,15 @@ Some quick tips on building once your checkout is set up:
 - **Rebuilding:** When making changes to code in `${root}/src/electron/` in a local branch, you only need to re-run `e build`.
 - **Adding patches:** When contributing changes in `${root}/src/` outside of `${root}/src/electron/`, you need to do so via Electron's [patch system](patches.md). The `e patches` command can export all relevant patches to `${root}/src/electron/patches/` once your code change is ready.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Unless you're applying upstream patches, you should treat `${root}/src/` as a read-only folder and spend most of your development time in `${root}/src/electron/`. You should not need to make any changes or run `git` commands in `${root}/src/`.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Detailed documentation for all available `e` commands can be found in the repository's [README.md](https://github.com/electron/build-tools/blob/main/README.md). You can also run `e --help` to list all commands and use the `--help` flag on any command to get more usage info.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For more information on project structure, see the [Source Code Directory Structure](source-code-directory-structure.md) guide.
 
@@ -129,8 +124,7 @@ Some quick tips on building once your checkout is set up:
 > $ cd -
 > ```
 > 
-> > [!-success] -success
-> > tip
+> > **Tip:**
 > > 
 > > `gclient` works by checking a file called `DEPS` inside the `${root}/src/electron` folder for dependencies (like Chromium or Node.js). Running `gclient sync -f` ensures that all dependencies required to build Electron match that file.
 > 
@@ -201,8 +195,7 @@ Some quick tips on building once your checkout is set up:
 > $ gn gen out/Release --args="import(\\`"//electron/build/args/release.gn\\`")"
 > ```
 > 
-> > [!-secondary] -secondary
-> > note
+> > **Note:**
 > > 
 > > This will generate a `out/Testing` or `out/Release` build directory under `${root}/src/` with the testing or release build depending upon the configuration passed above. You can replace `Testing|Release` with another names, but it should be a subdirectory of `out`.
 > 

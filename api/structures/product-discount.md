@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/product-discount
 title: "Product Discount"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 - `identifier` string - A string used to uniquely identify a discount offer for a product.

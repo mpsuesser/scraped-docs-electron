@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/menus
 title: "Menus"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron's [Menu](../api/menu.md) class provides a standardized way to create cross-platform native menus throughout your application.
@@ -21,7 +21,7 @@ To learn more about the various kinds of native menus you can create and how to 
 
 ## Building menus
 
-Each `Menu` instance is composed of an array of [MenuItem](../api/menu.md-item) objects accessible via the `menu.items` instance property. Menus can be nested by setting the `item.submenu` property to another menu.
+Each `Menu` instance is composed of an array of [MenuItem](../api/menu-item.md) objects accessible via the `menu.items` instance property. Menus can be nested by setting the `item.submenu` property to another menu.
 
 There are two ways to build a menu: either by directly calling [`menu.append`](../api/menu.md#menuappendmenuitem) or by using the static [`Menu.buildFromTemplate`](../api/menu.md#menubuildfromtemplatetemplate) helper function.
 
@@ -29,8 +29,7 @@ The helper function reduces boilerplate by allowing you to pass a collection of 
 
 Below is an example of a minimal application menu:
 
-- Constructor
-- Template Helper
+#### Constructor
 
 ```js
 const submenu = new Menu()
@@ -42,8 +41,21 @@ menu.append(new MenuItem({ label: 'Menu', submenu }))
 Menu.setApplicationMenu(menu)
 ```
 
-> [!-info] -info
-> info
+#### Template Helper
+
+```js
+const menu = Menu.buildFromTemplate([{
+  label: 'Menu',
+  submenu: [
+    { label: 'Hello' },
+    { type: 'separator' },
+    { label: 'Electron', type: 'checkbox', checked: true }
+  ]
+}])
+Menu.setApplicationMenu(menu)
+```
+
+> **Info:**
 > 
 > All menu items (except for the `separator` type) must have a label. Labels can either be manually defined using the `label` property or inherited from the item's `role`.
 
@@ -61,8 +73,7 @@ Other available types, when specified, give special additional properties to the
 - `palette` - creates a [Palette](https://developer.apple.com/documentation/appkit/nsmenu/presentationstyle-swift.enum/palette) submenu, which aligns items horizontally (available on macOS 14 and above)
 - `header` - creates a section header, which can convey groupings with labels (available on macOS 14 and above)
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Adjacent `radio` items are at the same level of submenu and not divided by a separator.
 > 
@@ -83,8 +94,7 @@ We recommend specifying the `role` attribute for any menu item that matches a st
 
 The `label` and `accelerator` values are optional when using a `role` and will default to appropriate values for each platform.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Role strings are **case-insensitive**. For example, `toggleDevTools`, `toggledevtools`, and `TOGGLEDEVTOOLS` are all equivalent roles when defining menu items.
 
@@ -166,8 +176,7 @@ macOS has a number of platform-specific menu roles available. Many of these map 
 - `clearRecentDocuments` - Map to the [`clearRecentDocuments`](https://developer.apple.com/documentation/appkit/nsdocumentcontroller/clearrecentdocuments\(_:\)) action.
 - `shareMenu` - The submenu is [share menu](../api/share-menu.md). The `sharingItem` property must also be set to indicate the item to share.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > When specifying a `role` on macOS, `label` and `accelerator` are the only options that will affect the menu item. All other options will be ignored.
 

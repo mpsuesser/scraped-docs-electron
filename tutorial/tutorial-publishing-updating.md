@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-publishing-updating
 title: "Tutorial Publishing Updating"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 6** of the Electron tutorial.
 
 ## Learning goals
 
@@ -21,8 +25,7 @@ The Electron maintainers provide a free auto-updating service for open-source ap
 
 At this point, we'll assume that you have already pushed all your code to a public GitHub repository.
 
-> [!-info] -info
-> Alternative update services
+> **Alternative update services:**
 > 
 > If you're using an alternate repository host (e.g. GitLab or Bitbucket) or if you need to keep your code repository private, please refer to our [step-by-step guide](updates.md) on hosting your own Electron update server.
 
@@ -40,11 +43,16 @@ Forge cannot publish to any repository on GitHub without permission. You need to
 
 Forge's [GitHub Publisher](https://www.electronforge.io/config/publishers/github) is a plugin that needs to be installed in your project's `devDependencies`:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install --save-dev @electron-forge/publisher-github
+```
+
+#### Yarn
+
+```sh
+yarn add --dev @electron-forge/publisher-github
 ```
 
 #### Configuring the publisher in Forge
@@ -69,8 +77,7 @@ module.exports = {
 }
 ```
 
-> [!-success] -success
-> Drafting releases before publishing
+> **Drafting releases before publishing:**
 > 
 > Notice that you have configured Forge to publish your release as a draft. This will allow you to see the release with its generated artifacts without actually publishing it to your end users. You can manually publish your releases via GitHub after writing release notes and double-checking that your distributables work.
 
@@ -95,19 +102,23 @@ Add Forge's [publish command](https://www.electronforge.io/cli#publish) to your 
 
 This command will run your configured makers and publish the output distributables to a new GitHub release.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm run publish
+```
+
+#### Yarn
+
+```sh
+yarn run publish
 ```
 
 By default, this will only publish a single distributable for your host operating system and architecture. You can publish for different architectures by passing in the `--arch` flag to your Forge commands.
 
 The name of this release will correspond to the `version` field in your project's package.json file.
 
-> [!-success] -success
-> Tagging releases
+> **Tagging releases:**
 > 
 > Optionally, you can also [tag your releases in Git](https://git-scm.com/book/en/v2/Git-Basics-Tagging) so that your release is associated with a labeled point in your code history. npm comes with a handy [`npm version`](https://docs.npmjs.com/cli/v8/commands/npm-version) command that can handle the version bumping and tagging for you.
 
@@ -129,11 +140,16 @@ To make this process easier, the Electron team maintains the [`update-electron-a
 
 First, install the module as a runtime dependency.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install update-electron-app
+```
+
+#### Yarn
+
+```sh
+yarn add update-electron-app
 ```
 
 Then, import the module and call it immediately in the main process.
@@ -152,7 +168,6 @@ Electron applications can self-update by pointing the autoUpdater module to an u
 
 If your application is not eligible for update.electronjs.org, you should instead deploy your own update server and configure the autoUpdater module yourself.
 
-> [!-info] -info
-> 🌟 You're done!
+> **🌟 You're done!:**
 > 
 > From here, you have officially completed our tutorial to Electron. Feel free to explore the rest of our docs and happy developing! If you have questions, please stop by our community [Discord server](https://discord.gg/electronjs).

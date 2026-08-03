@@ -2,12 +2,11 @@
 url: https://www.electronjs.org/docs/latest/tutorial/security
 title: "Security"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
-> [!-info] -info
-> Reporting security issues
+> **Reporting security issues:**
 > 
 > For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v43.2.0/SECURITY.md).
 > 
@@ -35,13 +34,11 @@ It is important to remember that the security of your Electron application is th
 
 A security issue exists whenever you receive code from an untrusted source (e.g. a remote server) and execute it locally. As an example, consider a remote website being displayed inside a default [`BrowserWindow`](../api/browser-window.md). If an attacker somehow manages to change said content (either by attacking the source directly, or by sitting between your app and the actual destination), they will be able to execute native code on the user's machine.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Under no circumstances should you load and execute remote code with Node.js integration enabled. Instead, use only local files (packaged together with your application) to execute Node.js code. To display remote content, use the [`<webview>`](../api/webview-tag.md) tag or a [`WebContentsView`](../api/web-contents-view.md) and make sure to disable the `nodeIntegration` and enable `contextIsolation`.
 
-> [!-info] -info
-> Electron security warnings
+> **Electron security warnings:**
 > 
 > Security warnings and recommendations are printed to the developer console. They only show up when the binary's name is Electron, indicating that a developer is currently looking at the console.
 > 
@@ -104,8 +101,7 @@ browserWindow.loadURL('https://example.com')
 
 ### 2\. Do not enable Node.js integration for remote content
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is the default behavior in Electron since 5.0.0.
 
@@ -153,8 +149,7 @@ When disabling Node.js integration, you can still expose APIs to your website th
 
 ### 3\. Enable Context Isolation
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Context Isolation is the default behavior in Electron since 12.0.0.
 
@@ -166,15 +161,13 @@ Even when `nodeIntegration: false` is used, to truly enforce strong isolation an
 
 Beware that *disabling context isolation* for a renderer process by setting `nodeIntegration: true` *also disables process sandboxing* for that process. See section below.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For more information on what `contextIsolation` is and how to enable it please see our dedicated [Context Isolation](context-isolation.md) document.
 
 ### 4\. Enable process sandboxing
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is the default behavior in Electron since 20.0.0.
 > 
@@ -184,8 +177,7 @@ Beware that *disabling context isolation* for a renderer process by setting `nod
 
 [Sandboxing](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/design/sandbox.md) is a Chromium feature that uses the operating system to significantly limit what renderer processes have access to. You should enable the sandbox in all renderers. Loading, reading or processing any untrusted content in an unsandboxed process, including the main process, is not advised.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For more information on what Process Sandboxing is and how to enable it please see our dedicated [Process Sandboxing](sandbox.md) document.
 
@@ -228,8 +220,7 @@ Note: `session.defaultSession` is only available after `app.whenReady` is called
 
 ### 6\. Do not disable webSecurity
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is Electron's default.
 
@@ -312,8 +303,7 @@ CSP's preferred delivery mechanism is an HTTP header. However, it is not possibl
 
 ### 8\. Do not enable allowRunningInsecureContent
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is Electron's default.
 
@@ -342,8 +332,7 @@ const mainWindow = new BrowserWindow({})
 
 ### 9\. Do not enable experimental features
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is Electron's default.
 
@@ -372,8 +361,7 @@ const mainWindow = new BrowserWindow({})
 
 ### 10\. Do not use enableBlinkFeatures
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is Electron's default.
 
@@ -400,8 +388,7 @@ const mainWindow = new BrowserWindow()
 
 ### 11\. Do not use allowpopups for WebViews
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > This recommendation is Electron's default.
 
@@ -650,7 +637,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
 })
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For more information on what `contextIsolation` is and how to use it to secure your app, please see the [Context Isolation](context-isolation.md) document.

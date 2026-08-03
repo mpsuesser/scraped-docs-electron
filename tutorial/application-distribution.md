@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-distribution
 title: "Application Distribution"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 To distribute your app with Electron, you need to package and rebrand it. To do this, you can either use specialized tooling or manual approaches.
@@ -23,8 +23,7 @@ If you prefer the manual approach, there are 2 ways to distribute your applicati
 
 To distribute your app manually, you need to download Electron's [prebuilt binaries](https://github.com/electron/electron/releases). Next, the folder containing your app should be named `app` and placed in Electron's resources directory as shown in the following examples.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The location of Electron's prebuilt binaries is indicated with `electron/` in the examples below.
 
@@ -83,8 +82,7 @@ MyApp.app/Contents
             └── MyApp Helper
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > it is also possible to rebrand Electron by changing the product name and building it from source. To do this you need to set the build argument corresponding to the product name (`electron_product_name = "YourProductName"`) in the `args.gn` file and rebuild.
 > 

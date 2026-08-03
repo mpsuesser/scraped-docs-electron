@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites
 title: "Tutorial Prerequisites"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 1** of the Electron tutorial.
 
 Electron is a framework for building desktop applications using JavaScript, HTML, and CSS. By embedding [Chromium](https://www.chromium.org/) and [Node.js](https://nodejs.org/) into a single binary file, Electron allows you to create cross-platform apps that work on Windows, macOS, and Linux with a single JavaScript codebase.
 
@@ -50,8 +54,7 @@ If you're unfamiliar with how Git works, we recommend reading GitHub's [Git guid
 
 We recommend that you create a local Git repository and publish it to GitHub before starting the tutorial, and commit your code after every step.
 
-> [!-info] -info
-> Installing Git via GitHub Desktop
+> **Installing Git via GitHub Desktop:**
 > 
 > GitHub Desktop will install the latest version of Git on your system if you don't already have it installed.
 
@@ -59,8 +62,7 @@ We recommend that you create a local Git repository and publish it to GitHub bef
 
 To begin developing an Electron app, you need to install the [Node.js](https://nodejs.org/en/download/) runtime and its bundled npm package manager onto your system. We recommend that you use the latest long-term support (LTS) version.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Please install Node.js using pre-built installers for your platform. You may encounter incompatibility issues with different development tools otherwise. If you are using macOS, we recommend using a package manager like [Homebrew](https://brew.sh/) or [nvm](https://github.com/nvm-sh/nvm) to avoid any directory permission issues.
 
@@ -73,8 +75,7 @@ $ npm -v
 8.7.0
 ```
 
-> [!-warning] -warning
-> caution
+> **Caution:**
 > 
 > Although you need Node.js installed locally to scaffold an Electron project, Electron **does not use your system's Node.js installation to run its code**. Instead, it comes bundled with its own Node.js runtime. This means that your end users do not need to install Node.js themselves as a prerequisite to running your app.
 > 

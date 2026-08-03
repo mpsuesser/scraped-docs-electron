@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/build-instructions-windows
 title: "Build Instructions Windows"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Follow the guidelines below for building **Electron itself** on Windows, for the purposes of creating custom Electron binaries. For bundling and distributing your app code with the prebuilt Electron binaries, see the [application distribution](../tutorial/application-distribution.md) guide.
@@ -26,8 +26,7 @@ If you don't currently have a Windows installation, [developer.microsoft.com](ht
 
 Building Electron is done entirely with command-line scripts and cannot be done with Visual Studio. You can develop Electron with any editor but support for building with Visual Studio will come in the future.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Even though Visual Studio is not used for building, it's still **required** because we need the build toolchains it provides.
 

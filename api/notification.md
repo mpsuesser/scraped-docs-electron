@@ -2,23 +2,25 @@
 url: https://www.electronjs.org/docs/latest/api/notification
 title: "Notification"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> Create OS desktop notifications
 
 Process: [Main](../glossary.md#main-process)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you want to show notifications from a renderer process you should use the [web Notifications API](../tutorial/notifications.md)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On MacOS, notifications use the UNNotification API as their underlying framework. This API requires an application to be code-signed in order for notifications to appear. Unsigned binaries will emit a `failed` event when notifications are called.
 
 ## Class: Notification
+
+> Create OS desktop notifications
 
 Process: [Main](../glossary.md#main-process)
 
@@ -26,8 +28,7 @@ Process: [Main](../glossary.md#main-process)
 
 It creates a new `Notification` with native properties as set by the `options`.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -83,13 +84,11 @@ Each returned `Notification` is a live object connected to the corresponding del
 
 The returned notifications have their `id`, `groupId`, `title`, `subtitle`, and `body` properties populated from information available in the Notification Center. Other properties (e.g., `actions`, `silent`, `icon`) are not available from delivered notifications and will have default values.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Like all macOS notification APIs, this method requires the application to be code-signed. In unsigned development builds, notifications are not delivered to Notification Center and this method will resolve with an empty array.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Unlike notifications created with `new Notification()`, notifications returned by `getHistory()` will remain visible in Notification Center when the object is garbage collected. Calling `show()` on a restored notification will remove the original from Notification Center and post a new one with the same properties.
 
@@ -171,8 +170,7 @@ Notification.removeGroup('chat-thread-1')
 		- `closeButtonText` string (optional) *macOS* - A custom title for the close button of an alert. An empty string will cause the default localized text to be used.
 		- `toastXml` string (optional) *Windows* - A custom description of the Notification on Windows superseding all properties above. Provides full customization of design and behavior of the notification.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Windows, `urgency` type 'critical' sorts the notification higher in Action Center (above default priority notifications), but does not prevent auto-dismissal. To prevent auto-dismissal, you should also set `timeoutType` to 'never'.
 
@@ -180,8 +178,7 @@ Notification.removeGroup('chat-thread-1')
 
 Objects created with `new Notification` emit the following events:
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Some events are only available on specific operating systems and are labeled as such.
 

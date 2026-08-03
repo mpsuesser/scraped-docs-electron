@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-menu
 title: "Application Menu"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Each Electron app has a single top-level application menu.
@@ -131,13 +131,11 @@ const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > On macOS, the first submenu of the application menu will **always** have your application's name as its label. In general, you can populate this submenu by conditionally adding a menu item with the `appMenu` role.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For additional descriptions of available roles, see the [`MenuItem` roles](menus.md#roles) section of the general Menus guide.
 
@@ -175,8 +173,7 @@ const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the `help` role defines a top-level Help submenu that has a search bar for other menu items. It requires items to be added to its `submenu` to function.
 
@@ -200,7 +197,6 @@ const menu = Menu.buildFromTemplate([
 win.setMenu(menu)
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > You can remove a specific window's application menu by calling the [`win.removeMenu`](../api/base-window.md#winremovemenu-linux-windows) API.

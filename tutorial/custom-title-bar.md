@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/custom-title-bar
 title: "Custom Title Bar"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Basic tutorial
@@ -12,7 +12,7 @@ Application windows have a default [chrome](https://developer.mozilla.org/en-US/
 
 You can follow along with this tutorial by opening Fiddle with the following starter code.
 
-- main.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -31,7 +31,7 @@ app.whenReady().then(() => {
 
 Let’s start by configuring a window with native window controls and a hidden title bar. To remove the default title bar, set the [BaseWindowContructorOptions](../api/structures/base-window-options.md) `titleBarStyle` param in the `BrowserWindow` constructor to `'hidden'`.
 
-- main.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -53,7 +53,7 @@ app.whenReady().then(() => {
 
 On macOS, setting `titleBarStyle: 'hidden'` removes the title bar while keeping the window’s traffic light controls available in the upper left hand corner. However on Windows and Linux, you’ll need to add window controls back into your `BrowserWindow` by setting the [BaseWindowContructorOptions](../api/structures/base-window-options.md) `titleBarOverlay` param in the `BrowserWindow` constructor.
 
-- main.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -79,9 +79,7 @@ Setting `titleBarOverlay: true` is the simplest way to expose window controls ba
 
 Now, let’s implement a simple custom title bar in the `webContents` of our `BrowserWindow`. There’s nothing fancy here, just HTML and CSS!
 
-- main.js
-- index.html
-- styles.css
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -102,11 +100,45 @@ app.whenReady().then(() => {
 })
 ```
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Custom Titlebar App</title>
+  </head>
+  <body>
+      <!-- mount your title bar at the top of you application's body tag -->
+    <div class="titlebar">Cool titlebar</div>
+  </body>
+</html>
+```
+
+#### styles.css
+
+```markdown
+body {
+    margin: 0;
+}
+
+.titlebar {
+  height: 30px;
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
 Currently our application window can’t be moved. Since we’ve removed the default title bar, the application needs to tell Electron which regions are draggable. We’ll do this by adding the CSS style `app-region: drag` to the custom title bar. Now we can drag the custom title bar to reposition our app window!
 
-- main.js
-- index.html
-- styles.css
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -125,15 +157,49 @@ function createWindow () {
 app.whenReady().then(() => {
   createWindow()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Custom Titlebar App</title>
+  </head>
+  <body>
+      <!-- mount your title bar at the top of you application's body tag -->
+    <div class="titlebar">Cool titlebar</div>
+  </body>
+</html>
+```
+
+#### styles.css
+
+```markdown
+body {
+  margin: 0;
+}
+.titlebar {
+  height: 30px;
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  app-region: drag;
+}
 ```
 
 For more information around how to manage drag regions defined by your electron application, see the [Custom draggable regions](custom-window-interactions.md#custom-draggable-regions) section below.
 
 One more step: we should make sure our title bar content doesn't overlap with the native window controls. Buttons can appear on the right or left side of the frame (or both) depending on RTL and the user's settings. We can create a safe area using the CSS variables `env(titlebar-area-x, 0px)` and `env(titlebar-area-width, 100%)`.
 
-- main.js
-- index.html
-- styles.css
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -152,6 +218,47 @@ function createWindow () {
 app.whenReady().then(() => {
   createWindow()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Custom Titlebar App</title>
+  </head>
+  <body>
+      <!-- mount your title bar at the top of you application's body tag -->
+    <div class="titlebar">Cool titlebar</div>
+  </body>
+</html>
+```
+
+#### styles.css
+
+```markdown
+body {
+  margin: 0;
+}
+.titlebar {
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  app-region: drag;
+  
+  margin-left: env(titlebar-area-x, 0);
+  width:       env(titlebar-area-width, 100%);
+  height:      env(titlebar-area-height, 30px);
+  box-sizing: border-box;
+  border: 1px dashed red;
+}
 ```
 
 Congratulations, you've just implemented a basic custom title bar!
@@ -205,8 +312,7 @@ const win = new BrowserWindow()
 win.setWindowButtonVisibility(false)
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Given the number of APIs available, there are many ways of achieving this. For instance, combining `frame: false` with `win.setWindowButtonVisibility(true)` will yield the same layout outcome as setting `titleBarStyle: 'hidden'`.
 
@@ -214,8 +320,7 @@ win.setWindowButtonVisibility(false)
 
 The [Window Controls Overlay API](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md) is a web standard that gives web apps the ability to customize their title bar region when installed on desktop. Electron exposes this API through the `titleBarOverlay` option in the `BrowserWindow` constructor. When `titleBarOverlay` is enabled, the window controls become exposed in their default position, and DOM elements cannot use the area underneath this region.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `titleBarOverlay` requires the `titleBarStyle` param in the `BrowserWindow` constructor to have a value other than `default`.
 
@@ -236,7 +341,6 @@ const win = new BrowserWindow({
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Once your title bar overlay is enabled from the main process, you can access the overlay's color and dimension values from a renderer using a set of readonly [JavaScript APIs](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#javascript-apis) and [CSS Environment Variables](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#css-environment-variables).

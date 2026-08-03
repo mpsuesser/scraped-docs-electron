@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/web-embeds
 title: "Web Embeds"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -16,8 +16,7 @@ Iframes in Electron behave like iframes in regular browsers. An `<iframe>` eleme
 
 ### WebViews
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > [We do not recommend you to use WebViews](../api/webview-tag.md#warning), as this tag undergoes dramatic architectural changes that may affect stability of your application. Consider switching to alternatives, like `iframe` and Electron's [`WebContentsView`](../api/web-contents-view.md), or an architecture that avoids embedded content by design.
 

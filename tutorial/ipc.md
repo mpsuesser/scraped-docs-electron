@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/ipc
 title: "Ipc"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Inter-process communication (IPC) is a key part of building feature-rich desktop applications in Electron. Because the main and renderer processes have different responsibilities in Electron's process model, IPC is the only way to perform many common tasks, such as calling a native API from your UI or triggering changes in your web contents from native menus.
@@ -29,10 +29,7 @@ You usually use this pattern to call a main process API from your web contents. 
 
 For this demo, you'll need to add code to your main process, your renderer process, and a preload script. The full code is below, but we'll be explaining each file individually in the following sections.
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, ipcMain } = require('electron/main')
@@ -65,6 +62,46 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
+})
+```
+
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  setTitle: (title) => ipcRenderer.send('set-title', title)
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    Title: <input id="title"/>
+    <button id="btn" type="button">Set</button>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+const setButton = document.getElementById('btn')
+const titleInput = document.getElementById('title')
+setButton.addEventListener('click', () => {
+  const title = titleInput.value
+  window.electronAPI.setTitle(title)
 })
 ```
 
@@ -103,8 +140,7 @@ app.whenReady().then(() => {
 
 The above `handleSetTitle` callback has two parameters: an [IpcMainEvent](../api/structures/ipc-main-event.md) structure and a `title` string. Whenever a message comes through the `set-title` channel, this function will find the BrowserWindow instance attached to the message sender and use the `win.setTitle` API on it.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Make sure you're loading the `index.html` and `preload.js` entry points for the following steps!
 
@@ -124,8 +160,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
 At this point, you'll be able to use the `window.electronAPI.setTitle()` function in the renderer process.
 
-> [!-warning] -warning
-> Security warning
+> **Security warning:**
 > 
 > We don't directly expose the whole `ipcRenderer.send` API for [security reasons](context-isolation.md#security-considerations). Make sure to limit the renderer's access to Electron APIs as much as possible.
 
@@ -171,10 +206,7 @@ In the following example, we'll be opening a native file dialog from the rendere
 
 For this demo, you'll need to add code to your main process, your renderer process, and a preload script. The full code is below, but we'll be explaining each file individually in the following sections.
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, ipcMain, dialog } = require('electron/main')
@@ -209,12 +241,52 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  openFile: () => ipcRenderer.invoke('dialog:openFile')
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Dialog</title>
+  </head>
+  <body>
+    <button type="button" id="btn">Open a File</button>
+    File path: <strong id="filePath"></strong>
+    <script src='./renderer.js'></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+const btn = document.getElementById('btn')
+const filePathElement = document.getElementById('filePath')
+
+btn.addEventListener('click', async () => {
+  const filePath = await window.electronAPI.openFile()
+  filePathElement.innerText = filePath
+})
+```
+
 ### 1\. Listen for events with ipcMain.handle
 
 In the main process, we'll be creating a `handleFileOpen()` function that calls `dialog.showOpenDialog` and returns the value of the file path selected by the user. This function is used as a callback whenever an `ipcRenderer.invoke` message is sent through the `dialog:openFile` channel from the renderer process. The return value is then returned as a Promise to the original `invoke` call.
 
-> [!-warning] -warning
-> A word on error handling
+> **A word on error handling:**
 > 
 > Errors thrown through `handle` in the main process are not transparent as they are serialized and only the `message` property from the original error is provided to the renderer process. Please refer to [#24427](https://github.com/electron/electron/issues/24427) for details.
 
@@ -248,13 +320,11 @@ app.whenReady().then(() => {
 // ...
 ```
 
-> [!-success] -success
-> on channel names
+> **On channel names:**
 > 
 > The `dialog:` prefix on the IPC channel name has no effect on the code. It only serves as a namespace that helps with code readability.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Make sure you're loading the `index.html` and `preload.js` entry points for the following steps!
 
@@ -270,8 +340,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
 })
 ```
 
-> [!-warning] -warning
-> Security warning
+> **Security warning:**
 > 
 > We don't directly expose the whole `ipcRenderer.invoke` API for [security reasons](context-isolation.md#security-considerations). Make sure to limit the renderer's access to Electron APIs as much as possible.
 
@@ -314,13 +383,11 @@ In the above snippet, we listen for clicks on the `#btn` button, and call our `w
 
 The `ipcRenderer.invoke` API was added in Electron 7 as a developer-friendly way to tackle two-way IPC from the renderer process. However, a couple of alternative approaches to this IPC pattern exist.
 
-> [!-warning] -warning
-> Avoid legacy approaches if possible
+> **Avoid legacy approaches if possible:**
 > 
 > We recommend using `ipcRenderer.invoke` whenever possible. The following two-way renderer-to-main patterns are documented for historical purposes.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > For the following examples, we're calling `ipcRenderer` directly from the preload script to keep the code samples small.
 
@@ -383,10 +450,7 @@ To demonstrate this pattern, we'll be building a number counter controlled by th
 
 For this demo, you'll need to add code to your main process, your renderer process, and a preload script. The full code is below, but we'll be explaining each file individually in the following sections.
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, Menu, ipcMain } = require('electron/main')
@@ -439,6 +503,48 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  onUpdateCounter: (callback) => ipcRenderer.on('update-counter', (_event, value) => callback(value)),
+  counterValue: (value) => ipcRenderer.send('counter-value', value)
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Menu Counter</title>
+  </head>
+  <body>
+    Current value: <strong id="counter">0</strong>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+const counter = document.getElementById('counter')
+
+window.electronAPI.onUpdateCounter((value) => {
+  const oldValue = Number(counter.innerText)
+  const newValue = oldValue + value
+  counter.innerText = newValue.toString()
+  window.electronAPI.counterValue(newValue)
+})
+```
+
 ### 1\. Send messages with the webContents module
 
 For this demo, we'll need to first build a custom menu in the main process using Electron's `Menu` module that uses the `webContents.send` API to send an IPC message from the main process to the target renderer.
@@ -483,8 +589,7 @@ For the purposes of the tutorial, it's important to note that the `click` handle
 click: () => mainWindow.webContents.send('update-counter', -1)
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Make sure you're loading the `index.html` and `preload.js` entry points for the following steps!
 
@@ -502,13 +607,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
 After loading the preload script, your renderer process should have access to the `window.electronAPI.onUpdateCounter()` listener function.
 
-> [!-warning] -warning
-> Security warning
+> **Security warning:**
 > 
 > We don't directly expose the whole `ipcRenderer.on` API for [security reasons](context-isolation.md#security-considerations). Make sure to limit the renderer's access to Electron APIs as much as possible. Also don't just pass the callback to `ipcRenderer.on` as this will leak `ipcRenderer` via `event.sender`. Use a custom handler that invokes the `callback` only with the desired arguments.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > In the case of this minimal example, you can call `ipcRenderer.on` directly in the preload script rather than exposing it over the context bridge.
 > 

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/share-menu
 title: "Share Menu"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 The `ShareMenu` class creates [Share Menu](https://developer.apple.com/design/human-interface-guidelines/macos/extensions/share-extensions/) on macOS, which can be used to share information from the current context to apps, social media accounts, and other services.
@@ -22,8 +22,7 @@ History
 
 Process: [Main](../glossary.md#main-process)
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 

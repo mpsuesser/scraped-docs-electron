@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/process-model
 title: "Process Model"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron inherits its multi-process architecture from Chromium, which makes the framework architecturally very similar to a modern web browser. This guide will expand on the concepts applied in the [Tutorial](tutorial-prerequisites.md).
@@ -42,8 +42,7 @@ const contents = win.webContents
 console.log(contents)
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > A renderer process is also created for [web embeds](web-embeds.md) such as the `BrowserView` module. The `webContents` object is also accessible for embedded web content.
 
@@ -84,8 +83,7 @@ Although explaining every web spec is out of scope for this guide, the bare mini
 
 Moreover, this also means that the renderer has no direct access to `require` or other Node.js APIs. In order to directly include NPM modules in the renderer, you must use the same bundler toolchains (for example, `webpack` or `parcel`) that you use on the web.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Renderer processes can be spawned with a full Node.js environment for ease of development. Historically, this used to be the default, but this feature was disabled for security reasons.
 

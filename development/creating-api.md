@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/creating-api
 title: "Creating Api"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Welcome to the Electron API guide! If you are unfamiliar with creating a new Electron API module within the [`browser`](https://github.com/electron/electron/tree/main/shell/browser) directory, this guide serves as a checklist for some of the necessary steps that you will need to implement.
@@ -153,8 +153,7 @@ In your [`shell/common/node_bindings.cc`](https://github.com/electron/electron/b
   V(electron_browser_{api_name})
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > More technical details on how Node links with Electron can be found on [our blog](https://www.electronjs.org/blog/electron-internals-using-node-as-a-library#link-node-with-electron).
 

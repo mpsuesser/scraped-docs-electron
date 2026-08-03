@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/
 title: "Latest"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron is a framework for building desktop applications using JavaScript, HTML, and CSS. By embedding [Chromium](https://www.chromium.org/) and [Node.js](https://nodejs.org/) into its binary, Electron allows you to maintain one JavaScript codebase and create cross-platform apps that work on Windows, macOS, and Linux — no native development experience required.
@@ -18,9 +18,7 @@ We recommend you to start with the [tutorial](tutorial/tutorial-prerequisites.md
 
 Fiddle also integrates nicely with our documentation. When browsing through examples in our tutorials, you'll frequently see an "Open in Fiddle" button above a code block. If you have Fiddle installed, this button will open a `fiddle.electronjs.org` link that will automatically load the example into Fiddle, no copy-pasting required.
 
-- main.js
-- preload.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -53,6 +51,42 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+```
+
+#### preload.js
+
+```js
+window.addEventListener('DOMContentLoaded', () => {
+  const replaceText = (selector, text) => {
+    const element = document.getElementById(selector)
+    if (element) element.innerText = text
+  }
+
+  for (const type of ['chrome', 'node', 'electron']) {
+    replaceText(\`${type}-version\`, process.versions[type])
+  }
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>
+        We are using Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        and Electron <span id="electron-version"></span>.
+    </p>
+</body>
+</html>
 ```
 
 ## What is in the docs?

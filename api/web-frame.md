@@ -2,16 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame
 title: "Web Frame"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Customize the rendering of the current web page.
 
 Process: [Renderer](../glossary.md#renderer-process)
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > If you want to call this API from a renderer process with context isolation enabled, place the API call in your preload script and [expose](../tutorial/context-isolation.md#after-context-isolation-enabled) it using the [`contextBridge`](context-bridge.md) API.
 
@@ -47,8 +46,7 @@ Returns `number` - The current zoom factor.
 
 Changes the zoom level to the specified level. The original size is 0 and each increment above or below represents zooming 20% larger or smaller to default limits of 300% and 50% of original size, respectively.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The zoom policy at the Chromium level is same-origin, meaning that the zoom level for a specific domain propagates across all instances of windows with the same domain. Differentiating the window URLs will make zoom work per-window.
 
@@ -63,8 +61,7 @@ Returns `number` - The current zoom level.
 
 Sets the maximum and minimum pinch-to-zoom level.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Visual zoom is disabled by default in Electron. To re-enable it, call:
 > 
@@ -72,8 +69,7 @@ Sets the maximum and minimum pinch-to-zoom level.
 > webFrame.setVisualZoomLevelLimits(1, 3)
 > ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Visual zoom only applies to pinch-to-zoom behavior. Cmd+/-/0 zoom shortcuts are controlled by the 'zoomIn', 'zoomOut', and 'resetZoom' MenuItem roles in the application Menu. To disable shortcuts, manually [define the Menu](../tutorial/menus.md) and omit zoom roles from the definition.
 
@@ -178,8 +174,7 @@ Note that when the execution of script fails, the returned promise will not reje
 
 Set the security origin, content security policy and name of the isolated world.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If the `csp` is specified, then the `securityOrigin` also has to be specified.
 

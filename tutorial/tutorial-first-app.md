@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app
 title: "Tutorial First App"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 2** of the Electron tutorial.
 
 ## Learning goals
 
@@ -12,8 +16,7 @@ In this part of the tutorial, you will learn how to set up your Electron project
 
 ## Setting up your project
 
-> [!-warning] -warning
-> Avoid WSL
+> **Avoid WSL:**
 > 
 > If you are on a Windows machine, please do not use [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2) (WSL) when following this tutorial as you will run into issues when trying to execute the application.
 
@@ -21,12 +24,18 @@ In this part of the tutorial, you will learn how to set up your Electron project
 
 Electron apps are scaffolded using npm, with the package.json file as an entry point. Start by creating a folder and initializing an npm package within it with `npm init`.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 mkdir my-electron-app && cd my-electron-app
 npm init
+```
+
+#### Yarn
+
+```sh
+mkdir my-electron-app && cd my-electron-app
+yarn init
 ```
 
 This command will prompt you to configure some fields in your package.json. There are a few rules to follow for the purposes of this tutorial:
@@ -34,8 +43,7 @@ This command will prompt you to configure some fields in your package.json. Ther
 - *entry point* should be `main.js` (you will be creating that file soon).
 - *author*, *license*, and *description* can be any value, but will be necessary for [packaging](tutorial-packaging.md) later on.
 
-> [!-warning] -warning
-> Install dependencies with a regular `node_modules` folder
+> **Install dependencies with a regular node\_modules folder:**
 > 
 > Electron's packaging toolchain requires the `node_modules` folder to be physically on disk in the way that npm installs Node dependencies. By default, [Yarn Berry](https://yarnpkg.com/) and [pnpm](http://pnpm.io/) both use alternative installation strategies.
 > 
@@ -43,16 +51,20 @@ This command will prompt you to configure some fields in your package.json. Ther
 
 Then, install Electron into your app's **devDependencies**, which is the list of external development-only package dependencies not required in production.
 
-> [!-info] -info
-> Why is Electron a dev dependency?
+> **Why is Electron a dev dependency?:**
 > 
 > This may seem counter-intuitive since your production code is running Electron APIs. Under the hood, Electron's JavaScript API binds to a binary that contains its implementations. The packaging step for Electron handles the bundling of this binary, eliminating the need to specify it as a production dependency.
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install electron --save-dev
+```
+
+#### Yarn
+
+```sh
+yarn add electron --dev
 ```
 
 Your package.json file should look something like this after initializing your package and installing Electron. You should also now have a `node_modules` folder containing the Electron executable, as well as a `package-lock.json` lockfile that specifies the exact dependency versions to install.
@@ -74,8 +86,7 @@ Your package.json file should look something like this after initializing your p
 }
 ```
 
-> [!-info] -info
-> Advanced Electron installation steps
+> **Advanced Electron installation steps:**
 > 
 > If installing Electron directly fails, please refer to our [Advanced Installation](installation.md) documentation for instructions on download mirrors, proxies, and troubleshooting steps.
 
@@ -85,8 +96,7 @@ The [`.gitignore`](https://git-scm.com/docs/gitignore) file specifies which file
 
 ## Running an Electron app
 
-> [!-success] -success
-> Further reading
+> **Further reading:**
 > 
 > Read [Electron's process model](process-model.md) documentation to better understand how Electron's multiple processes work together.
 
@@ -118,11 +128,16 @@ Because Electron's main process is a Node.js runtime, you can execute arbitrary 
 }
 ```
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm run start
+```
+
+#### Yarn
+
+```sh
+yarn run start
 ```
 
 Your terminal should print out `Hello from Electron 👋`. Congratulations, you have executed your first line of code in Electron! Next, you will learn how to create user interfaces with HTML and load that into a native window.
@@ -200,8 +215,7 @@ In the first line, we are importing two Electron modules with CommonJS module sy
 > 
 > For more information, see the [Process Model docs](process-model.md#process-specific-module-aliases-typescript).
 
-> [!-info] -info
-> ES Modules in Electron
+> **ES Modules in Electron:**
 > 
 > [ECMAScript modules](https://nodejs.org/api/esm.html) (i.e. using `import` to load a module) are supported in Electron as of Electron 28. You can find more information about the state of ESM in Electron and how to use them in our app in [our ESM guide](esm.md).
 
@@ -232,8 +246,7 @@ Many of Electron's core modules are Node.js [event emitters](https://nodejs.org/
 
 In Electron, BrowserWindows can only be created after the app module's [`ready`](../api/app.md#event-ready) event is fired. You can wait for this event by using the [`app.whenReady()`](../api/app.md#appwhenready) API and calling `createWindow()` once its promise is fulfilled.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > You typically listen to Node.js events by using an emitter's `.on` function.
 > 
@@ -254,8 +267,7 @@ Each web page your app displays in a window will run in a separate process calle
 
 Application windows behave differently on each operating system. Rather than enforce these conventions by default, Electron gives you the choice to implement them in your app code if you wish to follow them. You can implement basic window conventions by listening for events emitted by the app and BrowserWindow modules.
 
-> [!-success] -success
-> Process-specific control flow
+> **Process-specific control flow:**
 > 
 > Checking against Node's [`process.platform`](https://nodejs.org/api/process.html#process_process_platform) variable can help you to run code conditionally on certain platforms. Note that there are only three possible platforms that Electron can run in: `win32` (Windows), `linux` (Linux), and `darwin` (macOS).
 
@@ -289,8 +301,7 @@ app.whenReady().then(() => {
 
 ## Final starter code
 
-- main.js
-- index.html
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -319,6 +330,32 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hello from Electron renderer!</title>
+  </head>
+  <body>
+    <h1>Hello from Electron renderer!</h1>
+    <p>👋</p>
+    <p id="info"></p>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
 ```
 
 ## Optional: Debugging from VS Code
@@ -368,13 +405,11 @@ What we have done in the `launch.json` file is to create 3 configurations:
 - `Renderer` is used to debug the renderer process. Because the main process is the one that creates the process, we have to "attach" to it (`"request": "attach"`) instead of creating a new one. The renderer process is a web one, so the debugger we have to use is `chrome`.
 - `Main + renderer` is a [compound task](https://code.visualstudio.com/Docs/editor/tasks#_compound-tasks) that executes the previous ones simultaneously.
 
-> [!-warning] -warning
-> caution
+> **Caution:**
 > 
 > Because we are attaching to a process in `Renderer`, it is possible that the first lines of your code will be skipped as the debugger will not have had enough time to connect before they are being executed. You can work around this by refreshing the page or setting a timeout before executing the code in development mode.
 
-> [!-info] -info
-> Further reading
+> **Further reading:**
 > 
 > If you want to dig deeper in the debugging area, the following guides provide more information:
 > 

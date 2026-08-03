@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -703,8 +703,7 @@ Preconnects the given number of sockets to an origin.
 
 Returns `Promise<void>` - Resolves when all connections are closed.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > It will terminate / fail all requests currently in flight.
 
@@ -886,8 +885,7 @@ session.fromPartition('some-partition').setPermissionCheckHandler((webContents, 
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `isMainFrame` will always be `false` for a `fileSystem` request as a result of Chromium limitations.
 
@@ -1169,8 +1167,7 @@ Returns `Promise<Buffer>` - resolves with blob data.
 
 Initiates a download of the resource at `url`. The API will generate a [DownloadItem](download-item.md) that can be accessed with the [will-download](#event-will-download) event.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This does not perform any security checks that relate to a page's origin, unlike [`webContents.downloadURL`](web-contents.md#contentsdownloadurlurl-options).
 
@@ -1285,8 +1282,7 @@ Returns `boolean` - Whether the builtin spell checker is enabled.
 
 The built in spellchecker does not automatically detect what language a user is typing in. In order for the spell checker to correctly check their words you must call this API with an array of language codes. You can get the list of supported language codes with the `ses.availableSpellCheckerLanguages` property.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the OS spellchecker is used and will detect your language automatically. This API is a no-op on macOS.
 
@@ -1294,8 +1290,7 @@ The built in spellchecker does not automatically detect what language a user is 
 
 Returns `string[]` - An array of language codes the spellchecker is enabled for. If this list is empty the spellchecker will fallback to using `en-US`. By default on launch if this setting is an empty list Electron will try to populate this setting with the current OS locale. This setting is persisted across restarts.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the OS spellchecker is used and has its own list of languages. On macOS, this API will return whichever languages have been configured by the OS.
 
@@ -1309,8 +1304,7 @@ The file server must be **case insensitive**. If you cannot do this, you must up
 
 If the files present in `hunspell_dictionaries.zip` are available at `https://example.com/dictionaries/language-code.bdic` then you should call this api with `ses.setSpellCheckerDictionaryDownloadURL('https://example.com/dictionaries/')`. Please note the trailing slash. The URL to the dictionaries is formed as `${url}${filename}`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the OS spellchecker is used and therefore we do not download any dictionary files. This API is a no-op on macOS.
 
@@ -1324,8 +1318,7 @@ Returns `Promise<string[]>` - An array of all words in app's custom dictionary. 
 
 Returns `boolean` - Whether the word was successfully written to the custom dictionary. This API will not work on non-persistent (in-memory) sessions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS and Windows, this word will be written to the OS custom dictionary as well.
 
@@ -1335,8 +1328,7 @@ Returns `boolean` - Whether the word was successfully written to the custom dict
 
 Returns `boolean` - Whether the word was successfully removed from the custom dictionary. This API will not work on non-persistent (in-memory) sessions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS and Windows, this word will be removed from the OS custom dictionary as well.
 
@@ -1372,13 +1364,11 @@ app.whenReady().then(async () => {
 
 This API does not support loading packed (.crx) extensions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Loading extensions into in-memory (non-persistent) sessions is not supported and will throw an error.
 
@@ -1390,8 +1380,7 @@ This API does not support loading packed (.crx) extensions.
 
 Unloads an extension.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
@@ -1403,8 +1392,7 @@ Unloads an extension.
 
 Returns `Extension | null` - The loaded extension with the given ID.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
@@ -1414,8 +1402,7 @@ Returns `Extension | null` - The loaded extension with the given ID.
 
 Returns `Extension[]` - A list of all loaded extensions.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API cannot be called before the `ready` event of the `app` module is emitted.
 
@@ -1451,13 +1438,11 @@ Clears various different types of data.
 
 This method clears more types of data and is more thorough than the `clearStorageData` method.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Cookies are stored at a broader scope than origins. When removing cookies and filtering by `origins` (or `excludeOrigins`), the cookies will be removed at the [registrable domain](https://url.spec.whatwg.org/#host-registrable-domain) level. For example, clearing cookies for the origin `https://really.specific.origin.example.com/` will end up clearing all cookies for `example.com`. Clearing cookies for the origin `https://my.website.example.co.uk/` will end up clearing all cookies for `example.co.uk`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Clearing cache data will also clear the shared dictionary cache. This means that any dictionaries used for compression may be reloaded after clearing the cache. If you wish to clear the shared dictionary cache but leave other cached data intact, you may want to use the `clearSharedDictionaryCache` method.
 

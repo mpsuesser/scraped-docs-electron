@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/auto-updater
 title: "Auto Updater"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Enable apps to automatically update themselves.
@@ -24,8 +24,7 @@ In addition, there are some subtle differences on each platform:
 
 On macOS, the `autoUpdater` module is built upon [Squirrel.Mac](https://github.com/Squirrel/Squirrel.Mac), meaning you don't need any special setup to make it work. For server-side requirements, you can read [Server Support](https://github.com/Squirrel/Squirrel.Mac#server-support). Note that [App Transport Security](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) (ATS) applies to all requests made as part of the update process. Apps that need to disable ATS can add the `NSAllowsArbitraryLoads` key to their app's plist.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Your application must be signed for automatic updates on macOS. This is a requirement of `Squirrel.Mac`.
 
@@ -91,8 +90,7 @@ Emitted when an update has been downloaded.
 
 With Squirrel.Windows only `releaseName` is available.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > It is not strictly necessary to handle this event. A successfully downloaded update will still be applied the next time the application starts.
 
@@ -137,8 +135,7 @@ Returns `string` - The current update feed URL.
 
 Asks the server whether there is an update. You must call `setFeedURL` before using this API.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If an update is available it will be downloaded automatically. Calling `autoUpdater.checkForUpdates()` twice will download the update two times.
 
@@ -148,7 +145,6 @@ Restarts the app and installs the update after it has been downloaded. It should
 
 Under the hood calling `autoUpdater.quitAndInstall()` will close all application windows first, and automatically call `app.quit()` after all windows have been closed.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > It is not strictly necessary to call this function to apply an update, as a successfully downloaded update will always be applied the next time the application starts.

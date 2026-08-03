@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/dock
 title: "Dock"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Control your app in the macOS dock
@@ -11,8 +11,7 @@ current_date: 2026-08-03T17:26:37.553Z
 Process: [Main](../glossary.md#main-process)  
 *This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > See also: [A detailed guide about how to implement Dock menus](../tutorial/macos-dock.md).
 
@@ -28,8 +27,7 @@ When `critical` is passed, the dock icon will bounce until either the applicatio
 
 When `informational` is passed, the dock icon will bounce for one second. However, the request remains active until either the application becomes active or the request is canceled.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method can only be used while the app is not focused; when the app is focused it will return -1.
 
@@ -51,8 +49,7 @@ Bounces the Downloads stack if the filePath is inside the Downloads folder.
 
 Sets the string to be displayed in the dock’s badging area.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > You need to ensure that your application has the permission to display notifications for this method to work.
 
@@ -64,8 +61,7 @@ Returns `string` - The badge string of the dock.
 
 Hides the dock icon.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > **Known issue:** Calling `dock.hide()` within one second of a previous call will have no effect. As a workaround, ensure at least one second has elapsed between calls — for example, by deferring with a `setTimeout` of 1100ms or more after a previous call.
 

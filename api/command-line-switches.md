@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/command-line-switches
 title: "Command Line Switches"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Command line switches supported by Electron.
@@ -73,8 +73,7 @@ The `ELECTRON_ENABLE_LOGGING` environment variable has the same effect as passin
 
 Passing `--enable-logging` will result in logs being printed on stderr. Passing `--enable-logging=file` will result in logs being saved to the file specified by `--log-file=...`, or to `electron_debug.log` in the user-data directory if `--log-file` is not specified.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Windows, logs from child processes cannot be sent to stderr. Logging to a file is the most reliable way to collect logs on Windows.
 
@@ -234,8 +233,7 @@ Sets the minimum required version of XDG portal implementation to `version` in o
 
 Electron supports some of the [CLI flags](https://nodejs.org/api/cli.html) supported by Node.js.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Passing unsupported command line switches to Electron when it is not running in `ELECTRON_RUN_AS_NODE` will have no effect.
 

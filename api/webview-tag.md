@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Warning
@@ -25,8 +25,7 @@ Use the `webview` tag to embed 'guest' content (such as web pages) in your Elect
 
 Unlike an `iframe`, the `webview` runs in a separate process than your app. It doesn't have the same permissions as your web page and all interactions between your app and embedded content will be asynchronous. This keeps your app safe from the embedded content.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Most methods called on the webview from the host page require a synchronous call to the main process.
 
@@ -202,8 +201,7 @@ A `string` which is a list of strings which specifies the blink features to be d
 
 The `webview` tag has the following methods:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The webview element must be loaded before using the methods.
 
@@ -602,8 +600,7 @@ Changes the zoom factor to the specified factor. Zoom factor is zoom percent div
 
 Changes the zoom level to the specified level. The original size is 0 and each increment above or below represents zooming 20% larger or smaller to default limits of 300% and 50% of original size, respectively. The formula for this is `scale := 1.2 ^ level`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The zoom policy at the Chromium level is same-origin, meaning that the zoom level for a specific domain propagates across all instances of windows with the same domain. Differentiating the window URLs will make zoom work per-window.
 

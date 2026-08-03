@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/net
 title: "Net"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Issue HTTP/HTTPS requests using Chromium's native networking library
@@ -100,8 +100,7 @@ protocol.handle('https', (req) => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > In the [utility process](../glossary.md#utility-process), custom protocols are not supported.
 
@@ -146,8 +145,7 @@ A return value of `false` is a pretty strong indicator that the user won't be ab
 
 ### net.WebSocket
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This property is only available in the [main process](../glossary.md#main-process).
 

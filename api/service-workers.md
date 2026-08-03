@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/service-workers
 title: "Service Workers"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Query and receive events from a sessions active service workers.

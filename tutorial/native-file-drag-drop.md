@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-file-drag-drop
 title: "Native File Drag Drop"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -52,10 +52,7 @@ document.getElementById('drag').ondragstart = (event) => {
 
 In the Main process (`main.js` file), expand the received event with a path to the file that is being dragged and an icon:
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, ipcMain } = require('electron/main')
@@ -106,6 +103,50 @@ app.on('activate', () => {
     createWindow()
   }
 })
+```
+
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('electron', {
+  startDrag: (fileName) => ipcRenderer.send('ondragstart', fileName)
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Drag the boxes below to somewhere in your OS (Finder/Explorer, Desktop, etc.) to copy an example markdown file.</p>
+    <div style="border:2px solid black;border-radius:3px;padding:5px;display:inline-block" draggable="true" id="drag1">Drag me - File 1</div>
+    <div style="border:2px solid black;border-radius:3px;padding:5px;display:inline-block" draggable="true" id="drag2">Drag me - File 2</div>
+    <script src="renderer.js"></script>
+</body>
+</html>
+```
+
+#### renderer.js
+
+```js
+document.getElementById('drag1').ondragstart = (event) => {
+  event.preventDefault()
+  window.electron.startDrag('drag-and-drop-1.md')
+}
+
+document.getElementById('drag2').ondragstart = (event) => {
+  event.preventDefault()
+  window.electron.startDrag('drag-and-drop-2.md')
+}
 ```
 
 After launching the Electron application, try dragging and dropping the item from the BrowserWindow onto your desktop. In this guide, the item is a Markdown file located in the root of the project:

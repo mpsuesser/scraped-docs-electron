@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents-view
 title: "Web Contents View"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > A View that displays a WebContents.
@@ -38,8 +38,7 @@ Process: [Main](../glossary.md#main-process)
 
 `WebContentsView` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 

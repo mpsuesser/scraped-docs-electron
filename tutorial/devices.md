@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/devices
 title: "Devices"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Like Chromium based browsers, Electron provides access to device hardware through web APIs. For the most part these APIs work like they do in a browser, but there are some differences that need to be taken into account. The primary difference between Electron and browsers is what happens when device access is requested. In a browser, users are presented with a popup where they can grant access to an individual device. In Electron APIs are provided which can be used by a developer to either automatically pick a device or prompt users to pick a device via a developer created interface.
@@ -18,10 +18,7 @@ Additionally, [`ses.setBluetoothPairingHandler(handler)`](../api/session.md#sess
 
 This example demonstrates an Electron application that automatically selects the first available bluetooth device when the `Test Bluetooth` button is clicked.
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, ipcMain } = require('electron/main')
@@ -84,6 +81,86 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  cancelBluetoothRequest: () => ipcRenderer.send('cancel-bluetooth-request'),
+  bluetoothPairingRequest: (callback) => ipcRenderer.on('bluetooth-pairing-request', () => callback()),
+  bluetoothPairingResponse: (response) => ipcRenderer.send('bluetooth-pairing-response', response)
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Web Bluetooth API</title>
+  </head>
+  <body>
+    <h1>Web Bluetooth API</h1>
+
+    <button id="clickme">Test Bluetooth</button>
+    <button id="cancel">Cancel Bluetooth Request</button>
+
+    <p>Currently selected bluetooth device: <strong id="device-name"></strong></p>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+async function testIt () {
+  const device = await navigator.bluetooth.requestDevice({
+    acceptAllDevices: true
+  })
+  document.getElementById('device-name').innerHTML = device.name || \`ID: ${device.id}\`
+}
+
+document.getElementById('clickme').addEventListener('click', testIt)
+
+function cancelRequest () {
+  window.electronAPI.cancelBluetoothRequest()
+}
+
+document.getElementById('cancel').addEventListener('click', cancelRequest)
+
+window.electronAPI.bluetoothPairingRequest((event, details) => {
+  const response = {}
+
+  switch (details.pairingKind) {
+    case 'confirm': {
+      response.confirmed = window.confirm(\`Do you want to connect to device ${details.deviceId}?\`)
+      break
+    }
+    case 'confirmPin': {
+      response.confirmed = window.confirm(\`Does the pin ${details.pin} match the pin displayed on device ${details.deviceId}?\`)
+      break
+    }
+    case 'providePin': {
+      const pin = window.prompt(\`Please provide a pin for ${details.deviceId}.\`)
+      if (pin) {
+        response.pin = pin
+        response.confirmed = true
+      } else {
+        response.confirmed = false
+      }
+    }
+  }
+
+  window.electronAPI.bluetoothPairingResponse(response)
+})
+```
+
 ## WebHID API
 
 The [WebHID API](https://web.dev/hid/) can be used to access HID devices such as keyboards and gamepads. Electron provides several APIs for working with the WebHID API:
@@ -104,9 +181,7 @@ app.commandLine.appendSwitch('disable-hid-blocklist')
 
 This example demonstrates an Electron application that automatically selects HID devices through [`ses.setDevicePermissionHandler(handler)`](../api/session.md#sessetdevicepermissionhandlerhandler) and through [`select-hid-device` event on the Session](../api/session.md#event-select-hid-device) when the `Test WebHID` button is clicked.
 
-- main.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -164,6 +239,47 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>WebHID API</title>
+  </head>
+  <body>
+    <h1>WebHID API</h1>
+
+    <button id="clickme">Test WebHID</button>
+
+    <h3>HID devices automatically granted access via <i>setDevicePermissionHandler</i></h3>
+    <div id="granted-devices"></div>
+
+    <h3>HID devices automatically granted access via <i>select-hid-device</i></h3>
+    <div id="granted-devices2"></div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+function formatDevices (devices) {
+  return devices.map(device => device.productName).join('<hr>')
+}
+
+async function testIt () {
+  document.getElementById('granted-devices').innerHTML = formatDevices(await navigator.hid.getDevices())
+  document.getElementById('granted-devices2').innerHTML = formatDevices(await navigator.hid.requestDevice({ filters: [] }))
+}
+
+document.getElementById('clickme').addEventListener('click', testIt)
+```
+
 ## Web Serial API
 
 The [Web Serial API](https://web.dev/serial/) can be used to access serial devices that are connected via serial port, USB, or Bluetooth. In order to use this API in Electron, developers will need to handle the [`select-serial-port` event on the Session](../api/session.md#event-select-serial-port) associated with the serial port request.
@@ -186,9 +302,7 @@ app.commandLine.appendSwitch('disable-serial-blocklist')
 
 This example demonstrates an Electron application that automatically selects serial devices through [`ses.setDevicePermissionHandler(handler)`](../api/session.md#sessetdevicepermissionhandlerhandler) as well as demonstrating selecting the first available Arduino Uno serial device (if connected) through [`select-serial-port` event on the Session](../api/session.md#event-select-serial-port) when the `Test Web Serial` button is clicked.
 
-- main.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -255,6 +369,51 @@ app.on('window-all-closed', function () {
 })
 ```
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Web Serial API</title>
+  <body>
+    <h1>Web Serial API</h1>
+
+    <button id="clickme">Test Web Serial API</button>
+
+    <p>Matching Arduino Uno device: <strong id="device-name""></strong></p>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+async function testIt () {
+  const filters = [
+    { usbVendorId: 0x2341, usbProductId: 0x0043 },
+    { usbVendorId: 0x2341, usbProductId: 0x0001 }
+  ]
+  try {
+    const port = await navigator.serial.requestPort({ filters })
+    const portInfo = port.getInfo()
+    document.getElementById('device-name').innerHTML = \`vendorId: ${portInfo.usbVendorId} | productId: ${portInfo.usbProductId} \`
+  } catch (ex) {
+    if (ex.name === 'NotFoundError') {
+      document.getElementById('device-name').innerHTML = 'Device NOT found'
+    } else {
+      document.getElementById('device-name').innerHTML = ex
+    }
+  }
+}
+
+document.getElementById('clickme').addEventListener('click', testIt)
+```
+
 ## WebUSB API
 
 The [WebUSB API](https://web.dev/usb/) can be used to access USB devices. Electron provides several APIs for working with the WebUSB API:
@@ -277,9 +436,7 @@ app.commandLine.appendSwitch('disable-usb-blocklist')
 
 This example demonstrates an Electron application that automatically selects USB devices (if they are attached) through [`ses.setDevicePermissionHandler(handler)`](../api/session.md#sessetdevicepermissionhandlerhandler) and through [`select-usb-device` event on the Session](../api/session.md#event-select-usb-device) when the `Test WebUSB` button is clicked.
 
-- main.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -356,4 +513,67 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>WebUSB API</title>
+  </head>
+  <body>
+    <h1>WebUSB API</h1>
+
+    <button id="clickme">Test WebUSB</button>
+
+    <h3>USB devices automatically granted access via <i>setDevicePermissionHandler</i></h3>
+    <div id="granted-devices"></div>
+
+    <h3>USB devices automatically granted access via <i>select-usb-device</i></h3>
+    <div id="granted-devices2"></div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+function getDeviceDetails (device) {
+  return device.productName || \`Unknown device ${device.deviceId}\`
+}
+
+async function testIt () {
+  const noDevicesFoundMsg = 'No devices found'
+  const grantedDevices = await navigator.usb.getDevices()
+  let grantedDeviceList = ''
+  if (grantedDevices.length > 0) {
+    for (const device of grantedDevices) {
+      grantedDeviceList += \`<hr>${getDeviceDetails(device)}</hr>\`
+    }
+  } else {
+    grantedDeviceList = noDevicesFoundMsg
+  }
+  document.getElementById('granted-devices').innerHTML = grantedDeviceList
+
+  grantedDeviceList = ''
+  try {
+    const grantedDevice = await navigator.usb.requestDevice({
+      filters: []
+    })
+    grantedDeviceList += \`<hr>${getDeviceDetails(grantedDevice)}</hr>\`
+  } catch (ex) {
+    if (ex.name === 'NotFoundError') {
+      grantedDeviceList = noDevicesFoundMsg
+    }
+  }
+  document.getElementById('granted-devices2').innerHTML = grantedDeviceList
+}
+
+document.getElementById('clickme').addEventListener('click', testIt)
 ```

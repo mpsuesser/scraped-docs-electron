@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron-cpp-win32
 title: "Native Code And Electron Cpp Win32"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This tutorial builds on the [general introduction to Native Code and Electron](native-code-and-electron.md) and focuses on creating a native addon for Windows using C++ and the [Win32 API](https://learn.microsoft.com/en-us/windows/win32/). To illustrate how you can embed native Win32 code in your Electron app, we'll be building a basic native Windows GUI (using the Windows Common Controls) that communicates with Electron's JavaScript.
@@ -15,8 +15,7 @@ Specifically, we'll be integrating with two commonly used native Windows librari
 
 This tutorial will be most useful to those who already have some familiarity with native C++ GUI development on Windows. You should have experience with basic window classes and procedures, like `WNDCLASSEXW` and `WindowProc` functions. You should also be familiar with the Windows message loop, which is the heart of any native application - our code will be using `GetMessage`, `TranslateMessage`, and `DispatchMessage` to handle messages. Lastly, we'll be using (but not explaining) standard Win32 controls like `WC_EDITW` or `WC_BUTTONW`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you're not familiar with C++ GUI development on Windows, we recommend Microsoft's excellent documentation and guides, particularly for beginners. " [Get Started with Win32 and C++](https://learn.microsoft.com/en-us/windows/win32/learnwin32/learn-to-program-for-windows) " is a great introduction.
 
@@ -1356,8 +1355,7 @@ if (process.platform === 'win32') {
 }
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > You must call `destroy()` before the app quits (e.g. in the `will-quit` or `before-quit` event handler). Without this, persistent references to callbacks and the threadsafe function will prevent the native addon's destructor from running, causing Electron to hang on quit.
 

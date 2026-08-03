@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/message-channel-main
 title: "Message Channel Main"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 `MessageChannelMain` is the main-process-side equivalent of the DOM [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel) object. Its singular function is to create a pair of connected [`MessagePortMain`](message-port-main.md) objects.
@@ -38,8 +38,7 @@ ipcRenderer.on('port', (e) => {
 })
 ```
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 

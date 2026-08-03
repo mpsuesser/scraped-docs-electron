@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/custom-window-styles
 title: "Custom Window Styles"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Frameless windows
@@ -14,7 +14,7 @@ A frameless window removes all [chrome](https://developer.mozilla.org/en-US/docs
 
 To create a frameless window, set the [BaseWindowContructorOptions](../api/structures/base-window-options.md) `frame` param in the `BrowserWindow` constructor to `false`.
 
-- main.js
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -43,9 +43,7 @@ To create a fully transparent window, set the [BaseWindowContructorOptions](../a
 
 The following fiddle takes advantage of a transparent window and CSS styling to create the illusion of a circular window.
 
-- main.js
-- index.html
-- styles.css
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron')
@@ -64,6 +62,47 @@ function createWindow () {
 app.whenReady().then(() => {
   createWindow()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Transparent Hello World</title>
+  </head>
+  <body>
+    <div class="white-circle">
+        <div>Hello World!</div>
+    </div>
+  </body>
+</html>
+```
+
+#### styles.css
+
+```markdown
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+}
+.white-circle {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    app-region: drag;
+    user-select: none;
+}
 ```
 
 ### Limitations

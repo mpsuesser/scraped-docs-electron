@@ -2,14 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/window-customization
 title: "Window Customization"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 The [`BrowserWindow`](../api/browser-window.md) module is the foundation of your Electron application, and it exposes many APIs that let you customize the look and behavior of your app’s windows. This section covers how to implement various use cases for window customization on macOS, Windows, and Linux.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `BrowserWindow` is a subclass of the [`BaseWindow`](../api/base-window.md) module. Both modules allow you to create and manage application windows in Electron, with the main difference being that `BrowserWindow` supports a single, full size web view while `BaseWindow` supports composing many web views. `BaseWindow` can be used interchangeably with `BrowserWindow` in the examples of the documents in this section.
 

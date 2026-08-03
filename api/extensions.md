@@ -2,14 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/extensions
 title: "Extensions"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron supports a subset of the [Chrome Extensions API](https://developer.chrome.com/extensions/api_index), primarily to support DevTools extensions and Chromium-internal extensions, but it also happens to support some other extension capabilities.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Electron does not support arbitrary Chrome extensions from the store, and it is a **non-goal** of the Electron project to be perfectly compatible with Chrome's implementation of Extensions.
 
@@ -156,8 +155,7 @@ The following methods of `chrome.tabs` are supported:
 - `chrome.tabs.update` (partial support)
 	- supported properties: `url`, `muted`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > In Chrome, passing `-1` as a tab ID signifies the "currently active tab". Since Electron has no such concept, passing `-1` as a tab ID is not supported and will raise an error.
 
@@ -167,8 +165,7 @@ See [official documentation](https://developer.chrome.com/docs/extensions/refere
 
 All features of this API are supported.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Electron's [`webRequest`](web-request.md) module takes precedence over `chrome.webRequest` if there are conflicting handlers.
 

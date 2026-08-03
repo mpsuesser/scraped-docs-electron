@@ -2,21 +2,19 @@
 url: https://www.electronjs.org/docs/latest/api/ipc-main-service-worker
 title: "Ipc Main Service Worker"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Communicate asynchronously from the main process to service workers.
 
 Process: [Main](../glossary.md#main-process)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API is a subtle variation of [`IpcMain`](ipc-main.md) —targeted for communicating with service workers. For communicating with web frames, consult the `IpcMain` documentation.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 

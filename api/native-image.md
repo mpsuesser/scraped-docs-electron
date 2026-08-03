@@ -2,16 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/native-image
 title: "Native Image"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Create tray, dock, and application icons using PNG or JPG files.
 
 Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > If you want to call this API from a renderer process with context isolation enabled, place the API call in your preload script and [expose](../tutorial/context-isolation.md#after-context-isolation-enabled) it using the [`contextBridge`](context-bridge.md) API.
 
@@ -59,8 +58,7 @@ On Windows, you can also load `ICO` icons from file paths. For best visual quali
 
 Check the *Icon Scaling* section in the Windows [App Icon Construction](https://learn.microsoft.com/en-us/windows/apps/design/style/iconography/app-icon-construction#icon-scaling) reference.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > EXIF metadata is currently not supported and will not be taken into account during image encoding and decoding.
 
@@ -123,8 +121,7 @@ Creates an empty `NativeImage` instance.
 
 Returns `Promise<NativeImage>` - fulfilled with the file's thumbnail preview image, which is a [NativeImage](native-image.md).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Windows implementation will ignore `size.height` and scale the height according to `size.width`.
 

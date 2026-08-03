@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/utility-process
 title: "Utility Process"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 `utilityProcess` creates a child process with Node.js and Message ports enabled. It provides the equivalent of [`child_process.fork`](https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#child_processforkmodulepath-args-options) API from Node.js but instead uses [Services API](https://chromium.googlesource.com/chromium/src/+/main/docs/mojo_and_services.md) from Chromium to launch the child process.
@@ -33,8 +33,7 @@ Process: [Main](../glossary.md#main-process)
 
 Returns [`UtilityProcess`](utility-process.md#class-utilityprocess)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `utilityProcess.fork` can only be called after the `ready` event has been emitted on `App`.
 
@@ -94,8 +93,7 @@ child.on('exit', () => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > You can use the `pid` to determine if the process is currently running.
 

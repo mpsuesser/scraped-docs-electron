@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/devtools-extension
 title: "Devtools Extension"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron supports [Chrome DevTools extensions](https://developer.chrome.com/docs/extensions/how-to/devtools/extend-devtools), which can be used to extend the ability of Chrome's developer tools for debugging popular web frameworks.

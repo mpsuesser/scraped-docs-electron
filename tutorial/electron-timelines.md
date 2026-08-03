@@ -2,14 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/electron-timelines
 title: "Electron Timelines"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Electron frequently releases major versions alongside every other Chromium release. This document focuses on the release cadence and version support policy.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > See the [Electron Versioning](electron-versioning.md) document for more details on how Electron is versioned.
 
@@ -17,8 +16,7 @@ Electron frequently releases major versions alongside every other Chromium relea
 
 [Electron's Release Schedule](https://releases.electronjs.org/schedule) lists a schedule of Electron major releases showing key milestones including alpha, beta, and stable release dates, as well as end-of-life dates and dependency versions.
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Electron's official support policy is the latest 3 stable releases. Our stable release and end-of-life dates are determined by Chromium, and may be subject to change. While we try to keep our planned release and end-of-life dates frequently updated here, future dates may change if affected by upstream scheduling changes, and may not always be accurately reflected.
 > 
@@ -50,8 +48,7 @@ The latest stable release unilaterally receives all fixes from `main`, and the v
 
 ### Chromium version support
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > Chromium's public release schedule is [here](https://chromiumdash.appspot.com/schedule).
 
@@ -71,7 +68,6 @@ Stable release lines of Electron will receive minor and patch bumps of Node.js a
 
 When an API is changed or removed in a way that breaks existing functionality, the previous functionality will be supported for a minimum of two major versions when possible before being removed. For example, if a function takes three arguments, and that number is reduced to two in major version 10, the three-argument version would continue to work until, at minimum, major version 12. Past the minimum two-version threshold, we will attempt to support backwards compatibility beyond two versions until the maintainers feel the maintenance burden is too high to continue doing so.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For a canonical list of breaking changes, see the [Breaking Changes](../breaking-changes.md) document.

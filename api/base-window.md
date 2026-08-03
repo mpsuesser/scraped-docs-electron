@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/base-window
 title: "Base Window"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> Create and control windows.
 
 Process: [Main](../glossary.md#main-process)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `BaseWindow` provides a flexible way to compose multiple web views in a single window. For windows with only a single, full-size web view, the [`BrowserWindow`](browser-window.md) class may be a simpler option.
 
@@ -34,6 +35,8 @@ rightView.setBounds({ x: 400, y: 0, width: 400, height: 600 })
 ```
 
 ## Parent and child windows
+
+By using `parent` option, you can create child windows:
 
 ```js
 const { BaseWindow } = require('electron')
@@ -85,14 +88,15 @@ Unlike with a [`BrowserWindow`](browser-window.md), if you don't explicitly clos
 
 ## Class: BaseWindow
 
+> Create and control windows.
+
 Process: [Main](../glossary.md#main-process)
 
 `BaseWindow` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 
 It creates a new `BaseWindow` with native properties as set by the `options`.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -177,8 +181,7 @@ It creates a new `BaseWindow` with native properties as set by the `options`.
 
 Objects created with `new BaseWindow` emit the following events:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Some events are only available on specific operating systems and are labeled as such.
 
@@ -204,8 +207,7 @@ window.onbeforeunload = (e) => {
 }
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > There is a subtle difference between the behaviors of `window.onbeforeunload = handler` and `window.addEventListener('beforeunload', handler)`. It is recommended to always set the `event.returnValue` explicitly, instead of only returning a value, as the former works more consistently within Electron.
 
@@ -265,8 +267,7 @@ Emitted when the window exits from a maximized state.
 
 Emitted when the window is minimized.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Wayland, “minimized” is not currently a supported state. The minimize event will only fire when triggered by client-side decoration (e.g. clicking the minimize button on a frameless window’s Window Control Overlay)
 
@@ -323,8 +324,7 @@ Emitted when the window is being moved to a new position.
 
 Emitted once when the window is moved to a new position.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, this event is an alias of `move`.
 
@@ -482,8 +482,7 @@ A `boolean` property that determines whether the window is focusable.
 
 A `boolean` property that determines whether the window is visible on all workspaces.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Always returns false on Windows.
 
@@ -495,8 +494,7 @@ A `boolean` property that determines whether the window has a shadow.
 
 A `boolean` property that determines whether the menu bar should be visible.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If the menu bar is auto-hide, users can still bring up the menu bar by pressing the single `Alt` key.
 
@@ -518,8 +516,7 @@ A `string` property that determines the pathname of the file the window represen
 
 A `string` property that determines the title of the native window.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The title of the web page can be different from the title of the native window.
 
@@ -588,8 +585,7 @@ A `boolean` property that indicates whether the window is arranged via [Snap.](h
 
 Objects created with `new BaseWindow` have the following instance methods:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Some methods are only available on specific operating systems and are labeled as such.
 
@@ -677,8 +673,7 @@ Returns `boolean` - Whether the window is minimized.
 
 Sets whether the window should be in fullscreen mode.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, fullscreen transitions take place asynchronously. If further actions depend on the fullscreen state, use the ['enter-full-screen'](base-window.md#event-enter-full-screen) or > ['leave-full-screen'](base-window.md#event-leave-full-screen) events.
 
@@ -778,8 +773,7 @@ win.setBounds({ width: 100 })
 console.log(win.getBounds())
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the y-coordinate value cannot be smaller than the [Tray](tray.md) height. The tray height has changed over time and depends on the operating system, but is between 20-40px. Passing a value lower than the tray height will result in a window that is flush to the tray.
 
@@ -787,13 +781,11 @@ console.log(win.getBounds())
 
 Returns [Rectangle](structures/rectangle.md) - The `bounds` of the window as `Object`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the y-coordinate value returned will be at minimum the [Tray](tray.md) height. For example, calling `win.setBounds({ x: 25, y: 20, width: 800, height: 600 })` with a tray height of 38 means that `win.getBounds()` will return `{ x: 25, y: 38, width: 800, height: 600 }`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Wayland, this method will return `{ x: 0, y: 0, ... }` as introspecting or programmatically changing the global window coordinates is prohibited.
 
@@ -803,8 +795,7 @@ Returns `string` - Gets the background color of the window in Hex (`#RRGGBB`) fo
 
 See [Setting `backgroundColor`](browser-window.md#setting-the-backgroundcolor-property).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The alpha value is *not* returned alongside the red, green, and blue values.
 
@@ -823,8 +814,7 @@ Returns [Rectangle](structures/rectangle.md) - The `bounds` of the window's clie
 
 Returns [Rectangle](structures/rectangle.md) - Contains the window bounds of the normal state
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Whatever the current state of the window: maximized, minimized or in fullscreen, this function always returns the position and size of the window in normal state. In normal state, getBounds and getNormalBounds returns the same [Rectangle](structures/rectangle.md).
 
@@ -1000,8 +990,7 @@ Moves window to `x` and `y`.
 
 Returns `Integer[]` - Contains the window's current position.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Wayland, this method will return `[0, 0]` as introspecting or programmatically changing the global window coordinates is prohibited.
 
@@ -1015,8 +1004,7 @@ Changes the title of native window to `title`.
 
 Returns `string` - The title of the native window.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The title of the web page can be different from the title of the native window.
 
@@ -1243,8 +1231,7 @@ Sets the toolTip that is displayed when hovering over the window thumbnail in th
 
 Sets the properties for the window's taskbar button.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `relaunchCommand` and `relaunchDisplayName` must always be set together. If one of those properties is not set, then neither will be used.
 
@@ -1337,8 +1324,7 @@ The window is snapped via buttons shown when the mouse is hovered over window ma
 
 Sets whether the window should be visible on all workspaces.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API does nothing on Windows.
 
@@ -1346,8 +1332,7 @@ Sets whether the window should be visible on all workspaces.
 
 Returns `boolean` - Whether the window is visible on all workspaces.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API always returns false on Windows.
 
@@ -1454,8 +1439,7 @@ This method sets the browser window's system-drawn background material, includin
 
 See the [Windows documentation](https://learn.microsoft.com/en-us/windows/win32/api/dwmapi/ne-dwmapi-dwm_systembackdrop_type) for more details.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method is only supported on Windows 11 22H2 and up.
 
@@ -1475,8 +1459,7 @@ Returns `Point | null` - The custom position for the traffic light buttons in fr
 
 Sets the touchBar layout for the current window. Specifying `null` or `undefined` clears the touch bar. This method only has an effect if the machine has a touch bar.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The TouchBar API is currently experimental and may change or be removed in future Electron releases.
 

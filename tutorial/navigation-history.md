@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/navigation-history
 title: "Navigation History"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -87,11 +87,7 @@ async function restore () {
 
 Here's a full example that you can open with Electron Fiddle:
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
-- style.css
+#### main.js
 
 ```js
 const { app, BrowserWindow, BrowserView, ipcMain } = require('electron')
@@ -152,4 +148,210 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
+```
+
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  goBack: () => ipcRenderer.invoke('nav:back'),
+  goForward: () => ipcRenderer.invoke('nav:forward'),
+  canGoBack: () => ipcRenderer.invoke('nav:canGoBack'),
+  canGoForward: () => ipcRenderer.invoke('nav:canGoForward'),
+  loadURL: (url) => ipcRenderer.invoke('nav:loadURL', url),
+  getCurrentURL: () => ipcRenderer.invoke('nav:getCurrentURL'),
+  getHistory: () => ipcRenderer.invoke('nav:getHistory'),
+  onNavigationUpdate: (callback) => ipcRenderer.on('nav:updated', callback)
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enhanced Browser with Navigation History</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="controls">
+        <button id="backBtn" title="Go back">Back</button>
+        <button id="forwardBtn" title="Go forward">Forward</button>
+        <button id="backHistoryBtn" title="Show back history">Back History</button>
+        <button id="forwardHistoryBtn" title="Show forward history">Forward History</button>
+        <input id="urlInput" type="text" placeholder="Enter URL">
+        <button id="goBtn" title="Navigate to URL">Go</button>
+    </div>
+
+    <div id="historyPanel" class="history-panel"></div>
+
+    <div id="description">
+        <h2>Navigation History Demo</h2>
+        <p>This demo showcases Electron's NavigationHistory API functionality.</p>
+        <p><strong>Back/Forward:</strong> Navigate through your browsing history.</p>
+        <p><strong>Back History/Forward History:</strong> View and select from your browsing history.</p>
+        <p><strong>URL Bar:</strong> Enter a URL and click 'Go' or press Enter to navigate.</p>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
+```
+
+#### renderer.js
+
+```js
+const backBtn = document.getElementById('backBtn')
+const forwardBtn = document.getElementById('forwardBtn')
+const backHistoryBtn = document.getElementById('backHistoryBtn')
+const forwardHistoryBtn = document.getElementById('forwardHistoryBtn')
+const urlInput = document.getElementById('urlInput')
+const goBtn = document.getElementById('goBtn')
+const historyPanel = document.getElementById('historyPanel')
+
+async function updateButtons () {
+  const canGoBack = await window.electronAPI.canGoBack()
+  const canGoForward = await window.electronAPI.canGoForward()
+  backBtn.disabled = !canGoBack
+  backHistoryBtn.disabled = !canGoBack
+
+  forwardBtn.disabled = !canGoForward
+  forwardHistoryBtn.disabled = !canGoForward
+}
+
+async function updateURL () {
+  urlInput.value = await window.electronAPI.getCurrentURL()
+}
+
+function transformURL (url) {
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    const updatedUrl = 'https://' + url
+    return updatedUrl
+  }
+  return url
+}
+
+async function navigate (url) {
+  const urlInput = transformURL(url)
+
+  await window.electronAPI.loadURL(urlInput)
+}
+
+async function showHistory (forward = false) {
+  const history = await window.electronAPI.getHistory()
+  const currentIndex = history.findIndex(entry => entry.url === transformURL(urlInput.value))
+
+  if (!currentIndex) {
+    return
+  }
+
+  const relevantHistory = forward
+    ? history.slice(currentIndex + 1)
+    : history.slice(0, currentIndex).reverse()
+
+  historyPanel.innerHTML = ''
+  relevantHistory.forEach(entry => {
+    const div = document.createElement('div')
+    div.textContent = \`Title: ${entry.title}, URL: ${entry.url}\`
+    div.onclick = () => navigate(entry.url)
+    historyPanel.appendChild(div)
+  })
+
+  historyPanel.style.display = 'block'
+}
+
+backBtn.addEventListener('click', () => window.electronAPI.goBack())
+forwardBtn.addEventListener('click', () => window.electronAPI.goForward())
+backHistoryBtn.addEventListener('click', () => showHistory(false))
+forwardHistoryBtn.addEventListener('click', () => showHistory(true))
+goBtn.addEventListener('click', () => navigate(urlInput.value))
+
+urlInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    navigate(urlInput.value)
+  }
+})
+
+document.addEventListener('click', (e) => {
+  if (e.target !== historyPanel && !historyPanel.contains(e.target) &&
+    e.target !== backHistoryBtn && e.target !== forwardHistoryBtn) {
+    historyPanel.style.display = 'none'
+  }
+})
+
+window.electronAPI.onNavigationUpdate(() => {
+  updateButtons()
+  updateURL()
+})
+
+updateButtons()
+```
+
+#### style.css
+
+```markdown
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+#controls {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #45a049;
+}
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#urlInput {
+    flex-grow: 1;
+    margin: 0 10px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+#historyPanel {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+  #historyPanel div {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#description {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-top: 150px;
+}
 ```

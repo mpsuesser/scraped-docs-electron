@@ -2,9 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-adding-features
 title: "Tutorial Adding Features"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
+
+> **Follow along the tutorial:**
+> 
+> This is **part 4** of the Electron tutorial.
 
 ## Adding application complexity
 
@@ -21,8 +25,7 @@ On the other hand, Electron also provides a rich set of tools that allow you to 
 
 Electron's documentation has many tutorials to help you with more advanced topics and deeper operating system integrations. To get started, check out the [How-To Examples](examples.md) doc.
 
-> [!-secondary] -secondary
-> Let us know if something is missing!
+> **Let us know if something is missing!:**
 > 
 > If you can't find what you are looking for, please let us know on [GitHub](https://github.com/electron/website/issues/new) or in our [Discord server](https://discord.gg/electronjs)!
 

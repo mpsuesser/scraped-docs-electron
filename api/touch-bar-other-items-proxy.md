@@ -2,14 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar-other-items-proxy
 title: "Touch Bar Other Items Proxy"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Instantiates a special "other items proxy", which nests TouchBar elements inherited from Chromium at the space indicated by the proxy. By default, this proxy is added to each TouchBar at the end of the input. For more information, see the AppKit docs on [NSTouchBarItemIdentifierOtherItemsProxy](https://developer.apple.com/documentation/appkit/nstouchbaritemidentifierotheritemsproxy)
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Only one instance of this class can be added per TouchBar.
 

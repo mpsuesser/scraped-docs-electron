@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/safe-storage
 title: "Safe Storage"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Allows access to simple encryption and decryption of strings for storage on the local machine.
@@ -12,8 +12,7 @@ Process: [Main](../glossary.md#main-process)
 
 This module adds extra protection to data being stored on disk by using OS-provided cryptography systems. Current security semantics for each platform are outlined below.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > We recommend using the asynchronous API (`encryptStringAsync` / `decryptStringAsync`) over the synchronous API. The async API is non-blocking, supports key rotation, and handles temporary unavailability gracefully. The synchronous API may be deprecated in a future version of Electron.
 

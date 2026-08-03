@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/shell
 title: "Shell"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Manage files and URLs using their default applications.
@@ -20,8 +20,7 @@ const { shell } = require('electron')
 shell.openExternal('https://github.com')
 ```
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > While the `shell` module can be used in the renderer process, it will not function in a sandboxed renderer.
 

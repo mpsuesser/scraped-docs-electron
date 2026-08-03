@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/service-worker-main
 title: "Service Worker Main"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > An instance of a Service Worker representing a version of a script for a given scope.

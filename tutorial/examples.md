@@ -2,13 +2,15 @@
 url: https://www.electronjs.org/docs/latest/tutorial/examples
 title: "Examples"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 In this section, we have collected a set of guides for common features that you may want to implement in your Electron application. Each guide contains a practical example in a minimal, self-contained example app. The easiest way to run these examples is by downloading [Electron Fiddle](https://www.electronjs.org/fiddle).
 
 Once Fiddle is installed, you can press on the "Open in Fiddle" button that you will find below code samples like the following one:
+
+#### main.js
 
 ```js
 const { app, BrowserWindow } = require('electron/main')
@@ -41,6 +43,42 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+```
+
+#### preload.js
+
+```js
+window.addEventListener('DOMContentLoaded', () => {
+  const replaceText = (selector, text) => {
+    const element = document.getElementById(selector)
+    if (element) element.innerText = text
+  }
+
+  for (const type of ['chrome', 'node', 'electron']) {
+    replaceText(\`${type}-version\`, process.versions[type])
+  }
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>
+        We are using Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        and Electron <span id="electron-version"></span>.
+    </p>
+</body>
+</html>
 ```
 
 ## How to...?

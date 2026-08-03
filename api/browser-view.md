@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-view
 title: "Browser View"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 History
@@ -12,8 +12,7 @@ History
 | --- | --- |
 | ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The `BrowserView` class is deprecated, and replaced by the new [`WebContentsView`](web-contents-view.md) class.
 
@@ -29,8 +28,7 @@ History
 
 > Create and control views.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The `BrowserView` class is deprecated, and replaced by the new [`WebContentsView`](web-contents-view.md) class.
 
@@ -38,8 +36,7 @@ Process: [Main](../glossary.md#main-process)
 
 This module cannot be used until the `ready` event of the `app` module is emitted.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -223,7 +220,6 @@ Examples of valid `color` values:
 		- Similar to CSS Color Module Level 3 keywords, but case-sensitive.
 		- e.g. `blueviolet` or `red`
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Hex format with alpha takes `AARRGGBB` or `ARGB`, *not* `RRGGBBAA` or `RGB`.

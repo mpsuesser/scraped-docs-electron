@@ -2,12 +2,11 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar
 title: "Touch Bar"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -25,8 +24,7 @@ Process: [Main](../glossary.md#main-process)
 
 Creates a new touch bar with the specified items. Use `BrowserWindow.setTouchBar` to add the `TouchBar` to a window.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The TouchBar API is currently experimental and may change or be removed in future Electron releases.
 

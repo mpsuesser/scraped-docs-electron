@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/automated-testing
 title: "Automated Testing"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 Test automation is an efficient way of validating that your application code works as intended. While Electron doesn't actively maintain its own testing solution, this guide will go over a couple ways you can run end-to-end automated tests on your Electron app.
@@ -26,11 +26,16 @@ If you already have an existing WebdriverIO setup, it is recommended to update y
 
 If you don't use WebdriverIO in your project yet, you can add it by running the starter toolkit in your project root directory:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm init wdio@latest ./
+```
+
+#### Yarn
+
+```sh
+yarn create wdio@latest ./
 ```
 
 This starts a configuration wizard that helps you put together the right setup, installs all necessary packages, and generates a `wdio.conf.js` configuration file. Make sure to select *"Desktop Testing - of Electron Applications"* on one of the first questions asking *"What type of testing would you like to do?"*.
@@ -117,11 +122,19 @@ Find more documentation on Mocking Electron APIs and other useful resources in t
 
 In order to use Selenium with Electron, you need to download the `electron-chromedriver` binary, and run it:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install --save-dev electron-chromedriver
+./node_modules/.bin/chromedriver
+Starting ChromeDriver (v2.10.291558) on port 9515
+Only local connections are allowed.
+```
+
+#### Yarn
+
+```sh
+yarn add --dev electron-chromedriver
 ./node_modules/.bin/chromedriver
 Starting ChromeDriver (v2.10.291558) on port 9515
 Only local connections are allowed.
@@ -133,11 +146,16 @@ Remember the port number `9515`, which will be used later.
 
 Next, install Selenium into your project:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install --save-dev selenium-webdriver
+```
+
+#### Yarn
+
+```sh
+yarn add --dev selenium-webdriver
 ```
 
 Usage of `selenium-webdriver` with Electron is the same as with normal websites, except that you have to manually specify how to connect ChromeDriver and where to find the binary of your Electron app:
@@ -175,15 +193,19 @@ driver.quit()
 
 You can install Playwright through your preferred Node.js package manager. It comes with its own [test runner](https://playwright.dev/docs/intro), which is built for end-to-end testing:
 
-- npm
-- Yarn
+#### npm
 
 ```sh
 npm install --save-dev @playwright/test
 ```
 
-> [!-warning] -warning
-> Dependencies
+#### Yarn
+
+```sh
+yarn add --dev @playwright/test
+```
+
+> **Dependencies:**
 > 
 > This tutorial was written with `@playwright/test@1.52.0`. Check out [Playwright's releases](https://playwright.dev/docs/release-notes) page to learn about changes that might affect the code below.
 
@@ -268,13 +290,11 @@ Running 1 test using 1 worker
   ✓  example.spec.js:4:1 › example test (1s)
 ```
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > Playwright Test will automatically run any files matching the `.*(test|spec)\.(js|ts|mjs)` regex. You can customize this match in the [Playwright Test configuration options](https://playwright.dev/docs/api/class-testconfig#test-config-test-match). It also works with TypeScript out of the box.
 
-> [!-success] -success
-> Further reading
+> **Further reading:**
 > 
 > Check out Playwright's documentation for the full [Electron](https://playwright.dev/docs/api/class-electron/) and [ElectronApplication](https://playwright.dev/docs/api/class-electronapplication) class APIs.
 

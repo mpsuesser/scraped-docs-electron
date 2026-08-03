@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Control your application's event lifecycle.
@@ -39,8 +39,7 @@ Returns:
 
 Emitted once, when Electron has finished initializing. On macOS, `launchInfo` holds the `userInfo` of the [`NSUserNotification`](https://developer.apple.com/documentation/foundation/nsusernotification) or information from [`UNNotificationResponse`](https://developer.apple.com/documentation/usernotifications/unnotificationresponse) that was used to open the application, if it was launched from Notification Center. You can also call `app.isReady()` to check if this event has already fired and `app.whenReady()` to get a Promise that is fulfilled when Electron is initialized.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The `ready` event is only fired after the main process has finished running the first tick of the event loop. If an Electron API needs to be called before the `ready` event, ensure that it is called synchronously in the top-level context of the main process.
 
@@ -58,13 +57,11 @@ Returns:
 
 Emitted before the application starts closing its windows. Calling `event.preventDefault()` will prevent the default behavior, which is terminating the application.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If application quit was initiated by `autoUpdater.quitAndInstall()`, then `before-quit` is emitted *after* emitting `close` event on all windows and closing them.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Windows, this event will not be emitted if the app is closed due to a shutdown/restart of the system or a user logout.
 
@@ -78,8 +75,7 @@ Emitted when all windows have been closed and the application will quit. Calling
 
 See the description of the `window-all-closed` event for the differences between the `will-quit` and `window-all-closed` events.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Windows, this event will not be emitted if the app is closed due to a shutdown/restart of the system or a user logout.
 
@@ -92,8 +88,7 @@ Returns:
 
 Emitted when the application is quitting.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On Windows, this event will not be emitted if the app is closed due to a shutdown/restart of the system or a user logout.
 
@@ -413,20 +408,17 @@ This event will be emitted inside the primary instance of your application when 
 
 `argv` is an Array of the second instance's command line arguments, and `workingDirectory` is its current working directory. Usually applications respond to this by making their primary window focused and non-minimized.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `argv` will not be exactly the same list of arguments as those passed to the second instance. The order might change and additional arguments might be appended. If you need to maintain the exact same arguments, it's advised to use `additionalData` instead.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If the second instance is started by a different user than the first, the `argv` array will not include the arguments.
 
 This event is guaranteed to be emitted after the `ready` event of `app` gets emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Extra command line arguments might be added by Chromium, such as `--original-process-start-time`.
 
@@ -434,8 +426,7 @@ This event is guaranteed to be emitted after the `ready` event of `app` gets emi
 
 The `app` object has the following methods:
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Some methods are only available on specific operating systems and are labeled as such.
 
@@ -596,8 +587,7 @@ Usually the `name` field of `package.json` is a short lowercase name, according 
 
 Overrides the current application's name.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This function overrides the name used internally by Electron; it does not affect the name that the OS uses.
 
@@ -617,18 +607,15 @@ Returns `string` - The current application locale, fetched using Chromium's `l10
 
 To set the locale, you'll want to use a command line switch at app startup, which may be found [here](command-line-switches.md).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > When distributing your packaged app, you have to also ship the `locales` folder.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API must be called after the `ready` event is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > To see example return values of this API compared to other locale and language APIs, see [`app.getPreferredSystemLanguages()`](#appgetpreferredsystemlanguages).
 
@@ -636,8 +623,7 @@ To set the locale, you'll want to use a command line switch at app startup, whic
 
 Returns `string` - User operating system's locale two-letter [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) country code. The value is taken from native OS APIs.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > When unable to detect locale country code, it returns empty string.
 
@@ -652,13 +638,11 @@ Different operating systems also use the regional data differently:
 
 Therefore, this API can be used for purposes such as choosing a format for rendering dates and times in a calendar app, especially when the developer wants the format to be consistent with the OS.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This API must be called after the `ready` event is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > To see example return values of this API compared to other locale and language APIs, see [`app.getPreferredSystemLanguages()`](#appgetpreferredsystemlanguages).
 
@@ -730,13 +714,11 @@ Returns `boolean` - Whether the call succeeded.
 
 Sets the current executable as the default handler for a protocol (aka URI scheme). It allows you to integrate your app deeper into the operating system. Once registered, all links with `your-protocol://` will be opened with the current executable. The whole link, including protocol, will be passed to your application as a parameter.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, you can only register protocols that have been added to your app's `info.plist`, which cannot be modified at runtime. However, you can change the file during build time via [Electron Forge](https://www.electronforge.io/), [Electron Packager](https://github.com/electron/packager), or by editing `info.plist` with a text editor. Please refer to [Apple's documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-102207-TPXREF115) for details.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > In a Windows Store environment (when packaged as an `appx`) this API will return `true` for all calls but the registry key it sets won't be accessible by other applications. In order to register your Windows Store application as a default protocol handler you must [declare the protocol in your manifest](https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
@@ -760,8 +742,7 @@ This method checks if the current executable as the default handler for a protoc
 
 Returns `boolean` - Whether the current executable is the default handler for a protocol (aka URI scheme).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, you can use this method to check if the app has been registered as the default protocol handler for a protocol. You can also verify this by checking `~/Library/Preferences/com.apple.LaunchServices.plist` on the macOS machine. Please refer to [Apple's documentation](https://developer.apple.com/documentation/coreservices/1441725-lscopydefaulthandlerforurlscheme?language=objc) for details.
 
@@ -797,8 +778,7 @@ Adds `tasks` to the [Tasks](https://learn.microsoft.com/en-us/windows/win32/shel
 
 Returns `boolean` - Whether the call succeeded.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you'd like to customize the Jump List even more use `app.setJumpList(categories)` instead.
 
@@ -825,18 +805,15 @@ Sets or removes a custom Jump List for the application, and returns one of the f
 
 If `categories` is `null` the previously set custom Jump List (if any) will be replaced by the standard Jump List for the app (managed by Windows).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If a `JumpListCategory` object has neither the `type` nor the `name` property set then its `type` is assumed to be `tasks`. If the `name` property is set but the `type` property is omitted then the `type` is assumed to be `custom`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Users can remove items from custom categories, and Windows will not allow a removed item to be added back into a custom category until **after** the next successful call to `app.setJumpList(categories)`. Any attempt to re-add a removed item to a custom category earlier than that will result in the entire custom category being omitted from the Jump List. The list of removed items can be obtained using `app.getJumpListSettings()`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > The maximum length of a Jump List item's `description` property is 260 characters. Beyond this limit, the item will not be added to the Jump List, nor will it be displayed.
 
@@ -1086,8 +1063,7 @@ With the matching entitlement in your app's `entitlements.plist`:
 </array>
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Touch ID WebAuthn credentials are device-bound and are not synced via iCloud Keychain. They are only available on Macs with a Secure Enclave (Apple silicon, or Intel Macs with a T2 chip).
 
@@ -1101,8 +1077,7 @@ This method can only be called before app is ready.
 
 Returns `boolean` - whether hardware acceleration is currently enabled.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This information is only usable after the `gpu-info-update` event is emitted.
 
@@ -1120,8 +1095,7 @@ Returns [ProcessMetric\[\]](structures/process-metric.md): Array of `ProcessMetr
 
 Returns [GPUFeatureStatus](structures/gpu-feature-status.md) - The Graphics Feature Status from `chrome://gpu/`.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This information is only usable after the `gpu-info-update` event is emitted.
 
@@ -1176,13 +1150,11 @@ Sets the counter badge for current app. Setting the count to `0` will hide the b
 
 On macOS, it shows on the dock icon. On Linux, it only works for Unity launcher.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Unity launcher requires a `.desktop` file to work. For more information, please read the [Unity integration documentation](https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, you need to ensure that your application has the permission to display notifications for this method to work.
 
@@ -1273,8 +1245,7 @@ Manually enables Chrome's accessibility support, allowing to expose accessibilit
 
 This API must be called after the `ready` event is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Rendering accessibility tree can significantly affect the performance of your app. It should not be enabled by default. Calling this method will enable the following accessibility support features: `nativeAPIs`, `webContents`, `inlineTextBoxes`, and `extendedProperties`.
 
@@ -1463,8 +1434,7 @@ By using this API, important information such as password and other sensitive in
 
 See [Apple's documentation](https://developer.apple.com/library/archive/technotes/tn2150/_index.html) for more details.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Enable `Secure Keyboard Entry` only when it is needed and disable it when it is no longer needed.
 
@@ -1524,8 +1494,7 @@ See [Chromium's accessibility docs](https://www.chromium.org/developers/design-d
 
 This API must be called after the `ready` event is emitted.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Rendering accessibility tree can significantly affect the performance of your app. It should not be enabled by default.
 
@@ -1539,13 +1508,11 @@ An `Integer` property that returns the badge count for current app. Setting the 
 
 On macOS, setting this with any nonzero integer shows on the dock icon. On Linux, this property only works for Unity launcher.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Unity launcher requires a `.desktop` file to work. For more information, please read the [Unity integration documentation](https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher).
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, you need to ensure that your application has the permission to display notifications for this property to take effect.
 

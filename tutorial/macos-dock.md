@@ -2,14 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/macos-dock
 title: "Macos Dock"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 On macOS, the [Dock](https://support.apple.com/en-ca/guide/mac-help/mh35859/mac) is an interface element that displays open and frequently-used apps. While opened or pinned, each app has its own icon in the Dock.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > On macOS, the Dock is the entry point for certain cross-platform features like [Recent Documents](recent-documents.md) and [Application Progress](progress-bar.md). Read those guides for more details.
 
@@ -21,8 +20,7 @@ One of the main uses for your app's Dock icon is to expose additional app menus.
 
 To set an app-defined custom Dock menu, pass any [Menu](../api/menu.md) instance into the [`dock.setMenu`](../api/dock.md#docksetmenumenu-macos) API.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > For best practices to make your Dock menu feel more native, see Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/dock-menus) page on Dock menus.
 
@@ -46,13 +44,11 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > Unlike with regular [context menus](context-menu.md), Dock context menus don't need to be manually instrumented using the `menu.popup` API. Instead, the Dock object handles click events for you.
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > To learn more about crafting menus in Electron, see the [Menus](menus.md#building-menus) guide.
 
@@ -60,9 +56,7 @@ app.whenReady().then(() => {
 
 Below is a runnable example of how you can use the Dock menu to create and close windows in your Electron app.
 
-- main.js
-- index.html
-- renderer.js
+#### main.js
 
 ```js
 const { app, BrowserWindow, Menu } = require('electron/main')
@@ -111,4 +105,33 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Dock Menu Demo</title>
+  </head>
+  <body>
+    <h1>Dock Menu Demo</h1>
+    <ul>
+      <li>Create new BrowserWindow instances via the "New Window" option</li>
+      <li>Close all BrowserWindow instances via the "Close All Windows" option</li>
+      <li>Read the docs via the "Show Electron Docs" option</li>
+    </ul>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+```
+
+#### renderer.js
+
+```js
+document.title = \`${document.title} - ${new Date()}\`
 ```

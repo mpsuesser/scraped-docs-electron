@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/desktop-capturer
 title: "Desktop Capturer"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Access information about media sources that can be used to capture audio and video from the desktop using the [`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en/docs/Web/API/MediaDevices/getUserMedia) API.
@@ -72,8 +72,7 @@ stopButton.addEventListener('click', () => {
 
 See [`navigator.mediaDevices.getDisplayMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia) for more information.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > `navigator.mediaDevices.getDisplayMedia` does not permit the use of `deviceId` for selection of a source - see [specification](https://w3c.github.io/mediacapture-screen-share/#constraints).
 
@@ -97,8 +96,7 @@ History
 
 Returns `Promise<DesktopCapturerSource[]>` - Resolves with an array of [DesktopCapturerSource](structures/desktop-capturer-source.md) objects, each `DesktopCapturerSource` represents a screen or an individual window that can be captured.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 
 > - Capturing audio requires `NSAudioCaptureUsageDescription` Info.plist key on macOS 14.2 Sonoma and higher - [read more](#macos-versions-142-or-higher).
 > - Capturing the screen contents requires user consent on macOS 10.15 Catalina or higher, which can detected by [`systemPreferences.getMediaAccessStatus`](system-preferences.md#systempreferencesgetmediaaccessstatusmediatype-windows-macos).
@@ -117,8 +115,7 @@ PipeWire supports a single capture for both screens and windows. If you request 
 
 This is in order to facillitate use of Apple's new [CoreAudio Tap API](https://developer.apple.com/documentation/CoreAudio/capturing-system-audio-with-core-audio-taps#Configure-the-sample-code-project) by Chromium.
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Failure of `desktopCapturer` to start an audio stream due to `NSAudioCaptureUsageDescription` permission not present will still create a dead audio stream however no warnings or errors are displayed.
 

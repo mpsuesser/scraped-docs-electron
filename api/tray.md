@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/tray
 title: "Tray"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Class: Tray
@@ -31,13 +31,11 @@ app.whenReady().then(() => {
 })
 ```
 
-> [!-success] -success
-> tip
+> **Tip:**
 > 
 > See also: [A detailed guide about how to implement Tray menus](../tutorial/tray.md).
 
-> [!-warning] -warning
-> warning
+> **Warning:**
 > 
 > Electron's built-in classes cannot be subclassed in user code. For more information, see [the FAQ](../faq.md#class-inheritance-does-not-work-with-electron-built-in-modules).
 
@@ -191,8 +189,7 @@ Returns:
 
 Emitted when the mouse is released from clicking the tray icon.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This will not be emitted if you have set a context menu for your Tray using `tray.setContextMenu`, as a result of macOS-level constraints.
 

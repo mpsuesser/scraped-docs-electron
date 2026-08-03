@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/shared-texture
 title: "Shared Texture"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 > Import shared textures into Electron and converts platform specific handles into [`VideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame). Supports all Web rendering systems, and can be transferred across Electron processes. Read [here](https://github.com/electron/electron/blob/v43.2.0/shell/common/api/shared_texture/README.md) for more information.
@@ -24,8 +24,7 @@ The `sharedTexture` module has the following methods:
 
 Imports the shared texture from the given options.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method is only available in the main process.
 
@@ -40,8 +39,7 @@ Returns [SharedTextureImported](structures/shared-texture-imported.md) - The imp
 
 Send the imported shared texture to a renderer process. You must register a receiver at renderer process before calling this method. This method has a 1000ms timeout. Ensure the receiver is set and the renderer process is alive before calling this method.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method is only available in the main process.
 
@@ -56,8 +54,7 @@ Returns `Promise<void>` - Resolves when the transfer is complete.
 
 Set a callback to receive imported shared textures from the main process.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > This method is only available in the renderer process.
 

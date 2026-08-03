@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/dark-mode
 title: "Dark Mode"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 ## Overview
@@ -32,11 +32,7 @@ If you wish to opt-out while using Electron > 8.0.0, you must set the `NSRequire
 
 This example demonstrates an Electron application that derives its theme colors from the `nativeTheme`. Additionally, it provides theme toggle and reset controls using IPC channels.
 
-- main.js
-- preload.js
-- index.html
-- renderer.js
-- styles.css
+#### main.js
 
 ```js
 const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron/main')
@@ -82,6 +78,70 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+```
+
+#### preload.js
+
+```js
+const { contextBridge, ipcRenderer } = require('electron/renderer')
+
+contextBridge.exposeInMainWorld('darkMode', {
+  toggle: () => ipcRenderer.invoke('dark-mode:toggle'),
+  system: () => ipcRenderer.invoke('dark-mode:system')
+})
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Current theme source: <strong id="theme-source">System</strong></p>
+
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <button id="reset-to-system">Reset to System Theme</button>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
+```
+
+#### renderer.js
+
+```js
+document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
+  const isDarkMode = await window.darkMode.toggle()
+  document.getElementById('theme-source').innerHTML = isDarkMode ? 'Dark' : 'Light'
+})
+
+document.getElementById('reset-to-system').addEventListener('click', async () => {
+  await window.darkMode.system()
+  document.getElementById('theme-source').innerHTML = 'System'
+})
+```
+
+#### styles.css
+
+```markdown
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #333; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+  body { background: #ddd; color: black; }
+}
 ```
 
 ### How does this work?

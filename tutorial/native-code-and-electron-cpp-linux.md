@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron-cpp-linux
 title: "Native Code And Electron Cpp Linux"
 description: ""
-access_date: 2026-08-03T17:26:37.553Z
-current_date: 2026-08-03T17:26:37.553Z
+access_date: 2026-08-03T18:12:31.121Z
+current_date: 2026-08-03T18:12:31.121Z
 ---
 
 This tutorial builds on the [general introduction to Native Code and Electron](native-code-and-electron.md) and focuses on creating a native addon for Linux using C++ and GTK3. To illustrate how you can embed native Linux code in your Electron app, we'll be building a basic native GTK3 GUI that communicates with Electron's JavaScript.
@@ -14,15 +14,13 @@ Specifically, we'll be using GTK3 for our GUI interface, which provides:
 - Cross-desktop compatibility across various Linux distributions
 - Integration with the native theming and accessibility features of Linux desktops
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > We specifically use GTK3 because that's what Chromium (and by extension, Electron) uses internally. Using GTK4 would cause runtime conflicts since both GTK3 and GTK4 would be loaded in the same process. If and when Chromium upgrades to GTK4, you will likely be able to easily upgrade your native code to GTK4, too.
 
 This tutorial will be most useful to those who already have some familiarity with GTK development on Linux. You should have experience with basic GTK concepts like widgets, signals, and the main event loop. In the interest of brevity, we're not spending too much time explaining the individual GTK elements we're using or the code we're writing for them. This allows this tutorial to be really helpful for those who already know GTK development and want to use their skills with Electron - without having to also be an entire GTK documentation.
 
-> [!-secondary] -secondary
-> note
+> **Note:**
 > 
 > If you're not already familiar with these concepts, the [GTK3 documentation](https://docs.gtk.org/gtk3/) and [GTK3 tutorials](https://docs.gtk.org/gtk3/getting_started.html) are excellent resources to get started. The [GNOME Developer Documentation](https://developer.gnome.org/) also provides comprehensive guides for GTK development.
 
@@ -1601,8 +1599,7 @@ This wrapper:
 - Provides a `destroy()` method to release native resources
 - Converts JSON data into proper JavaScript objects
 
-> [!-info] -info
-> info
+> **Info:**
 > 
 > You must call `destroy()` before the app quits (e.g. in the `will-quit` or `before-quit` event handler). Without this, persistent references to callbacks and the threadsafe function will prevent the native addon's destructor from running, causing Electron to hang on quit.
 
