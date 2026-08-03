@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/notifications
 title: "Notifications"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 Each operating system has its own mechanism to display notifications to users. Electron's notification APIs are cross-platform, but are different for each process type.

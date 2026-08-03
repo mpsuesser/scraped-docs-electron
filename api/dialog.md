@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/dialog
 title: "Dialog"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 > Display native system dialogs for opening and saving files, alerting, etc.

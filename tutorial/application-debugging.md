@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-debugging
 title: "Application Debugging"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 Whenever your Electron application is not behaving the way you wanted it to, an array of debugging tools might help you find coding errors, performance bottlenecks, or optimization opportunities.

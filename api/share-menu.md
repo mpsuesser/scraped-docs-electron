@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/share-menu
 title: "Share Menu"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 The `ShareMenu` class creates [Share Menu](https://developer.apple.com/design/human-interface-guidelines/macos/extensions/share-extensions/) on macOS, which can be used to share information from the current context to apps, social media accounts, and other services.

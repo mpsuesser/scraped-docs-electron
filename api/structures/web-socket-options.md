@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/web-socket-options
 title: "Web Socket Options"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 - `protocols` string | string\[\] (optional) - Requested WebSocket subprotocols.

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tray
 title: "Tray"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 This guide will take you through the process of creating an icon with its own context menu to the system tray.

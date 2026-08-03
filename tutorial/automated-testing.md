@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/automated-testing
 title: "Automated Testing"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 Test automation is an efficient way of validating that your application code works as intended. While Electron doesn't actively maintain its own testing solution, this guide will go over a couple ways you can run end-to-end automated tests on your Electron app.

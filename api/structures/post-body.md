@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/post-body
 title: "Post Body"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 - `data` ([UploadRawData](upload-raw-data.md) | [UploadFile](upload-file.md))\[\] - The post data to be sent to the new window.

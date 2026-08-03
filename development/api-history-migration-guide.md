@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/api-history-migration-guide
 title: "Api History Migration Guide"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 This document demonstrates how to add API History blocks to existing APIs.

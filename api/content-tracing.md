@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.

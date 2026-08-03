@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-distribution
 title: "Application Distribution"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 To distribute your app with Electron, you need to package and rebrand it. To do this, you can either use specialized tooling or manual approaches.

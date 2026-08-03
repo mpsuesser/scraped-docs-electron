@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/menus
 title: "Menus"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 Electron's [Menu](../api/menu.md) class provides a standardized way to create cross-platform native menus throughout your application.

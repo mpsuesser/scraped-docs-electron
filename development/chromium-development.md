@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/chromium-development
 title: "Chromium Development"
 description: ""
-access_date: 2026-08-03T18:12:31.121Z
-current_date: 2026-08-03T18:12:31.121Z
+access_date: 2026-08-03T18:22:54.625Z
+current_date: 2026-08-03T18:22:54.625Z
 ---
 
 > A collection of resources for learning about Chromium and tracking its development.
