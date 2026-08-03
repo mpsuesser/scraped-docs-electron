@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/why-electron
 title: "Why Electron"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 Electron is a framework enabling developers to build cross-platform desktop applications for macOS, Windows, and Linux by combining web technologies (HTML, JavaScript, CSS) with Node.js and native code. It is open-source, MIT-licensed, and free for both commercial and personal use. In this document, we’ll explain why companies and developers choose Electron.

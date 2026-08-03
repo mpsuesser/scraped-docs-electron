@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/message-channel-main
 title: "Message Channel Main"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 `MessageChannelMain` is the main-process-side equivalent of the DOM [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel) object. Its singular function is to create a pair of connected [`MessagePortMain`](message-port-main.md) objects.

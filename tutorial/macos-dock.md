@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/macos-dock
 title: "Macos Dock"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 On macOS, the [Dock](https://support.apple.com/en-ca/guide/mac-help/mh35859/mac) is an interface element that displays open and frequently-used apps. While opened or pinned, each app has its own icon in the Dock.

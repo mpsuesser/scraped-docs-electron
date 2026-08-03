@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/window-open
 title: "Window Open"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 There are several ways to control how windows are created from trusted or untrusted content within a renderer. Windows can be created from the renderer in two ways:

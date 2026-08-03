@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/message-ports
 title: "Message Ports"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 [`MessagePort`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort) s are a web feature that allow passing messages between different contexts. It's like `window.postMessage`, but on different channels. The goal of this document is to describe how Electron extends the Channel Messaging model, and to give some examples of how you might use MessagePorts in your app.

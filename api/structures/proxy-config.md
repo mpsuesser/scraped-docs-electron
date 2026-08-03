@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/proxy-config
 title: "Proxy Config"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 - `mode` string (optional) - The proxy mode. Should be one of `direct`, `auto_detect`, `pac_script`, `fixed_servers` or `system`. Defaults to `pac_script` proxy mode if `pacScript` option is specified otherwise defaults to `fixed_servers`.

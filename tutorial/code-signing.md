@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/code-signing
 title: "Code Signing"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 Code signing is a security technology to certify that an app was created by you. You should sign your application so it does not trigger any operating system security warnings.

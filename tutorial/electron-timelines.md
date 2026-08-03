@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/electron-timelines
 title: "Electron Timelines"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 Electron frequently releases major versions alongside every other Chromium release. This document focuses on the release cadence and version support policy.

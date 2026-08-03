@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/shell
 title: "Shell"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 > Manage files and URLs using their default applications.

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/fuses
 title: "Fuses"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 > Package time feature toggles

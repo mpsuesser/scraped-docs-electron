@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/using-pepper-flash-plugin
 title: "Using Pepper Flash Plugin"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 Electron no longer supports the Pepper Flash plugin, as Chrome has removed support.

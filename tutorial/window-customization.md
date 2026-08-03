@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/window-customization
 title: "Window Customization"
 description: ""
-access_date: 2026-08-03T19:08:43.151Z
-current_date: 2026-08-03T19:08:43.151Z
+access_date: 2026-08-03T19:38:49.815Z
+current_date: 2026-08-03T19:38:49.815Z
 ---
 
 The [`BrowserWindow`](../api/browser-window.md) module is the foundation of your Electron application, and it exposes many APIs that let you customize the look and behavior of your app’s windows. This section covers how to implement various use cases for window customization on macOS, Windows, and Linux.
