@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/in-app-purchase
 title: "In App Purchase"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-03T22:36:28.814Z
+current_date: 2026-08-03T22:36:28.814Z
 ---
 
 History
@@ -46,7 +46,7 @@ History
 | Version(s) | Changes |
 | --- | --- |
 | ```markdown None ``` | [  This method now returns a Promise instead of using a callback function.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
-| ```markdown None ``` | Added `username` option to `opts` parameter. |
+| [ ```markdown >=24.0.0 ``` ](https://github.com/electron/electron/pull/35902) | Added `username` option to `opts` parameter. |
 | ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `productID` string
