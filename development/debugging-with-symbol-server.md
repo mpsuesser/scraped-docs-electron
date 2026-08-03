@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/debugging-with-symbol-server
 title: "Debugging With Symbol Server"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 Debug symbols allow you to have better debugging sessions. They have information about the functions contained in executables and dynamic libraries and provide you with information to get clean call stacks. A Symbol Server allows the debugger to load the correct symbols, binaries and sources automatically without forcing users to download large debugging files. The server functions like [Microsoft's symbol server](https://support.microsoft.com/kb/311503) so the documentation there can be useful.

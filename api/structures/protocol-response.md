@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/protocol-response
 title: "Protocol Response"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 - `error` Integer (optional) - When assigned, the `request` will fail with the `error` number. For the available error numbers you can use, please see the [net error list](https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h).

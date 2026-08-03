@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/web-preferences
 title: "Web Preferences"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 - `devTools` boolean (optional) - Whether to enable DevTools. If it is set to `false`, can not use `BrowserWindow.webContents.openDevTools()` to open DevTools. Default is `true`.

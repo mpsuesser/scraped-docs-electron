@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/environment-variables
 title: "Environment Variables"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 > Control application configuration and behavior without changing code.

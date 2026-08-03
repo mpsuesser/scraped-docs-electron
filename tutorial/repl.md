@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/repl
 title: "Repl"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 [Read-Eval-Print-Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) (REPL) is a simple, interactive computer programming environment that takes single user inputs (i.e. single expressions), evaluates them, and returns the result to the user.

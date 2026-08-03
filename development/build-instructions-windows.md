@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/build-instructions-windows
 title: "Build Instructions Windows"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 Follow the guidelines below for building **Electron itself** on Windows, for the purposes of creating custom Electron binaries. For bundling and distributing your app code with the prebuilt Electron binaries, see the [application distribution](../tutorial/application-distribution.md) guide.

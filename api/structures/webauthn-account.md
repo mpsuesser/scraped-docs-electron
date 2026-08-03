@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/webauthn-account
 title: "Webauthn Account"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 - `credentialId` string - URL-safe base64-encoded (no padding) credential ID of the discoverable credential. Matches `PublicKeyCredential.id` returned by `navigator.credentials.get()` in the renderer.

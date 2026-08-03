@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/examples
 title: "Examples"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 In this section, we have collected a set of guides for common features that you may want to implement in your Electron application. Each guide contains a practical example in a minimal, self-contained example app. The easiest way to run these examples is by downloading [Electron Fiddle](https://www.electronjs.org/fiddle).

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/preload-script-registration
 title: "Preload Script Registration"
 description: ""
-access_date: 2026-08-03T18:54:45.323Z
-current_date: 2026-08-03T18:54:45.323Z
+access_date: 2026-08-03T19:00:42.552Z
+current_date: 2026-08-03T19:00:42.552Z
 ---
 
 - `type` string - Context type where the preload script will be executed. Possible values include `frame` or `service-worker`.
