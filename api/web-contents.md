@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-08-04T13:12:43.348Z
-current_date: 2026-08-04T13:12:43.348Z
+access_date: 2026-08-04T17:09:30.858Z
+current_date: 2026-08-04T17:09:30.858Z
 ---
 
 > Render and control web pages.
@@ -1048,7 +1048,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Returns `boolean` - Whether the browser can go back to previous web page.
 
@@ -1060,7 +1060,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Returns `boolean` - Whether the browser can go forward to next web page.
 
@@ -1072,7 +1072,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `offset` Integer
 
@@ -1086,7 +1086,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Clears the navigation history.
 
@@ -1098,7 +1098,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Makes the browser go back a web page.
 
@@ -1110,7 +1110,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Makes the browser go forward a web page.
 
@@ -1122,7 +1122,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `index` Integer
 
@@ -1136,7 +1136,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `offset` Integer
 
@@ -2030,7 +2030,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/38924) | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
+| ```markdown None ``` | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
 
 - `allowed` boolean
 
@@ -2129,7 +2129,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/38924) | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
+| ```markdown None ``` | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
 
 A `boolean` property that determines whether or not this WebContents will throttle animations and timers when the page becomes backgrounded. This also affects the Page Visibility API.
 
