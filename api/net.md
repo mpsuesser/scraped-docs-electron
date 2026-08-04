@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/net
 title: "Net"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-04T19:03:02.080Z
+current_date: 2026-08-04T19:03:02.080Z
 ---
 
 > Issue HTTP/HTTPS requests using Chromium's native networking library
@@ -64,7 +64,7 @@ Creates a [`ClientRequest`](client-request.md) instance using the provided `opti
 
 Returns `Promise<GlobalResponse>` - see [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
-Sends a request, similarly to how `fetch()` works in the renderer, using Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's HTTP stack.
+Sends a request, similarly to how `fetch()` works in the renderer, using Chromium's network stack. This differs from Node's `fetch()`, which uses Node.js's HTTP stack.
 
 Example:
 

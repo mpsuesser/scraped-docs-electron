@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/fuses
 title: "Fuses"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-04T19:03:02.080Z
+current_date: 2026-08-04T19:03:02.080Z
 ---
 
 > Package time feature toggles
@@ -34,7 +34,7 @@ The `runAsNode` fuse toggles whether the [`ELECTRON_RUN_AS_NODE`](../api/environ
 
 **@electron/fuses:** `FuseV1Options.EnableCookieEncryption`
 
-The `cookieEncryption` fuse toggles whether the cookie store on disk is encrypted using OS level cryptography keys. By default, the SQLite database that Chromium uses to store cookies stores the values in plaintext. If you wish to ensure your app's cookies are encrypted in the same way Chrome does, then you should enable this fuse. Please note it is a one-way transition—if you enable this fuse, existing unencrypted cookies will be encrypted-on-write, but subsequently disabling the fuse later will make your cookie store corrupt and useless. Most apps can safely enable this fuse.
+The `cookieEncryption` fuse toggles whether the cookie store on disk is encrypted using OS level cryptography keys. By default, the SQLite database that Chromium uses to store cookies stores the values in plaintext. If you wish to ensure your app's cookies are encrypted in the same way Chromium does, then you should enable this fuse. Please note it is a one-way transition—if you enable this fuse, existing unencrypted cookies will be encrypted-on-write, but subsequently disabling the fuse later will make your cookie store corrupt and useless. Most apps can safely enable this fuse.
 
 ### nodeOptions
 
@@ -182,4 +182,4 @@ Somewhere in the Electron binary, there will be a sequence of bytes that look li
 
 To flip a fuse, you find its position in the fuse wire and change it to "0" or "1" depending on the state you'd like.
 
-You can view the current schema [here](https://github.com/electron/electron/blob/v43.2.0/build/fuses/fuses.json5).
+You can view the current schema [here](https://github.com/electron/electron/blob/v43.3.0/build/fuses/fuses.json5).

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/process
 title: "Process"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-04T19:03:02.080Z
+current_date: 2026-08-04T19:03:02.080Z
 ---
 
 > Extensions to process object.
@@ -180,6 +180,7 @@ Returns `Object`:
 
 - `total` Integer - The total amount of physical memory in Kilobytes available to the system.
 - `free` Integer - The total amount of memory not being used by applications or disk cache.
+- `available` Integer *Linux* - The kernel's estimate of the amount of memory available for allocation without swapping, from `/proc/meminfo` `MemAvailable`. Use this as the memory pressure signal on Linux; `free` there is `MemFree`, which excludes page cache and other reclaimable memory.
 - `fileBacked` Integer *macOS* - The amount of memory that currently has been paged out to storage. Includes memory for file caches, network buffers, and other system services.
 - `purgeable` Integer *macOS* - The amount of memory that is marked as "purgeable". The system can reclaim it if memory pressure increases.
 - `swapTotal` Integer *Windows* *Linux* - The total amount of swap memory in Kilobytes available to the system.

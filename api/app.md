@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-04T19:03:02.080Z
+current_date: 2026-08-04T19:03:02.080Z
 ---
 
 > Control your application's event lifecycle.
@@ -302,6 +302,9 @@ Returns:
 - `authenticationResponseDetails` Object
 	- `url` URL
 		- `pid` number
+		- `isRequestForNavigation` boolean - Indicates whether the request is for a navigation.
+		- `firstAuthAttempt` boolean - Indicates whether this is the first authentication attempt.
+		- `responseHeaders` Record<string, string | string\[\]> (optional) - The headers returned in the response.
 - `authInfo` Object
 	- `isProxy` boolean
 		- `scheme` string
@@ -375,9 +378,9 @@ Emitted when the child process unexpectedly disappears. This is normally because
 Returns:
 
 - `event` Event
-- `accessibilitySupportEnabled` boolean - `true` when Chrome's accessibility support is enabled, `false` otherwise.
+- `accessibilitySupportEnabled` boolean - `true` when Chromium's accessibility support is enabled, `false` otherwise.
 
-Emitted when Chrome's accessibility support changes. This event fires when assistive technologies, such as screen readers, are enabled or disabled. See [https://www.chromium.org/developers/design-documents/accessibility](https://www.chromium.org/developers/design-documents/accessibility) for more details.
+Emitted when Chromium's accessibility support changes. This event fires when assistive technologies, such as screen readers, are enabled or disabled. See [https://www.chromium.org/developers/design-documents/accessibility](https://www.chromium.org/developers/design-documents/accessibility) for more details.
 
 ### Event: 'session-created'
 
@@ -1235,13 +1238,13 @@ For more information about setting different services as login items on macOS 13
 
 ### app.isAccessibilitySupportEnabled() macOS Windows
 
-Returns `boolean` - `true` if Chrome's accessibility support is enabled, `false` otherwise. This API will return `true` if the use of assistive technologies, such as screen readers, has been detected. See [https://www.chromium.org/developers/design-documents/accessibility](https://www.chromium.org/developers/design-documents/accessibility) for more details.
+Returns `boolean` - `true` if Chromium's accessibility support is enabled, `false` otherwise. This API will return `true` if the use of assistive technologies, such as screen readers, has been detected. See [https://www.chromium.org/developers/design-documents/accessibility](https://www.chromium.org/developers/design-documents/accessibility) for more details.
 
 ### app.setAccessibilitySupportEnabled(enabled) macOS Windows
 
 - `enabled` boolean - Enable or disable [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) rendering
 
-Manually enables Chrome's accessibility support, allowing to expose accessibility switch to users in application settings. See [Chromium's accessibility docs](https://www.chromium.org/developers/design-documents/accessibility) for more details. Disabled by default.
+Manually enables Chromium's accessibility support, allowing to expose accessibility switch to users in application settings. See [Chromium's accessibility docs](https://www.chromium.org/developers/design-documents/accessibility) for more details. Disabled by default.
 
 This API must be called after the `ready` event is emitted.
 
@@ -1488,7 +1491,7 @@ app.setClientCertRequestPasswordHandler(async ({ hostname, tokenName, isRetry })
 
 ### app.accessibilitySupportEnabled macOS Windows
 
-A `boolean` property that's `true` if Chrome's accessibility support is enabled, `false` otherwise. This property will be `true` if the use of assistive technologies, such as screen readers, has been detected. Setting this property to `true` manually enables Chrome's accessibility support, allowing developers to expose accessibility switch to users in application settings.
+A `boolean` property that's `true` if Chromium's accessibility support is enabled, `false` otherwise. This property will be `true` if the use of assistive technologies, such as screen readers, has been detected. Setting this property to `true` manually enables Chromium's accessibility support, allowing developers to expose accessibility switch to users in application settings.
 
 See [Chromium's accessibility docs](https://www.chromium.org/developers/design-documents/accessibility) for more details. Disabled by default.
 
