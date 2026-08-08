@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/native-image
 title: "Native Image"
 description: ""
-access_date: 2026-08-08T00:29:18.119Z
-current_date: 2026-08-08T00:29:18.119Z
+access_date: 2026-08-08T08:31:19.038Z
+current_date: 2026-08-08T08:31:19.038Z
 ---
 
 > Create tray, dock, and application icons using PNG or JPG files.
@@ -256,7 +256,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/48178) | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
+| ```markdown None ``` | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.
@@ -270,7 +270,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [  `nativeImage.toDataURL` will preserve PNG colorspace  ](../breaking-changes.md#behavior-changed-nativeimagetodataurl-will-preserve-png-colorspace) |
+| ```markdown None ``` | [  `nativeImage.toDataURL` will preserve PNG colorspace  ](../breaking-changes.md#behavior-changed-nativeimagetodataurl-will-preserve-png-colorspace) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.
@@ -283,7 +283,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/48178) | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
+| ```markdown None ``` | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.
