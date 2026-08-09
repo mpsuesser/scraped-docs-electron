@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/context-bridge
 title: "Context Bridge"
 description: ""
-access_date: 2026-08-09T12:16:04.900Z
-current_date: 2026-08-09T12:16:04.900Z
+access_date: 2026-08-09T16:15:10.633Z
+current_date: 2026-08-09T16:15:10.633Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/40330) | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
+| ```markdown None ``` | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
 
 > Create a safe, bi-directional, synchronous bridge across isolated contexts
 
