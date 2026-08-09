@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-08-09T00:28:45.879Z
-current_date: 2026-08-09T00:28:45.879Z
+access_date: 2026-08-09T08:20:39.023Z
+current_date: 2026-08-09T08:20:39.023Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.
@@ -109,7 +109,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/50826) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `options` ([EnableHeapProfilingOptions](structures/enable-heap-profiling-options.md)) (optional)
 
