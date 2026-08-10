@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/image-view
 title: "Image View"
 description: ""
-access_date: 2026-08-10T00:32:32.934Z
-current_date: 2026-08-10T00:32:32.934Z
+access_date: 2026-08-10T08:41:31.508Z
+current_date: 2026-08-10T08:41:31.508Z
 ---
 
 > A View that displays an image.
@@ -43,7 +43,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 > A View that displays an image.
 
@@ -63,7 +63,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 Creates an ImageView.
 
@@ -77,7 +77,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `image` NativeImage
 
