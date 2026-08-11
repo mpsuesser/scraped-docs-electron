@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-08-11T16:23:37.314Z
-current_date: 2026-08-11T16:23:37.314Z
+access_date: 2026-08-11T19:40:43.075Z
+current_date: 2026-08-11T19:40:43.075Z
 ---
 
 > Render and control web pages.
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v43.3.0/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v43.4.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')
@@ -1052,7 +1052,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Returns `boolean` - Whether the browser can go back to previous web page.
 
@@ -1064,7 +1064,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Returns `boolean` - Whether the browser can go forward to next web page.
 
@@ -1076,7 +1076,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `offset` Integer
 
@@ -1090,7 +1090,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Clears the navigation history.
 
@@ -1102,7 +1102,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Makes the browser go back a web page.
 
@@ -1114,7 +1114,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 Makes the browser go forward a web page.
 
@@ -1126,7 +1126,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `index` Integer
 
@@ -1140,7 +1140,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-clearhistory-cangoback-goback-cangoforward-goforward-gotoindex-cangotooffset-gotooffset-on-webcontents) |
 
 - `offset` Integer
 
@@ -1596,13 +1596,13 @@ win.webContents.print(options, (success, errorType) => {
 
 #### contents.printToPDF(options)
 
-- `options` Object
+- `options` [PrintToPDFOptions](structures/print-to-pdf-options.md)
 	- `landscape` boolean (optional) - Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.
 		- `displayHeaderFooter` boolean (optional) - Whether to display header and footer. Defaults to false.
 		- `printBackground` boolean (optional) - Whether to print background graphics. Defaults to false.
 		- `scale` number(optional) - Scale of the webpage rendering. Defaults to 1.
 		- `pageSize` string | Size (optional) - Specify page size of the generated PDF. Can be `A0`, `A1`, `A2`, `A3`, `A4`, `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing `height` and `width` in inches. Defaults to `Letter`.
-		- `margins` Object (optional)
+		- `margins` [PrintToPDFMargins](structures/print-to-pdf-margins.md) (optional)
 		- `top` number (optional) - Top margin in inches. Defaults to 1cm (~0.4 inches).
 				- `bottom` number (optional) - Bottom margin in inches. Defaults to 1cm (~0.4 inches).
 				- `left` number (optional) - Left margin in inches. Defaults to 1cm (~0.4 inches).
@@ -2034,7 +2034,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
+| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/38924) | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
 
 - `allowed` boolean
 
@@ -2133,7 +2133,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
+| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/38924) | [  `WebContents.backgroundThrottling` set to false affects all `WebContents` in the host `BrowserWindow`  ](../breaking-changes.md#behavior-changed-webcontentsbackgroundthrottling-set-to-false-affects-all-webcontents-in-the-host-browserwindow) |
 
 A `boolean` property that determines whether or not this WebContents will throttle animations and timers when the page becomes backgrounded. This also affects the Page Visibility API.
 

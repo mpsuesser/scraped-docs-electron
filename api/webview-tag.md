@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-11T19:40:43.075Z
+current_date: 2026-08-11T19:40:43.075Z
 ---
 
 ## Warning
@@ -525,13 +525,13 @@ Prints `webview` 's web page. Same as `webContents.print([options])`.
 
 ### <webview>.printToPDF(options)
 
-- `options` Object
+- `options` [PrintToPDFOptions](structures/print-to-pdf-options.md)
 	- `landscape` boolean (optional) - Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.
 		- `displayHeaderFooter` boolean (optional) - Whether to display header and footer. Defaults to false.
 		- `printBackground` boolean (optional) - Whether to print background graphics. Defaults to false.
 		- `scale` number(optional) - Scale of the webpage rendering. Defaults to 1.
 		- `pageSize` string | Size (optional) - Specify page size of the generated PDF. Can be `A0`, `A1`, `A2`, `A3`, `A4`, `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing `height` and `width` in inches. Defaults to `Letter`.
-		- `margins` Object (optional)
+		- `margins` [PrintToPDFMargins](structures/print-to-pdf-margins.md) (optional)
 		- `top` number (optional) - Top margin in inches. Defaults to 1cm (~0.4 inches).
 				- `bottom` number (optional) - Bottom margin in inches. Defaults to 1cm (~0.4 inches).
 				- `left` number (optional) - Left margin in inches. Defaults to 1cm (~0.4 inches).
