@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/browser-view
 title: "Browser View"
 description: ""
-access_date: 2026-08-11T00:28:15.330Z
-current_date: 2026-08-11T00:28:15.330Z
+access_date: 2026-08-11T08:38:20.837Z
+current_date: 2026-08-11T08:38:20.837Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 > **Note:**
 > 
@@ -24,7 +24,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 > Create and control views.
 
@@ -62,7 +62,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 - `options` Object (optional)
 	- `webPreferences` [WebPreferences](structures/web-preferences.md) (optional) - Settings of web page's features.
@@ -139,7 +139,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 A [`WebContents`](web-contents.md) object owned by this view.
 
@@ -153,8 +153,8 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [  Standardized auto-resizing behavior across all platforms  ](../breaking-changes.md#behavior-changed-browserviewsetautoresize-behavior-on-macos) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [  Standardized auto-resizing behavior across all platforms  ](../breaking-changes.md#behavior-changed-browserviewsetautoresize-behavior-on-macos) |
 
 - `options` Object
 	- `width` boolean (optional) - If `true`, the view's width will grow and shrink together with the window. `false` by default.
@@ -168,7 +168,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 - `bounds` [Rectangle](structures/rectangle.md)
 
@@ -180,7 +180,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 Returns [Rectangle](structures/rectangle.md)
 
@@ -192,7 +192,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-browserview) |
 
 - `color` string - Color in Hex, RGB, ARGB, HSL, HSLA or named CSS color format. The alpha channel is optional for the hex type.
 

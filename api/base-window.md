@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/base-window
 title: "Base Window"
 description: ""
-access_date: 2026-08-11T00:28:15.330Z
-current_date: 2026-08-11T00:28:15.330Z
+access_date: 2026-08-11T08:38:20.837Z
+current_date: 2026-08-11T08:38:20.837Z
 ---
 
 > Create and control windows.
@@ -1030,8 +1030,8 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=31.0.0 ``` ](https://github.com/electron/electron/pull/41391) | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/35658) | ```markdown API ADDED ``` |
+| ```markdown None ``` | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `flag` boolean
 
