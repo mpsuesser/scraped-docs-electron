@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/shared-texture-transfer
 title: "Shared Texture Transfer"
 description: ""
-access_date: 2026-08-11T19:40:43.075Z
-current_date: 2026-08-11T19:40:43.075Z
+access_date: 2026-08-12T00:36:57.486Z
+current_date: 2026-08-12T00:36:57.486Z
 ---
 
 - `transfer` string *Readonly* - The opaque transfer data of the shared texture. This can be transferred across Electron processes.
@@ -13,4 +13,4 @@ current_date: 2026-08-11T19:40:43.075Z
 - `visibleRect` [Rectangle](rectangle.md) *Readonly* - A subsection of \[0, 0, codedSize.width(), codedSize.height()\]. In common cases, it is the full section area.
 - `timestamp` number *Readonly* - A timestamp in microseconds that will be reflected to `VideoFrame`.
 
-Use `sharedTexture.subtle.finishTransferSharedTexture` to get [`SharedTextureImportedSubtle`](shared-texture-imported-subtle.md) back.
+Use `sharedTexture.subtle.finishTransferSharedTexture` to get [SharedTextureImportedSubtle](shared-texture-imported-subtle.md) back.
