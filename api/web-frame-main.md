@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame-main
 title: "Web Frame Main"
 description: ""
-access_date: 2026-08-14T00:38:10.464Z
-current_date: 2026-08-14T00:38:10.464Z
+access_date: 2026-08-14T12:21:30.411Z
+current_date: 2026-08-14T12:21:30.411Z
 ---
 
 > Control web pages and iframes.
@@ -178,7 +178,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^43.4.0 ``` ](https://github.com/electron/electron/pull/52439)[ ```markdown ^v42.9.0 ``` ](https://github.com/electron/electron/pull/52439) | ```markdown API ADDED ``` |
+| [ ```markdown ^43.4.0 ``` ](https://github.com/electron/electron/pull/52439)[ ```markdown ^42.9.0 ``` ](https://github.com/electron/electron/pull/52439) | ```markdown API ADDED ``` |
 
 - `options` [PrintToPDFOptions](structures/print-to-pdf-options.md)
 	- `landscape` boolean (optional) - Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.
