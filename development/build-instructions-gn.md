@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/build-instructions-gn
 title: "Build Instructions Gn"
 description: ""
-access_date: 2026-08-11T19:40:43.075Z
-current_date: 2026-08-11T19:40:43.075Z
+access_date: 2026-08-19T00:23:56.422Z
+current_date: 2026-08-19T00:23:56.422Z
 ---
 
 Follow the guidelines below for building **Electron itself**, for the purposes of creating custom Electron binaries. For bundling and distributing your app code with the prebuilt Electron binaries, see the [application distribution](../tutorial/application-distribution.md) guide.
@@ -41,7 +41,7 @@ Once installed, the `e` command should be globally available in your command lin
 e init --root=~/electron --bootstrap testing
 ```
 
-The `--bootstrap` flag also runs `e sync` (synchronizes source code branches from [`DEPS`](https://github.com/electron/electron/blob/v43.4.0/DEPS) using [`gclient`](https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/HEAD/README.gclient.md)) and `e build` (compiles the Electron binary into the `${root}/src/out` folder).
+The `--bootstrap` flag also runs `e sync` (synchronizes source code branches from [`DEPS`](https://github.com/electron/electron/blob/v43.4.1/DEPS) using [`gclient`](https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/HEAD/README.gclient.md)) and `e build` (compiles the Electron binary into the `${root}/src/out` folder).
 
 > **Info:**
 > 
@@ -54,7 +54,7 @@ Once the build is done compiling, you can test it by running `e start` (or by lo
 Some quick tips on building once your checkout is set up:
 
 - **Directory structure:** Within the project, Chromium code is synced to `${root}/src/` while Electron's code (i.e. code in [https://github.com/electron/electron](https://github.com/electron/electron)) lives in `${root}/src/electron/`. Note that both directories have their own git repositories.
-- **Updating your checkout:** Run git commands such as `git checkout <branch>` and `git pull` from `${root}/src/electron`. Whenever you update your commit `HEAD`, make sure to `e sync` before `e build` to sync dependencies such as Chromium and Node.js. This is especially relevant because the Chromium version in [`DEPS`](https://github.com/electron/electron/blob/v43.4.0/DEPS) changes frequently.
+- **Updating your checkout:** Run git commands such as `git checkout <branch>` and `git pull` from `${root}/src/electron`. Whenever you update your commit `HEAD`, make sure to `e sync` before `e build` to sync dependencies such as Chromium and Node.js. This is especially relevant because the Chromium version in [`DEPS`](https://github.com/electron/electron/blob/v43.4.1/DEPS) changes frequently.
 - **Rebuilding:** When making changes to code in `${root}/src/electron/` in a local branch, you only need to re-run `e build`.
 - **Adding patches:** When contributing changes in `${root}/src/` outside of `${root}/src/electron/`, you need to do so via Electron's [patch system](patches.md). The `e patches` command can export all relevant patches to `${root}/src/electron/patches/` once your code change is ready.
 
@@ -81,7 +81,7 @@ Some quick tips on building once your checkout is set up:
 > 
 > The following `gn` files contain the main rules for building Electron:
 > 
-> - [`BUILD.gn`](https://github.com/electron/electron/blob/v43.4.0/BUILD.gn) defines how Electron itself is built and includes the default configurations for linking with Chromium.
+> - [`BUILD.gn`](https://github.com/electron/electron/blob/v43.4.1/BUILD.gn) defines how Electron itself is built and includes the default configurations for linking with Chromium.
 > - [`build/args/{testing,release,all}.gn`](https://github.com/electron/electron/tree/main/build/args) contain the default build arguments for building Electron.
 > 
 > ### GN prerequisites

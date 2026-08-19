@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-08-11T19:40:43.075Z
-current_date: 2026-08-11T19:40:43.075Z
+access_date: 2026-08-19T00:23:56.422Z
+current_date: 2026-08-19T00:23:56.422Z
 ---
 
 ## Warning
@@ -180,6 +180,8 @@ A `boolean`. When this attribute is present the guest page will be allowed to op
 A `string` which is a comma separated list of strings which specifies the web preferences to be set on the webview. The full list of supported preference strings can be found in [BrowserWindow](browser-window.md#new-browserwindowoptions).
 
 The string follows the same format as the features string in `window.open`. A name by itself is given a `true` boolean value. A preference can be set to another value by including an `=`, followed by the value. Special values `yes` and `1` are interpreted as `true`, while `no` and `0` are interpreted as `false`.
+
+Security-critical preferences cannot be used to make the guest less secure than its embedder. When the embedder has any of `contextIsolation`, `javascript`, `nodeIntegration`, `nodeIntegrationInWorker`, `sandbox`, `nodeIntegrationInSubFrames` or `enableWebSQL` set to its more secure value, the guest inherits that value and the corresponding `webpreferences` entry is ignored.
 
 ### enableblinkfeatures
 
