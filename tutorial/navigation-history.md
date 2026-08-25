@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/navigation-history
 title: "Navigation History"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 ## Overview
@@ -163,7 +163,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   loadURL: (url) => ipcRenderer.invoke('nav:loadURL', url),
   getCurrentURL: () => ipcRenderer.invoke('nav:getCurrentURL'),
   getHistory: () => ipcRenderer.invoke('nav:getHistory'),
-  onNavigationUpdate: (callback) => ipcRenderer.on('nav:updated', callback)
+  onNavigationUpdate: (callback) => ipcRenderer.on('nav:updated', () => callback())
 })
 ```
 

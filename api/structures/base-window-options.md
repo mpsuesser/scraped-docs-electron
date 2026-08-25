@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/base-window-options
 title: "Base Window Options"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 - `width` Integer (optional) - Window's width in pixels. Default is `800`.
@@ -22,13 +22,15 @@ current_date: 2026-08-03T19:38:49.815Z
 - `maximizable` boolean (optional) *macOS* *Windows* - Whether window is maximizable. This is not implemented on Linux. Default is `true`.
 - `closable` boolean (optional) *macOS* *Windows* - Whether window is closable. This is not implemented on Linux. Default is `true`.
 - `focusable` boolean (optional) - Whether the window can be focused. Default is `true`. On Windows setting `focusable: false` also implies setting `skipTaskbar: true`. On Linux setting `focusable: false` makes the window stop interacting with wm, so the window will always stay on top in all workspaces.
-- `alwaysOnTop` boolean (optional) - Whether the window should always stay on top of other windows. Default is `false`.
+- `alwaysOnTop` boolean (optional) - Whether the window should always stay on top of other windows. Default is `false`. Not supported on Wayland (Linux).
 - `fullscreen` boolean (optional) - Whether the window should show in fullscreen. When explicitly set to `false` the fullscreen button will be hidden or disabled on macOS. Default is `false`.
 - `fullscreenable` boolean (optional) - Whether the window can be put into fullscreen mode. On macOS, also whether the maximize/zoom button should toggle full screen mode or maximize window. Default is `true`.
 - `simpleFullscreen` boolean (optional) *macOS* - Use pre-Lion fullscreen on macOS. Default is `false`.
 - `skipTaskbar` boolean (optional) *macOS* *Windows* - Whether to show the window in taskbar. Default is `false`.
 - `hiddenInMissionControl` boolean (optional) *macOS* - Whether window should be hidden when the user toggles into mission control.
 - `kiosk` boolean (optional) - Whether the window is in kiosk mode. Default is `false`.
+- `name` string (optional) - A unique identifier for the window, used internally by Electron to enable features such as state persistence. Each window must have a distinct name. It can only be reused after the corresponding window has been destroyed. An error is thrown if the name is already in use. This is not the visible title shown to users on the title bar.
+- `windowStatePersistence` ([WindowStatePersistence](window-state-persistence.md) | boolean) (optional) - Configures or enables the persistence of window state (position, size, maximized state, etc.) across application restarts. Has no effect if window `name` is not provided. Automatically disabled when there is no available display. *Experimental*
 - `title` string (optional) - Default window title. Default is `"Electron"`. If the HTML tag `<title>` is defined in the HTML file loaded by `loadURL()`, this property will be ignored.
 - `icon` ([NativeImage](../native-image.md) | string) (optional) - The window icon. On Windows it is recommended to use `ICO` icons to get best visual effects, you can also leave it undefined so the executable's icon will be used.
 - `show` boolean (optional) - Whether window should be shown when created. Default is `true`.
@@ -54,7 +56,7 @@ current_date: 2026-08-03T19:38:49.815Z
 		- `hidden` - Results in a hidden title bar and a full size content window. On macOS, the window still has the standard window controls (“traffic lights”) in the top left. On Windows and Linux, when combined with `titleBarOverlay: true` it will activate the Window Controls Overlay (see `titleBarOverlay` for more information), otherwise no window controls will be shown.
 		- `hiddenInset` *macOS* - Results in a hidden title bar with an alternative look where the traffic light buttons are slightly more inset from the window edge.
 		- `customButtonsOnHover` *macOS* - Results in a hidden title bar and a full size content window, the traffic light buttons will display when being hovered over in the top left of the window. **Note:** This option is currently experimental.
-- `titleBarOverlay` Object | Boolean (optional) - When using a frameless window in conjunction with `win.setWindowButtonVisibility(true)` on macOS or using a `titleBarStyle` so that the standard window controls ("traffic lights" on macOS) are visible, this property enables the Window Controls Overlay [JavaScript APIs](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#javascript-apis) and [CSS Environment Variables](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#css-environment-variables). Specifying `true` will result in an overlay with default system colors. Default is `false`.
+- `titleBarOverlay` Object | boolean (optional) - When using a frameless window in conjunction with `win.setWindowButtonVisibility(true)` on macOS or using a `titleBarStyle` so that the standard window controls ("traffic lights" on macOS) are visible, this property enables the Window Controls Overlay [JavaScript APIs](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#javascript-apis) and [CSS Environment Variables](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#css-environment-variables). Specifying `true` will result in an overlay with default system colors. Default is `false`.
 	- `color` String (optional) *Windows* *Linux* - The CSS color of the Window Controls Overlay when enabled. Default is the system color.
 		- `symbolColor` String (optional) *Windows* *Linux* - The CSS color of the symbols on the Window Controls Overlay when enabled. Default is the system color.
 		- `height` Integer (optional) - The height of the title bar and Window Controls Overlay in pixels. Default is system height.

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/menu-item
 title: "Menu Item"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 ## Class: MenuItem
@@ -50,6 +50,7 @@ Process: [Main](../glossary.md#main-process)
 		- `after` string\[\] (optional) - Inserts this item after the item with the specified id. If the referenced item doesn't exist the item will be inserted at the end of the menu.
 		- `beforeGroupContaining` string\[\] (optional) - Provides a means for a single context menu to declare the placement of their containing group before the containing group of the item with the specified id.
 		- `afterGroupContaining` string\[\] (optional) - Provides a means for a single context menu to declare the placement of their containing group after the containing group of the item with the specified id.
+		- `badge` [MenuItemBadge](structures/menu-item-badge.md) (optional) *macOS* - A badge shown alongside the label, either a system-styled count (`alerts`, `updates`, `new-items`) or a custom string. Only available on macOS 14 and up.
 
 > **Note:**
 > 
@@ -166,3 +167,11 @@ This property can be dynamically changed.
 #### menuItem.commandId
 
 A `number` indicating an item's sequential unique id.
+
+#### menuItem.menu
+
+#### menuItem.badge macOS
+
+A [MenuItemBadge](structures/menu-item-badge.md) (optional) indicating the badge for the menu item.
+
+This property can be dynamically changed; setting it to `undefined` removes the badge. Only available on macOS 14 and up.

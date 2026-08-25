@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/base-window
 title: "Base Window"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Create and control windows.
@@ -119,13 +119,15 @@ It creates a new `BaseWindow` with native properties as set by the `options`.
 		- `maximizable` boolean (optional) *macOS* *Windows* - Whether window is maximizable. This is not implemented on Linux. Default is `true`.
 		- `closable` boolean (optional) *macOS* *Windows* - Whether window is closable. This is not implemented on Linux. Default is `true`.
 		- `focusable` boolean (optional) - Whether the window can be focused. Default is `true`. On Windows setting `focusable: false` also implies setting `skipTaskbar: true`. On Linux setting `focusable: false` makes the window stop interacting with wm, so the window will always stay on top in all workspaces.
-		- `alwaysOnTop` boolean (optional) - Whether the window should always stay on top of other windows. Default is `false`.
+		- `alwaysOnTop` boolean (optional) - Whether the window should always stay on top of other windows. Default is `false`. Not supported on Wayland (Linux).
 		- `fullscreen` boolean (optional) - Whether the window should show in fullscreen. When explicitly set to `false` the fullscreen button will be hidden or disabled on macOS. Default is `false`.
 		- `fullscreenable` boolean (optional) - Whether the window can be put into fullscreen mode. On macOS, also whether the maximize/zoom button should toggle full screen mode or maximize window. Default is `true`.
 		- `simpleFullscreen` boolean (optional) *macOS* - Use pre-Lion fullscreen on macOS. Default is `false`.
 		- `skipTaskbar` boolean (optional) *macOS* *Windows* - Whether to show the window in taskbar. Default is `false`.
 		- `hiddenInMissionControl` boolean (optional) *macOS* - Whether window should be hidden when the user toggles into mission control.
 		- `kiosk` boolean (optional) - Whether the window is in kiosk mode. Default is `false`.
+		- `name` string (optional) - A unique identifier for the window, used internally by Electron to enable features such as state persistence. Each window must have a distinct name. It can only be reused after the corresponding window has been destroyed. An error is thrown if the name is already in use. This is not the visible title shown to users on the title bar.
+		- `windowStatePersistence` ([WindowStatePersistence](structures/window-state-persistence.md) | boolean) (optional) - Configures or enables the persistence of window state (position, size, maximized state, etc.) across application restarts. Has no effect if window `name` is not provided. Automatically disabled when there is no available display. *Experimental*
 		- `title` string (optional) - Default window title. Default is `"Electron"`. If the HTML tag `<title>` is defined in the HTML file loaded by `loadURL()`, this property will be ignored.
 		- `icon` ([NativeImage](native-image.md) | string) (optional) - The window icon. On Windows it is recommended to use `ICO` icons to get best visual effects, you can also leave it undefined so the executable's icon will be used.
 		- `show` boolean (optional) - Whether window should be shown when created. Default is `true`.
@@ -151,7 +153,7 @@ It creates a new `BaseWindow` with native properties as set by the `options`.
 				- `hidden` - Results in a hidden title bar and a full size content window. On macOS, the window still has the standard window controls (“traffic lights”) in the top left. On Windows and Linux, when combined with `titleBarOverlay: true` it will activate the Window Controls Overlay (see `titleBarOverlay` for more information), otherwise no window controls will be shown.
 				- `hiddenInset` *macOS* - Results in a hidden title bar with an alternative look where the traffic light buttons are slightly more inset from the window edge.
 				- `customButtonsOnHover` *macOS* - Results in a hidden title bar and a full size content window, the traffic light buttons will display when being hovered over in the top left of the window. **Note:** This option is currently experimental.
-		- `titleBarOverlay` Object | Boolean (optional) - When using a frameless window in conjunction with `win.setWindowButtonVisibility(true)` on macOS or using a `titleBarStyle` so that the standard window controls ("traffic lights" on macOS) are visible, this property enables the Window Controls Overlay [JavaScript APIs](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#javascript-apis) and [CSS Environment Variables](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#css-environment-variables). Specifying `true` will result in an overlay with default system colors. Default is `false`.
+		- `titleBarOverlay` Object | boolean (optional) - When using a frameless window in conjunction with `win.setWindowButtonVisibility(true)` on macOS or using a `titleBarStyle` so that the standard window controls ("traffic lights" on macOS) are visible, this property enables the Window Controls Overlay [JavaScript APIs](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#javascript-apis) and [CSS Environment Variables](https://github.com/WICG/window-controls-overlay/blob/main/explainer.md#css-environment-variables). Specifying `true` will result in an overlay with default system colors. Default is `false`.
 		- `color` String (optional) *Windows* *Linux* - The CSS color of the Window Controls Overlay when enabled. Default is the system color.
 				- `symbolColor` String (optional) *Windows* *Linux* - The CSS color of the symbols on the Window Controls Overlay when enabled. Default is the system color.
 				- `height` Integer (optional) - The height of the title bar and Window Controls Overlay in pixels. Default is system height.
@@ -420,6 +422,16 @@ Calling `event.preventDefault()` will prevent the menu from being displayed.
 
 To convert `point` to DIP, use [`screen.screenToDipPoint(point)`](screen.md#screenscreentodippointpoint-windows-linux).
 
+#### Event: 'persisted-state-restored'
+
+Emitted after the persisted window state has been restored.
+
+Window state includes the window bounds (x, y, height, width) and display mode (maximized, fullscreen, kiosk).
+
+> **Note:**
+> 
+> This event is only emitted when [windowStatePersistence](structures/window-state-persistence.md) is enabled in [BaseWindowConstructorOptions](structures/base-window-options.md) or in [BrowserWindowConstructorOptions](structures/browser-window-options.md).
+
 ### Static Methods
 
 The `BaseWindow` class has the following static methods:
@@ -437,6 +449,14 @@ Returns `BaseWindow | null` - The window that is focused in this application, ot
 - `id` Integer
 
 Returns `BaseWindow | null` - The window with the given `id`.
+
+#### BaseWindow.clearPersistedState(name)
+
+- `name` string - The window `name` to clear state for (see [BaseWindowConstructorOptions](structures/base-window-options.md)).
+
+Clears the saved state for a window with the given name. This removes all persisted window bounds, display mode, and work area information that was previously saved when `windowStatePersistence` was enabled.
+
+If the window `name` is empty or the window state doesn't exist, the method will log a warning.
 
 ### Instance Properties
 
@@ -960,9 +980,13 @@ Returns `boolean` - Whether the window will be hidden when the user toggles into
 
 Sets whether the window should show always on top of other windows. After setting this, the window is still a normal window, not a toolbox window which can not be focused on.
 
+Not supported on Wayland (Linux).
+
 #### win.isAlwaysOnTop()
 
 Returns `boolean` - Whether the window is always on top of other windows.
+
+Not supported on Wayland (Linux).
 
 #### win.moveAbove(mediaSourceId)
 
@@ -1138,9 +1162,9 @@ Sets progress value in progress bar. Valid range is \[0, 1.0\].
 
 Remove progress bar when progress < 0; Change to indeterminate mode when progress > 1.
 
-On Linux platform, only supports Unity desktop environment, you need to specify the `*.desktop` file name to `desktopName` field in `package.json`. By default, it will assume `{app.name}.desktop`.
-
 On Windows, a mode can be passed. Accepted values are `none`, `normal`, `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a mode set (but with a value within the valid range), `normal` will be assumed.
+
+On Linux, the progress bar shows on docks and taskbars that support the LauncherEntry D-Bus API. It is associated with the app's `.desktop` file, so [`app.setDesktopName`](app.md#appsetdesktopnamename-linux) must match the name of the app's actual `.desktop` file. Indeterminate mode is not supported.
 
 #### win.setOverlayIcon(overlay, description) Windows
 

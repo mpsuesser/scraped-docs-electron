@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/code-signing
 title: "Code Signing"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 Code signing is a security technology to certify that an app was created by you. You should sign your application so it does not trigger any operating system security warnings.
@@ -54,6 +54,15 @@ packager({
 ### Signing Mac App Store applications
 
 See the [Mac App Store Guide](mac-app-store-submission-guide.md).
+
+## macOS APIs that require code signing
+
+A number of macOS APIs exposed by Electron rely on system frameworks (like Keychain Access and `Squirrel.Mac`) that only behave correctly once your app is code signed. When testing these APIs, keep in mind that an unsigned or ad-hoc signed app may behave inconsistently, and issues that look like Electron bugs are often resolved by properly signing (and notarizing) your app:
+
+- [`safeStorage`](../api/safe-storage.md) - Without a valid, consistent code signature, macOS may be unable to tell that two builds of your unsigned app are "the same app", which can cause the Keychain to prompt the user for permission again after every update.
+- [`app.setLoginItemSettings()`](../api/app.md#appsetloginitemsettingssettings-macos-windows) - Login items can behave incorrectly (e.g. silently failing to register) when the app is not packaged, code signed, and notarized.
+- [The `cookieEncryption` fuse](fuses.md#cookieencryption) - Cookie encryption uses the same OS-level access to the Keychain as `safeStorage`, so it has the same code signing requirement.
+- [`autoUpdater`](../api/auto-updater.md) - `Squirrel.Mac` requires the app to be signed for automatic updates to work at all.
 
 ## Signing Windows builds
 

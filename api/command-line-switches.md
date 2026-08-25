@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/command-line-switches
 title: "Command Line Switches"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Command line switches supported by Electron.
@@ -339,3 +339,4 @@ Finally, you'll need to ensure that the version of Chromium in Electron matches 
 ### Chromium features relevant to Electron apps
 
 - `AlwaysLogLOAFURL`: enables script attribution for [`long-animation-frame`](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing) `PerformanceObserver` events for non-http(s), non-data, non-blob URLs (such as `file:` or custom protocol URLs).
+- `SpareRendererForSitePerProcess`: keeps a spare renderer process running at all times so that a new window, or a navigation that needs a new process, does not wait for a process to launch. Electron starts one such process when the default session is created, for the first sandboxed window that uses it; enable this if the app opens windows regularly and the memory of an idle renderer is acceptable. Only windows whose `webPreferences` are sandboxed and set none of `additionalArguments`, `enableBlinkFeatures`, `disableBlinkFeatures`, `experimentalFeatures`, `offscreen` or (macOS) `scrollBounce` can use it.

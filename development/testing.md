@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/testing
 title: "Testing"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 We aim to keep the code coverage of Electron high. We ask that all pull request not only pass all existing tests, but ideally also add new tests to cover changed code and new scenarios. Ensuring that we capture as many code paths and use cases of Electron as possible ensures that we all ship apps with fewer bugs.
@@ -74,3 +74,11 @@ To configure display scaling:
 
 1. Push the Windows key and search for *Display settings*.
 2. Under *Scale and layout*, make sure that the device is set to 100%.
+
+## Multi-Monitor Tests
+
+Some Electron APIs require testing across multiple displays, such as screen detection, window positioning, and display-related events. For contributors working on these features, the `virtualDisplay` native addon enables you to create and position virtual displays programmatically, making it possible to test multi-monitor scenarios without any physical hardware.
+
+For detailed information on using virtual displays in your tests, see [Multi-Monitor Testing](multi-monitor-testing.md).
+
+**Platform support:** macOS only

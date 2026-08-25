@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/pull-requests
 title: "Pull Requests"
 description: ""
-access_date: 2026-08-19T00:23:56.422Z
-current_date: 2026-08-19T00:23:56.422Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 ## Setting up your local environment
@@ -146,7 +146,7 @@ git push fork my-branch
 
 ### Step 9: Opening the Pull Request
 
-From within GitHub, opening a new pull request will present you with a template that should be filled out. It can be found [here](https://github.com/electron/electron/blob/v43.4.1/.github/PULL_REQUEST_TEMPLATE.md).
+From within GitHub, opening a new pull request will present you with a template that should be filled out. It can be found [here](https://github.com/electron/electron/blob/v44.0.0/.github/PULL_REQUEST_TEMPLATE.md).
 
 If you do not adequately complete this template, your PR may be delayed in being merged as maintainers seek more information or clarify ambiguities.
 
@@ -168,7 +168,7 @@ Feel free to post a comment in the pull request to ping reviewers if you are awa
 
 #### Approval and Request Changes Workflow
 
-All pull requests require approval from a [Code Owner](https://github.com/electron/electron/blob/v43.4.1/.github/CODEOWNERS) of the area you modified in order to land. Whenever a maintainer reviews a pull request they may request changes. These may be small, such as fixing a typo, or may involve substantive changes. Such requests are intended to be helpful, but at times may come across as abrupt or unhelpful, especially if they do not include concrete suggestions on *how* to change them.
+All pull requests require approval from a [Code Owner](https://github.com/electron/electron/blob/v44.0.0/.github/CODEOWNERS) of the area you modified in order to land. Whenever a maintainer reviews a pull request they may request changes. These may be small, such as fixing a typo, or may involve substantive changes. Such requests are intended to be helpful, but at times may come across as abrupt or unhelpful, especially if they do not include concrete suggestions on *how* to change them.
 
 Try not to be discouraged. If you feel that a review is unfair, say so or seek the input of another project contributor. Often such comments are the result of a reviewer having taken insufficient time to review and are not ill-intended. Such difficulties can often be resolved with a bit of patience. That said, reviewers should be expected to provide helpful feedback.
 

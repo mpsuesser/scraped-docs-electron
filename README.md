@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/README
 title: "README"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 Please make sure that you use the documents that match your Electron version. The version number should be a part of the page URL. If it's not, you are probably using the documentation of a development branch which may contain API changes that are not compatible with your Electron version. To view older versions of the documentation, you can [browse by tag](https://github.com/electron/electron/tree/v1.4.0) on GitHub by opening the "Switch branches/tags" dropdown and selecting the tag that matches your version.
@@ -34,11 +34,12 @@ There are questions that are asked quite often. Check this out before creating a
 		- [Represented File for macOS BrowserWindows](tutorial/represented-file.md)
 		- [Native File Drag & Drop](tutorial/native-file-drag-drop.md)
 		- [Navigation History](tutorial/navigation-history.md)
+		- [Window State Persistence](tutorial/window-state-persistence.md)
 		- [Offscreen Rendering](tutorial/offscreen-rendering.md)
 		- [Dark Mode](tutorial/dark-mode.md)
 		- [Web embeds in Electron](tutorial/web-embeds.md)
-- [Boilerplates and CLIs](tutorial/boilerplates-and-clis.md)
-	- [Boilerplate vs CLI](tutorial/boilerplates-and-clis.md#boilerplate-vs-cli)
+		- [Boilerplates and CLIs](tutorial/boilerplates-and-clis.md)
+		- [Boilerplate vs CLI](tutorial/boilerplates-and-clis.md#boilerplate-vs-cli)
 		- [Electron Forge](tutorial/boilerplates-and-clis.md#electron-forge)
 		- [electron-builder](tutorial/boilerplates-and-clis.md#electron-builder)
 		- [electron-react-boilerplate](tutorial/boilerplates-and-clis.md#electron-react-boilerplate)

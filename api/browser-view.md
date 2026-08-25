@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-view
 title: "Browser View"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 History
@@ -75,6 +75,7 @@ History
 				- `session` [Session](session.md#class-session) (optional) - Sets the session used by the page. Instead of passing the Session object directly, you can also choose to use the `partition` option instead, which accepts a partition string. When both `session` and `partition` are provided, `session` will be preferred. Default is the default session.
 				- `partition` string (optional) - Sets the session used by the page according to the session's partition string. If `partition` starts with `persist:`, the page will use a persistent session available to all pages in the app with the same `partition`. If there is no `persist:` prefix, the page will use an in-memory session. By assigning the same `partition`, multiple pages can share the same session. Default is the default session.
 				- `zoomFactor` number (optional) - The default zoom factor of the page, `3.0` represents `300%`. Default is `1.0`.
+				- `zoomMode` string (optional) - The initial zoom mode for the page. See [`contents.setZoomMode`](web-contents.md#contentssetzoommodemode) for available modes. Default is `'default'`.
 				- `javascript` boolean (optional) - Enables JavaScript support. Default is `true`.
 				- `webSecurity` boolean (optional) - When `false`, it will disable the same-origin policy (usually using testing websites by people), and set `allowRunningInsecureContent` to `true` if this option has not been set by user. Default is `true`.
 				- `allowRunningInsecureContent` boolean (optional) - Allow an https page to run JavaScript, CSS or plugins from http URLs. Default is `false`.

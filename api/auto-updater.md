@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/auto-updater
 title: "Auto Updater"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Enable apps to automatically update themselves.
@@ -26,7 +26,7 @@ On macOS, the `autoUpdater` module is built upon [Squirrel.Mac](https://github.c
 
 > **Info:**
 > 
-> Your application must be signed for automatic updates on macOS. This is a requirement of `Squirrel.Mac`.
+> Your application must be [signed](../tutorial/code-signing.md#macos-apis-that-require-code-signing) for automatic updates on macOS. This is a requirement of `Squirrel.Mac`.
 
 ### Windows
 

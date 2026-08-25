@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Create and control browser windows.
@@ -151,6 +151,7 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
 				- `session` [Session](session.md#class-session) (optional) - Sets the session used by the page. Instead of passing the Session object directly, you can also choose to use the `partition` option instead, which accepts a partition string. When both `session` and `partition` are provided, `session` will be preferred. Default is the default session.
 				- `partition` string (optional) - Sets the session used by the page according to the session's partition string. If `partition` starts with `persist:`, the page will use a persistent session available to all pages in the app with the same `partition`. If there is no `persist:` prefix, the page will use an in-memory session. By assigning the same `partition`, multiple pages can share the same session. Default is the default session.
 				- `zoomFactor` number (optional) - The default zoom factor of the page, `3.0` represents `300%`. Default is `1.0`.
+				- `zoomMode` string (optional) - The initial zoom mode for the page. See [`contents.setZoomMode`](web-contents.md#contentssetzoommodemode) for available modes. Default is `'default'`.
 				- `javascript` boolean (optional) - Enables JavaScript support. Default is `true`.
 				- `webSecurity` boolean (optional) - When `false`, it will disable the same-origin policy (usually using testing websites by people), and set `allowRunningInsecureContent` to `true` if this option has not been set by user. Default is `true`.
 				- `allowRunningInsecureContent` boolean (optional) - Allow an https page to run JavaScript, CSS or plugins from http URLs. Default is `false`.
@@ -1038,9 +1039,13 @@ Returns `boolean` - Whether the window will be hidden when the user toggles into
 
 Sets whether the window should show always on top of other windows. After setting this, the window is still a normal window, not a toolbox window which can not be focused on.
 
+Not supported on Wayland (Linux).
+
 #### win.isAlwaysOnTop()
 
 Returns `boolean` - Whether the window is always on top of other windows.
+
+Not supported on Wayland (Linux).
 
 #### win.moveAbove(mediaSourceId)
 
@@ -1300,9 +1305,9 @@ Sets progress value in progress bar. Valid range is \[0, 1.0\].
 
 Remove progress bar when progress < 0; Change to indeterminate mode when progress > 1.
 
-On Linux platform, only supports Unity desktop environment, you need to specify the `*.desktop` file name to `desktopName` field in `package.json`. By default, it will assume `{app.name}.desktop`.
-
 On Windows, a mode can be passed. Accepted values are `none`, `normal`, `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a mode set (but with a value within the valid range), `normal` will be assumed.
+
+On Linux, the progress bar shows on docks and taskbars that support the LauncherEntry D-Bus API. It is associated with the app's `.desktop` file, so [`app.setDesktopName`](app.md#appsetdesktopnamename-linux) must match the name of the app's actual `.desktop` file. Indeterminate mode is not supported.
 
 #### win.setOverlayIcon(overlay, description) Windows
 
@@ -1327,15 +1332,15 @@ Sets whether the window should have a shadow.
 
 Returns `boolean` - Whether the window has a shadow.
 
-#### win.setOpacity(opacity) Windows macOS
+#### win.setOpacity(opacity)
 
 - `opacity` number - between 0.0 (fully transparent) and 1.0 (fully opaque)
 
-Sets the opacity of the window. On Linux, does nothing. Out of bound number values are clamped to the \[0, 1\] range.
+Sets the opacity of the window. Out of bound number values are clamped to the \[0, 1\] range.
 
 #### win.getOpacity()
 
-Returns `number` - between 0.0 (fully transparent) and 1.0 (fully opaque). On Linux, always returns 1.
+Returns `number` - between 0.0 (fully transparent) and 1.0 (fully opaque).
 
 #### win.setShape(rects) Windows Linux Experimental
 

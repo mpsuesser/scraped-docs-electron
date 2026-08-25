@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/progress-bar
 title: "Progress Bar"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 ## Overview
@@ -18,11 +18,7 @@ On macOS, the progress bar will be displayed as a part of the dock icon.
 
 ![macOS Progress Bar](https://www.electronjs.org/assets/images/macos-progress-bar-9dce59a0e807a3463779c06a9c4c2002.png)
 
-On Linux, the Unity graphical interface also has a similar feature that allows you to specify the progress bar in the launcher.
-
-![Linux Progress Bar](https://www.electronjs.org/assets/images/linux-progress-bar-bcc23bc8192ec1ba0cd6e78a8fbc4416.png)
-
-> NOTE: on Windows, each window can have its own progress bar, whereas on macOS and Linux (Unity) there can be only one progress bar for the application.
+> NOTE: on Windows, each window can have its own progress bar, whereas on macOS there can be only one progress bar for the application. On Linux, progress bars are not supported.
 
 ---
 
@@ -101,7 +97,7 @@ app.on('activate', () => {
 </head>
 <body>
     <h1>Hello World!</h1>
-    <p>Keep an eye on the dock (Mac) or taskbar (Windows, Unity) for this application!</p>
+    <p>Keep an eye on the dock (Mac) or taskbar (Windows) for this application!</p>
     <p>It should indicate a progress that advances from 0 to 100%.</p>
     <p>It should then show indeterminate (Windows) or pin at 100% (other operating systems)
       briefly and then loop.</p>
@@ -109,7 +105,7 @@ app.on('activate', () => {
 </html>
 ```
 
-After launching the Electron application, the dock (macOS) or taskbar (Windows, Unity) should show a progress bar that starts at zero and progresses through 100% to completion. It should then show indeterminate (Windows) or pin to 100% (other operating systems) briefly and then loop.
+After launching the Electron application, the dock (macOS) or taskbar (Windows) should show a progress bar that starts at zero and progresses through 100% to completion. It should then show indeterminate (Windows) or pin to 100% (other operating systems) briefly and then loop.
 
 ![macOS dock progress bar](https://www.electronjs.org/assets/images/dock-progress-bar-1beb706f09517d1dac6f58fa7c76c64a.png)
 

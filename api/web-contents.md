@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-08-19T00:23:56.422Z
-current_date: 2026-08-19T00:23:56.422Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Render and control web pages.
@@ -224,7 +224,7 @@ Returns:
 		- `isSameDocument` boolean - This event does not fire for same document navigations using window.history api and reference fragment navigations. This property is always set to `false` for this event.
 		- `isMainFrame` boolean - True if the navigation is taking place in a main frame.
 		- `frame` WebFrameMain | null - The frame to be navigated. May be `null` if accessed after the frame has either navigated or been destroyed.
-		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation, which can be a parent frame (e.g. via `window.open` with a frame's name), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
+		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation. This can be a parent frame (e.g. via `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe navigating its parent via `<a target="_top">`), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
 - `url` string *Deprecated*
 - `isInPlace` boolean *Deprecated*
 - `isMainFrame` boolean *Deprecated*
@@ -248,7 +248,7 @@ Returns:
 		- `isSameDocument` boolean - This event does not fire for same document navigations using window.history api and reference fragment navigations. This property is always set to `false` for this event.
 		- `isMainFrame` boolean - True if the navigation is taking place in a main frame.
 		- `frame` WebFrameMain | null - The frame to be navigated. May be `null` if accessed after the frame has either navigated or been destroyed.
-		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation, which can be a parent frame (e.g. via `window.open` with a frame's name), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
+		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation. This can be a parent frame (e.g. via `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe navigating its parent via `<a target="_top">`), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
 
 Emitted when a user or the page wants to start navigation in any frame. It can happen when the `window.location` object is changed or a user clicks a link in the page.
 
@@ -269,7 +269,7 @@ Returns:
 		- `isSameDocument` boolean - Whether the navigation happened without changing document. Examples of same document navigations are reference fragment navigations, pushState/replaceState, and same page history navigation.
 		- `isMainFrame` boolean - True if the navigation is taking place in a main frame.
 		- `frame` WebFrameMain | null - The frame to be navigated. May be `null` if accessed after the frame has either navigated or been destroyed.
-		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation, which can be a parent frame (e.g. via `window.open` with a frame's name), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
+		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation. This can be a parent frame (e.g. via `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe navigating its parent via `<a target="_top">`), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
 - `url` string *Deprecated*
 - `isInPlace` boolean *Deprecated*
 - `isMainFrame` boolean *Deprecated*
@@ -287,7 +287,7 @@ Returns:
 		- `isSameDocument` boolean - Whether the navigation happened without changing document. Examples of same document navigations are reference fragment navigations, pushState/replaceState, and same page history navigation.
 		- `isMainFrame` boolean - True if the navigation is taking place in a main frame.
 		- `frame` WebFrameMain | null - The frame to be navigated. May be `null` if accessed after the frame has either navigated or been destroyed.
-		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation, which can be a parent frame (e.g. via `window.open` with a frame's name), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
+		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation. This can be a parent frame (e.g. via `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe navigating its parent via `<a target="_top">`), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
 - `url` string *Deprecated*
 - `isInPlace` boolean *Deprecated*
 - `isMainFrame` boolean *Deprecated*
@@ -309,7 +309,7 @@ Returns:
 		- `isSameDocument` boolean - Whether the navigation happened without changing document. Examples of same document navigations are reference fragment navigations, pushState/replaceState, and same page history navigation.
 		- `isMainFrame` boolean - True if the navigation is taking place in a main frame.
 		- `frame` WebFrameMain | null - The frame to be navigated. May be `null` if accessed after the frame has either navigated or been destroyed.
-		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation, which can be a parent frame (e.g. via `window.open` with a frame's name), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
+		- `initiator` WebFrameMain | null (optional) - The frame which initiated the navigation. This can be a parent frame (e.g. via `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe navigating its parent via `<a target="_top">`), or null if the navigation was not initiated by a frame. This can also be null if the initiating frame was deleted before the event was emitted.
 - `url` string *Deprecated*
 - `isInPlace` boolean *Deprecated*
 - `isMainFrame` boolean *Deprecated*
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v43.4.1/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.0.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')
@@ -1315,6 +1315,28 @@ Returns `boolean` - Whether this page has been muted.
 
 Returns `boolean` - Whether audio is currently playing.
 
+#### contents.setCaretBrowsingEnabled(enabled)
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | ```markdown API ADDED ``` |
+
+- `enabled` boolean
+
+Sets whether [caret browsing](#contentscaretbrowsingenabled) is enabled on the current web page.
+
+#### contents.isCaretBrowsingEnabled()
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | ```markdown API ADDED ``` |
+
+Returns `boolean` - Whether [caret browsing](#contentscaretbrowsingenabled) is enabled for this page.
+
 #### contents.setZoomFactor(factor)
 
 - `factor` Double - Zoom factor; default is 1.0.
@@ -1335,11 +1357,40 @@ Changes the zoom level to the specified level. The original size is 0 and each i
 
 > **Note:**
 > 
-> The zoom policy at the Chromium level is same-origin, meaning that the zoom level for a specific domain propagates across all instances of windows with the same domain. Differentiating the window URLs will make zoom work per-window.
+> The zoom policy at the Chromium level is same-origin by default, meaning that the zoom level for a specific domain propagates across all instances of windows with the same domain. To use per-webContents zoom instead, set the zoom mode to `'isolated'` via [`contents.setZoomMode('isolated')`](#contentssetzoommodemode).
 
 #### contents.getZoomLevel()
 
 Returns `number` - the current zoom level.
+
+#### contents.setZoomMode(mode)
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/49962) | ```markdown API ADDED ``` |
+
+- `mode` string - Can be `default`, `isolated`, `manual`, or `disabled`.
+
+Sets the zoom mode for this web contents.
+
+- `default` - Zoom changes are handled automatically on a per-origin basis. Other webContents navigated to the same origin will share the same zoom level.
+- `isolated` - Zoom changes are handled automatically but on a per-webContents basis. This webContents will not be affected by zoom changes in other webContents, and vice versa.
+- `manual` - Automatic zoom handling is disabled. The `zoom-changed` event will still be dispatched, but the page will not actually be zoomed. The zoom level can be managed manually by the application.
+- `disabled` - All zooming in this webContents is disabled. The webContents will revert to the default zoom level and all zoom changes will be ignored.
+
+The `isolated` and `manual` zoom modes persist across navigations.
+
+#### contents.getZoomMode()
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/49962) | ```markdown API ADDED ``` |
+
+Returns `string` - The current zoom mode. Can be `default`, `isolated`, `manual`, or `disabled`.
 
 #### contents.setVisualZoomLevelLimits(minimumLevel, maximumLevel)
 
@@ -2077,6 +2128,22 @@ A handler or event listener registered on the WebContents will receive IPC messa
 
 A `boolean` property that determines whether this page is muted.
 
+#### contents.caretBrowsingEnabled
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | ```markdown API ADDED ``` |
+
+A `boolean` property that determines whether caret browsing is enabled for this page.
+
+When enabled, a movable cursor is placed in the page's text, allowing the user to navigate and select content with the keyboard. Changes apply to the live page without reloading it.
+
+A `<webview>` guest inherits this value from its embedder when it is created and then tracks it independently, so disabling caret browsing on the embedder leaves an existing guest enabled.
+
+While any `WebContents` in the process has caret browsing enabled, assistive technology is notified process-wide that caret browsing is active, so that screen readers report the caret's position as it moves. That notification is only withdrawn once every `WebContents` that enabled caret browsing has either disabled it or been destroyed.
+
 #### contents.userAgent
 
 A `string` property that determines the user agent for this web page.
@@ -2092,6 +2159,18 @@ The original size is 0 and each increment above or below represents zooming 20% 
 A `number` property that determines the zoom factor for this web contents.
 
 The zoom factor is the zoom percent divided by 100, so 300% = 3.0.
+
+#### contents.zoomMode
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/49962) | ```markdown API ADDED ``` |
+
+A `string` property that determines the zoom mode for this web contents.
+
+See [`contents.setZoomMode`](#contentssetzoommodemode) for a description of the available modes.
 
 #### contents.frameRate
 

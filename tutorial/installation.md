@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/installation
 title: "Installation"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 To install prebuilt Electron binaries, use [`npm`](https://docs.npmjs.com/). The preferred method is to install Electron as a development dependency in your app:
@@ -67,9 +67,7 @@ ELECTRON_INSTALL_ARCH=x64 electron .
 Supported architectures are a subset of Node.js [`process.arch`](https://nodejs.org/api/process.html#processarch) values, and include:
 
 - `x64` (Intel Mac and 64-bit Windows)
-- `ia32` (32-bit Windows)
 - `arm64` (Apple silicon, Windows on ARM, ARM64 Linux)
-- `arm` (32-bit ARM)
 
 In addition to changing the architecture, you can also specify the platform (e.g., `win32`, `linux`, etc.) using the `--platform` flag:
 

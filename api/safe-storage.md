@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/safe-storage
 title: "Safe Storage"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Allows access to simple encryption and decryption of strings for storage on the local machine.
@@ -26,6 +26,10 @@ This module adds extra protection to data being stored on disk by using OS-provi
 	- Note that not all Linux setups have an available secret store. If no secret store is available, items stored in using the `safeStorage` API will be unprotected as they are encrypted via hardcoded plaintext password. You can detect when this happens when `safeStorage.getSelectedStorageBackend()` returns `basic_text`.
 
 Note that on macOS, access to the system Keychain is required and these calls can block the current thread to collect user input. The same is true for Linux, if a password management tool is available.
+
+> **Info:**
+> 
+> On macOS, your app should be [code signed](../tutorial/code-signing.md#macos-apis-that-require-code-signing) for `safeStorage` to behave consistently. Without a valid, consistent signature, macOS may not recognize different builds of your app as the same application, which can cause the Keychain to re-prompt the user for permission on every update.
 
 ### Asynchronous API
 

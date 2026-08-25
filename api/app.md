@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-08-19T00:23:56.422Z
-current_date: 2026-08-19T00:23:56.422Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 > Control your application's event lifecycle.
@@ -274,7 +274,7 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
 Returns:
 
 - `event` Event
-- `webContents` [WebContents](web-contents.md)
+- `webContents` [WebContents](web-contents.md) (optional)
 - `url` URL
 - `certificateList` [Certificate\[\]](structures/certificate.md)
 - `callback` Function
@@ -283,6 +283,8 @@ Returns:
 Emitted when a client certificate is requested.
 
 The `url` corresponds to the navigation entry requesting the client certificate and `callback` can be called with an entry filtered from the list. Using `event.preventDefault()` prevents the application from using the first certificate from the store.
+
+`webContents` is `null` when the request does not originate from a renderer process, for example when using [`net.request`](net.md#netrequestoptions) or [`net.fetch`](net.md#netfetchinput-init) in the main process, or from a [utility process](utility-process.md) created with `respondToAuthRequestsFromMainProcess: true`. For utility processes created without that flag, `net` requests proceed without a client certificate and this event is not emitted.
 
 ```js
 const { app } = require('electron')
@@ -902,6 +904,10 @@ I.e. This method returns `true` if your process is the primary instance of your 
 
 On macOS, the system enforces single instance automatically when users try to open a second instance of your app in Finder, and the `open-file` and `open-url` events will be emitted for that. However when users start your app in command line, the system's single instance mechanism will be bypassed, and you have to use this method to ensure single instance.
 
+> **Note:**
+> 
+> On macOS and Linux, the second instance's command line arguments and `additionalData` are sent to the primary instance in a single message that is limited to 32 MB. Larger messages are dropped: this method still returns `false`, but the primary instance does not emit `second-instance`.
+
 An example of activating the window of primary instance when a second instance starts:
 
 ```js
@@ -1161,29 +1167,31 @@ Returns `boolean` - Whether the call succeeded.
 
 Sets the counter badge for current app. Setting the count to `0` will hide the badge.
 
-On macOS, it shows on the dock icon. On Linux, it only works for Unity launcher.
+On macOS, it shows on the Dock icon. On Linux, it shows on docks and taskbars that support the LauncherEntry D-Bus API,
 
 > **Note:**
 > 
-> Unity launcher requires a `.desktop` file to work. For more information, please read the [Unity integration documentation](https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher).
+> On Linux, the badge is associated with the app's `.desktop` file, so [`app.setDesktopName`](#appsetdesktopnamename-linux) (or the `desktopName` field in `package.json`) must match the name of the app's actual `.desktop` file.
 
 > **Note:**
 > 
 > On macOS, you need to ensure that your application has the permission to display notifications for this method to work.
 
-### app.getBadgeCount() Linux macOS
+### app.getBadgeCount() macOS
 
 Returns `Integer` - The current value displayed in the counter badge.
 
-### app.isUnityRunning() Linux
-
-Returns `boolean` - Whether the current desktop environment is Unity launcher.
-
 ### app.getLoginItemSettings(\[options\]) macOS Windows
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
+
 - `options` Object (optional)
-	- `type` string (optional) *macOS* - Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`. Defaults to `mainAppService`. Only available on macOS 13 and up. See [app.setLoginItemSettings](app.md#appsetloginitemsettingssettings-macos-windows) for more information about each type.
-		- `serviceName` string (optional) *macOS* - The name of the service. Required if `type` is non-default. Only available on macOS 13 and up.
+	- `type` string (optional) *macOS* - Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`. Defaults to `mainAppService`. See [app.setLoginItemSettings](app.md#appsetloginitemsettingssettings-macos-windows) for more information about each type.
+		- `serviceName` string (optional) *macOS* - The name of the service. Required if `type` is non-default.
 		- `path` string (optional) *Windows* - The executable path to compare against. Defaults to `process.execPath`.
 		- `args` string\[\] (optional) *Windows* - The command-line arguments to compare against. Defaults to an empty array.
 
@@ -1192,10 +1200,7 @@ If you provided `path` and `args` options to `app.setLoginItemSettings`, then yo
 Returns `Object`:
 
 - `openAtLogin` boolean - `true` if the app is set to open at login.
-- `openAsHidden` boolean *macOS* *Deprecated* - `true` if the app is set to open as hidden at login. This does not work on macOS 13 and up.
 - `wasOpenedAtLogin` boolean *macOS* - `true` if the app was opened at login automatically.
-- `wasOpenedAsHidden` boolean *macOS* *Deprecated* - `true` if the app was opened as a hidden login item. This indicates that the app should not open any windows at startup. This setting is not available on [MAS builds](../tutorial/mac-app-store-submission-guide.md) or on macOS 13 and up.
-- `restoreState` boolean *macOS* *Deprecated* - `true` if the app was opened as a login item that should restore the state from the previous session. This indicates that the app should restore the windows that were open the last time the app was closed. This setting is not available on [MAS builds](../tutorial/mac-app-store-submission-guide.md) or on macOS 13 and up.
 - `status` string *macOS* - can be `not-registered`, `enabled`, `requires-approval`, or `not-found`.
 - `executableWillLaunchAtLogin` boolean *Windows* - `true` if app is set to open at login and its run key is not deactivated. This differs from `openAtLogin` as it ignores the `args` option, this property will be true if the given executable would be launched at login with **any** arguments.
 - `launchItems` Object\[\] *Windows*
@@ -1207,15 +1212,24 @@ Returns `Object`:
 
 ### app.setLoginItemSettings(settings) macOS Windows
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | Removed `openAsHidden` option. |
+
+> **Info:**
+> 
+> On macOS, your app should be [code signed and notarized](../tutorial/code-signing.md#macos-apis-that-require-code-signing) for login item settings to work reliably. When an app isn't packaged, code signed, and notarized, `openAtLogin` may silently fail to take effect.
+
 - `settings` Object
 	- `openAtLogin` boolean (optional) - `true` to open the app at login, `false` to remove the app as a login item. Defaults to `false`.
-		- `openAsHidden` boolean (optional) *macOS* *Deprecated* - `true` to open the app as hidden. Defaults to `false`. The user can edit this setting from the System Preferences so `app.getLoginItemSettings().wasOpenedAsHidden` should be checked when the app is opened to know the current value. This setting is not available on [MAS builds](../tutorial/mac-app-store-submission-guide.md) or on macOS 13 and up.
-		- `type` string (optional) *macOS* - The type of service to add as a login item. Defaults to `mainAppService`. Only available on macOS 13 and up.
+		- `type` string (optional) *macOS* - The type of service to add as a login item. Defaults to `mainAppService`.
 		- `mainAppService` - The primary application.
 				- `agentService` - The property list name for a launch agent. The property list name must correspond to a property list in the app’s `Contents/Library/LaunchAgents` directory.
 				- `daemonService` string (optional) *macOS* - The property list name for a launch agent. The property list name must correspond to a property list in the app’s `Contents/Library/LaunchDaemons` directory.
 				- `loginItemService` string (optional) *macOS* - The property list name for a login item service. The property list name must correspond to a property list in the app’s `Contents/Library/LoginItems` directory.
-		- `serviceName` string (optional) *macOS* - The name of the service. Required if `type` is non-default. Only available on macOS 13 and up.
+		- `serviceName` string (optional) *macOS* - The name of the service. Required if `type` is non-default.
 		- `path` string (optional) *Windows* - The executable to launch at login. Defaults to `process.execPath`.
 		- `args` string\[\] (optional) *Windows* - The command-line arguments to pass to the executable. Defaults to an empty array. Take care to wrap paths in quotes.
 		- `enabled` boolean (optional) *Windows* - `true` will change the startup approved registry key and `enable / disable` the App in Task Manager and Windows Settings. Defaults to `true`.
@@ -1244,7 +1258,7 @@ app.setLoginItemSettings({
 })
 ```
 
-For more information about setting different services as login items on macOS 13 and up, see [`SMAppService`](https://developer.apple.com/documentation/servicemanagement/smappservice?language=objc).
+For more information about setting different services as login items on macOS, see [`SMAppService`](https://developer.apple.com/documentation/servicemanagement/smappservice?language=objc).
 
 ### app.isAccessibilitySupportEnabled() macOS Windows
 
@@ -1517,13 +1531,7 @@ A `Menu | null` property that returns [`Menu`](menu.md) if one has been set and 
 
 ### app.badgeCount Linux macOS
 
-An `Integer` property that returns the badge count for current app. Setting the count to `0` will hide the badge.
-
-On macOS, setting this with any nonzero integer shows on the dock icon. On Linux, this property only works for Unity launcher.
-
-> **Note:**
-> 
-> Unity launcher requires a `.desktop` file to work. For more information, please read the [Unity integration documentation](https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher).
+An `Integer` property that returns the badge count for current app. Setting the count to `0` will hide the badge. Setting this with any nonzero integer shows the count on the Dock icon on macOS, or on the launcher on Linux.
 
 > **Note:**
 > 

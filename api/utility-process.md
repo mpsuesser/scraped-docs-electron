@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/utility-process
 title: "Utility Process"
 description: ""
-access_date: 2026-08-04T19:03:02.080Z
-current_date: 2026-08-04T19:03:02.080Z
+access_date: 2026-08-25T01:08:12.922Z
+current_date: 2026-08-25T01:08:12.922Z
 ---
 
 `utilityProcess` creates a child process with Node.js and Message ports enabled. It provides the equivalent of [`child_process.fork`](https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#child_processforkmodulepath-args-options) API from Node.js but instead uses [Services API](https://chromium.googlesource.com/chromium/src/+/main/docs/mojo_and_services.md) from Chromium to launch the child process.
@@ -29,7 +29,7 @@ Process: [Main](../glossary.md#main-process)
 		- `serviceName` string (optional) - Name of the process that will appear in `name` property of [ProcessMetric](structures/process-metric.md) returned by [`app.getAppMetrics`](app.md#appgetappmetrics) and [`child-process-gone` event of `app`](app.md#event-child-process-gone). Default is `Node Utility Process`.
 		- `allowLoadingUnsignedLibraries` boolean (optional) *macOS* - With this flag, the utility process will be launched via the `Electron Helper (Plugin).app` helper executable on macOS, which can be codesigned with `com.apple.security.cs.disable-library-validation` and `com.apple.security.cs.allow-unsigned-executable-memory` entitlements. This will allow the utility process to load unsigned libraries. Unless you specifically need this capability, it is best to leave this disabled. Default is `false`.
 		- `disclaim` boolean (optional) *macOS* - With this flag, the utility process will disclaim responsibility for the child process. This causes the operating system to consider the child process as a separate entity for purposes of security policies like Transparency, Consent, and Control (TCC). When responsibility is disclaimed, the parent process will not be attributed for any TCC requests initiated by the child process. This is useful when launching processes that run third-party or otherwise untrusted code. Default is `false`.
-		- `respondToAuthRequestsFromMainProcess` boolean (optional) - With this flag, all HTTP 401 and 407 network requests created via the [net module](net.md) will allow responding to them via the [`login`](#event-login) event on the `UtilityProcess` instance when a `session` is provided, or via the [`app#login`](app.md#event-login) event in the main process when using the default system network context. Without this flag, auth challenges are handled by the default [`login`](client-request.md#event-login) event on the [`ClientRequest`](client-request.md) object. Default is `false`.
+		- `respondToAuthRequestsFromMainProcess` boolean (optional) - With this flag, all HTTP 401 and 407 network requests created via the [net module](net.md) will allow responding to them via the [`login`](#event-login) event on the `UtilityProcess` instance when a `session` is provided, or via the [`app#login`](app.md#event-login) event in the main process when using the default system network context. This flag also routes client-certificate selection to the [`app#select-client-certificate`](app.md#event-select-client-certificate) event in the main process; without it, `net` requests from the utility process proceed without a client certificate. Without this flag, auth challenges are handled by the default [`login`](client-request.md#event-login) event on the [`ClientRequest`](client-request.md) object. Default is `false`.
 
 Returns [`UtilityProcess`](utility-process.md#class-utilityprocess)
 
