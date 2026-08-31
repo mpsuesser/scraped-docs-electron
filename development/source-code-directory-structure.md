@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/source-code-directory-structure
 title: "Source Code Directory Structure"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-08-31T03:27:19.645Z
+current_date: 2026-08-31T03:27:19.645Z
 ---
 
 The source code of Electron is separated into a few parts, mostly following Chromium on the separation conventions.
@@ -12,7 +12,7 @@ You may need to become familiar with [Chromium's multi-process architecture](htt
 
 ## Project structure
 
-Electron is a complex project containing multiple upstream dependencies, which are tracked in source control via the [`DEPS`](https://github.com/electron/electron/blob/v44.0.0/DEPS) file. When [initializing a local Electron checkout](build-instructions-gn.md), Electron's source code is just one of many nested folders within the project root.
+Electron is a complex project containing multiple upstream dependencies, which are tracked in source control via the [`DEPS`](https://github.com/electron/electron/blob/v44.1.0/DEPS) file. When [initializing a local Electron checkout](build-instructions-gn.md), Electron's source code is just one of many nested folders within the project root.
 
 The project contains a single `src` folder that corresponds to a specific git checkout of [Chromium's `src` folder](https://source.chromium.org/chromium/chromium/src). In addition, Electron's repository code is contained in `src/electron` (with its own nested git repository), and other Electron-specific third-party dependencies (e.g. [nan](https://github.com/nodejs/nan) or [node](https://github.com/nodejs/node)) are located in `src/third_party` (along with all other Chromium third-party dependencies, such as WebRTC or ANGLE).
 

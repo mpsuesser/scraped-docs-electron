@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-08-30T12:26:20.798Z
-current_date: 2026-08-30T12:26:20.798Z
+access_date: 2026-08-31T03:27:19.645Z
+current_date: 2026-08-31T03:27:19.645Z
 ---
 
 > Control your application's event lifecycle.
@@ -274,7 +274,7 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
 Returns:
 
 - `event` Event
-- `webContents` [WebContents](web-contents.md) (optional)
+- `webContents` [WebContents](web-contents.md) | null
 - `url` URL
 - `certificateList` [Certificate\[\]](structures/certificate.md)
 - `callback` Function
@@ -300,7 +300,7 @@ app.on('select-client-certificate', (event, webContents, url, list, callback) =>
 Returns:
 
 - `event` Event
-- `webContents` [WebContents](web-contents.md) (optional)
+- `webContents` [WebContents](web-contents.md) | null
 - `authenticationResponseDetails` Object
 	- `url` URL
 		- `pid` number

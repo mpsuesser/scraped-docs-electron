@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/launch-app-from-url-in-another-app
 title: "Launch App From Url In Another App"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-08-31T03:27:19.645Z
+current_date: 2026-08-31T03:27:19.645Z
 ---
 
 ## Overview
@@ -35,6 +35,8 @@ if (process.defaultApp) {
   app.setAsDefaultProtocolClient('electron-fiddle')
 }
 ```
+
+On Windows, when running through the default Electron executable (for example, `electron .`), registration must include the app entry path so protocol launches load the correct application. Packaged apps launch their own executable and do not need these additional arguments.
 
 We will now define the function in charge of creating our browser window and load our application's `index.html` file.
 
@@ -92,6 +94,10 @@ if (!gotTheLock) {
 ```
 
 #### macOS code:
+
+> **Info:**
+> 
+> Register an `open-url` listener during initial startup, before waiting for `ready` or other asynchronous initialization. Listeners registered later may miss a launch URL delivered by macOS.
 
 ```js
 // This method will be called when Electron has finished

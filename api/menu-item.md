@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/menu-item
 title: "Menu Item"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-08-31T03:27:19.645Z
+current_date: 2026-08-31T03:27:19.645Z
 ---
 
 ## Class: MenuItem
@@ -152,7 +152,7 @@ A `radio` menu item will turn on its `checked` property when clicked, and will t
 
 You can add a `click` function for additional behavior.
 
-#### menuItem.registerAccelerator
+#### menuItem.registerAccelerator Linux Windows
 
 A `boolean` indicating if the accelerator should be registered with the system or just displayed.
 

@@ -2,11 +2,13 @@
 url: https://www.electronjs.org/docs/latest/breaking-changes
 title: "Breaking Changes"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-08-31T03:27:19.645Z
+current_date: 2026-08-31T03:27:19.645Z
 ---
 
 Breaking changes will be documented here, and deprecation warnings added to JS code where possible, at least [one major version](tutorial/electron-versioning.md#semver) before the change is made.
+
+Note that breaking changes listed for future releases are always subject to change.
 
 ### Types of Breaking Changes
 
@@ -18,7 +20,7 @@ This document uses the following convention to categorize breaking changes:
 - **Deprecated:** An API was marked as deprecated. The API will continue to function, but will emit a deprecation warning, and will be removed in a future release.
 - **Removed:** An API or feature was removed, and is no longer supported by Electron.
 
-## Planned Breaking API Changes (44.0)
+## Breaking API Changes (44.0)
 
 ### Behavior Changed: webContents may be null in select-client-certificate
 
@@ -294,7 +296,7 @@ Electron 44 removes the option `openAsHidden` from [`app.setLoginItemSettings()`
 
 These only worked on macOS 12 and below. Support for macOS 12 has been dropped.
 
-## Planned Breaking API Changes (43.0)
+## Breaking API Changes (43.0)
 
 ### Behavior Changed: Rounded corners on Linux
 
@@ -361,7 +363,7 @@ if (!result.canceled && result.filePaths.length > 0) {
 
 The `showHiddenFiles` property is no longer supported on Linux. It continues to work on macOS and Windows. GTK intends for this feature to be a user choice rather than an app choice, and has removed the API to do this programmatically.
 
-## Planned Breaking API Changes (42.0)
+## Breaking API Changes (42.0)
 
 ### Behavior Changed: macOS notifications now use UNNotification API
 
@@ -424,7 +426,7 @@ nativeImage.createFromNamedImage(imageName, {
 })
 ```
 
-## Planned Breaking API Changes (41.0)
+## Breaking API Changes (41.0)
 
 ### Behavior Changed: PDFs no longer create a separate WebContents
 
@@ -440,7 +442,7 @@ We have updated the [cookie](api/cookies.md#event-changed) change cause in the c
 
 This property will still be honored on macOS and Windows, but support on Linux will be removed in a future version of Electron. GTK intends for this to be a user choice rather than an app choice and has removed the API to do this programmatically.
 
-## Planned Breaking API Changes (40.0)
+## Breaking API Changes (40.0)
 
 ### Deprecated: clipboard API access from renderer processes
 
@@ -450,7 +452,7 @@ Using the `clipboard` API directly in the renderer process is deprecated. If you
 
 Debug symbols for MacOS (dSYM) now use xz compression in order to handle larger file sizes. `dsym.zip` files are now `dsym.tar.xz` files. End users using debug symbols may need to update their zip utilities.
 
-## Planned Breaking API Changes (39.0)
+## Breaking API Changes (39.0)
 
 ### Deprecated: --host-rules command line switch
 
@@ -495,7 +497,7 @@ app.commandLine.appendSwitch(
 
 When using shared texture offscreen rendering feature, the `paint` event now emits a more structured object. It moves the `sharedTextureHandle`, `planes`, `modifier` into a unified `handle` property. See the [OffscreenSharedTexture](api/structures/offscreen-shared-texture.md) API structure for more details.
 
-## Planned Breaking API Changes (38.0)
+## Breaking API Changes (38.0)
 
 ### Removed: ELECTRON\_OZONE\_PLATFORM\_HINT environment variable
 
@@ -529,7 +531,7 @@ The `webFrame.findFrameByRoutingId(routingId)` function will be removed.
 
 You should use `webFrame.findFrameByToken(frameToken)` instead.
 
-## Planned Breaking API Changes (37.0)
+## Breaking API Changes (37.0)
 
 ### Utility Process unhandled rejection behavior change
 
@@ -567,7 +569,7 @@ Using single-purpose sessions here is discouraged due to overhead costs; however
 
 `BrowserWindow.IsVisibleOnAllWorkspaces()` will now return false on Linux if the window is not currently visible.
 
-## Planned Breaking API Changes (36.0)
+## Breaking API Changes (36.0)
 
 ### Behavior Changes: app.commandLine
 
@@ -636,7 +638,7 @@ $ electron --gtk-version=3   # or --gtk-version=2
 
 The same can be done with the [`app.commandLine.appendSwitch`](api/command-line.md#commandlineappendswitchswitch-value) function.
 
-## Planned Breaking API Changes (35.0)
+## Breaking API Changes (35.0)
 
 ### Behavior Changed: Dialog API's defaultPath option on Linux
 
@@ -706,7 +708,7 @@ The `systemPreferences.isAeroGlassEnabled()` function has been deprecated withou
 
 [https://learn.microsoft.com/en-us/windows/win32/dwm/composition-ovw#disabling-dwm-composition-windows7-and-earlier](https://learn.microsoft.com/en-us/windows/win32/dwm/composition-ovw#disabling-dwm-composition-windows7-and-earlier)
 
-## Planned Breaking API Changes (34.0)
+## Breaking API Changes (34.0)
 
 ### Behavior Changed: menu bar will be hidden during fullscreen on Windows
 
@@ -714,7 +716,7 @@ This brings the behavior to parity with Linux. Prior behavior: Menu bar is still
 
 **Correction**: This was previously listed as a breaking change in Electron 33, but was first released in Electron 34.
 
-## Planned Breaking API Changes (33.0)
+## Breaking API Changes (33.0)
 
 ### Deprecated: document.execCommand("paste")
 
@@ -798,7 +800,7 @@ const shouldReduceTransparency = systemPreferences.accessibilityDisplayShouldRed
 const prefersReducedTransparency = nativeTheme.prefersReducedTransparency
 ```
 
-## Planned Breaking API Changes (32.0)
+## Breaking API Changes (32.0)
 
 ### Removed: File.path
 
@@ -860,7 +862,7 @@ win.webContents.navigationHistory.goToOffset(index)
 
 If you have a directory called `databases` in the directory returned by `app.getPath('userData')`, it will be deleted when Electron 32 is first run. The `databases` directory was used by WebSQL, which was removed in Electron 31. Chromium now performs a cleanup that deletes this directory. See [issue #45396](https://github.com/electron/electron/issues/45396).
 
-## Planned Breaking API Changes (31.0)
+## Breaking API Changes (31.0)
 
 ### Removed: WebSQL support
 
@@ -876,7 +878,7 @@ See [crbug.com/332584706](https://issues.chromium.org/issues/332584706) for more
 
 This brings the behavior to parity with Windows and Linux. Prior behavior: The first `flashFrame(true)` bounces the dock icon only once (using the [NSInformationalRequest](https://developer.apple.com/documentation/appkit/nsrequestuserattentiontype/nsinformationalrequest) level) and `flashFrame(false)` does nothing. New behavior: Flash continuously until `flashFrame(false)` is called. This uses the [NSCriticalRequest](https://developer.apple.com/documentation/appkit/nsrequestuserattentiontype/nscriticalrequest) level instead. To explicitly use `NSInformationalRequest` to cause a single dock icon bounce, it is still possible to use [`dock.bounce('informational')`](api/dock.md#dockbouncetype-macos).
 
-## Planned Breaking API Changes (30.0)
+## Breaking API Changes (30.0)
 
 ### Behavior Changed: cross-origin iframes now use Permission Policy to access features
 
@@ -920,7 +922,7 @@ The `inputFormType` property of the params object in the `context-menu` event fr
 
 Chromium has removed access to this information.
 
-## Planned Breaking API Changes (29.0)
+## Breaking API Changes (29.0)
 
 ### Behavior Changed: ipcRenderer can no longer be sent over the contextBridge
 
@@ -970,7 +972,7 @@ app.on('gpu-process-crashed', (event, killed) => { /* ... */ })
 app.on('child-process-gone', (event, details) => { /* ... */ })
 ```
 
-## Planned Breaking API Changes (28.0)
+## Breaking API Changes (28.0)
 
 ### Behavior Changed: WebContents.backgroundThrottling set to false affects all WebContents in the host BrowserWindow
 
@@ -1067,7 +1069,7 @@ app.on('gpu-process-crashed', (event, killed) => { /* ... */ })
 app.on('child-process-gone', (event, details) => { /* ... */ })
 ```
 
-## Planned Breaking API Changes (27.0)
+## Breaking API Changes (27.0)
 
 ### Removed: macOS 10.13 / 10.14 support
 
@@ -1158,7 +1160,7 @@ systemPreferences.getColor('alternate-selected-control-text')
 systemPreferences.getColor('selected-content-background')
 ```
 
-## Planned Breaking API Changes (26.0)
+## Breaking API Changes (26.0)
 
 ### Deprecated: webContents.getPrinters
 
@@ -1207,7 +1209,7 @@ systemPreferences.getColor('alternate-selected-control-text')
 systemPreferences.getColor('selected-content-background')
 ```
 
-## Planned Breaking API Changes (25.0)
+## Breaking API Changes (25.0)
 
 ### Deprecated: protocol.{un,}{register,intercept}{Buffer,String,Stream,File,Http}Protocol and protocol.isProtocol{Registered,Intercepted}
 
@@ -1284,7 +1286,7 @@ if (ret === null) {
 }
 ```
 
-## Planned Breaking API Changes (24.0)
+## Breaking API Changes (24.0)
 
 ### API Changed: nativeImage.createThumbnailFromPath(path, size)
 
@@ -1320,7 +1322,7 @@ nativeImage.createThumbnailFromPath(imagePath, size).then(result => {
 })
 ```
 
-## Planned Breaking API Changes (23.0)
+## Breaking API Changes (23.0)
 
 ### Behavior Changed: Draggable Regions on macOS
 
@@ -1398,7 +1400,7 @@ w.capturePage().then(image => {
 })
 ```
 
-## Planned Breaking API Changes (22.0)
+## Breaking API Changes (22.0)
 
 ### Deprecated: webContents.incrementCapturerCount(stayHidden, stayAwake)
 
@@ -1510,7 +1512,7 @@ win.webContents.on('input-event', (_, event) => {
 })
 ```
 
-## Planned Breaking API Changes (21.0)
+## Breaking API Changes (21.0)
 
 ### Behavior Changed: V8 Memory Cage enabled
 
@@ -1569,7 +1571,7 @@ webContents.printToPDF({
 })
 ```
 
-## Planned Breaking API Changes (20.0)
+## Breaking API Changes (20.0)
 
 ### Removed: macOS 10.11 / 10.12 support
 
@@ -1591,13 +1593,13 @@ On X11, `skipTaskbar` sends a `_NET_WM_STATE_SKIP_TASKBAR` message to the X11 wi
 
 The handler invoked when `session.setDevicePermissionHandler(handler)` is used has a change to its arguments. This handler no longer is passed a frame [`WebFrameMain`](api/web-frame-main.md), but instead is passed the `origin`, which is the origin that is checking for device permission.
 
-## Planned Breaking API Changes (19.0)
+## Breaking API Changes (19.0)
 
 ### Removed: IA32 Linux binaries
 
 This is a result of Chromium 102.0.4999.0 dropping support for IA32 Linux. This concludes the [removal of support for IA32 Linux](#removed-ia32-linux-support).
 
-## Planned Breaking API Changes (18.0)
+## Breaking API Changes (18.0)
 
 ### Removed: nativeWindowOpen
 
@@ -1605,7 +1607,7 @@ Prior to Electron 15, `window.open` was by default shimmed to use `BrowserWindow
 
 See the documentation for [window.open in Electron](api/window-open.md) for more details.
 
-## Planned Breaking API Changes (17.0)
+## Breaking API Changes (17.0)
 
 ### Removed: desktopCapturer.getSources in the renderer
 
@@ -1639,7 +1641,7 @@ Prior to Electron 15, `window.open` was by default shimmed to use `BrowserWindow
 
 See the documentation for [window.open in Electron](api/window-open.md) for more details.
 
-## Planned Breaking API Changes (16.0)
+## Breaking API Changes (16.0)
 
 ### Behavior Changed: crashReporter implementation switched to Crashpad on Linux
 
@@ -1653,7 +1655,7 @@ Usage of the `desktopCapturer.getSources` API in the renderer has been deprecate
 
 See [here](#removed-desktopcapturergetsources-in-the-renderer) for details on how to replace this API in your app.
 
-## Planned Breaking API Changes (15.0)
+## Breaking API Changes (15.0)
 
 ### Default Changed: nativeWindowOpen defaults to true
 
@@ -1672,7 +1674,7 @@ console.log(app.runningUnderRosettaTranslation)
 console.log(app.runningUnderARM64Translation)
 ```
 
-## Planned Breaking API Changes (14.0)
+## Breaking API Changes (14.0)
 
 ### Removed: remote module
 
@@ -1752,7 +1754,7 @@ webContents.on('did-create-window', (window, details) => {
 })
 ```
 
-## Planned Breaking API Changes (13.0)
+## Breaking API Changes (13.0)
 
 ### API Changed: session.setPermissionCheckHandler(handler)
 
@@ -1871,7 +1873,7 @@ webContents.setWindowOpenHandler((details) => {
 })
 ```
 
-## Planned Breaking API Changes (12.0)
+## Breaking API Changes (12.0)
 
 ### Removed: Pepper Flash support
 
@@ -1952,7 +1954,7 @@ shell.moveItemToTrash(path)
 shell.trashItem(path).then(/* ... */)
 ```
 
-## Planned Breaking API Changes (11.0)
+## Breaking API Changes (11.0)
 
 ### Removed: BrowserView.{destroy, fromId, fromWebContents, getAllViews} and id property of BrowserView
 
@@ -1960,7 +1962,7 @@ The experimental APIs `BrowserView.{destroy, fromId, fromWebContents, getAllView
 
 For more detailed information, see [#23578](https://github.com/electron/electron/pull/23578).
 
-## Planned Breaking API Changes (10.0)
+## Breaking API Changes (10.0)
 
 ### Deprecated: companyName argument to crashReporter.start()
 
@@ -2075,7 +2077,7 @@ const isRegistered = protocol.isProtocolRegistered(scheme)
 const isIntercepted = protocol.isProtocolIntercepted(scheme)
 ```
 
-## Planned Breaking API Changes (9.0)
+## Breaking API Changes (9.0)
 
 ### Default Changed: Loading non-context-aware native modules in the renderer process is disabled by default
 
@@ -2149,7 +2151,7 @@ In Electron 9.0, the old serialization algorithm has been removed, and sending s
 
 The `shell.openItem` API has been replaced with an asynchronous `shell.openPath` API. You can see the original API proposal and reasoning [here](https://github.com/electron/governance/blob/main/wg-api/spec-documents/shell-openitem.md).
 
-## Planned Breaking API Changes (8.0)
+## Breaking API Changes (8.0)
 
 ### Behavior Changed: Values sent over IPC are now serialized with Structured Clone Algorithm
 
@@ -2271,7 +2273,7 @@ systemPreferences.isHighContrastColorScheme()
 nativeTheme.shouldUseHighContrastColors
 ```
 
-## Planned Breaking API Changes (7.0)
+## Breaking API Changes (7.0)
 
 ### Deprecated: Atom.io Node Headers URL
 
@@ -2409,7 +2411,7 @@ These functions now have two forms, synchronous and Promise-based asynchronous:
 - `dialog.showOpenDialog()` / `dialog.showOpenDialogSync()` [#16973](https://github.com/electron/electron/pull/16973)
 - `dialog.showSaveDialog()` / `dialog.showSaveDialogSync()` [#17054](https://github.com/electron/electron/pull/17054)
 
-## Planned Breaking API Changes (6.0)
+## Breaking API Changes (6.0)
 
 ### API Changed: win.setMenu(null) is now win.removeMenu()
 
@@ -2490,7 +2492,7 @@ tray.setHighlightMode(mode)
 // API will be removed in v7.0 without replacement.
 ```
 
-## Planned Breaking API Changes (5.0)
+## Breaking API Changes (5.0)
 
 ### Default Changed: nodeIntegration and webviewTag default to false, contextIsolation defaults to true
 
@@ -2579,7 +2581,7 @@ const factor = webContents.getZoomFactor()
 console.log(factor)
 ```
 
-## Planned Breaking API Changes (4.0)
+## Breaking API Changes (4.0)
 
 The following list includes the breaking API changes made in Electron 4.0.
 
