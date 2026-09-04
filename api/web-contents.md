@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-09-04T05:46:35.763Z
-current_date: 2026-09-04T05:46:35.763Z
+access_date: 2026-09-04T14:03:28.827Z
+current_date: 2026-09-04T14:03:28.827Z
 ---
 
 > Render and control web pages.
@@ -1321,7 +1321,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696)[ ```markdown ^43.6.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
 
 - `enabled` boolean
 
@@ -1333,7 +1333,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696)[ ```markdown ^43.6.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
 
 Returns `boolean` - Whether [caret browsing](#contentscaretbrowsingenabled) is enabled for this page.
 
@@ -2134,7 +2134,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
+| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52696)[ ```markdown ^43.6.0 ``` ](https://github.com/electron/electron/pull/52696) | ```markdown API ADDED ``` |
 
 A `boolean` property that determines whether caret browsing is enabled for this page.
 

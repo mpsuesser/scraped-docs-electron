@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/cpu-usage
 title: "Cpu Usage"
 description: ""
-access_date: 2026-09-04T05:46:35.763Z
-current_date: 2026-09-04T05:46:35.763Z
+access_date: 2026-09-04T14:03:28.827Z
+current_date: 2026-09-04T14:03:28.827Z
 ---
 
 - `percentCPUUsage` number - Percentage of CPU used since the last call to the API that returned this object. First call returns 0.
@@ -15,7 +15,7 @@ Both `percentCPUUsage` and `idleWakeupsPerSecond` are averages rather than insta
 Multiple APIs return `CPUUsage` objects, and each tracks its own intervals:
 
 - [`process.getCPUUsage()`](../process.md#processgetcpuusage) measures the process it is called in. Only calls to `process.getCPUUsage()` in that same process reset its interval.
-- [`app.getAppMetrics()`](../app.md#appgetappmetrics) measures every process in the app, as the `cpu` property of each [ProcessMetric](process-metric.md). It keeps a separate interval for each process ID, and a single call resets all of them at once, since one call reports on every process.
+- [`app.getAppMetrics()`](../app.md#appgetappmetrics) measures every process in the app, as the `cpu` property of each [`ProcessMetric`](process-metric.md). It keeps a separate interval for each process ID, and a single call resets all of them at once, since one call reports on every process.
 
 > **Note:**
 > 
