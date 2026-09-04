@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-09-01T18:39:19.622Z
-current_date: 2026-09-01T18:39:19.622Z
+access_date: 2026-09-04T05:46:35.763Z
+current_date: 2026-09-04T05:46:35.763Z
 ---
 
 > Render and control web pages.
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.1.1/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.2.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')

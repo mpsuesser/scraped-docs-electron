@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/process
 title: "Process"
 description: ""
-access_date: 2026-08-04T19:03:02.080Z
-current_date: 2026-08-04T19:03:02.080Z
+access_date: 2026-09-04T05:46:35.763Z
+current_date: 2026-09-04T05:46:35.763Z
 ---
 
 > Extensions to process object.
@@ -139,7 +139,11 @@ Indicates the creation time of the application. The time is represented as numbe
 
 ### process.getCPUUsage()
 
-Returns [CPUUsage](structures/cpu-usage.md)
+Returns [CPUUsage](structures/cpu-usage.md) - CPU usage of the process this is called in.
+
+> **Note:**
+> 
+> `percentCPUUsage` and `idleWakeupsPerSecond` are averages over the time since the previous call to `process.getCPUUsage()` in this process, and each call starts a new measurement interval. Every caller in the process shares that interval. See [CPUUsage](structures/cpu-usage.md) for details.
 
 ### process.getHeapStatistics()
 

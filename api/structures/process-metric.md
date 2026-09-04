@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/process-metric
 title: "Process Metric"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-04T05:46:35.763Z
+current_date: 2026-09-04T05:46:35.763Z
 ---
 
 - `pid` Integer - Process id of the process.
@@ -19,7 +19,7 @@ current_date: 2026-08-03T19:38:49.815Z
 		- `Unknown`
 - `serviceName` string (optional) - The non-localized name of the process.
 - `name` string (optional) - The name of the process. Examples for utility: `Audio Service`, `Content Decryption Module Service`, `Network Service`, `Video Capture`, etc.
-- `cpu` [CPUUsage](cpu-usage.md) - CPU usage of the process.
+- `cpu` [CPUUsage](cpu-usage.md) - CPU usage of the process. Its `percentCPUUsage` and `idleWakeupsPerSecond` are averages over the time since the previous call to the API returning this object.
 - `creationTime` number - Creation time for this process. The time is represented as number of milliseconds since epoch. Since the `pid` can be reused after a process dies, it is useful to use both the `pid` and the `creationTime` to uniquely identify a process.
 - `memory` [MemoryInfo](memory-info.md) - Memory information for the process.
 - `sandboxed` boolean (optional) *macOS* *Windows* - Whether the process is sandboxed on OS level.

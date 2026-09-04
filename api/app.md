@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-08-31T03:27:19.645Z
-current_date: 2026-08-31T03:27:19.645Z
+access_date: 2026-09-04T05:46:35.763Z
+current_date: 2026-09-04T05:46:35.763Z
 ---
 
 > Control your application's event lifecycle.
@@ -1109,6 +1109,10 @@ This method can only be called before app is ready.
 ### app.getAppMetrics()
 
 Returns [ProcessMetric\[\]](structures/process-metric.md): Array of `ProcessMetric` objects that correspond to memory and CPU usage statistics of all the processes associated with the app.
+
+> **Note:**
+> 
+> `cpu.percentCPUUsage` and `cpu.idleWakeupsPerSecond` are averages over the time since the last call to `app.getAppMetrics()`, and each call starts a new measurement interval for every process at once. Other code in the main process, including dependencies, shares those intervals. See [CPUUsage](structures/cpu-usage.md) for more details.
 
 ### app.getGPUFeatureStatus()
 
