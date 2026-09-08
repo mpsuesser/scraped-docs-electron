@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 > Create and control browser windows.
@@ -144,7 +144,7 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
 	- `webPreferences` [WebPreferences](structures/web-preferences.md) (optional) - Settings of web page's features.
 		- `devTools` boolean (optional) - Whether to enable DevTools. If it is set to `false`, can not use `BrowserWindow.webContents.openDevTools()` to open DevTools. Default is `true`.
 				- `nodeIntegration` boolean (optional) - Whether node integration is enabled. Default is `false`.
-				- `nodeIntegrationInWorker` boolean (optional) - Whether node integration is enabled in web workers. Default is `false`. More about this can be found in [Multithreading](../tutorial/multithreading.md).
+				- `nodeIntegrationInWorker` boolean (optional) - Whether node integration is enabled in web workers. Default is `false`. Only workers created by a frame that itself has access to Node.js (the main frame, or any frame when `nodeIntegrationInSubFrames` is enabled) get it. More about this can be found in [Multithreading](../tutorial/multithreading.md).
 				- `nodeIntegrationInSubFrames` boolean (optional) - Experimental option for enabling Node.js support in sub-frames such as iframes and child windows. All your preloads will load for every iframe, you can use `process.isMainFrame` to determine if you are in the main frame or not.
 				- `preload` string (optional) - Specifies a script that will be loaded before other scripts run in the page. This script will always have access to node APIs no matter whether node integration is turned on or off. The value should be the absolute file path to the script. When node integration is turned off, the preload script can reintroduce Node global symbols back to the global scope. See example [here](context-bridge.md#exposing-node-global-symbols).
 				- `sandbox` boolean (optional) - If set, this will sandbox the renderer associated with the window, making it compatible with the Chromium OS-level sandbox and disabling the Node.js engine. This is not the same as the `nodeIntegration` option and the APIs available to the preload script are more limited. Default is `true` since Electron 20. The sandbox will automatically be disabled when `nodeIntegration` is set to `true`. Read more about the option [here](../tutorial/sandbox.md).

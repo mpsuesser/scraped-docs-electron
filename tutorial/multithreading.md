@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/multithreading
 title: "Multithreading"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 With [Web Workers](https://developer.mozilla.org/en/docs/Web/API/Web_Workers_API/Using_web_workers), it is possible to run JavaScript in OS-level threads.
@@ -19,6 +19,8 @@ const win = new BrowserWindow({
   }
 })
 ```
+
+Workers created by an `<iframe>` only get Node.js integration when the frame itself has it, i.e. when `nodeIntegrationInSubFrames` is also enabled.
 
 The `nodeIntegrationInWorker` can be used independent of `nodeIntegration`, but `sandbox` must not be set to `true`.
 

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/custom-window-interactions
 title: "Custom Window Interactions"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 ## Custom draggable regions
@@ -40,6 +40,10 @@ When creating a draggable region, the dragging behavior may conflict with text s
   app-region: drag;
 }
 ```
+
+> **Tip:**
+> 
+> When developing, set the [`ELECTRON_DEBUG_DRAGGABLE_REGIONS`](../api/environment-variables.md#electron_debug_draggable_regions-experimental) environment variable to paint the draggable regions Electron is using on top of the window, and to log how often they change and what they cost. It is an experimental debugging aid rather than a formal API, and may change or be removed without warning.
 
 ### Tip: disable context menus
 

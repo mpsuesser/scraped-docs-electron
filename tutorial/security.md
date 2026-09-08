@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/security
 title: "Security"
 description: ""
-access_date: 2026-09-04T05:46:35.763Z
-current_date: 2026-09-04T05:46:35.763Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 > **Reporting security issues:**
 > 
-> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.2.0/SECURITY.md).
+> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.3.0/SECURITY.md).
 > 
 > For upstream Chromium vulnerabilities: Electron keeps up to date with alternating Chromium releases. For more information, see the [Electron Release Timelines](electron-timelines.md) document.
 
@@ -572,8 +572,10 @@ ipcMain.handle('get-secrets', (e) => {
 })
 
 function validateSender (frame) {
-  // Validate the host of the URL using an actual URL parser and an allowlist
-  if ((new URL(frame.url)).host === 'electronjs.org') return true
+  // Validate the frame's origin against an allowlist. Use the origin, not the
+  // URL: about:blank, blob: and sandboxed documents have URLs that do not
+  // identify who controls them, and the frame may be null if it has gone away.
+  if (frame && frame.origin === 'https://electronjs.org') return true
   return false
 }
 ```

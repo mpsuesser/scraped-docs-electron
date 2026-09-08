@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-08-19T00:23:56.422Z
-current_date: 2026-08-19T00:23:56.422Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 ## Warning
@@ -169,7 +169,7 @@ This value can only be modified before the first navigation, since the session o
 <webview src="https://www.github.com/" allowpopups></webview>
 ```
 
-A `boolean`. When this attribute is present the guest page will be allowed to open new windows. Popups are disabled by default.
+A `boolean`. When this attribute is present the guest page will be allowed to open new windows, whether through `window.open()` or a link opened into a new window (for example a modifier-clicked or `target="_blank"` link). Popups are disabled by default.
 
 ### webpreferences
 
@@ -863,7 +863,7 @@ Returns:
 - `channel` string
 - `args` any\[\]
 
-Fired when the guest page has sent an asynchronous message to embedder page.
+Fired when the guest page has sent an asynchronous message to embedder page. `frameId` does not tell the embedder which document sent the message; when that matters, have the guest use `ipcRenderer.send()` and handle the guest `webContents` ' [`ipc-message`](web-contents.md#event-ipc-message) event in the main process, where `event.senderFrame` identifies the sender.
 
 With `sendToHost` method and `ipc-message` event you can communicate between guest page and embedder page:
 

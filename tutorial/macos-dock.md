@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/macos-dock
 title: "Macos Dock"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 On macOS, the [Dock](https://support.apple.com/en-ca/guide/mac-help/mh35859/mac) is an interface element that displays open and frequently-used apps. While opened or pinned, each app has its own icon in the Dock.
@@ -19,6 +19,10 @@ All functionality for the Dock is exposed via the [Dock](../api/dock.md) class e
 One of the main uses for your app's Dock icon is to expose additional app menus. The Dock menu is triggered by right-clicking or Ctrl -clicking the app icon. By default, the app's Dock menu will come with system-provided window management utilities, including the ability to show all windows, hide the app, and switch between different open windows.
 
 To set an app-defined custom Dock menu, pass any [Menu](../api/menu.md) instance into the [`dock.setMenu`](../api/dock.md#docksetmenumenu-macos) API.
+
+> **Note:**
+> 
+> A [`badge`](../api/menu-item.md#menuitembadge-macos) on a `MenuItem` is not displayed in a Dock menu, though the same item shows it in an application menu.
 
 > **Tip:**
 > 

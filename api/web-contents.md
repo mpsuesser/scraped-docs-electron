@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-09-04T14:03:28.827Z
-current_date: 2026-09-04T14:03:28.827Z
+access_date: 2026-09-08T21:23:20.023Z
+current_date: 2026-09-08T21:23:20.023Z
 ---
 
 > Render and control web pages.
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.2.0/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.3.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')
@@ -2036,7 +2036,7 @@ Setting the WebRTC UDP Port Range allows you to restrict the udp port range used
 
 - `requestWebContents` WebContents - Web contents that the id will be registered to.
 
-Returns `string` - The identifier of a WebContents stream. This identifier can be used with `navigator.mediaDevices.getUserMedia` using a `chromeMediaSource` of `tab`. The identifier is restricted to the web contents that it is registered to and is only valid for 10 seconds.
+Returns `string` - The identifier of a WebContents stream. This identifier can be used with `navigator.mediaDevices.getUserMedia` using a `chromeMediaSource` of `tab`. The identifier is restricted to the web contents that it is registered to and is only valid for 10 seconds. The `desktop` source only accepts screen and window identifiers from [`desktopCapturer.getSources`](desktop-capturer.md#desktopcapturergetsourcesoptions); to capture a WebContents use this identifier with the `tab` source, or [`ses.setDisplayMediaRequestHandler`](session.md#sessetdisplaymediarequesthandlerhandler-opts).
 
 #### contents.getOrCreateDevToolsTargetId()
 
