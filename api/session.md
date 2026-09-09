@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-09-09T06:07:36.825Z
+current_date: 2026-09-09T06:07:36.825Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -139,7 +139,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^v42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
+| [ ```markdown ^44.3.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^v42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
 
 Returns:
 
