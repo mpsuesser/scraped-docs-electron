@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/forge-overview
 title: "Forge Overview"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 Electron Forge is a tool for packaging and publishing Electron applications. It unifies Electron's build tooling ecosystem into a single extensible interface so that anyone can jump right into making Electron apps.
@@ -37,7 +37,6 @@ The [Electron Forge docs](https://www.electronforge.io/) contain detailed inform
 
 For beginners, we recommend following through Electron's [tutorial](tutorial-prerequisites.md) to develop, build, package and publish your first Electron app. If you have already developed an app on your machine and want to start on packaging and distribution, start from [step 5](tutorial-packaging.md) of the tutorial.
 
-## Getting help
+## Found a bug in Forge?
 
-- If you need help with developing your app, our [community Discord server](https://discord.gg/APGC3k5yaH) is a great place to get advice from other Electron app developers.
-- If you suspect you're running into a bug with Forge, please check the [GitHub issue tracker](https://github.com/electron/forge/issues) to see if any existing issues match your problem. If not, feel free to fill out our bug report template and submit a new issue.
+If you suspect you're running into a bug with Forge, please check the [GitHub issue tracker](https://github.com/electron/forge/issues) to see if any existing issues match your problem. If not, feel free to fill out our bug report template and submit a new issue.

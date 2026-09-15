@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/
 title: "Latest"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 Electron is a framework for building desktop applications using JavaScript, HTML, and CSS. By embedding [Chromium](https://www.chromium.org/) and [Node.js](https://nodejs.org/) into its binary, Electron allows you to maintain one JavaScript codebase and create cross-platform apps that work on Windows, macOS, and Linux — no native development experience required.
@@ -103,9 +103,6 @@ All the official documentation is available from the sidebar. These are the diff
 - **References**: Useful links to better understand how the Electron project works and is organized.
 - **Contributing**: Compiling Electron and making contributions can be daunting. We try to make it easier in this section.
 
-## Getting help
+## Found a bug in Electron?
 
-Are you getting stuck anywhere? Here are a few links to places to look:
-
-- If you need help with developing your app, our [community Discord server](https://discord.gg/electronjs) is a great place to get advice from other Electron app developers.
-- If you suspect you're running into a bug with the `electron` package, please check the [GitHub issue tracker](https://github.com/electron/electron/issues) to see if any existing issues match your problem. If not, feel free to fill out our bug report template and submit a new issue.
+If you suspect you're running into a bug with the `electron` package, please check the [GitHub issue tracker](https://github.com/electron/electron/issues) to see if any existing issues match your problem. If not, feel free to fill out our bug report template and submit a new issue.

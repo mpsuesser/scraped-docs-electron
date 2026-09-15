@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/fuses
 title: "Fuses"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > Package time feature toggles
@@ -26,7 +26,7 @@ Because they are flipped at package time before you code sign your app, the OS b
 
 **@electron/fuses:** `FuseV1Options.RunAsNode`
 
-The `runAsNode` fuse toggles whether the [`ELECTRON_RUN_AS_NODE`](../api/environment-variables.md) environment variable is respected or not. With this fuse disabled, [`child_process.fork`](https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options) in the main process will not function as expected, as it depends on this environment variable to function. Instead, we recommend that you use [Utility Processes](../api/utility-process.md), which work for many use cases where you need a standalone Node.js process (e.g. a SQLite server process).
+The `runAsNode` fuse toggles whether the [`ELECTRON_RUN_AS_NODE`](../api/environment-variables.md) environment variable is respected or not. With this fuse disabled, [`child_process.fork`](https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options) throws, as it depends on this environment variable to function. Instead, we recommend that you use [Utility Processes](../api/utility-process.md), which work for many use cases where you need a standalone Node.js process (e.g. a SQLite server process).
 
 ### cookieEncryption
 
@@ -188,4 +188,4 @@ Somewhere in the Electron binary, there will be a sequence of bytes that look li
 
 To flip a fuse, you find its position in the fuse wire and change it to "0" or "1" depending on the state you'd like.
 
-You can view the current schema [here](https://github.com/electron/electron/blob/v44.3.0/build/fuses/fuses.json5).
+You can view the current schema [here](https://github.com/electron/electron/blob/v44.4.0/build/fuses/fuses.json5).

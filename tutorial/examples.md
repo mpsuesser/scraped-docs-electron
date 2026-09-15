@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/examples
 title: "Examples"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 In this section, we have collected a set of guides for common features that you may want to implement in your Electron application. Each guide contains a practical example in a minimal, self-contained example app. The easiest way to run these examples is by downloading [Electron Fiddle](https://www.electronjs.org/fiddle).
@@ -83,4 +83,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 ## How to...?
 
-You can find the full list of "How to?" in the sidebar. If there is something that you would like to do that is not documented, please join our [Discord server](https://discord.com/invite/electronjs) and let us know!
+You can find the full list of "How to?" in the sidebar.

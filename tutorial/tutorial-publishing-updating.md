@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-publishing-updating
 title: "Tutorial Publishing Updating"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > **Follow along the tutorial:**
@@ -170,4 +170,4 @@ If your application is not eligible for update.electronjs.org, you should instea
 
 > **🌟 You're done!:**
 > 
-> From here, you have officially completed our tutorial to Electron. Feel free to explore the rest of our docs and happy developing! If you have questions, please stop by our community [Discord server](https://discord.gg/electronjs).
+> From here, you have officially completed our tutorial to Electron. Feel free to explore the rest of our docs and happy developing!

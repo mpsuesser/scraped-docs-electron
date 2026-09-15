@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/tray
 title: "Tray"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 ## Class: Tray
@@ -43,7 +43,7 @@ app.whenReady().then(() => {
 
 **Linux**
 
-- Tray icon uses [StatusNotifierItem](https://www.freedesktop.org/wiki/Specifications/StatusNotifierItem/) by default, when it is not available in user's desktop environment the `GtkStatusIcon` will be used instead. If StatusNotifierItem is available, the first tray icon created will use SNI, while subsequently-created icons will use `GtkStatusIcon`.
+- Tray icon uses [StatusNotifierItem](https://www.freedesktop.org/wiki/Specifications/StatusNotifierItem/) by default, when it is not available in user's desktop environment the `GtkStatusIcon` will be used instead.
 - The `click` event is emitted when the tray icon receives activation from user, however the StatusNotifierItem spec does not specify which action would cause an activation, for some environments it is left mouse click, but for some it might be double left mouse click.
 - In order for changes made to individual `MenuItem` s to take effect, you have to call `setContextMenu` again. For example:
 ```js

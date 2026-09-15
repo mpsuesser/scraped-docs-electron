@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-request
 title: "Web Request"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > Intercept and modify the contents of a request at various stages of its lifetime.
@@ -43,6 +43,12 @@ The following methods are available on instances of `WebRequest`:
 
 #### webRequest.onBeforeRequest(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -52,6 +58,7 @@ The following methods are available on instances of `WebRequest`:
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -85,6 +92,12 @@ Some examples of valid `urls`:
 
 #### webRequest.onBeforeSendHeaders(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -94,6 +107,7 @@ Some examples of valid `urls`:
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -110,6 +124,12 @@ The `callback` has to be called with a `response` object.
 
 #### webRequest.onSendHeaders(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -119,6 +139,7 @@ The `callback` has to be called with a `response` object.
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -128,6 +149,12 @@ The `listener` will be called with `listener(details)` just before a request is 
 
 #### webRequest.onHeadersReceived(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -137,6 +164,7 @@ The `listener` will be called with `listener(details)` just before a request is 
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -155,6 +183,12 @@ The `callback` has to be called with a `response` object.
 
 #### webRequest.onResponseStarted(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -164,6 +198,7 @@ The `callback` has to be called with a `response` object.
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -176,6 +211,12 @@ The `listener` will be called with `listener(details)` when first byte of the re
 
 #### webRequest.onBeforeRedirect(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -185,6 +226,7 @@ The `listener` will be called with `listener(details)` when first byte of the re
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -199,6 +241,12 @@ The `listener` will be called with `listener(details)` when a server initiated r
 
 #### webRequest.onCompleted(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -208,6 +256,7 @@ The `listener` will be called with `listener(details)` when a server initiated r
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double
@@ -221,6 +270,12 @@ The `listener` will be called with `listener(details)` when a request is complet
 
 #### webRequest.onErrorOccurred(\[filter, \]listener)
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
 	- `details` Object
@@ -230,6 +285,7 @@ The `listener` will be called with `listener(details)` when a request is complet
 				- `webContentsId` Integer (optional)
 				- `webContents` WebContents (optional)
 				- `frame` WebFrameMain | null (optional) - Requesting frame. May be `null` if accessed after the frame has either navigated or been destroyed.
+				- `initiatorOrigin` string (optional) - The origin that issued the request (for example `https://example.com`, or `null` for an opaque origin). Kept from the original request across redirects; absent for requests the browser started itself.
 				- `resourceType` string - Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
 				- `referrer` string
 				- `timestamp` Double

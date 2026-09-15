@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-09-10T14:30:22.799Z
-current_date: 2026-09-10T14:30:22.799Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -80,13 +80,20 @@ The following events are available on instances of `Session`:
 
 #### Event: 'will-download'
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+
 Returns:
 
 - `event` Event
 - `item` [DownloadItem](download-item.md)
 - `webContents` [WebContents](web-contents.md)
+- `frame` [WebFrameMain](web-frame-main.md) | null - The frame that started the download, if it still exists.
 
-Emitted when Electron is about to download `item` in `webContents`.
+Emitted when Electron is about to download `item` in `webContents`. See also [`item.getInitiatorOrigin()`](download-item.md#downloaditemgetinitiatororigin).
 
 Calling `event.preventDefault()` will cancel the download and `item` will not be available from next tick of the process.
 
@@ -207,11 +214,18 @@ app.on('window-all-closed', function () {
 
 #### Event: 'preconnect'
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+
 Returns:
 
 - `event` Event
 - `preconnectUrl` string - The URL being requested for preconnection by the renderer.
 - `allowCredentials` boolean - True if the renderer is requesting that the connection include credentials (see the [spec](https://w3c.github.io/resource-hints/#preconnect) for more details.)
+- `frame` [WebFrameMain](web-frame-main.md) | null - The frame that requested the preconnection, if it still exists.
 
 Emitted when a render process requests preconnection to a URL, generally due to a [resource hint](https://w3c.github.io/resource-hints/).
 

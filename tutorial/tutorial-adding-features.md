@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-adding-features
 title: "Tutorial Adding Features"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > **Follow along the tutorial:**
@@ -27,7 +27,7 @@ Electron's documentation has many tutorials to help you with more advanced topic
 
 > **Let us know if something is missing!:**
 > 
-> If you can't find what you are looking for, please let us know on [GitHub](https://github.com/electron/website/issues/new) or in our [Discord server](https://discord.gg/electronjs)!
+> If you can't find what you are looking for, please let us know on [GitHub](https://github.com/electron/website/issues/new)!
 
 ## What's next?
 

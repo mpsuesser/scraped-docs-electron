@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/protocol
 title: "Protocol"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-09-15T17:17:25.445Z
+current_date: 2026-09-15T17:17:25.445Z
 ---
 
 > Register a custom protocol and intercept existing protocol requests.
@@ -110,6 +110,8 @@ Protocols that use streams (http and stream protocols) should set `stream: true`
 	- `request` [GlobalRequest](https://nodejs.org/api/globals.html#request)
 
 Register a protocol handler for `scheme`. Requests made to URLs with this scheme will delegate to this handler to determine what response should be sent.
+
+In addition to the standard `Request` fields, `request.initiatorOrigin` is set to the origin that issued the request (for example `https://example.com`, or `null` for an opaque origin) when web content made it; it is absent for requests the browser started itself. Unlike `request.referrer` it is not controlled by the requesting page, so prefer it when deciding whether to serve a request.
 
 Either a `Response` or a `Promise<Response>` can be returned.
 
