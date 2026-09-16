@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-09-15T17:17:25.445Z
-current_date: 2026-09-15T17:17:25.445Z
+access_date: 2026-09-16T00:55:03.947Z
+current_date: 2026-09-16T00:55:03.947Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -84,7 +84,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -218,7 +218,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 
