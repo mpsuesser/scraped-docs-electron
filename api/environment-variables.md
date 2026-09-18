@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/environment-variables
 title: "Environment Variables"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-09-18T18:11:09.345Z
+current_date: 2026-09-18T18:11:09.345Z
 ---
 
 > Control application configuration and behavior without changing code.
@@ -187,7 +187,7 @@ Sample output:
 
 ### ELECTRON\_LOG\_ASAR\_READS
 
-When Electron reads from an ASAR file, log the read offset and file path to the system `tmpdir`. The resulting file can be provided to the ASAR module to optimize file ordering.
+When Electron reads from an ASAR file, log the read offset and file path to the system `tmpdir`. The resulting file can be provided to the ASAR module to optimize file ordering. This variable is read once when each process starts, so it must be set in the environment that launches Electron rather than from the app's own code.
 
 ### ELECTRON\_ENABLE\_STACK\_DUMPING
 

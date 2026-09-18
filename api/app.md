@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-09-18T01:30:41.770Z
-current_date: 2026-09-18T01:30:41.770Z
+access_date: 2026-09-18T18:11:09.345Z
+current_date: 2026-09-18T18:11:09.345Z
 ---
 
 > Control your application's event lifecycle.
@@ -1191,7 +1191,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
+| ```markdown None ``` | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
 
 - `options` Object (optional)
 	- `type` string (optional) *macOS* - Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`. Defaults to `mainAppService`. See [app.setLoginItemSettings](app.md#appsetloginitemsettingssettings-macos-windows) for more information about each type.
@@ -1220,7 +1220,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=44.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden` option. |
+| ```markdown None ``` | Removed `openAsHidden` option. |
 
 > **Info:**
 > 
