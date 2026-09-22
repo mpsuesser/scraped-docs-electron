@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/protocol
 title: "Protocol"
 description: ""
-access_date: 2026-09-15T17:17:25.445Z
-current_date: 2026-09-15T17:17:25.445Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Register a custom protocol and intercept existing protocol requests.
@@ -80,9 +80,7 @@ An example of registering a privileged scheme, that bypasses Content Security Po
 ```js
 const { protocol } = require('electron')
 
-protocol.registerSchemesAsPrivileged([
-  { scheme: 'foo', privileges: { bypassCSP: true } }
-])
+protocol.registerSchemesAsPrivileged([{ scheme: 'foo', privileges: { bypassCSP: true } }])
 ```
 
 A standard scheme adheres to what RFC 3986 calls [generic URI syntax](https://tools.ietf.org/html/rfc3986#section-3). For example `http` and `https` are standard schemes, while `file` is not.
@@ -298,7 +296,7 @@ const { protocol } = require('electron')
 
 const { PassThrough } = require('node:stream')
 
-function createStream (text) {
+function createStream(text) {
   const rv = new PassThrough() // PassThrough is also a Readable stream
   rv.push(text)
   rv.push(null)

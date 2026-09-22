@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/style-guide
 title: "Style Guide"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 These are the guidelines for writing Electron documentation.
@@ -55,7 +55,7 @@ There are a few style guidelines that aren't covered by the linter rules:
 - Use `sh` instead of `cmd` in code blocks (due to the syntax highlighter).
 - Keep line lengths between 80 and 100 characters if possible for readability purposes.
 - No nesting lists more than 2 levels (due to the markdown renderer).
-- All `js` and `javascript` code blocks are linted with [standard-markdown](https://www.npmjs.com/package/standard-markdown).
+- All `js` and `javascript` code blocks are linted with [oxlint](https://oxc.rs/docs/guide/usage/linter) and formatted with [oxfmt](https://oxc.rs/docs/guide/usage/formatter) as part of `npm run lint:docs`; `npm run lint:fmt-in-markdown -- --fix` reformats them.
 - For unordered lists, use asterisks instead of dashes.
 
 ## Picking words

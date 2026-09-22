@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron
 title: "Native Code And Electron"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 One of Electron's most powerful features is the ability to combine web technologies with native code - both for compute-intensive logic as well as for the occasional native user interface, where desired.
@@ -275,7 +275,7 @@ const native = bindings('my_addon')
 
 // Create a nice JavaScript wrapper
 class MyNativeAddon extends EventEmitter {
-  constructor () {
+  constructor() {
     super()
 
     // Create an instance of our C++ class
@@ -283,7 +283,7 @@ class MyNativeAddon extends EventEmitter {
   }
 
   // Wrap the C++ method with a nicer JavaScript API
-  helloWorld (input = '') {
+  helloWorld(input = '') {
     if (typeof input !== 'string') {
       throw new TypeError('Input must be a string')
     }

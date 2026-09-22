@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/trace-config
 title: "Trace Config"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 - `recording_mode` string (optional) - Can be `record-until-full`, `record-continuously`, `record-as-much-as-possible` or `trace-to-console`. Defaults to `record-until-full`.
@@ -18,7 +18,7 @@ current_date: 2026-08-03T19:38:49.815Z
 
 An example TraceConfig that roughly matches what Chrome DevTools records:
 
-```js
+```markdown
 {
   recording_mode: 'record-until-full',
   included_categories: [

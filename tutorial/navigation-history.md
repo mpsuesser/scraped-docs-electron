@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/navigation-history
 title: "Navigation History"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Overview
@@ -76,7 +76,7 @@ A common flow is that you want to restore the history of a webContents - for ins
 const firstWindow = new BrowserWindow()
 
 // Later, you want a second window to have the same history and navigation position
-async function restore () {
+async function restore() {
   const entries = firstWindow.webContents.navigationHistory.getAllEntries()
   const index = firstWindow.webContents.navigationHistory.getActiveIndex()
 
@@ -91,7 +91,7 @@ Here's a full example that you can open with Electron Fiddle:
 
 ```js
 const { app, BrowserWindow, BrowserView, ipcMain } = require('electron')
-const path = require('path')
+const path = require('node:path')
 
 function createWindow () {
   const mainWindow = new BrowserWindow({

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/mac-app-store-submission-guide
 title: "Mac App Store Submission Guide"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 - How to sign Electron apps on macOS;
@@ -202,7 +202,7 @@ With `@electron/osx-sign`, you can set custom entitlements per file as such:
 ```js
 const { signAsync } = require('@electron/osx-sign')
 
-function getEntitlementsForFile (filePath) {
+function getEntitlementsForFile(filePath) {
   if (filePath.startsWith('my-path-1')) {
     return './my-path-1.plist'
   } else {

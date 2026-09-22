@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/snapcraft
 title: "Snapcraft"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 This guide provides information on how to package your Electron application for any Snapcraft environment, including the Ubuntu Software Center.
@@ -64,8 +64,7 @@ If you have an existing build pipeline, you can use `electron-installer-snap` pr
 ```js
 const snap = require('electron-installer-snap')
 
-snap(options)
-  .then(snapPath => console.log(\`Created snap at ${snapPath}!\`))
+snap(options).then((snapPath) => console.log(\`Created snap at ${snapPath}!\`))
 ```
 
 ## Using snapcraft with @electron/packager

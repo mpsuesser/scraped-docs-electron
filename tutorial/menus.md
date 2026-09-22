@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/menus
 title: "Menus"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Electron's [Menu](../api/menu.md) class provides a standardized way to create cross-platform native menus throughout your application.
@@ -77,7 +77,7 @@ Other available types, when specified, give special additional properties to the
 > 
 > Adjacent `radio` items are at the same level of submenu and not divided by a separator.
 > 
-> ```js
+> ```markdown
 > [
 >   { type: 'radio', label: 'Adjacent 1' },
 >   { type: 'radio', label: 'Adjacent 2' },
@@ -201,7 +201,7 @@ By default, items will be inserted in the order they exist in the template unles
 
 Template:
 
-```js
+```markdown
 [
   { id: '1', label: 'one' },
   { id: '2', label: 'two' },
@@ -221,7 +221,7 @@ Menu:
 
 Template:
 
-```js
+```markdown
 [
   { id: '1', label: 'one' },
   { type: 'separator' },
@@ -245,7 +245,7 @@ Menu:
 
 Template:
 
-```js
+```markdown
 [
   { id: '1', label: 'one', after: ['3'] },
   { id: '2', label: 'two', before: ['1'] },
@@ -270,7 +270,9 @@ To add visual aid to your menus, you can use the `icon` property to assign image
 const { nativeImage } = require('electron/common')
 const { MenuItem } = require('electron/main')
 
-const green = nativeImage.createFromDataURL('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACOSURBVHgBpZLRDYAgEEOrEzgCozCCGzkCbKArOIlugJvgoRAUNcLRpvGH19TkgFQWkqIohhK8UEaKwKcsOg/+WR1vX+AlA74u6q4FqgCOSzwsGHCwbKliAF89Cv89tWmOT4VaVMoVbOBrdQUz+FrD6XItzh4LzYB1HFJ9yrEkZ4l+wvcid9pTssh4UKbPd+4vED2Nd54iAAAAAElFTkSuQmCC')
+const green = nativeImage.createFromDataURL(
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACOSURBVHgBpZLRDYAgEEOrEzgCozCCGzkCbKArOIlugJvgoRAUNcLRpvGH19TkgFQWkqIohhK8UEaKwKcsOg/+WR1vX+AlA74u6q4FqgCOSzwsGHCwbKliAF89Cv89tWmOT4VaVMoVbOBrdQUz+FrD6XItzh4LzYB1HFJ9yrEkZ4l+wvcid9pTssh4UKbPd+4vED2Nd54iAAAAAElFTkSuQmCC'
+)
 
 const item = new MenuItem({
   label: 'Green Circle',
@@ -288,7 +290,9 @@ const { MenuItem } = require('electron/main')
 const item = new MenuItem({
   label: 'Log Message',
   sublabel: 'This will use the console.log utility',
-  click: () => { console.log('Logging via menu...') }
+  click: () => {
+    console.log('Logging via menu...')
+  }
 })
 ```
 

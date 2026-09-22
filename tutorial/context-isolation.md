@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/context-isolation
 title: "Context Isolation"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## What is it?
@@ -91,7 +91,7 @@ You can create a `interface.d.ts` declaration file and globally augment the `Win
 
 ```ts
 export interface IElectronAPI {
-  loadPreferences: () => Promise<void>,
+  loadPreferences: () => Promise<void>
 }
 
 declare global {

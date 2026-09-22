@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/net
 title: "Net"
 description: ""
-access_date: 2026-08-04T19:03:02.080Z
-current_date: 2026-08-04T19:03:02.080Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Issue HTTP/HTTPS requests using Chromium's native networking library
@@ -69,7 +69,7 @@ Sends a request, similarly to how `fetch()` works in the renderer, using Chromiu
 Example:
 
 ```js
-async function example () {
+async function example() {
   const response = await net.fetch('https://my.app')
   if (response.ok) {
     const body = await response.json()

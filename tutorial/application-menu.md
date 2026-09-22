@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-menu
 title: "Application Menu"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Each Electron app has a single top-level application menu.
@@ -27,27 +27,27 @@ const isMac = process.platform === 'darwin'
 const template = [
   // { role: 'appMenu' }
   ...(isMac
-    ? [{
-        label: app.name,
-        submenu: [
-          { role: 'about' },
-          { type: 'separator' },
-          { role: 'services' },
-          { type: 'separator' },
-          { role: 'hide' },
-          { role: 'hideOthers' },
-          { role: 'unhide' },
-          { type: 'separator' },
-          { role: 'quit' }
-        ]
-      }]
+    ? [
+        {
+          label: app.name,
+          submenu: [
+            { role: 'about' },
+            { type: 'separator' },
+            { role: 'services' },
+            { type: 'separator' },
+            { role: 'hide' },
+            { role: 'hideOthers' },
+            { role: 'unhide' },
+            { type: 'separator' },
+            { role: 'quit' }
+          ]
+        }
+      ]
     : []),
   // { role: 'fileMenu' }
   {
     label: 'File',
-    submenu: [
-      isMac ? { role: 'close' } : { role: 'quit' }
-    ]
+    submenu: [isMac ? { role: 'close' } : { role: 'quit' }]
   },
   // { role: 'editMenu' }
   {
@@ -67,17 +67,10 @@ const template = [
             { type: 'separator' },
             {
               label: 'Speech',
-              submenu: [
-                { role: 'startSpeaking' },
-                { role: 'stopSpeaking' }
-              ]
+              submenu: [{ role: 'startSpeaking' }, { role: 'stopSpeaking' }]
             }
           ]
-        : [
-            { role: 'delete' },
-            { type: 'separator' },
-            { role: 'selectAll' }
-          ])
+        : [{ role: 'delete' }, { type: 'separator' }, { role: 'selectAll' }])
     ]
   },
   // { role: 'viewMenu' }
@@ -102,15 +95,8 @@ const template = [
       { role: 'minimize' },
       { role: 'zoom' },
       ...(isMac
-        ? [
-            { type: 'separator' },
-            { role: 'front' },
-            { type: 'separator' },
-            { role: 'window' }
-          ]
-        : [
-            { role: 'close' }
-          ])
+        ? [{ type: 'separator' }, { role: 'front' }, { type: 'separator' }, { role: 'window' }]
+        : [{ role: 'close' }])
     ]
   },
   {
@@ -148,9 +134,7 @@ const { shell } = require('electron/common')
 const { app, Menu } = require('electron/main')
 
 const template = [
-  ...(process.platform === 'darwin'
-    ? [{ role: 'appMenu' }]
-    : []),
+  ...(process.platform === 'darwin' ? [{ role: 'appMenu' }] : []),
   { role: 'fileMenu' },
   { role: 'editMenu' },
   { role: 'viewMenu' },
@@ -188,10 +172,7 @@ const win = new BrowserWindow()
 const menu = Menu.buildFromTemplate([
   {
     label: 'my custom menu',
-    submenu: [
-      { role: 'copy' },
-      { role: 'paste' }
-    ]
+    submenu: [{ role: 'copy' }, { role: 'paste' }]
   }
 ])
 win.setMenu(menu)

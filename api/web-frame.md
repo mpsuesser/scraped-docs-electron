@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame
 title: "Web Frame"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Customize the rendering of the current web page.
@@ -104,9 +104,9 @@ const { webFrame } = require('electron')
 const spellChecker = require('spellchecker')
 
 webFrame.setSpellCheckProvider('en-US', {
-  spellCheck (words, callback) {
+  spellCheck(words, callback) {
     setTimeout(() => {
-      const misspelled = words.filter(x => spellchecker.isMisspelled(x))
+      const misspelled = words.filter((x) => spellchecker.isMisspelled(x))
       callback(misspelled)
     }, 0)
   }
@@ -199,17 +199,25 @@ console.log(webFrame.getResourceUsage())
 
 This will generate:
 
-```js
+```markdown
 {
   images: {
     count: 22,
     size: 2549,
     liveSize: 2542
   },
-  cssStyleSheets: { /* same with "images" */ },
-  xslStyleSheets: { /* same with "images" */ },
-  fonts: { /* same with "images" */ },
-  other: { /* same with "images" */ }
+  cssStyleSheets: {
+    /* same with "images" */
+  },
+  xslStyleSheets: {
+    /* same with "images" */
+  },
+  fonts: {
+    /* same with "images" */
+  },
+  other: {
+    /* same with "images" */
+  }
 }
 ```
 

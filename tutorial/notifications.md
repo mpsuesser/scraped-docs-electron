@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/notifications
 title: "Notifications"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Each operating system has its own mechanism to display notifications to users. Electron's notification APIs are cross-platform, but are different for each process type.
@@ -91,12 +91,10 @@ Notifications can be displayed directly from the renderer process with the [web 
 
 ```js
 const NOTIFICATION_TITLE = 'Title'
-const NOTIFICATION_BODY =
-  'Notification from the Renderer process. Click to log to console.'
+const NOTIFICATION_BODY = 'Notification from the Renderer process. Click to log to console.'
 const CLICK_MESSAGE = 'Notification clicked'
 
-new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY }).onclick =
-  () => console.log(CLICK_MESSAGE)
+new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY }).onclick = () => console.log(CLICK_MESSAGE)
 ```
 
 Here's a full example that you can open with Electron Fiddle:

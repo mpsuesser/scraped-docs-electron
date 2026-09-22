@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/native-code-and-electron-swift-macos
 title: "Native Code And Electron Swift Macos"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 This tutorial builds on the [general introduction to Native Code and Electron](native-code-and-electron.md) and focuses on creating a native addon for macOS using Swift.
@@ -1125,7 +1125,7 @@ You're so close! We now have working Objective-C, Swift, and thread-safe ways to
 const EventEmitter = require('node:events')
 
 class SwiftAddon extends EventEmitter {
-  constructor () {
+  constructor() {
     super()
 
     if (process.platform !== 'darwin') {
@@ -1148,19 +1148,19 @@ class SwiftAddon extends EventEmitter {
     })
   }
 
-  helloWorld (input = '') {
+  helloWorld(input = '') {
     return this.addon.helloWorld(input)
   }
 
-  helloGui () {
+  helloGui() {
     this.addon.helloGui()
   }
 
-  destroy () {
+  destroy() {
     this.addon.destroy()
   }
 
-  parse (payload) {
+  parse(payload) {
     const parsed = JSON.parse(payload)
 
     return { ...parsed, date: new Date(parsed.date) }

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/windows-taskbar
 title: "Windows Taskbar"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Overview
@@ -92,12 +92,17 @@ win.setThumbarButtons([
   {
     tooltip: 'button1',
     icon: nativeImage.createFromPath(path.join(__dirname, 'button1.png')),
-    click () { console.log('button1 clicked') }
-  }, {
+    click() {
+      console.log('button1 clicked')
+    }
+  },
+  {
     tooltip: 'button2',
     icon: nativeImage.createFromPath(path.join(__dirname, 'button2.png')),
     flags: ['enabled', 'dismissonclick'],
-    click () { console.log('button2 clicked.') }
+    click() {
+      console.log('button2 clicked.')
+    }
   }
 ])
 ```

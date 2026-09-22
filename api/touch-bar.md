@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar
 title: "Touch Bar"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > **Warning:**
@@ -117,7 +117,7 @@ const spin = new TouchBarButton({
     const spinReels = () => {
       updateReels()
 
-      if ((Date.now() - startTime) >= spinLength) {
+      if (Date.now() - startTime >= spinLength) {
         finishSpin()
       } else {
         // Slow down a bit on each spin

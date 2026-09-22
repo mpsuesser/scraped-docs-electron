@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Create and control browser windows.
@@ -524,6 +524,10 @@ win.loadURL('https://github.com')
 A `WebContents` object this window owns. All web page related events and operations will be done via it.
 
 See the [`webContents` documentation](web-contents.md) for its methods and events.
+
+> **Note:**
+> 
+> Reading this property throws `Object has been destroyed` once the window has been destroyed; see [`win.isDestroyed()`](base-window.md#winisdestroyed).
 
 #### win.id Readonly
 
@@ -1261,10 +1265,12 @@ const { BrowserWindow } = require('electron')
 const win = new BrowserWindow()
 
 win.loadURL('http://localhost:8000/post', {
-  postData: [{
-    type: 'rawData',
-    bytes: Buffer.from('hello=world')
-  }],
+  postData: [
+    {
+      type: 'rawData',
+      bytes: Buffer.from('hello=world')
+    }
+  ],
   extraHeaders: 'Content-Type: application/x-www-form-urlencoded'
 })
 ```

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/printer-info
 title: "Printer Info"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 - `name` string - the name of the printer as understood by the OS.
@@ -17,7 +17,7 @@ The number represented by `status` means different things on different platforms
 
 Below is an example of some of the additional options that may be set which may be different on each platform.
 
-```js
+```markdown
 {
   name: 'Austin_4th_Floor_Printer___C02XK13BJHD4',
   displayName: 'Austin 4th Floor Printer @ C02XK13BJHD4',

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/notification-action
 title: "Notification Action"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 - `type` string - The type of action, can be `button` or `selection`. `selection` is only supported on Windows.
@@ -37,11 +37,13 @@ app.whenReady().then(() => {
   const items = ['One', 'Two', 'Three']
   const n = new Notification({
     title: 'Choose an option',
-    actions: [{
-      type: 'selection',
-      text: 'Apply',
-      items
-    }]
+    actions: [
+      {
+        type: 'selection',
+        text: 'Apply',
+        items
+      }
+    ]
   })
 
   n.on('action', (e) => {

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/dialog
 title: "Dialog"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Display native system dialogs for opening and saving files, alerting, etc.
@@ -55,7 +55,7 @@ The `window` argument allows the dialog to attach itself to a parent window, mak
 
 The `filters` specifies an array of file types that can be displayed or selected when you want to limit the user to a specific type. For example:
 
-```js
+```markdown
 {
   filters: [
     { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
@@ -119,7 +119,7 @@ The `window` argument allows the dialog to attach itself to a parent window, mak
 
 The `filters` specifies an array of file types that can be displayed or selected when you want to limit the user to a specific type. For example:
 
-```js
+```markdown
 {
   filters: [
     { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
@@ -137,14 +137,17 @@ The `extensions` array should contain extensions without wildcards or dots (e.g.
 > On Windows and Linux an open dialog can not be both a file selector and a directory selector, so if you set `properties` to `['openFile', 'openDirectory']` on these platforms, a directory selector will be shown.
 
 ```js
-dialog.showOpenDialog(mainWindow, {
-  properties: ['openFile', 'openDirectory']
-}).then(result => {
-  console.log(result.canceled)
-  console.log(result.filePaths)
-}).catch(err => {
-  console.log(err)
-})
+dialog
+  .showOpenDialog(mainWindow, {
+    properties: ['openFile', 'openDirectory']
+  })
+  .then((result) => {
+    console.log(result.canceled)
+    console.log(result.filePaths)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 ```
 
 > **Note:**

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-utils
 title: "Web Utils"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > A utility layer to interact with Web API objects (Files, Blobs, etc.)
@@ -43,7 +43,7 @@ electronApi.doSomethingWithFile(file)
 const { contextBridge, webUtils } = require('electron')
 
 contextBridge.exposeInMainWorld('electronApi', {
-  doSomethingWithFile (file) {
+  doSomethingWithFile(file) {
     const path = webUtils.getPathForFile(file)
     // Do something with the path, e.g., send it over IPC to the main process.
     // It's best not to expose the full file path to the web content if possible.

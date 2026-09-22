@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/desktop-capturer
 title: "Desktop Capturer"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Access information about media sources that can be used to capture audio and video from the desktop using the [`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en/docs/Web/API/MediaDevices/getUserMedia) API.
@@ -19,16 +19,19 @@ const { app, BrowserWindow, desktopCapturer, session } = require('electron')
 app.whenReady().then(() => {
   const mainWindow = new BrowserWindow()
 
-  session.defaultSession.setDisplayMediaRequestHandler((request, callback) => {
-    desktopCapturer.getSources({ types: ['screen'] }).then((sources) => {
-      // Grant access to the first screen found.
-      callback({ video: sources[0], audio: 'loopback' })
-    })
-    // If true, use the system picker if available.
-    // Note: this is currently experimental. If the system picker
-    // is available, it will be used and the media request handler
-    // will not be invoked.
-  }, { useSystemPicker: true })
+  session.defaultSession.setDisplayMediaRequestHandler(
+    (request, callback) => {
+      desktopCapturer.getSources({ types: ['screen'] }).then((sources) => {
+        // Grant access to the first screen found.
+        callback({ video: sources[0], audio: 'loopback' })
+      })
+      // If true, use the system picker if available.
+      // Note: this is currently experimental. If the system picker
+      // is available, it will be used and the media request handler
+      // will not be invoked.
+    },
+    { useSystemPicker: true }
+  )
 
   mainWindow.loadFile('index.html')
 })
@@ -40,17 +43,20 @@ const stopButton = document.getElementById('stopButton')
 const video = document.querySelector('video')
 
 startButton.addEventListener('click', () => {
-  navigator.mediaDevices.getDisplayMedia({
-    audio: true,
-    video: {
-      width: 320,
-      height: 240,
-      frameRate: 30
-    }
-  }).then(stream => {
-    video.srcObject = stream
-    video.onloadedmetadata = (e) => video.play()
-  }).catch(e => console.log(e))
+  navigator.mediaDevices
+    .getDisplayMedia({
+      audio: true,
+      video: {
+        width: 320,
+        height: 240,
+        frameRate: 30
+      }
+    })
+    .then((stream) => {
+      video.srcObject = stream
+      video.onloadedmetadata = (e) => video.play()
+    })
+    .catch((e) => console.log(e))
 })
 
 stopButton.addEventListener('click', () => {

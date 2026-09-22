@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/base-window
 title: "Base Window"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Create and control windows.
@@ -642,6 +642,10 @@ Returns `boolean` - Whether the window is focused.
 #### win.isDestroyed()
 
 Returns `boolean` - Whether the window is destroyed.
+
+> **Note:**
+> 
+> Once a window is destroyed, accessing most of its other properties and methods throws `Object has been destroyed`, so callbacks that may run after the window is gone should guard with `isDestroyed()`.
 
 #### win.show()
 

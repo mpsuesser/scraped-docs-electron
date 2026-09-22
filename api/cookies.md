@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/cookies
 title: "Cookies"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Query and modify a session's cookies.
@@ -19,30 +19,36 @@ For example:
 const { session } = require('electron')
 
 // Query all cookies.
-session.defaultSession.cookies.get({})
+session.defaultSession.cookies
+  .get({})
   .then((cookies) => {
     console.log(cookies)
-  }).catch((error) => {
+  })
+  .catch((error) => {
     console.log(error)
   })
 
 // Query all cookies associated with a specific url.
-session.defaultSession.cookies.get({ url: 'https://www.github.com' })
+session.defaultSession.cookies
+  .get({ url: 'https://www.github.com' })
   .then((cookies) => {
     console.log(cookies)
-  }).catch((error) => {
+  })
+  .catch((error) => {
     console.log(error)
   })
 
 // Set a cookie with the given cookie data;
 // may overwrite equivalent cookies if they exist.
 const cookie = { url: 'https://www.github.com', name: 'dummy_name', value: 'dummy' }
-session.defaultSession.cookies.set(cookie)
-  .then(() => {
+session.defaultSession.cookies.set(cookie).then(
+  () => {
     // success
-  }, (error) => {
+  },
+  (error) => {
     console.error(error)
-  })
+  }
+)
 ```
 
 ### Instance Events

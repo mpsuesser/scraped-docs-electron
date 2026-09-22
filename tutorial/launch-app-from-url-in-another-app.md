@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/launch-app-from-url-in-another-app
 title: "Launch App From Url In Another App"
 description: ""
-access_date: 2026-08-31T03:27:19.645Z
-current_date: 2026-08-31T03:27:19.645Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Overview
@@ -69,7 +69,7 @@ const gotTheLock = app.requestSingleInstanceLock()
 if (!gotTheLock) {
   app.quit()
 } else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
+  app.on('second-instance', (event, commandLine) => {
     // Someone tried to run a second instance, we should focus our window.
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
@@ -176,9 +176,9 @@ packager({
       schemes: ['electron-fiddle']
     }
   ]
-
-}).then(paths => console.log(\`SUCCESS: Created ${paths.join(', ')}\`))
-  .catch(err => console.error(\`ERROR: ${err.message}\`))
+})
+  .then((paths) => console.log(\`SUCCESS: Created ${paths.join(', ')}\`))
+  .catch((err) => console.error(\`ERROR: ${err.message}\`))
 ```
 
 If you're using Electron Packager's CLI, use the `--protocol` and `--protocol-name` flags. For example:
@@ -213,7 +213,7 @@ const gotTheLock = app.requestSingleInstanceLock()
 if (!gotTheLock) {
   app.quit()
 } else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
+  app.on('second-instance', (event, commandLine) => {
     // Someone tried to run a second instance, we should focus our window.
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()

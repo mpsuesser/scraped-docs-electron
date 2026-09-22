@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/multi-monitor-testing
 title: "Multi Monitor Testing"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 The `virtualDisplay` addon leverages macOS CoreGraphics APIs to create virtual displays, allowing you to write and run multi-monitor tests without the need for physical monitors. Due to macOS CoreGraphics quirks, reading the entire guide once before writing tests is recommended.
@@ -101,7 +101,7 @@ const display1 = virtualDisplay.create({ x: 0, y: 0, width: 1920, height: 1080 }
 const display2 = virtualDisplay.create({ x: 500, y: 0, width: 1920, height: 1080 })
 
 // macOS automatically repositions display2 to x: 1920 to prevent overlap
-const actualBounds = screen.getAllDisplays().map(d => d.bounds)
+const actualBounds = screen.getAllDisplays().map((d) => d.bounds)
 // Result: [{ x: 0, y: 0, width: 1920, height: 1080 }, { x: 1920, y: 0, width: 1920, height: 1080 }]
 ```
 

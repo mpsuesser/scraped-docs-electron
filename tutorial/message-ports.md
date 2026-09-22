@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/message-ports
 title: "Message Ports"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 [`MessagePort`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort) s are a web feature that allow passing messages between different contexts. It's like `window.postMessage`, but on different channels. The goal of this document is to describe how Electron extends the Channel Messaging model, and to give some examples of how you might use MessagePorts in your app.
@@ -109,11 +109,11 @@ Then, in your preload scripts you receive the port through IPC and set up the li
 ```js
 const { ipcRenderer } = require('electron')
 
-ipcRenderer.on('port', e => {
+ipcRenderer.on('port', (e) => {
   // port received, make it globally available.
   window.electronMessagePort = e.ports[0]
 
-  window.electronMessagePort.onmessage = messageEvent => {
+  window.electronMessagePort.onmessage = (messageEvent) => {
     // handle message
   }
 })
@@ -220,11 +220,7 @@ const makeStreamingRequest = (element, callback) => {
   const { port1, port2 } = new MessageChannel()
 
   // We send one end of the port to the main process ...
-  ipcRenderer.postMessage(
-    'give-me-a-stream',
-    { element, count: 10 },
-    [port2]
-  )
+  ipcRenderer.postMessage('give-me-a-stream', { element, count: 10 }, [port2])
 
   // ... and we hang on to the other end. The main process will send messages
   // to its end of the port, and close it when it's finished.
@@ -306,7 +302,7 @@ const { ipcRenderer } = require('electron')
 // We need to wait until the main world is ready to receive the message before
 // sending the port. We create this promise in the preload so it's guaranteed
 // to register the onload listener before the load event is fired.
-const windowLoaded = new Promise(resolve => {
+const windowLoaded = new Promise((resolve) => {
   window.onload = resolve
 })
 

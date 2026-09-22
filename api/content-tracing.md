@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.
@@ -19,16 +19,14 @@ This module does not include a web interface. To view recorded traces, use [trac
 ```js
 const { app, contentTracing } = require('electron')
 
-app.whenReady().then(() => {
-  (async () => {
-    await contentTracing.startRecording({
-      included_categories: ['*']
-    })
-    console.log('Tracing started')
-    await new Promise(resolve => setTimeout(resolve, 5000))
-    const path = await contentTracing.stopRecording()
-    console.log('Tracing data recorded to ' + path)
-  })()
+app.whenReady().then(async () => {
+  await contentTracing.startRecording({
+    included_categories: ['*']
+  })
+  console.log('Tracing started')
+  await new Promise((resolve) => setTimeout(resolve, 5000))
+  const path = await contentTracing.stopRecording()
+  console.log('Tracing data recorded to ' + path)
 })
 ```
 
@@ -126,19 +124,17 @@ Usage:
 ```js
 const { contentTracing } = require('electron')
 
-async function recordTrace () {
+async function recordTrace() {
   await contentTracing.enableHeapProfiling()
   await contentTracing.startRecording({
     included_categories: ['disabled-by-default-memory-infra'],
     excluded_categories: ['*'],
     memory_dump_config: {
-      triggers: [
-        { mode: 'detailed', periodic_interval_ms: 1000 }
-      ]
+      triggers: [{ mode: 'detailed', periodic_interval_ms: 1000 }]
     }
   })
 
-  await new Promise(resolve => setTimeout(resolve, 5000))
+  await new Promise((resolve) => setTimeout(resolve, 5000))
 
   const filePath = await contentTracing.stopRecording()
 }

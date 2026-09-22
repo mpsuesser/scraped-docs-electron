@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/security
 title: "Security"
 description: ""
-access_date: 2026-09-18T18:11:09.345Z
-current_date: 2026-09-18T18:11:09.345Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > **Reporting security issues:**
 > 
-> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.4.3/SECURITY.md).
+> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.4.4/SECURITY.md).
 > 
 > For upstream Chromium vulnerabilities: Electron keeps up to date with alternating Chromium releases. For more information, see the [Electron Release Timelines](electron-timelines.md) document.
 
@@ -198,22 +198,20 @@ const { session } = require('electron')
 
 const { URL } = require('node:url')
 
-session
-  .defaultSession
-  .setPermissionRequestHandler((webContents, permission, callback) => {
-    const parsedUrl = new URL(webContents.getURL())
+session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
+  const parsedUrl = new URL(webContents.getURL())
 
-    if (permission === 'notifications') {
-      // Approves the permissions request
-      callback(true)
-    }
+  if (permission === 'notifications') {
+    // Approves the permissions request
+    callback(true)
+  }
 
-    // Verify URL
-    if (parsedUrl.protocol !== 'https:' || parsedUrl.host !== 'example.com') {
-      // Denies the permissions request
-      return callback(false)
-    }
-  })
+  // Verify URL
+  if (parsedUrl.protocol !== 'https:' || parsedUrl.host !== 'example.com') {
+    // Denies the permissions request
+    return callback(false)
+  }
+})
 ```
 
 Note: `session.defaultSession` is only available after `app.whenReady` is called.
@@ -285,7 +283,7 @@ session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
   callback({
     responseHeaders: {
       ...details.responseHeaders,
-      'Content-Security-Policy': ['default-src \'none\'']
+      'Content-Security-Policy': ["default-src 'none'"]
     }
   })
 })
@@ -571,7 +569,7 @@ ipcMain.handle('get-secrets', (e) => {
   return getSecrets()
 })
 
-function validateSender (frame) {
+function validateSender(frame) {
   // Validate the frame's origin against an allowlist. Use the origin, not the
   // URL: about:blank, blob: and sandboxed documents have URLs that do not
   // identify who controls them, and the frame may be null if it has gone away.

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/devices
 title: "Devices"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Like Chromium based browsers, Electron provides access to device hardware through web APIs. For the most part these APIs work like they do in a browser, but there are some differences that need to be taken into account. The primary difference between Electron and browsers is what happens when device access is requested. In a browser, users are presented with a popup where they can grant access to an individual device. In Electron APIs are provided which can be used by a developer to either automatically pick a device or prompt users to pick a device via a developer created interface.
@@ -50,7 +50,7 @@ function createWindow () {
     }
   })
 
-  ipcMain.on('cancel-bluetooth-request', (event) => {
+  ipcMain.on('cancel-bluetooth-request', () => {
     selectBluetoothCallback('')
   })
 
@@ -330,7 +330,6 @@ function createWindow () {
     if (portList && portList.length > 0) {
       callback(portList[0].portId)
     } else {
-      // eslint-disable-next-line n/no-callback-literal
       callback('') // Could not find any matching devices
     }
   })

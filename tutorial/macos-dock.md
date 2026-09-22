@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/macos-dock
 title: "Macos Dock"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 On macOS, the [Dock](https://support.apple.com/en-ca/guide/mac-help/mh35859/mac) is an interface element that displays open and frequently-used apps. While opened or pinned, each app has its own icon in the Dock.
@@ -38,7 +38,9 @@ app.whenReady().then(() => {
   const dockMenu = Menu.buildFromTemplate([
     {
       label: 'New Window',
-      click: () => { const win = new BrowserWindow() }
+      click: () => {
+        const win = new BrowserWindow()
+      }
     }
     // add more menu options to the array
   ])

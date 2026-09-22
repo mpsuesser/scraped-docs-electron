@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/keyboard-shortcuts
 title: "Keyboard Shortcuts"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Accelerators
@@ -100,11 +100,13 @@ if (process.platform === 'darwin') {
   menu.append(appMenu)
 }
 
-const submenu = Menu.buildFromTemplate([{
-  label: 'Open a Dialog',
-  click: () => dialog.showMessageBox({ message: 'Hello World!' }),
-  accelerator: 'CommandOrControl+Alt+R'
-}])
+const submenu = Menu.buildFromTemplate([
+  {
+    label: 'Open a Dialog',
+    click: () => dialog.showMessageBox({ message: 'Hello World!' }),
+    accelerator: 'CommandOrControl+Alt+R'
+  }
+])
 menu.append(new MenuItem({ label: 'Custom Menu', submenu }))
 
 Menu.setApplicationMenu(menu)

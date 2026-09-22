@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/performance
 title: "Performance"
 description: ""
-access_date: 2026-08-04T19:03:02.080Z
-current_date: 2026-08-04T19:03:02.080Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Developers frequently ask about strategies to optimize the performance of Electron applications. Software engineers, consumers, and framework developers do not always agree on one single definition of what "performance" means. This document outlines some of the Electron maintainers' favorite ways to reduce the amount of memory, CPU, and disk resources being used while ensuring that your app is responsive to user input and completes operations as quickly as possible. Furthermore, we want all performance strategies to maintain a high standard for your app's security.
@@ -98,11 +98,11 @@ const fs = require('node:fs')
 const fooParser = require('foo-parser')
 
 class Parser {
-  constructor () {
+  constructor() {
     this.files = fs.readdirSync('.')
   }
 
-  getParsedFiles () {
+  getParsedFiles() {
     return fooParser.parse(this.files)
   }
 }
@@ -119,16 +119,16 @@ In the above example, we're doing a lot of work that's being executed as soon as
 const fs = require('node:fs')
 
 class Parser {
-  async getFiles () {
+  async getFiles() {
     // Touch the disk as soon as \`getFiles\` is called, not sooner.
     // Also, ensure that we're not blocking other operations by using
     // the asynchronous version.
-    this.files = this.files || await fs.promises.readdir('.')
+    this.files = this.files || (await fs.promises.readdir('.'))
 
     return this.files
   }
 
-  async getParsedFiles () {
+  async getParsedFiles() {
     // Our fictitious foo-parser is a big and expensive module to load, so
     // defer that work until we actually need to parse files.
     // Since \`require()\` comes with a module cache, the \`require()\` call

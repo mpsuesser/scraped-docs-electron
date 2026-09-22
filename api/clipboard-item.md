@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard-item
 title: "Clipboard Item"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 > A single clipboard entry that pairs one or more MIME-typed payloads.
@@ -69,15 +69,12 @@ const { pathToFileURL } = require('node:url')
 // manager.
 clipboard.write([
   new ClipboardItem({
-    'text/uri-list': [
-      pathToFileURL('/path/to/first.txt').href,
-      pathToFileURL('/path/to/second.txt').href
-    ].join('\r\n')
+    'text/uri-list': [pathToFileURL('/path/to/first.txt').href, pathToFileURL('/path/to/second.txt').href].join('\r\n')
   })
 ])
 
 // Read the files currently on the clipboard.
-async function readFiles () {
+async function readFiles() {
   const [item] = await clipboard.read()
   if (item.types.includes('text/uri-list')) {
     const blob = await item.getType('text/uri-list')
@@ -107,7 +104,7 @@ Returns `Promise<Blob> | Promise<ClipboardBookmark>` - Resolves with the payload
 ```js
 const { clipboard } = require('electron')
 
-async function dumpClipboard () {
+async function dumpClipboard() {
   const items = await clipboard.read()
   for (const item of items) {
     for (const type of item.types) {
@@ -127,7 +124,7 @@ Returns `Promise<ClipboardBookmark>` - Resolves with a [ClipboardBookmark](struc
 ```js
 const { clipboard } = require('electron')
 
-async function dumpClipboard () {
+async function dumpClipboard() {
   const bookmarkType = 'electron application/bookmark'
   const items = await clipboard.read()
   for (const item of items) {

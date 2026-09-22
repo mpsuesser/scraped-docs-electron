@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/in-app-purchases
 title: "In App Purchases"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Preparing
@@ -75,7 +75,6 @@ inAppPurchase.on('transactions-updated', (event, transactions) => {
       }
 
       case 'failed':
-
         console.log(\`Failed to purchase ${payment.productIdentifier}.\`)
 
         // Finish the transaction.
@@ -83,12 +82,10 @@ inAppPurchase.on('transactions-updated', (event, transactions) => {
 
         break
       case 'restored':
-
         console.log(\`The purchase of ${payment.productIdentifier} has been restored.\`)
 
         break
       case 'deferred':
-
         console.log(\`The purchase of ${payment.productIdentifier} has been deferred.\`)
 
         break
@@ -104,7 +101,7 @@ if (!inAppPurchase.canMakePayments()) {
 }
 
 // Retrieve and display the product descriptions.
-inAppPurchase.getProducts(PRODUCT_IDS).then(products => {
+inAppPurchase.getProducts(PRODUCT_IDS).then((products) => {
   // Check the parameters.
   if (!Array.isArray(products) || products.length <= 0) {
     console.log('Unable to retrieve the product information.')
@@ -121,7 +118,7 @@ inAppPurchase.getProducts(PRODUCT_IDS).then(products => {
   const selectedQuantity = 1
 
   // Purchase the selected product.
-  inAppPurchase.purchaseProduct(selectedProduct.productIdentifier, selectedQuantity).then(isProductValid => {
+  inAppPurchase.purchaseProduct(selectedProduct.productIdentifier, selectedQuantity).then((isProductValid) => {
     if (!isProductValid) {
       console.log('The product is not valid.')
       return

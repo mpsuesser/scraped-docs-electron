@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/README
 title: "README"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 Please make sure that you use the documents that match your Electron version. The version number should be a part of the page URL. If it's not, you are probably using the documentation of a development branch which may contain API changes that are not compatible with your Electron version. To view older versions of the documentation, you can [browse by tag](https://github.com/electron/electron/tree/v1.4.0) on GitHub by opening the "Switch branches/tags" dropdown and selecting the tag that matches your version.
@@ -38,12 +38,6 @@ There are questions that are asked quite often. Check this out before creating a
 		- [Offscreen Rendering](tutorial/offscreen-rendering.md)
 		- [Dark Mode](tutorial/dark-mode.md)
 		- [Web embeds in Electron](tutorial/web-embeds.md)
-		- [Boilerplates and CLIs](tutorial/boilerplates-and-clis.md)
-		- [Boilerplate vs CLI](tutorial/boilerplates-and-clis.md#boilerplate-vs-cli)
-		- [Electron Forge](tutorial/boilerplates-and-clis.md#electron-forge)
-		- [electron-builder](tutorial/boilerplates-and-clis.md#electron-builder)
-		- [electron-react-boilerplate](tutorial/boilerplates-and-clis.md#electron-react-boilerplate)
-		- [Other Tools and Boilerplates](tutorial/boilerplates-and-clis.md#other-tools-and-boilerplates)
 
 ### Advanced steps
 

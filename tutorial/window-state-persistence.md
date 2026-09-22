@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/window-state-persistence
 title: "Window State Persistence"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-22T19:04:52.199Z
+current_date: 2026-09-22T19:04:52.199Z
 ---
 
 ## Overview
@@ -21,7 +21,7 @@ To enable Window State Persistence, set `windowStatePersistence: true` in your w
 ```js
 const { app, BrowserWindow } = require('electron')
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     name: 'main-window',
     width: 800,
@@ -53,7 +53,7 @@ You can control which aspects of the window state are persisted by passing an ob
 ```js
 const { app, BrowserWindow } = require('electron')
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     name: 'main-window',
     width: 800,
