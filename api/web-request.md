@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-request
 title: "Web Request"
 description: ""
-access_date: 2026-09-24T12:31:23.316Z
-current_date: 2026-09-24T12:31:23.316Z
+access_date: 2026-09-25T03:23:14.378Z
+current_date: 2026-09-25T03:23:14.378Z
 ---
 
 > Intercept and modify the contents of a request at various stages of its lifetime.
@@ -47,7 +47,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
+| [ ```markdown ^v44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
