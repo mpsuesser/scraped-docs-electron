@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/tutorial/security
 title: "Security"
 description: ""
-access_date: 2026-09-23T07:02:42.391Z
-current_date: 2026-09-23T07:02:42.391Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 > **Reporting security issues:**
 > 
-> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.4.5/SECURITY.md).
+> For information on how to properly disclose an Electron vulnerability, see [SECURITY.md](https://github.com/electron/electron/blob/v44.5.0/SECURITY.md).
 > 
 > For upstream Chromium vulnerabilities: Electron keeps up to date with alternating Chromium releases. For more information, see the [Electron Release Timelines](electron-timelines.md) document.
 

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard-item
 title: "Clipboard Item"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 > A single clipboard entry that pairs one or more MIME-typed payloads.
@@ -78,10 +78,8 @@ async function readFiles() {
   const [item] = await clipboard.read()
   if (item.types.includes('text/uri-list')) {
     const blob = await item.getType('text/uri-list')
-    if (blob instanceof Blob) {
-      const uriList = await blob.text()
-      return uriList.split(/\r?\n/).filter(Boolean)
-    }
+    const uriList = await blob.text()
+    return uriList.split(/\r?\n/).filter(Boolean)
   }
   return []
 }
@@ -95,11 +93,11 @@ A `string[]` property — the MIME types of the data carried by this entry. For 
 
 ### Instance Methods
 
-#### clipboardItem.getType(type)
+#### clipboardItem.getType<T extends string>(type)
 
-- `type` string - mime type to retrieve.
+- `type` T - mime type to retrieve.
 
-Returns `Promise<Blob> | Promise<ClipboardBookmark>` - Resolves with the payload for the given MIME type. Modeled after the W3C [`ClipboardItem.getType`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/getType) method. The promise resolves to a `Blob` for most MIME types; the one exception is `getType('electron application/bookmark')`, which resolves to a [ClipboardBookmark](structures/clipboard-bookmark.md) object instead. Rejects when `type` is not present in [`clipboardItem.types`](#clipboarditemtypes-readonly).
+Returns `Promise<string extends T ? (Blob | ClipboardBookmark) : T extends 'electron application/bookmark' ? ClipboardBookmark : Blob>` - Resolves with the payload for the given MIME type. Modeled after the W3C [`ClipboardItem.getType`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/getType) method. The promise resolves to a `Blob` for most MIME types; the one exception is `getType('electron application/bookmark')`, which resolves to a [ClipboardBookmark](structures/clipboard-bookmark.md) object instead. Rejects when `type` is not present in [`clipboardItem.types`](#clipboarditemtypes-readonly).
 
 ```js
 const { clipboard } = require('electron')

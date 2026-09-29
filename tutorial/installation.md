@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/installation
 title: "Installation"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 To install prebuilt Electron binaries, use [`npm`](https://docs.npmjs.com/). The preferred method is to install Electron as a development dependency in your app:
@@ -137,10 +137,10 @@ On environments that have been using older versions of Electron, you might find 
 
 You can also override the local cache location by providing a `electron_config_cache` environment variable.
 
-The cache contains the version's official zip file as well as a checksum, and is stored as `[checksum]/[filename]`. A typical cache might look like this:
+Cached zip files are stored in subdirectories. Their names are assigned by `@electron/get`. A typical cache might look like this:
 
 ```sh
-├── a91b089b5dc5b1279966511344b805ec84869b6cd60af44f800b363bba25b915
+├── 523ee27feac8b931299c79e78b7ca4f365aa3f7069fff666cae93c7fb9ff2fee
 │   └── electron-v15.3.1-darwin-x64.zip
 ```
 

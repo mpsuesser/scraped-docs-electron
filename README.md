@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/README
 title: "README"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 Please make sure that you use the documents that match your Electron version. The version number should be a part of the page URL. If it's not, you are probably using the documentation of a development branch which may contain API changes that are not compatible with your Electron version. To view older versions of the documentation, you can [browse by tag](https://github.com/electron/electron/tree/v1.4.0) on GitHub by opening the "Switch branches/tags" dropdown and selecting the tag that matches your version.
@@ -55,6 +55,7 @@ There are questions that are asked quite often. Check this out before creating a
 		- [DevTools Extension](tutorial/devtools-extension.md)
 		- [Automated Testing](tutorial/automated-testing.md)
 		- [REPL](tutorial/repl.md)
+		- [Crash Reporting](tutorial/crash-reporting.md)
 - [Distribution](tutorial/application-distribution.md)
 	- [Code Signing](tutorial/code-signing.md)
 		- [Mac App Store](tutorial/mac-app-store-submission-guide.md)

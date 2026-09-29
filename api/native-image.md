@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/native-image
 title: "Native Image"
 description: ""
-access_date: 2026-08-12T17:17:59.517Z
-current_date: 2026-08-12T17:17:59.517Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 > Create tray, dock, and application icons using PNG or JPG files.
@@ -236,6 +236,10 @@ Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer
 ### Instance Methods
 
 The following methods are available on instances of the `NativeImage` class:
+
+> **Note:**
+> 
+> The methods that return a `Buffer` throw an error when called from a context without a Node.js environment, such as a [sandboxed](../tutorial/sandbox.md) preload script. `image.toDataURL()` works in every context.
 
 #### image.toPNG(\[options\])
 

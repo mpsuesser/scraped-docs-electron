@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 > Create and control browser windows.
@@ -1521,7 +1521,7 @@ Returns `boolean` - Whether the window is visible on all workspaces.
 
 Makes the window ignore all mouse events.
 
-All mouse events happened in this window will be passed to the window below this window, but if this window has focus, it will still receive keyboard events.
+All mouse events happened in this window will be passed to the window below this window, but if this window has focus, it will still receive keyboard events. On Linux this is supported on both X11 and Wayland. On X11 the X server has applied the window's new input shape when the call returns; on Wayland the new input region is applied with the window's next frame.
 
 #### win.setContentProtection(enable) macOS Windows
 
@@ -1529,7 +1529,15 @@ All mouse events happened in this window will be passed to the window below this
 
 Prevents the window contents from being captured by other apps.
 
-On Windows, it calls [`SetWindowDisplayAffinity`](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowdisplayaffinity) with `WDA_EXCLUDEFROMCAPTURE`. For Windows 10 version 2004 and up the window will be removed from capture entirely, older Windows versions behave as if `WDA_MONITOR` is applied capturing a black window.
+On Windows, it calls [`SetWindowDisplayAffinity`](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowdisplayaffinity) with `WDA_EXCLUDEFROMCAPTURE`. For Windows 10 version 2004 and up the window will be removed from capture entirely, older Windows versions behave as if `WDA_MONITOR` is applied capturing a black window. The change takes effect with the next desktop composition, not when the call returns, so a capture started immediately afterwards can still contain the window.
+
+Protection also applies in a Windows remote session. A Remote Desktop client still shows the window to the remote user, but remote access software that works by capturing the desktop cannot. To leave windows unprotected in remote sessions instead, disable the `AllowWindowCaptureExclusionInRemoteSessions` Chromium feature at the start of your main script. `win.isContentProtected()` still returns `true` in that case.
+
+```js
+const { app } = require('electron')
+
+app.commandLine.appendSwitch('disable-features', 'AllowWindowCaptureExclusionInRemoteSessions')
+```
 
 On macOS, it sets the `NSWindow` 's [`sharingType`](https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.property?language=objc) to [`NSWindowSharingNone`](https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.enum/none?language=objc). Unfortunately, due to an intentional change in macOS, newer Mac applications that use `ScreenCaptureKit` will capture your window despite `win.setContentProtection(true)`. See [here](https://github.com/electron/electron/issues/48258#issuecomment-3269893618).
 

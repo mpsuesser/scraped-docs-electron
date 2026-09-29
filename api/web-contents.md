@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-09-23T07:02:42.391Z
-current_date: 2026-09-23T07:02:42.391Z
+access_date: 2026-09-29T19:33:05.993Z
+current_date: 2026-09-29T19:33:05.993Z
 ---
 
 > Render and control web pages.
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.4.5/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.5.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')
@@ -1344,7 +1344,7 @@ Returns `boolean` - Whether [caret browsing](#contentscaretbrowsingenabled) is e
 
 Changes the zoom factor to the specified factor. Zoom factor is zoom percent divided by 100, so 300% = 3.0.
 
-The factor must be greater than 0.0.
+The factor must be greater than 0.0. Values outside the range Chromium can display (0.25 to 5.0) are clamped to it.
 
 #### contents.getZoomFactor()
 
@@ -1354,7 +1354,7 @@ Returns `number` - the current zoom factor.
 
 - `level` number - Zoom level.
 
-Changes the zoom level to the specified level. The original size is 0 and each increment above or below represents zooming 20% larger or smaller to default limits of 300% and 50% of original size, respectively. The formula for this is `scale := 1.2 ^ level`.
+Changes the zoom level to the specified level. The original size is 0 and each increment above or below represents zooming 20% larger or smaller. The formula for this is `scale := 1.2 ^ level`, and the level is clamped to the range Chromium can display (25% to 500%, about -7.6 to 8.8).
 
 > **Note:**
 > 
@@ -1400,7 +1400,7 @@ Returns `string` - The current zoom mode. Can be `default`, `isolated`, `manual`
 
 Returns `Promise<void>`
 
-Sets the maximum and minimum pinch-to-zoom level.
+Sets the maximum and minimum pinch-to-zoom level. The page keeps its normal scale until the user pinches; a `minimumLevel` below 1 only allows zooming out.
 
 > **Note:**
 > 
