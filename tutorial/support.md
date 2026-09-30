@@ -2,10 +2,10 @@
 url: https://www.electronjs.org/docs/latest/tutorial/support
 title: "Support"
 description: ""
-access_date: 2026-09-29T19:33:05.993Z
-current_date: 2026-09-29T19:33:05.993Z
+access_date: 2026-09-30T02:36:45.313Z
+current_date: 2026-09-30T02:36:45.313Z
 ---
 
 - For information on supported releases, see the [Electron Releases](electron-timelines.md) doc.
 - For community support on Electron, see the [Community page](https://www.electronjs.org/community).
-- For platform support info, see the [README](https://github.com/electron/electron/blob/v44.5.0/README.md).
+- For platform support info, see the [README](https://github.com/electron/electron/blob/v44.5.1/README.md).
