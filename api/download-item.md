@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/download-item
 title: "Download Item"
 description: ""
-access_date: 2026-10-07T00:05:59.958Z
-current_date: 2026-10-07T00:05:59.958Z
+access_date: 2026-10-07T18:52:03.744Z
+current_date: 2026-10-07T18:52:03.744Z
 ---
 
 > Control file downloads from remote sources.
@@ -140,7 +140,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^v44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | ```markdown API ADDED ``` |
+| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | ```markdown API ADDED ``` |
 
 Returns `string` - The origin that started the download (for example `https://example.com`, or `null` for an opaque origin), or an empty string if the download was not started by web content (for example `webContents.downloadURL()`). Use this rather than `getURL()` or the `webContents` to decide whose download it is: the URL is chosen by the initiator and the `webContents` is the whole tab.
 
