@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
 title: "Offscreen Rendering"
 description: ""
-access_date: 2026-10-07T00:05:59.958Z
-current_date: 2026-10-07T00:05:59.958Z
+access_date: 2026-10-07T23:21:29.744Z
+current_date: 2026-10-07T23:21:29.744Z
 ---
 
 ## Overview
@@ -26,7 +26,7 @@ GPU accelerated rendering means that the GPU is used for composition. The benefi
 
 1. Use GPU shared texture
 	Used when `webPreferences.offscreen.useSharedTexture` is set to `true`.
-	This is an advanced feature requiring a native node module to work with your own code. The frames are directly copied in GPU textures, thus this mode is very fast because there's no CPU-GPU memory copies overhead, and you can directly import the shared texture to your own rendering program. You can read more details [here](https://github.com/electron/electron/blob/v44.6.0/shell/common/api/shared_texture/README.md).
+	This is an advanced feature requiring a native node module to work with your own code. The frames are directly copied in GPU textures, thus this mode is very fast because there's no CPU-GPU memory copies overhead, and you can directly import the shared texture to your own rendering program. You can read more details [here](https://github.com/electron/electron/blob/v44.7.0/shell/common/api/shared_texture/README.md).
 2. Use CPU shared memory bitmap
 	Used when `webPreferences.offscreen.useSharedTexture` is set to `false` (default behavior).
 	The texture is accessible using the `NativeImage` API at the cost of performance. The frame has to be copied from the GPU to the CPU bitmap which requires more system resources, thus this mode is slower than the Software output device mode. But it supports GPU related functionalities.
