@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-10-13T18:19:00.641Z
-current_date: 2026-10-13T18:19:00.641Z
+access_date: 2026-10-14T06:34:15.573Z
+current_date: 2026-10-14T06:34:15.573Z
 ---
 
 > Render and control web pages.
@@ -523,13 +523,13 @@ Emitted when the user is requesting to change the zoom level using the mouse whe
 
 Emitted when the `WebContents` loses focus.
 
+The `blur` event is also emitted when switching between windows or apps for the `WebContents` that has focus within its window.
+
 #### Event: 'focus'
 
 Emitted when the `WebContents` gains focus.
 
-Note that on macOS, having focus means the `WebContents` is the first responder of window, so switching focus between windows would not trigger the `focus` and `blur` events of `WebContents`, as the first responder of each window is not changed.
-
-The `focus` and `blur` events of `WebContents` should only be used to detect focus change between different `WebContents` and `BrowserView` in the same window.
+The `focus` event is also emitted when switching between windows or apps for the `WebContents` that has focus within its window.
 
 #### Event: 'devtools-open-url'
 
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.7.1/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v44.7.2/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')

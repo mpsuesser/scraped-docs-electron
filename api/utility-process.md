@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/utility-process
 title: "Utility Process"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-10-14T06:34:15.573Z
+current_date: 2026-10-14T06:34:15.573Z
 ---
 
 `utilityProcess` creates a child process with Node.js and Message ports enabled. It provides the equivalent of [`child_process.fork`](https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#child_processforkmodulepath-args-options) API from Node.js but instead uses [Services API](https://chromium.googlesource.com/chromium/src/+/main/docs/mojo_and_services.md) from Chromium to launch the child process.
@@ -153,6 +153,7 @@ Emitted when the child process sends a message using [`process.parentPort.postMe
 
 Returns:
 
+- `event` Event
 - `authenticationResponseDetails` Object
 	- `url` URL
 		- `pid` number
@@ -169,7 +170,9 @@ Returns:
 	- `username` string (optional)
 		- `password` string (optional)
 
-Emitted when the utility process encounters an HTTP 401 or 407 authentication challenge, if the process was created with both `respondToAuthRequestsFromMainProcess: true` and a `session` option. The `callback` should be called with credentials to respond to the challenge. Calling `callback` without arguments will cancel the request.
+Emitted when the utility process encounters an HTTP 401 or 407 authentication challenge, if the process was created with both `respondToAuthRequestsFromMainProcess: true` and a `session` option.
+
+The default behavior is to cancel the authentication. To override this you should prevent the default behavior with `event.preventDefault()` and call `callback(username, password)` with the credentials. Calling `callback` without arguments will cancel the request.
 
 This behaves the same as the [`login` event on `app`](app.md#event-login) but is scoped to the individual utility process instance.
 
@@ -182,7 +185,8 @@ const child = utilityProcess.fork('./worker.js', [], {
   respondToAuthRequestsFromMainProcess: true
 })
 
-child.on('login', (authenticationResponseDetails, authInfo, callback) => {
+child.on('login', (event, authenticationResponseDetails, authInfo, callback) => {
+  event.preventDefault()
   callback('username', 'password')
 })
 ```

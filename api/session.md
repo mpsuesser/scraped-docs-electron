@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-10-07T00:05:59.958Z
-current_date: 2026-10-07T00:05:59.958Z
+access_date: 2026-10-14T06:34:15.573Z
+current_date: 2026-10-14T06:34:15.573Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -1250,7 +1250,7 @@ Returns `string` - The user agent for this session.
 #### ses.setSSLConfig(config)
 
 - `config` Object
-	- `minVersion` string (optional) - Can be `tls1`, `tls1.1`, `tls1.2` or `tls1.3`. The minimum SSL version to allow when connecting to remote servers. Defaults to `tls1`.
+	- `minVersion` string (optional) - Can be `tls1.2` or `tls1.3`. The minimum SSL version to allow when connecting to remote servers. Defaults to `tls1.2`.
 		- `maxVersion` string (optional) - Can be `tls1.2` or `tls1.3`. The maximum SSL version to allow when connecting to remote servers. Defaults to `tls1.3`.
 		- `disabledCipherSuites` Integer\[\] (optional) - List of cipher suites which should be explicitly prevented from being used in addition to those disabled by the net built-in policy. Supported literal forms: 0xAABB, where AA is `cipher_suite[0]` and BB is `cipher_suite[1]`, as defined in RFC 2246, Section 7.4.1.2. Unrecognized but parsable cipher suites in this form will not return an error. Ex: To disable TLS\_RSA\_WITH\_RC4\_128\_MD5, specify 0x0004, while to disable TLS\_ECDH\_ECDSA\_WITH\_RC4\_128\_SHA, specify 0xC002. Note that TLSv1.3 ciphers cannot be disabled using this mechanism.
 
