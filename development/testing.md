@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/testing
 title: "Testing"
 description: ""
-access_date: 2026-09-29T19:33:05.993Z
-current_date: 2026-09-29T19:33:05.993Z
+access_date: 2026-10-16T05:07:53.385Z
+current_date: 2026-10-16T05:07:53.385Z
 ---
 
 We aim to keep the code coverage of Electron high. We ask that all pull request not only pass all existing tests, but ideally also add new tests to cover changed code and new scenarios. Ensuring that we capture as many code paths and use cases of Electron as possible ensures that we all ship apps with fewer bugs.
@@ -26,7 +26,7 @@ The suite is driven by [vitest](https://vitest.dev/): the `vitest` CLI runs unde
 
 To run only some spec files, pass them with `--files`: `npm run test -- --files spec/api-app.spec.ts`. To run only tests whose name matches a pattern, run `npm run test -- -g=PATTERN`, replacing `PATTERN` with a regex. As an example: If you want to run only IPC tests, you would run `npm run test -- -g ipc`.
 
-The spec files use mocha's interface (`describe`, `it`, `before`, `after`, `this.timeout()`), provided on top of vitest by `spec/vitest/mocha-compat.ts`, and [chai](https://www.chaijs.com/) assertions.
+Specs import `describe`, `it`, `expect` and the hooks from `vitest` and assert with its matchers (`expect(x).toBe(y)`, `toEqual`, `toHaveProperty`,...); chai-style chains (`expect(x).to.equal(y)`) are rejected by the linter because their property form can silently assert nothing. A few Electron specific behaviours (a macrotask between tests, `defer()` cleanup, `spec/disabled-tests.json`) live in `spec/vitest/runner.ts`.
 
 ## Node.js Smoke Tests
 

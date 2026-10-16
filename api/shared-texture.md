@@ -2,11 +2,11 @@
 url: https://www.electronjs.org/docs/latest/api/shared-texture
 title: "Shared Texture"
 description: ""
-access_date: 2026-10-14T06:34:15.573Z
-current_date: 2026-10-14T06:34:15.573Z
+access_date: 2026-10-16T05:07:53.385Z
+current_date: 2026-10-16T05:07:53.385Z
 ---
 
-> Import shared textures into Electron and converts platform specific handles into [`VideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame). Supports all Web rendering systems, and can be transferred across Electron processes. Read [here](https://github.com/electron/electron/blob/v44.7.2/shell/common/api/shared_texture/README.md) for more information.
+> Import shared textures into Electron and converts platform specific handles into [`VideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame). Supports all Web rendering systems, and can be transferred across Electron processes. Read [here](https://github.com/electron/electron/blob/v44.8.0/shell/common/api/shared_texture/README.md) for more information.
 
 Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)
 

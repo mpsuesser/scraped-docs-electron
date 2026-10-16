@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/notification
 title: "Notification"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-16T05:07:53.385Z
+current_date: 2026-10-16T05:07:53.385Z
 ---
 
 > Create OS desktop notifications
@@ -166,7 +166,7 @@ Notification.removeGroup('chat-thread-1')
 		- `replyPlaceholder` string (optional) *macOS* *Windows* - The placeholder to write in the inline reply input field.
 		- `sound` string (optional) *macOS* - The name of the sound file to play when the notification is shown.
 		- `urgency` string (optional) *Linux* *Windows* - The urgency level of the notification. Can be 'normal', 'critical', or 'low'.
-		- `actions` [NotificationAction\[\]](structures/notification-action.md) (optional) *macOS* *Windows* - Actions to add to the notification. Please read the available actions and limitations in the `NotificationAction` documentation.
+		- `actions` [NotificationAction\[\]](structures/notification-action.md) (optional) - Actions to add to the notification. Please read the available actions and limitations in the `NotificationAction` documentation.
 		- `closeButtonText` string (optional) *macOS* - A custom title for the close button of an alert. An empty string will cause the default localized text to be used.
 		- `toastXml` string (optional) *Windows* - A custom description of the Notification on Windows superseding all properties above. Provides full customization of design and behavior of the notification.
 
@@ -287,7 +287,7 @@ app.whenReady().then(() => {
 })
 ```
 
-#### Event: 'action' macOS Windows
+#### Event: 'action'
 
 Returns:
 
