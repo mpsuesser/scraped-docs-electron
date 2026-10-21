@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 title: "Tutorial Packaging"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 > **Follow along the tutorial:**
@@ -22,20 +22,18 @@ Electron Forge is an all-in-one tool that handles the packaging and distribution
 
 ### Importing your project into Forge
 
-You can install Electron Forge's CLI in your project's `devDependencies` and import your existing project with a handy conversion script.
+Electron Forge's `create-electron-app` package can import your existing project with a handy conversion script, which also installs Forge's CLI in your project's `devDependencies` for you.
 
 #### npm
 
 ```sh
-npm install --save-dev @electron-forge/cli
-npx electron-forge import
+npx create-electron-app@latest import
 ```
 
 #### Yarn
 
 ```sh
-yarn add --dev @electron-forge/cli
-yarn electron-forge import
+yarn create electron-app import
 ```
 
 Once the conversion script is done, Forge should have added a few scripts to your `package.json` file.

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-09-29T19:33:05.993Z
-current_date: 2026-09-29T19:33:05.993Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 > Create and control browser windows.
@@ -1522,6 +1522,12 @@ Returns `boolean` - Whether the window is visible on all workspaces.
 Makes the window ignore all mouse events.
 
 All mouse events happened in this window will be passed to the window below this window, but if this window has focus, it will still receive keyboard events. On Linux this is supported on both X11 and Wayland. On X11 the X server has applied the window's new input shape when the call returns; on Wayland the new input region is applied with the window's next frame.
+
+> **Note:**
+> 
+> On Windows, `forward: true` stops working temporarily when the active window is running at a higher integrity level (e.g., elevated/Administrator) than your Electron app. Since Electron typically runs at standard user privilege, this occurs when an elevated window—such as Task Manager or an installer—takes focus. This is due to User Interface Privacy Isolation (UIPI).
+> 
+> To work around it, your app must be run with Administrator privileges or configured with UIAccess privileges (see the Background section under [the Reference section of this page](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj852244\(v=ws.11\)#reference)).
 
 #### win.setContentProtection(enable) macOS Windows
 

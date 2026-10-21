@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-09-29T19:33:05.993Z
-current_date: 2026-09-29T19:33:05.993Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 > Control your application's event lifecycle.
@@ -124,6 +124,43 @@ Returns:
 - `hasVisibleWindows` boolean
 
 Emitted when the application is activated. Various actions can trigger this event, such as launching the application for the first time, attempting to re-launch the application when it's already running, or clicking on the application's dock or taskbar icon.
+
+### Event: 'app-shim-connected' macOS Experimental
+
+Returns:
+
+- `event` Event
+- `shim` [AppShimHost](app-shim-host.md)
+
+Emitted when an app shim connects to your app. Shims can only connect after [`app.startAppShimServer()`](#appstartappshimserveroptions-macos-experimental) has been called.
+
+Any process running as the same user can connect. Verify the shim before creating windows in it, for example with [`shim.satisfiesCodeRequirement()`](app-shim-host.md#shimsatisfiescoderequirementrequirement-experimental), and call `shim.quit()` to reject a shim that you do not trust.
+
+### Event: 'app-shim-version-mismatch' macOS Experimental
+
+Returns:
+
+- `event` Event
+- `bundlePath` string - The path of the app shim's bundle.
+
+Emitted when an app shim was launched but could not connect because your app's bundle has been replaced by a different version since your app started. A shim loads the version of Electron that is on disk, which cannot communicate with the version that is still running.
+
+The shim quits without showing any UI, so use this event to tell the user what happened. Shims can connect again after your app restarts.
+
+```js
+const { app, dialog } = require('electron')
+
+app.on('app-shim-version-mismatch', async () => {
+  const { response } = await dialog.showMessageBox({
+    message: \`Restart ${app.name} to finish updating\`,
+    buttons: ['Restart', 'Later']
+  })
+  if (response === 0) {
+    app.relaunch()
+    app.quit()
+  }
+})
+```
 
 ### Event: 'did-become-active' macOS
 
@@ -1010,6 +1047,21 @@ Activation policy types:
 - 'accessory' - The application doesn’t appear in the Dock and doesn’t have a menu bar, but it may be activated programmatically or by clicking on one of its windows.
 - 'prohibited' - The application doesn’t appear in the Dock and may not create windows or be activated.
 
+### app.startAppShimServer(\[options\]) macOS Experimental
+
+- `options` Object (optional)
+	- `name` string (optional) - A name for this server, which lets several running copies of your app each have their own. It can only contain letters, digits, `.`, `-` and `_`, and must match the `ElectronAppShimServerName` of the shims that connect to it. Default is `appshim`.
+
+Starts accepting connections from [app shims](app-shim-host.md). An [`app-shim-connected`](#event-app-shim-connected-macos-experimental) event is emitted for each shim that connects.
+
+Throws if the server cannot be started, for example because another copy of your app has already started a server with the same `name`.
+
+This method can only be called after the app is ready. It is not available in Mac App Store builds.
+
+### app.stopAppShimServer() macOS Experimental
+
+Stops accepting connections from app shims. Shims that have already connected stay connected.
+
 ### app.importCertificate(options, callback) Linux
 
 - `options` Object
@@ -1192,7 +1244,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
 
 - `options` Object (optional)
 	- `type` string (optional) *macOS* - Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`. Defaults to `mainAppService`. See [app.setLoginItemSettings](app.md#appsetloginitemsettingssettings-macos-windows) for more information about each type.
@@ -1221,7 +1273,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Removed `openAsHidden` option. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden` option. |
 
 > **Info:**
 > 

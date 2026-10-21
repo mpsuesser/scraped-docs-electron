@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/base-window-options
 title: "Base Window Options"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 - `width` Integer (optional) - Window's width in pixels. Default is `800`.
@@ -37,6 +37,7 @@ current_date: 2026-08-25T01:08:12.922Z
 - `frame` boolean (optional) - Specify `false` to create a [frameless window](../../tutorial/custom-window-styles.md#frameless-windows). Default is `true`.
 - `parent` BaseWindow (optional) - Specify parent window. Default is `null`.
 - `modal` boolean (optional) - Whether this is a modal window. This only works when the window is a child window. Default is `false`.
+- `appShim` [AppShimHost](../app-shim-host.md) (optional) *macOS* *Experimental* - Creates the native window in the process of this app shim, so that it belongs to the shim's Dock icon and not to your app's. See [AppShimHost](../app-shim-host.md) for what affordances are granted to the window.
 - `acceptFirstMouse` boolean (optional) *macOS* - Whether clicking an inactive window will also click through to the web contents. Default is `false` on macOS. This option is not configurable on other platforms.
 - `disableAutoHideCursor` boolean (optional) - Whether to hide cursor when typing. Default is `false`.
 - `autoHideMenuBar` boolean (optional) *Linux* *Windows* - Auto hide the menu bar unless the `Alt` key is pressed. Default is `false`.

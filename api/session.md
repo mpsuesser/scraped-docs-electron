@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-10-14T06:34:15.573Z
-current_date: 2026-10-14T06:34:15.573Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -84,7 +84,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -146,7 +146,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^44.3.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^v42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^44.3.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
 
 Returns:
 
@@ -220,7 +220,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 

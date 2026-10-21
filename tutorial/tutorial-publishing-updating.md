@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-publishing-updating
 title: "Tutorial Publishing Updating"
 description: ""
-access_date: 2026-09-15T17:17:25.445Z
-current_date: 2026-09-15T17:17:25.445Z
+access_date: 2026-10-21T07:43:23.286Z
+current_date: 2026-10-21T07:43:23.286Z
 ---
 
 > **Follow along the tutorial:**
@@ -85,9 +85,9 @@ module.exports = {
 
 You also need to make the Publisher aware of your authentication token. By default, it will use the value stored in the `GITHUB_TOKEN` environment variable.
 
-### Running the publish command
+### Running the release command
 
-Add Forge's [publish command](https://www.electronforge.io/cli#publish) to your npm scripts.
+Add Forge's [release command](https://www.electronforge.io/cli#release) to your npm scripts.
 
 ```json
 //...
@@ -95,7 +95,7 @@ Add Forge's [publish command](https://www.electronforge.io/cli#publish) to your 
   "start": "electron-forge start",
   "package": "electron-forge package",
   "make": "electron-forge make",
-  "publish": "electron-forge publish"
+  "release": "electron-forge release"
 },
 //...
 ```
@@ -105,13 +105,13 @@ This command will run your configured makers and publish the output distributabl
 #### npm
 
 ```sh
-npm run publish
+npm run release
 ```
 
 #### Yarn
 
 ```sh
-yarn run publish
+yarn release
 ```
 
 By default, this will only publish a single distributable for your host operating system and architecture. You can publish for different architectures by passing in the `--arch` flag to your Forge commands.
