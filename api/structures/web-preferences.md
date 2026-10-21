@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/web-preferences
 title: "Web Preferences"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 - `devTools` boolean (optional) - Whether to enable DevTools. If it is set to `false`, can not use `BrowserWindow.webContents.openDevTools()` to open DevTools. Default is `true`.
@@ -69,3 +69,4 @@ current_date: 2026-09-08T21:23:20.023Z
 - `transparent` boolean (optional) - Whether to enable background transparency for the guest page. Default is `true`. **Note:** The guest page's text and background colors are derived from the [color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) of its root element. When transparency is enabled, the text color will still change accordingly but the background will remain transparent.
 - `enableDeprecatedPaste` boolean (optional) *Deprecated* - Whether to enable the `paste` [execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand). Default is `false`.
 - `focusOnNavigation` boolean (optional) - Whether to focus the WebContents when navigating. Default is `true`.
+- `disableWakeLocks` boolean (optional) - Whether to disable the wake locks of the WebContents. Default is `false`.

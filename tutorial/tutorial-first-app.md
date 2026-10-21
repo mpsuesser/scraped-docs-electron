@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app
 title: "Tutorial First App"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 > **Follow along the tutorial:**
@@ -150,16 +150,16 @@ In Electron, each window displays a web page that can be loaded either from a lo
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
-    />
+    >
     <meta
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
-    />
+    >
     <title>Hello from Electron renderer!</title>
   </head>
   <body>
@@ -338,15 +338,15 @@ app.on('window-all-closed', () => {
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
-    />
+    >
     <meta
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
-    />
+    >
     <title>Hello from Electron renderer!</title>
   </head>
   <body>

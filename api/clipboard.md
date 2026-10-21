@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard
 title: "Clipboard"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 History
@@ -132,7 +132,7 @@ async function writeClipboard() {
     new ClipboardItem({
       'text/plain': 'hello',
       'text/html': '<b>hello</b>',
-      'image/png': new Blob([png], { type: 'image/png' }),
+      'image/png': new Blob([new Uint8Array(png)], { type: 'image/png' }),
       'electron application/bookmark': {
         title: 'Electron',
         url: 'https://electronjs.org'

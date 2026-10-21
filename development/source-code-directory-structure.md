@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/development/source-code-directory-structure
 title: "Source Code Directory Structure"
 description: ""
-access_date: 2026-10-21T07:43:23.286Z
-current_date: 2026-10-21T07:43:23.286Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 The source code of Electron is separated into a few parts, mostly following Chromium on the separation conventions.
@@ -64,6 +64,8 @@ Electron
 |   |   └── api/ - API implementation for sandboxed renderer processes.
 │   ├── utility/ - Utility process initialization code.
 │   │   └── api/ - API implementation for utility process modules.
+|   ├── webview/ - Entry point of the bundle that registers the \`<webview>\`
+|   |              element in renderers that enable it.
 |   └── worker/ - Logic that handles proper functionality of Node.js
 |                 environments in Web Workers.
 ├── patches/ - Patches applied on top of Electron's core dependencies

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/asar-archives
 title: "Asar Archives"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 After creating an [application distribution](application-distribution.md), the app's source code is usually bundled into an [ASAR archive](https://github.com/electron/asar), which is a simple extensive archive format designed for Electron apps. By bundling the app we can mitigate issues around long path names on Windows, speed up `require` and conceal your source code from cursory inspection.
@@ -51,6 +51,8 @@ Use a module from the archive:
 ```js
 require('./path/to/example.asar/dir/module.js')
 ```
+
+Directories in an archive can also be iterated with `fs.opendir`, and symbolic links stored in an archive can be inspected with `fs.readlink`, which returns the link's target relative to the link, like a real filesystem would.
 
 You can also display a web page in an ASAR archive with `BrowserWindow`:
 
@@ -108,16 +110,20 @@ The archives can not be modified so all Node APIs that can modify files will not
 
 Though ASAR archives are treated as directories, there are no actual directories in the filesystem, so you can never set the working directory to directories in ASAR archives. Passing them as the `cwd` option of some APIs will also cause errors.
 
+### File Descriptors for Files in Archives
+
+`fs.open`, `fs.openSync` and `fs.promises.open` return real file descriptors (and `FileHandle` s) for files in ASAR archives, backed by the archive itself, so APIs built on top of them - `fs.read`, `fs.readv`, `fs.fstat`, `fs.readFile(fd)`, `fs.createReadStream`, `FileHandle#readFile`, `FileHandle#createReadStream`, and so on - read directly out of the archive without any temporary copy. Likewise `fs.copyFile`, `fs.cp` and their sync and promise variants copy straight from the archive to the destination.
+
+Because archives are read-only, opening a file inside an archive with any flag that allows writing (`w`, `a`, `r+`,...) fails with `EACCES`, and `fs.fchmod`, `fs.fchown` and `fs.futimes` on such a descriptor fail with `EACCES` too. The descriptor only identifies the entry to Node's `fs` module; it is not backed by the file's contents, so passing it to code outside of `fs` (for example a native addon that reads from the raw descriptor, `child_process` `stdio`, `net.Socket({ fd })` or `http2stream.respondWithFile()`) fails with `EBADF` and is not supported.
+
 ### Extra Unpacking on Some APIs
 
-Most `fs` APIs can read a file or get a file's information from ASAR archives without unpacking, but for some APIs that rely on passing the real file path to underlying system calls, Electron will extract the needed file into a temporary file and pass the path of the temporary file to the APIs to make them work. This adds a little overhead for those APIs.
+For APIs that rely on passing the real file path to underlying system calls, Electron will extract the needed file into a temporary file and pass the path of the temporary file to the APIs to make them work. This adds a little overhead for those APIs.
 
 APIs that require extra unpacking are:
 
 - `child_process.execFile`
 - `child_process.execFileSync`
-- `fs.open`
-- `fs.openSync`
 - `process.dlopen` - Used by `require` on native modules
 
 ### Fake Stat Information of fs.stat

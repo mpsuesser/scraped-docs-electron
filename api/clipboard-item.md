@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard-item
 title: "Clipboard Item"
 description: ""
-access_date: 2026-09-29T19:33:05.993Z
-current_date: 2026-09-29T19:33:05.993Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 > A single clipboard entry that pairs one or more MIME-typed payloads.
@@ -44,7 +44,7 @@ clipboard.write([
   new ClipboardItem({
     'text/plain': 'hello',
     'text/html': '<b>hello</b>',
-    'image/png': new Blob([png], { type: 'image/png' }),
+    'image/png': new Blob([new Uint8Array(png)], { type: 'image/png' }),
     'electron application/bookmark': {
       title: 'Electron',
       url: 'https://electronjs.org'

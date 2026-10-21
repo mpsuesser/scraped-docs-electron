@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/sandbox
 title: "Sandbox"
 description: ""
-access_date: 2026-08-04T19:03:02.080Z
-current_date: 2026-08-04T19:03:02.080Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 One key security feature in Chromium is that processes can be executed within a sandbox. The sandbox limits the harm that malicious code can cause by limiting access to most system resources — sandboxed processes can only freely use CPU cycles and memory. In order to perform operations requiring additional privilege, sandboxed processes use dedicated communication channels to delegate tasks to more privileged processes.
@@ -34,27 +34,15 @@ Therefore, when the sandbox is enabled, renderer processes can only perform priv
 
 ### Preload scripts
 
-In order to allow renderer processes to communicate with the main process, preload scripts attached to sandboxed renderers will still have a polyfilled subset of Node.js APIs available. A `require` function similar to Node's `require` module is exposed, but can only import a subset of Electron and Node's built-in modules:
+In order to allow renderer processes to communicate with the main process, preload scripts attached to sandboxed renderers are run with a few extra values in scope:
 
-- `electron` (following renderer process modules: `contextBridge`, `crashReporter`, `ipcRenderer`, `nativeImage`, `webFrame`, `webUtils`)
-- [`events`](https://nodejs.org/api/events.html)
-- [`timers`](https://nodejs.org/api/timers.html)
-- [`url`](https://nodejs.org/api/url.html)
+- `require` - a function that can only load the `electron` module (also available as `electron/renderer` and `electron/common`), which contains the renderer process modules: `contextBridge`, `crashReporter`, `ipcRenderer`, `nativeImage`, `webFrame` and `webUtils`.
+- [`process`](../api/process.md) - a reduced `process` object.
+- `global` - an alias for the preload script's `globalThis`.
 
-[node: imports](https://nodejs.org/api/esm.html#node-imports) are supported as well:
+No Node.js built-in modules or Node.js globals such as `Buffer` or `setImmediate` are available. Use the equivalent Web APIs (`Uint8Array`, `TextEncoder` / `TextDecoder`, `URL`, `EventTarget`, `setTimeout` / `queueMicrotask`) instead, or bundle a polyfill into your preload script.
 
-- [`node:events`](https://nodejs.org/api/events.html)
-- [`node:timers`](https://nodejs.org/api/timers.html)
-- [`node:url`](https://nodejs.org/api/url.html)
-
-In addition, the preload script also polyfills certain Node.js primitives as globals:
-
-- [`Buffer`](https://nodejs.org/api/buffer.html)
-- [`process`](../api/process.md)
-- [`clearImmediate`](https://nodejs.org/api/timers.html#timers_clearimmediate_immediate)
-- [`setImmediate`](https://nodejs.org/api/timers.html#timers_setimmediate_callback_args)
-
-Because the `require` function is a polyfill with limited functionality, you will not be able to use [CommonJS modules](https://nodejs.org/api/modules.html#modules_modules_commonjs_modules) to separate your preload script into multiple files. If you need to split your preload code, use a bundler such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/).
+Because this `require` function cannot load files, you will not be able to use [CommonJS modules](https://nodejs.org/api/modules.html#modules_modules_commonjs_modules) to separate your preload script into multiple files. If you need to split your preload code, use a bundler such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/).
 
 Note that because the environment presented to the `preload` script is substantially more privileged than that of a sandboxed renderer, it is still possible to leak privileged APIs to untrusted code running in the renderer process unless [`contextIsolation`](context-isolation.md) is enabled.
 

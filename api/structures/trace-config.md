@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/structures/trace-config
 title: "Trace Config"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 - `recording_mode` string (optional) - Can be `record-until-full`, `record-continuously`, `record-as-much-as-possible` or `trace-to-console`. Defaults to `record-until-full`.
@@ -15,6 +15,7 @@ current_date: 2026-09-22T19:04:52.199Z
 - `included_process_ids` number\[\] (optional) - a list of process IDs to include in the trace. If not specified, trace all processes.
 - `histogram_names` string\[\] (optional) - a list of [histogram](https://chromium.googlesource.com/chromium/src.git/+/HEAD/tools/metrics/histograms/README.md) names to report with the trace.
 - `memory_dump_config` Record<string, any> (optional) - if the `disabled-by-default-memory-infra` category is enabled, this contains optional additional configuration for data collection. See the [Chromium memory-infra docs](https://chromium.googlesource.com/chromium/src/+/main/docs/memory-infra/memory_infra_startup_tracing.md#the-advanced-way) for more information.
+- `nativeHeapProfiling` [NativeHeapProfilerOptions](native-heap-profiler-options.md) (optional) *Experimental* - **Electron extension; not part of Chromium's TraceConfig schema.** Enables native (C/C++) heap allocation profiling for this recording. This is distinct from JavaScript heap profiling (see [`process.takeHeapSnapshot()`](../process.md#processtakeheapsnapshotfilepath) or [`contents.takeHeapSnapshot()`](../web-contents.md#contentstakeheapsnapshotfilepath)); it samples allocations made by Chromium and native modules. `included_process_ids` above also limits which processes are profiled when this is enabled.
 
 An example TraceConfig that roughly matches what Chrome DevTools records:
 

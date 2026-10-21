@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-distribution
 title: "Application Distribution"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 To distribute your app with Electron, you need to package and rebrand it. To do this, you can either use specialized tooling or manual approaches.
@@ -63,7 +63,7 @@ You can find more details on how to use `asar` in the [`electron/asar` repositor
 
 After bundling your app into Electron, you will want to rebrand Electron before distributing it to users.
 
-- **Windows:** You can rename `electron.exe` to any name you like, and edit its icon and other information with tools like [rcedit](https://github.com/electron/rcedit).
+- **Windows:** You can rename `electron.exe` to any name you like, and edit its icon and other information with tools like [rcedit](https://github.com/electron/rcedit). Rename `electron_wer.dll` to match (for example `myapp_wer.dll` next to `myapp.exe`) so the [crash reporter](../api/crash-reporter.md) can still capture fail-fast crashes.
 - **Linux:** You can rename the `electron` executable to any name you like.
 - **macOS:** You can rename `Electron.app` to any name you want, and you also have to rename the `CFBundleDisplayName`, `CFBundleIdentifier` and `CFBundleName` fields in the following files:
 	- `Electron.app/Contents/Info.plist`

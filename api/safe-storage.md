@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/safe-storage
 title: "Safe Storage"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 > Allows access to simple encryption and decryption of strings for storage on the local machine.
@@ -14,7 +14,7 @@ This module adds extra protection to data being stored on disk by using OS-provi
 
 > **Note:**
 > 
-> We recommend using the asynchronous API (`encryptStringAsync` / `decryptStringAsync`) over the synchronous API. The async API is non-blocking, supports key rotation, and handles temporary unavailability gracefully. The synchronous API may be deprecated in a future version of Electron.
+> The synchronous API (`isEncryptionAvailable` / `encryptString` / `decryptString`) is deprecated and will be removed in Electron 46. Use the asynchronous API (`isAsyncEncryptionAvailable` / `encryptStringAsync` / `decryptStringAsync`), which is non-blocking, supports key rotation, and handles temporary unavailability gracefully.
 
 ## Platform-Specific Key Providers
 
@@ -52,11 +52,19 @@ The `safeStorage` module emits the following events:
 
 The `safeStorage` module has the following methods:
 
-### safeStorage.isEncryptionAvailable()
+### safeStorage.isEncryptionAvailable() Deprecated
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 Returns `boolean` - Whether encryption is available.
 
 On Linux, returns true if the app has emitted the `ready` event and the secret key is available. On MacOS, returns true if Keychain is available. On Windows, returns true once the app has emitted the `ready` event.
+
+**Deprecated:** Use [`safeStorage.isAsyncEncryptionAvailable()`](#safestorageisasyncencryptionavailable) instead.
 
 ### safeStorage.isAsyncEncryptionAvailable()
 
@@ -64,7 +72,13 @@ Returns `Promise<boolean>` - Resolves with whether encryption is available for a
 
 The asynchronous encryptor is initialized lazily the first time this method, `encryptStringAsync`, or `decryptStringAsync` is called after the app is ready. The returned promise resolves once initialization completes.
 
-### safeStorage.encryptString(plainText)
+### safeStorage.encryptString(plainText) Deprecated
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 - `plainText` string
 
@@ -72,11 +86,21 @@ Returns `Buffer` - An array of bytes representing the encrypted string.
 
 This function will throw an error if encryption fails.
 
-### safeStorage.decryptString(encrypted)
+**Deprecated:** Use [`safeStorage.encryptStringAsync(plainText)`](#safestorageencryptstringasyncplaintext) instead.
+
+### safeStorage.decryptString(encrypted) Deprecated
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 - `encrypted` Buffer
 
 Returns `string` - the decrypted string. Decrypts the encrypted buffer obtained with `safeStorage.encryptString` back into a string.
+
+**Deprecated:** Use [`safeStorage.decryptStringAsync(encrypted)`](#safestoragedecryptstringasyncencrypted) instead. Data encrypted with `safeStorage.encryptString` can be decrypted with `safeStorage.decryptStringAsync`.
 
 ### safeStorage.encryptStringAsync(plainText)
 

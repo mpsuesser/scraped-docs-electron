@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-10-21T07:43:23.286Z
-current_date: 2026-10-21T07:43:23.286Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 > Create and control browser windows.
@@ -205,6 +205,7 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
 				- `transparent` boolean (optional) - Whether to enable background transparency for the guest page. Default is `true`. **Note:** The guest page's text and background colors are derived from the [color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) of its root element. When transparency is enabled, the text color will still change accordingly but the background will remain transparent.
 				- `enableDeprecatedPaste` boolean (optional) *Deprecated* - Whether to enable the `paste` [execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand). Default is `false`.
 				- `focusOnNavigation` boolean (optional) - Whether to focus the WebContents when navigating. Default is `true`.
+				- `disableWakeLocks` boolean (optional) - Whether to disable the wake locks of the WebContents. Default is `false`.
 		- `paintWhenInitiallyHidden` boolean (optional) - Whether the renderer should be active when `show` is `false` and it has just been created. In order for `document.visibilityState` to work correctly on first load with `show: false` you should set this to `false`. Setting this to `false` will cause the `ready-to-show` event to not fire. Default is `true`.
 
 ### Instance Events

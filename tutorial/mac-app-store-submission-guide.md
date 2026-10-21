@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/mac-app-store-submission-guide
 title: "Mac App Store Submission Guide"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-10-21T21:57:29.759Z
+current_date: 2026-10-21T21:57:29.759Z
 ---
 
 - How to sign Electron apps on macOS;
@@ -98,7 +98,7 @@ When signing the app with `@electron/osx-sign`, it will automatically add the ne
 > 
 > The `TEAM_ID` should be replaced with your Apple Developer account's Team ID, and the `your.bundle.id` should be replaced with the App ID of the app.
 > 
-> And the following entitlements must be added to the binaries and helpers in the app's bundle:
+> And the following entitlements must be added to the executables in the app's bundle:
 > 
 > ```xml
 > <?xml version="1.0" encoding="UTF-8"?>
