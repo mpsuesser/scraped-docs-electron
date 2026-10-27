@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/application-menu
 title: "Application Menu"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-10-27T19:59:18.350Z
+current_date: 2026-10-27T19:59:18.350Z
 ---
 
 Each Electron app has a single top-level application menu.
@@ -105,7 +105,6 @@ const template = [
       {
         label: 'Learn More',
         click: async () => {
-          const { shell } = require('electron')
           await shell.openExternal('https://electronjs.org')
         }
       }
@@ -145,7 +144,6 @@ const template = [
       {
         label: 'Learn More',
         click: async () => {
-          const { shell } = require('electron')
           await shell.openExternal('https://electronjs.org')
         }
       }

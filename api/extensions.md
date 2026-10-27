@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/extensions
 title: "Extensions"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-27T19:59:18.350Z
+current_date: 2026-10-27T19:59:18.350Z
 ---
 
 Electron supports a subset of the [Chrome Extensions API](https://developer.chrome.com/extensions/api_index), primarily to support DevTools extensions and Chromium-internal extensions, but it also happens to support some other extension capabilities.
@@ -46,7 +46,7 @@ We support the following extensions APIs, with some caveats. Other APIs may addi
 - `short_name`
 - `host_permissions` (Manifest V3)
 - `manifest_version`
-- `background` (Manifest V2)
+- `background`
 - `minimum_chrome_version`
 
 See [Manifest file format](https://developer.chrome.com/docs/extensions/mv3/manifest/) for more information about the purpose of each possible key.
@@ -96,6 +96,8 @@ The following events of `chrome.management` are supported:
 
 - `chrome.management.onEnabled`
 - `chrome.management.onDisabled`
+
+Apart from `chrome.management.getSelf` and `chrome.management.getPermissionWarningsByManifest`, these require the `management` permission.
 
 See [official documentation](https://developer.chrome.com/docs/extensions/reference/management) for more information.
 
