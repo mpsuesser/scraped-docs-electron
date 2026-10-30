@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/net-log
 title: "Net Log"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 > Logging network events for a session.
@@ -14,9 +14,10 @@ Process: [Main](../glossary.md#main-process)
 const { app, netLog } = require('electron')
 
 app.whenReady().then(async () => {
-  await netLog.startLogging('/path/to/net-log')
+  const path = '/path/to/net-log'
+  await netLog.startLogging(path)
   // After some network events
-  const path = await netLog.stopLogging()
+  await netLog.stopLogging()
   console.log('Net-logs written to', path)
 })
 ```

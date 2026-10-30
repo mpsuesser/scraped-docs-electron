@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/menu
 title: "Menu"
 description: ""
-access_date: 2026-10-13T18:19:00.641Z
-current_date: 2026-10-13T18:19:00.641Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 ## Class: Menu
@@ -58,6 +58,37 @@ Returns `Menu | null` - The application menu, if set, or `null`, if not set.
 > **Note:**
 > 
 > The returned `Menu` instance doesn't support dynamic addition or removal of menu items. [Instance properties](#instance-properties) can still be dynamically modified.
+
+#### Menu.setHighlightColors(options) Windows
+
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | ```markdown API ADDED ``` |
+
+- `options` Object | null
+	- `light` Object (optional) - Colors used when menus are drawn with light colors.
+		- `background` string (optional) - Background color of the hovered or keyboard-focused menu item, as a CSS color string (e.g. `#0067c0`).
+				- `foreground` string (optional) - Text color of the hovered or keyboard-focused menu item, as a CSS color string.
+		- `dark` Object (optional) - Colors used when menus are drawn with dark colors.
+		- `background` string (optional) - Background color of the hovered or keyboard-focused menu item, as a CSS color string.
+				- `foreground` string (optional) - Text color of the hovered or keyboard-focused menu item, as a CSS color string.
+
+Sets the colors used to highlight the hovered or keyboard-focused item in every menu the app shows, including context menus and the menu bar's dropdowns. Light and dark colors are set separately, and any color left unset keeps the default for that mode. Each call replaces the colors set by any previous call. Passing `null` restores the defaults.
+
+```js
+const { Menu } = require('electron')
+
+Menu.setHighlightColors({
+  light: { background: '#0067c0', foreground: '#ffffff' },
+  dark: { background: '#4cc2ff', foreground: '#000000' }
+})
+```
+
+Menus opened after the call use the new colors. The colors are not applied while Windows high contrast mode or forced colors are active, so the user's system colors take priority.
+
+This method has no effect on macOS and Linux.
 
 #### Menu.sendActionToFirstResponder(action) macOS
 

@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/crash-reporter
 title: "Crash Reporter"
 description: ""
-access_date: 2026-10-21T21:57:29.759Z
-current_date: 2026-10-21T21:57:29.759Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 > Submit crash reports to a remote server.
@@ -171,15 +171,15 @@ Since `require('electron')` is not available in Node child processes (processes 
 
 If the crash reporter is started in the main process, Node child processes are monitored automatically. There is no way to start the crash reporter from a Node child process.
 
-#### process.crashReporter.getParameters()
+### process.crashReporter.getParameters()
 
 See [`crashReporter.getParameters()`](#crashreportergetparameters).
 
-#### process.crashReporter.addExtraParameter(key, value)
+### process.crashReporter.addExtraParameter(key, value)
 
 See [`crashReporter.addExtraParameter(key, value)`](#crashreporteraddextraparameterkey-value).
 
-#### process.crashReporter.removeExtraParameter(key)
+### process.crashReporter.removeExtraParameter(key)
 
 See [`crashReporter.removeExtraParameter(key)`](#crashreporterremoveextraparameterkey).
 

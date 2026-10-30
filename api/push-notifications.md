@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/push-notifications
 title: "Push Notifications"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 Process: [Main](../glossary.md#main-process)
@@ -28,7 +28,7 @@ pushNotifications.on('received-apns-notification', (event, userInfo) => {
 
 The `pushNotification` module emits the following events:
 
-#### Event: 'received-apns-notification' macOS
+### Event: 'received-apns-notification' macOS
 
 Returns:
 

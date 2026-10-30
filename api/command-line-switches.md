@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/command-line-switches
 title: "Command Line Switches"
 description: ""
-access_date: 2026-08-25T01:08:12.922Z
-current_date: 2026-08-25T01:08:12.922Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 > Command line switches supported by Electron.
@@ -243,7 +243,7 @@ Activate inspector on host:port and break at start of user script. Default host:
 
 Aliased to `--debug-brk=[host:]port`.
 
-#### \--inspect-brk-node\[=\[host:\]port\]
+### \--inspect-brk-node\[=\[host:\]port\]
 
 Activate inspector on `host:port` and break at start of the first internal JavaScript script executed when the inspector is available. Default `host:port` is `127.0.0.1:9229`.
 

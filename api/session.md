@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-10-27T19:59:18.350Z
-current_date: 2026-10-27T19:59:18.350Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -1713,9 +1713,10 @@ const { app, session } = require('electron')
 
 app.whenReady().then(async () => {
   const netLog = session.fromPartition('some-partition').netLog
-  netLog.startLogging('/path/to/net-log')
+  const path = '/path/to/net-log'
+  await netLog.startLogging(path)
   // After some network events
-  const path = await netLog.stopLogging()
+  await netLog.stopLogging()
   console.log('Net-logs written to', path)
 })
 ```

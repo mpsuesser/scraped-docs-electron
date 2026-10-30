@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 ## Warning
@@ -408,7 +408,7 @@ Executes editing command `cut` in page.
 
 Executes editing command `copy` in page.
 
-#### <webview>.centerSelection()
+### <webview>.centerSelection()
 
 Centers the current text selection in page.
 
@@ -432,15 +432,15 @@ Executes editing command `selectAll` in page.
 
 Executes editing command `unselect` in page.
 
-#### <webview>.scrollToTop()
+### <webview>.scrollToTop()
 
 Scrolls to the top of the current `<webview>`.
 
-#### <webview>.scrollToBottom()
+### <webview>.scrollToBottom()
 
 Scrolls to the bottom of the current `<webview>`.
 
-#### <webview>.adjustSelection(options)
+### <webview>.adjustSelection(options)
 
 - `options` Object
 	- `start` Number (optional) - Amount to shift the start index of the current selection.
@@ -933,7 +933,7 @@ Returns:
 
 Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for a link in its context menu.
 
-#### Event: 'devtools-search-query'
+### Event: 'devtools-search-query'
 
 Returns:
 

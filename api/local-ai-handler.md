@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/local-ai-handler
 title: "Local Ai Handler"
 description: ""
-access_date: 2026-10-21T21:57:29.759Z
-current_date: 2026-10-21T21:57:29.759Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 > Proxy built-in AI APIs to a local LLM implementation
@@ -16,7 +16,7 @@ This module is intended to be used by a script registered to a session via [`ses
 
 The `localAIHandler` module has the following methods:
 
-#### localAIHandler.setPromptAPIHandler(promptAPIHandler) Experimental
+### localAIHandler.setPromptAPIHandler(promptAPIHandler) Experimental
 
 - `promptAPIHandler` Function<typeof [LanguageModelUtility](language-model-utility.md) | null>
 	- `details` Object

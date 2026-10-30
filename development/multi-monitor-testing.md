@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/development/multi-monitor-testing
 title: "Multi Monitor Testing"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-10-30T18:16:24.207Z
+current_date: 2026-10-30T18:16:24.207Z
 ---
 
 The `virtualDisplay` addon leverages macOS CoreGraphics APIs to create virtual displays, allowing you to write and run multi-monitor tests without the need for physical monitors. Due to macOS CoreGraphics quirks, reading the entire guide once before writing tests is recommended.
 
 ## Methods
 
-#### virtualDisplay.create(\[options\])
+### virtualDisplay.create(\[options\])
 
 Creates a virtual display and returns a display ID.
 
@@ -36,7 +36,7 @@ const displayId = virtualDisplay.create({
 > 
 > It is recommended to call [`virtualDisplay.forceCleanup()`](#virtualdisplayforcecleanup) before every test to prevent display creation from failing in that test. macOS CoreGraphics maintains an internal display ID allocation pool that can become corrupted when virtual displays are created and destroyed rapidly during testing. Without proper cleanup, subsequent display creation may fail with inconsistent display IDs, resulting in test flakiness.
 
-#### virtualDisplay.forceCleanup()
+### virtualDisplay.forceCleanup()
 
 Performs a complete cleanup of all virtual displays and resets the macOS CoreGraphics display system.
 
@@ -46,7 +46,7 @@ beforeEach(() => {
 })
 ```
 
-#### virtualDisplay.destroy(displayId)
+### virtualDisplay.destroy(displayId)
 
 Removes the virtual display.
 
