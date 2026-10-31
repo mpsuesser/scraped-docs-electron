@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/fuses
 title: "Fuses"
 description: ""
-access_date: 2026-10-30T18:16:24.207Z
-current_date: 2026-10-30T18:16:24.207Z
+access_date: 2026-10-31T00:48:37.048Z
+current_date: 2026-10-31T00:48:37.048Z
 ---
 
 > Package time feature toggles
@@ -188,4 +188,4 @@ Somewhere in the Electron binary, there will be a sequence of bytes that look li
 
 To flip a fuse, you find its position in the fuse wire and change it to "0" or "1" depending on the state you'd like.
 
-You can view the current schema [here](https://github.com/electron/electron/blob/v45.2.0/build/fuses/fuses.json5).
+You can view the current schema [here](https://github.com/electron/electron/blob/v45.2.1/build/fuses/fuses.json5).
