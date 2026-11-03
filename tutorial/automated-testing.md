@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/automated-testing
 title: "Automated Testing"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-03T19:37:34.185Z
+current_date: 2026-11-03T19:37:34.185Z
 ---
 
 Test automation is an efficient way of validating that your application code works as intended. While Electron doesn't actively maintain its own testing solution, this guide will go over a couple ways you can run end-to-end automated tests on your Electron app.
@@ -15,6 +15,12 @@ From [ChromeDriver - WebDriver for Chrome](https://sites.google.com/chromium.org
 > WebDriver is an open source tool for automated testing of web apps across many browsers. It provides capabilities for navigating to web pages, user input, JavaScript execution, and more. ChromeDriver is a standalone server which implements WebDriver's wire protocol for Chromium. It is being developed by members of the Chromium and WebDriver teams.
 
 There are a few ways that you can set up testing using WebDriver.
+
+> **Command-line argument parsing:**
+> 
+> ChromeDriver adds its own command-line arguments when it launches Electron, such as `--enable-automation` and `--remote-debugging-port=0`. It can also add a positional startup URL such as `data:,`. These appear in `process.argv` alongside your application's arguments and can cause strict argument parsers, such as `yargs.strict()`, to reject the launch.
+> 
+> Inspect `process.argv` with the driver version and configuration used by your tests. In your test startup code, explicitly recognize or filter only the known driver-added arguments while keeping validation of your application's arguments. The added arguments can vary with the driver version and configuration.
 
 ### With WebdriverIO
 
