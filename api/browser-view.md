@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-view
 title: "Browser View"
 description: ""
-access_date: 2026-10-21T21:57:29.759Z
-current_date: 2026-10-21T21:57:29.759Z
+access_date: 2026-11-04T21:31:47.643Z
+current_date: 2026-11-04T21:31:47.643Z
 ---
 
 History
@@ -56,7 +56,7 @@ app.whenReady().then(() => {
 })
 ```
 
-### new BrowserView(\[options\]) Experimental Deprecated
+### new BrowserView(\[options\]) Deprecated
 
 History
 
@@ -135,7 +135,7 @@ History
 
 Objects created with `new BrowserView` have the following properties:
 
-#### view.webContents Experimental Deprecated
+#### view.webContents Deprecated
 
 History
 
@@ -149,7 +149,7 @@ A [`WebContents`](web-contents.md) object owned by this view.
 
 Objects created with `new BrowserView` have the following instance methods:
 
-#### view.setAutoResize(options) Experimental Deprecated
+#### view.setAutoResize(options) Deprecated
 
 History
 
@@ -164,7 +164,7 @@ History
 		- `horizontal` boolean (optional) - If `true`, the view's x position and width will grow and shrink proportionally with the window. `false` by default.
 		- `vertical` boolean (optional) - If `true`, the view's y position and height will grow and shrink proportionally with the window. `false` by default.
 
-#### view.setBounds(bounds) Experimental Deprecated
+#### view.setBounds(bounds) Deprecated
 
 History
 
@@ -176,7 +176,7 @@ History
 
 Resizes and moves the view to the supplied bounds relative to the window.
 
-#### view.getBounds() Experimental Deprecated
+#### view.getBounds() Deprecated
 
 History
 
@@ -188,7 +188,7 @@ Returns [Rectangle](structures/rectangle.md)
 
 The `bounds` of this BrowserView instance as `Object`.
 
-#### view.setBackgroundColor(color) Experimental Deprecated
+#### view.setBackgroundColor(color) Deprecated
 
 History
 
