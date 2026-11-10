@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/extensions
 title: "Extensions"
 description: ""
-access_date: 2026-10-30T18:16:24.207Z
-current_date: 2026-10-30T18:16:24.207Z
+access_date: 2026-11-10T21:16:50.361Z
+current_date: 2026-11-10T21:16:50.361Z
 ---
 
 Electron supports a subset of the [Chrome Extensions API](https://developer.chrome.com/extensions/api_index), primarily to support DevTools extensions and Chromium-internal extensions, but it also happens to support some other extension capabilities.
@@ -142,10 +142,16 @@ The following methods of `chrome.storage` are supported:
 - `chrome.storage.local`
 - `chrome.storage.sync` (partial support)
 	- stored on disk next to `chrome.storage.local` in a separate storage area and subject to Chrome's `sync` quotas; data is **not** synced across devices, matching Chrome with sync disabled.
-
-`chrome.storage.managed` is **not** supported.
+- `chrome.storage.managed` (partial support)
+	- read-only and always empty, matching Chrome when no enterprise policy is set for the extension.
 
 See [official documentation](https://developer.chrome.com/docs/extensions/reference/storage) for more information.
+
+### chrome.system.storage
+
+All features of this API are supported.
+
+See [official documentation](https://developer.chrome.com/docs/extensions/reference/system/storage) for more information.
 
 ### chrome.tabs
 

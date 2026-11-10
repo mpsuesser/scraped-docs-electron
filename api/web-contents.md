@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents
 title: "Web Contents"
 description: ""
-access_date: 2026-11-04T21:31:47.643Z
-current_date: 2026-11-04T21:31:47.643Z
+access_date: 2026-11-10T21:16:50.361Z
+current_date: 2026-11-10T21:16:50.361Z
 ---
 
 > Render and control web pages.
@@ -806,7 +806,7 @@ When using shared texture (set `webPreferences.offscreen.useSharedTexture` to `t
 
 Only a limited number of textures can exist at the same time, so it's important that you call `texture.release()` as soon as you're done with the texture. By managing the texture lifecycle by yourself, you can safely pass the `texture.textureInfo` to other processes through IPC.
 
-More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v45.2.3/shell/browser/osr/README.md).
+More details can be found in the [offscreen rendering tutorial](../tutorial/offscreen-rendering.md). To learn about how to handle the texture in native code, refer to [offscreen rendering's code documentation.](https://github.com/electron/electron/blob/v45.3.0/shell/browser/osr/README.md).
 
 ```js
 const { BrowserWindow } = require('electron')
@@ -1905,10 +1905,6 @@ Disable device emulation enabled by `webContents.enableDeviceEmulation`.
 - `inputEvent` [MouseInputEvent](structures/mouse-input-event.md) | [MouseWheelInputEvent](structures/mouse-wheel-input-event.md) | [KeyboardInputEvent](structures/keyboard-input-event.md)
 
 Sends an input `event` to the page.
-
-> **Note:**
-> 
-> The [`BrowserWindow`](browser-window.md) containing the contents needs to be focused for `sendInputEvent()` to work.
 
 #### contents.beginFrameSubscription(\[onlyDirty,\]callback)
 

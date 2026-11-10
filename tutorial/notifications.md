@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/tutorial/notifications
 title: "Notifications"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-10T21:16:50.361Z
+current_date: 2026-11-10T21:16:50.361Z
 ---
 
 Each operating system has its own mechanism to display notifications to users. Electron's notification APIs are cross-platform, but are different for each process type.
@@ -177,11 +177,38 @@ In production, Electron will also detect that Squirrel was used and will automat
 
 #### Use advanced notifications
 
-Windows also allow for advanced notifications with custom templates, images, and other flexible elements.
+Windows allows for advanced notifications with custom templates, images, inputs, and action buttons.
 
-To send those notifications from the main process, you can use the userland module [`electron-windows-notifications`](https://github.com/felixrieseberg/electron-windows-notifications), which uses native Node addons to send `ToastNotification` and `TileNotification` objects.
+To send advanced notifications from the main process on Windows, use the [`toastXml`](../api/notification.md#notificationtoastxml-windows) option of the `Notification` constructor. This property accepts an XML string conforming to the Microsoft [Toast XML Schema](https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/toast-xml-schema) and supersedes other notification options.
 
-While notifications including buttons work with `electron-windows-notifications`, handling replies requires the use of [`electron-windows-interactive-notifications`](https://github.com/felixrieseberg/electron-windows-interactive-notifications), which helps with registering the required COM components and calling your Electron app with the entered user data.
+```js
+const { Notification } = require('electron')
+
+const xml = \`
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Notification Title</text>
+      <text>Notification body text</text>
+    </binding>
+  </visual>
+  <actions>
+    <action content="Confirm" arguments="action=confirm" />
+    <action content="Dismiss" arguments="action=dismiss" />
+  </actions>
+</toast>\`
+
+const notification = new Notification({ toastXml: xml })
+notification.show()
+```
+
+Important considerations when using Toast XML on Windows:
+
+- **AppUserModelID**: You must call [`app.setAppUserModelId()`](../api/app.md#appsetappusermodelidid-windows) before showing notifications. Windows uses this ID to associate toast notifications with your application in the notification center.
+- **Image paths**: When including local images in `<image src="..." />`, paths must be absolute and formatted as `file:///` URLs (for example, using `url.pathToFileURL(imagePath).toString()`).
+- **XML escaping**: Dynamic strings placed inside XML elements or attributes must be XML-escaped (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`) to prevent XML parsing failures.
+- **Error handling**: If the XML string is malformed or invalid according to the Windows toast schema, the notification will not appear and the `failed` event will be emitted on the `Notification` instance.
+- **Handling action buttons**: Action buttons specify an `arguments` attribute. When clicked, Electron emits the `action` event with the action index. For deep-linking or custom protocol activation, specify `activationType="protocol"` on the `<action>` element.
 
 #### Query notification state
 
