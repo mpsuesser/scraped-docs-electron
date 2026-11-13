@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/view
 title: "View"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Create and layout native views.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 This module cannot be used until the `ready` event of the `app` module is emitted.
 
@@ -27,7 +27,7 @@ win.contentView.addChildView(view)
 
 > A basic native view.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `View` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/process
 title: "Process"
 description: ""
-access_date: 2026-09-04T05:46:35.763Z
-current_date: 2026-09-04T05:46:35.763Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Extensions to process object.
 
-Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)
+Process [Main](../glossary.md#main-process) [Renderer](../glossary.md#renderer-process)
 
 Electron's `process` object is extended from the [Node.js `process` object](https://nodejs.org/api/process.html). It adds the following events, properties, and methods:
 

@@ -2,19 +2,19 @@
 url: https://www.electronjs.org/docs/latest/api/context-bridge
 title: "Context Bridge"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
+| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/40330) | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
 
 > Create a safe, bi-directional, synchronous bridge across isolated contexts
 
-Process: [Renderer](../glossary.md#renderer-process)
+Process [Renderer](../glossary.md#renderer-process)
 
 An example of exposing an API to a renderer from an isolated preload script is given below:
 

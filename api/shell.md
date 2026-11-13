@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/shell
 title: "Shell"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Manage files and URLs using their default applications.
 
-Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process) (non-sandboxed only)
+Process [Main](../glossary.md#main-process) [Renderer](../glossary.md#renderer-process) (non-sandboxed only)
 
 The `shell` module provides functions related to desktop integration.
 
@@ -56,7 +56,7 @@ History
 | --- | --- |
 | ```markdown None ``` | Added `activate` option. |
 | ```markdown None ``` | Added `workingDirectory` option. |
-| ```markdown None ``` | Added `logUsage` option. |
+| [ ```markdown >=24.0.0 ``` ](https://github.com/electron/electron/pull/37139) | Added `logUsage` option. |
 
 - `url` string - Max 2081 characters on Windows.
 - `options` Object (optional)
@@ -74,7 +74,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [ ```markdown API ADDED ``` ](../breaking-changes.md#deprecated-shellmoveitemtotrash) |
+| [ ```markdown >=12.0.0 ``` ](https://github.com/electron/electron/pull/25114) | [ ```markdown API ADDED ``` ](../breaking-changes.md#deprecated-shellmoveitemtotrash) |
 
 - `path` string - path to the item to be moved to the trash.
 

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/dialog
 title: "Dialog"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Display native system dialogs for opening and saving files, alerting, etc.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 An example of showing a dialog to select multiple files:
 
@@ -259,8 +259,8 @@ History
 | Version(s) | Changes |
 | --- | --- |
 | ```markdown None ``` | [  This method now returns a Promise instead of using a callback function.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
-| ```markdown None ``` | Added the `signal` option. |
-| ```markdown None ``` | Added the `textWidth` option. |
+| [ ```markdown >=15.0.0 ``` ](https://github.com/electron/electron/pull/26102) | Added the `signal` option. |
+| [ ```markdown >=16.0.0 ``` ](https://github.com/electron/electron/pull/30474)[ ```markdown ^15.1.0 ``` ](https://github.com/electron/electron/pull/30474) | Added the `textWidth` option. |
 
 - `window` [BaseWindow](base-window.md) (optional)
 - `options` Object

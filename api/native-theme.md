@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/native-theme
 title: "Native Theme"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Read and respond to changes in Chromium's native color theme.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 ## Events
 

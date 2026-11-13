@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/tray
 title: "Tray"
 description: ""
-access_date: 2026-09-15T17:17:25.445Z
-current_date: 2026-09-15T17:17:25.445Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 ## Class: Tray
 
 > Add icons and context menus to the system's notification area.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `Tray` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 

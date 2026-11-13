@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/net
 title: "Net"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Issue HTTP/HTTPS requests using Chromium's native networking library
 
-Process: [Main](../glossary.md#main-process), [Utility](../glossary.md#utility-process)
+Process [Main](../glossary.md#main-process) [Utility](../glossary.md#utility-process)
 
 The `net` module is a client-side API for issuing HTTP(S) requests. It is similar to the [HTTP](https://nodejs.org/api/http.html) and [HTTPS](https://nodejs.org/api/https.html) modules of Node.js but uses Chromium's native networking library instead of the Node.js implementation, offering better support for web proxies. It also supports checking network status.
 

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/language-model-utility
 title: "Language Model Utility"
 description: ""
-access_date: 2026-10-21T21:57:29.759Z
-current_date: 2026-10-21T21:57:29.759Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Implement local AI language models
 
-Process: [Utility](../glossary.md#utility-process)
+Process [Utility](../glossary.md#utility-process)
 
 ### new LanguageModelUtility(initialState)
 

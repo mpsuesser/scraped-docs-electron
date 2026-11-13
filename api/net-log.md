@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/net-log
 title: "Net Log"
 description: ""
-access_date: 2026-10-30T18:16:24.207Z
-current_date: 2026-10-30T18:16:24.207Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Logging network events for a session.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 ```js
 const { app, netLog } = require('electron')

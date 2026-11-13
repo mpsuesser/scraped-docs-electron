@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/system-preferences
 title: "System Preferences"
 description: ""
-access_date: 2026-11-10T21:16:50.361Z
-current_date: 2026-11-10T21:16:50.361Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Get system preferences.
 
-Process: [Main](../glossary.md#main-process), [Utility](../glossary.md#utility-process)
+Process [Main](../glossary.md#main-process) [Utility](../glossary.md#utility-process)
 
 ```js
 const { systemPreferences } = require('electron')

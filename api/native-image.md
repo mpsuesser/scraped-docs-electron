@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/native-image
 title: "Native Image"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Create tray, dock, and application icons using PNG or JPG files.
 
-Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)
+Process [Main](../glossary.md#main-process) [Renderer](../glossary.md#renderer-process)
 
 > **Info:**
 > 
@@ -230,8 +230,9 @@ const item = new MenuItem({
 
 > Natively wrap images such as tray, dock, and application icons.
 
-Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process) [Renderer](../glossary.md#renderer-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 ### Instance Methods
 
@@ -260,7 +261,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
+| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/48178) | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.
@@ -274,7 +275,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  `nativeImage.toDataURL` will preserve PNG colorspace  ](../breaking-changes.md#behavior-changed-nativeimagetodataurl-will-preserve-png-colorspace) |
+| [ ```markdown >=32.0.0 ``` ](https://github.com/electron/electron/pull/41752) | [  `nativeImage.toDataURL` will preserve PNG colorspace  ](../breaking-changes.md#behavior-changed-nativeimagetodataurl-will-preserve-png-colorspace) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.
@@ -287,7 +288,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
+| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/48178) | [  Normalized `NativeImage.toBitmap()` pixel data to sRGB by default.  ](../breaking-changes.md#behavior-changed-nativeimagetobitmap-now-normalizes-color-space) |
 
 - `options` Object (optional)
 	- `scaleFactor` Number (optional) - Defaults to 1.0.

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/power-monitor
 title: "Power Monitor"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Monitor power state changes.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 ## Events
 

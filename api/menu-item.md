@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/menu-item
 title: "Menu Item"
 description: ""
-access_date: 2026-09-08T21:23:20.023Z
-current_date: 2026-09-08T21:23:20.023Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 ## Class: MenuItem
 
 > Add items to native application menus and context menus.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 > **Warning:**
 > 

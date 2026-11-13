@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 This module does not include a web interface. Traces are recorded in the [Perfetto protobuf format](https://perfetto.dev/docs/reference/trace-packet-proto); to view them, open them in the [Perfetto UI](https://ui.perfetto.dev/).
 
@@ -56,7 +56,7 @@ History
 | --- | --- |
 | ```markdown None ``` | The `options` parameter now accepts `TraceConfig` in addition to `TraceCategoriesAndOptions`. |
 | ```markdown None ``` | [  This function now returns a callback `Promise<void>`.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
-| ```markdown None ``` | Added the `nativeHeapProfiling` option to enable native heap profiling. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53349) | Added the `nativeHeapProfiling` option to enable native heap profiling. |
 
 - `options` ([TraceConfig](structures/trace-config.md) | [TraceCategoriesAndOptions](structures/trace-categories-and-options.md))
 
@@ -76,7 +76,7 @@ History
 | --- | --- |
 | ```markdown None ``` | [  This method now returns a Promise instead of using a callback function.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
 | ```markdown None ``` | The `resultFilePath` parameter is now optional. |
-| ```markdown None ``` | [  Trace data is now written in the Perfetto protobuf format. The legacy JSON format is no longer supported.  ](../breaking-changes.md#behavior-changed-contenttracing-recordings-use-the-perfetto-protobuf-format) |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53349) | [  Trace data is now written in the Perfetto protobuf format. The legacy JSON format is no longer supported.  ](../breaking-changes.md#behavior-changed-contenttracing-recordings-use-the-perfetto-protobuf-format) |
 
 - `resultFilePath` string (optional)
 

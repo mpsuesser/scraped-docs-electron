@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame-main
 title: "Web Frame Main"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Control web pages and iframes.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 The `webFrameMain` module can be used to lookup frames across existing [`WebContents`](web-contents.md) instances. Navigation events are the common use case.
 
@@ -74,8 +74,9 @@ Returns `WebFrameMain | null` - A frame with the given process and frame token, 
 
 ## Class: WebFrameMain
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 ### Instance Events
 
@@ -178,7 +179,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/52439)[ ```markdown ^43.4.0 ``` ](https://github.com/electron/electron/pull/52439)[ ```markdown ^42.9.0 ``` ](https://github.com/electron/electron/pull/52439) | ```markdown API ADDED ``` |
 
 - `options` [PrintToPDFOptions](structures/print-to-pdf-options.md)
 	- `landscape` boolean (optional) - Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.

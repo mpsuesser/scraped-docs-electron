@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/touch-bar
 title: "Touch Bar"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > **Warning:**
@@ -14,7 +14,7 @@ current_date: 2026-09-22T19:04:52.199Z
 
 > Create TouchBar layouts for native macOS applications
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 ### new TouchBar(options)
 

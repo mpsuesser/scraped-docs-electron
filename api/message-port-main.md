@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/message-port-main
 title: "Message Port Main"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 `MessagePortMain` is the main-process-side equivalent of the DOM [`MessagePort`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort) object. It behaves similarly to the DOM version, with the exception that it uses the Node.js `EventEmitter` event system, instead of the DOM `EventTarget` system. This means you should use `port.on('message', ...)` to listen for events, instead of `port.onmessage = ...` or `port.addEventListener('message', ...)`
@@ -16,8 +16,9 @@ See the [Channel Messaging API](https://developer.mozilla.org/en-US/docs/Web/API
 
 > Port interface for channel messaging in the main process.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 ### Instance Methods
 

@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/web-request
 title: "Web Request"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Intercept and modify the contents of a request at various stages of its lifetime.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 Instances of the `WebRequest` class are accessed by using the `webRequest` property of a `Session`.
 
@@ -47,7 +48,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -96,7 +97,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -128,7 +129,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -153,7 +154,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -187,7 +188,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -215,7 +216,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -245,7 +246,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null
@@ -274,7 +275,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.initiatorOrigin`. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added `details.initiatorOrigin`. |
 
 - `filter` [WebRequestFilter](structures/web-request-filter.md) (optional)
 - `listener` Function | null

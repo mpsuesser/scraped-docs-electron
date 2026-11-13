@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/cookies
 title: "Cookies"
 description: ""
-access_date: 2026-11-13T00:53:21.564Z
-current_date: 2026-11-13T00:53:21.564Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Query and modify a session's cookies.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 Instances of the `Cookies` class are accessed by using `cookies` property of a `Session`.
 

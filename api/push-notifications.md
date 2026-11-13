@@ -2,11 +2,11 @@
 url: https://www.electronjs.org/docs/latest/api/push-notifications
 title: "Push Notifications"
 description: ""
-access_date: 2026-10-30T18:16:24.207Z
-current_date: 2026-10-30T18:16:24.207Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 > Register for and receive notifications from remote push notification services
 

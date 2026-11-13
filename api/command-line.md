@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/command-line
 title: "Command Line"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Manipulate the command line arguments for your app that Chromium reads
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 The following example shows how to check if the `--disable-gpu` flag is set.
 

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 The `session` module can be used to create new `Session` objects.
 
@@ -62,8 +62,9 @@ A `Session` object, the default session object of the app, available after `app.
 
 > Get and set properties of a session.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 You can create a `Session` object in the `session` module:
 
@@ -84,7 +85,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added the trailing `frame` argument. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -146,7 +147,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^44.3.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
 
 Returns:
 
@@ -220,7 +221,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added the trailing `frame` argument. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -596,7 +597,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/51563) | ```markdown API ADDED ``` |
 
 Returns:
 
@@ -633,7 +634,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/51255) | ```markdown API ADDED ``` |
 
 Returns:
 

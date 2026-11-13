@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/download-item
 title: "Download Item"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Control file downloads from remote sources.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 `DownloadItem` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) that represents a download item in Electron. It is used in `will-download` event of `Session` class, and allows users to control the download item.
 
@@ -140,7 +141,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | ```markdown API ADDED ``` |
 
 Returns `string` - The origin that started the download (for example `https://example.com`, or `null` for an opaque origin), or an empty string if the download was not started by web content (for example `webContents.downloadURL()`). Use this rather than `getURL()` or the `webContents` to decide whose download it is: the URL is chosen by the initiator and the `webContents` is the whole tab.
 

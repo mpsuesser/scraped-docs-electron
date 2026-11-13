@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/web-socket
 title: "Web Socket"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 ## Class: WebSocket extends EventTarget
 
 > Create WebSocket connections from the main process using Chromium's native networking library
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `net.WebSocket` is a drop-in replacement for the [WHATWG `WebSocket`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) interface that routes the connection through Chromium's network stack rather than Node.js. Use it when you want a main-process WebSocket connection that:
 

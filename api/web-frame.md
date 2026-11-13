@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/web-frame
 title: "Web Frame"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Customize the rendering of the current web page.
 
-Process: [Renderer](../glossary.md#renderer-process)
+Process [Renderer](../glossary.md#renderer-process)
 
 > **Info:**
 > 
@@ -184,7 +184,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/50633) | ```markdown API ADDED ``` |
 
 Returns `Integer[]` - The IDs of isolated worlds that currently exist for this frame. This does not include the main world (ID `0`) or Electron's preload world (ID `999`).
 
@@ -285,7 +285,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/50633) | ```markdown API ADDED ``` |
 
 Returns:
 

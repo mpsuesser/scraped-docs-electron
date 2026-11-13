@@ -2,19 +2,19 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard
 title: "Clipboard"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Using the `clipboard` API directly in the renderer process is deprecated.  ](../breaking-changes.md#deprecated-clipboard-api-access-from-renderer-processes) |
+| [ ```markdown >=40.0.0 ``` ](https://github.com/electron/electron/pull/48877) | [  Using the `clipboard` API directly in the renderer process is deprecated.  ](../breaking-changes.md#deprecated-clipboard-api-access-from-renderer-processes) |
 
 > Perform copy and paste operations on the system clipboard.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 The `clipboard` module is modeled after the [W3C Clipboard API](https://w3c.github.io/clipboard-apis/#clipboard-interface): `clipboard.read()` returns a `Promise` that resolves with a list of [`ClipboardItem`](clipboard-item.md) objects, and `clipboard.write()` accepts an array of `ClipboardItem` instances that map [MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/MIME_types) to [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) payloads.
 

@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/parent-port
 title: "Parent Port"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Interface for communication with parent process.
 
-Process: [Utility](../glossary.md#utility-process)
+Process [Utility](../glossary.md#utility-process)
 
 `parentPort` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter). *This object is not exported from the `'electron'` module. It is only available as a property of the process object in the Electron API.*
 

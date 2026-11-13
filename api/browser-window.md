@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Create and control browser windows.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 This module cannot be used until the `ready` event of the `app` module is emitted.
 
@@ -128,7 +128,7 @@ It is recommended that you pause expensive operations when the visibility state 
 
 > Create and control browser windows.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `BrowserWindow` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 
@@ -1124,7 +1124,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
+| [ ```markdown >=31.0.0 ``` ](https://github.com/electron/electron/pull/41391) | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
 
 - `flag` boolean
 

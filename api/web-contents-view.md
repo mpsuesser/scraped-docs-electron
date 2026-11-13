@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/web-contents-view
 title: "Web Contents View"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > A View that displays a WebContents.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 This module cannot be used until the `ready` event of the `app` module is emitted.
 
@@ -32,7 +32,7 @@ view2.setBounds({ x: 400, y: 0, width: 400, height: 400 })
 
 > A View that displays a WebContents.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `WebContentsView` inherits from [`View`](view.md).
 

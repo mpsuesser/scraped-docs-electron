@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/ipc-main
 title: "Ipc Main"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Communicate asynchronously from the main process to renderer processes.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 The `ipcMain` module is an [Event Emitter](https://nodejs.org/api/events.html#events_class_eventemitter). When used in the main process, it handles asynchronous and synchronous messages sent from a renderer process (web page). Messages sent from a renderer will be emitted to this module.
 

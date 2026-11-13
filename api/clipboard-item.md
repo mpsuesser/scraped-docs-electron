@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard-item
 title: "Clipboard Item"
 description: ""
-access_date: 2026-10-21T21:57:29.759Z
-current_date: 2026-10-21T21:57:29.759Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > A single clipboard entry that pairs one or more MIME-typed payloads.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `ClipboardItem` is modeled after the W3C [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem) class. Each `ClipboardItem` carries one or more MIME-typed payloads that represent the same conceptual clipboard entry — for example, a single copy operation that exposes both a plain-text and an HTML representation of a selection.
 
@@ -16,7 +16,7 @@ Process: [Main](../glossary.md#main-process)
 
 > Construct a clipboard entry for [`clipboard.write()`](clipboard.md#clipboardwritedata) or inspect an entry returned from [`clipboard.read()`](clipboard.md#clipboardread).
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 > **Warning:**
 > 

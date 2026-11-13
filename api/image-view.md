@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/image-view
 title: "Image View"
 description: ""
-access_date: 2026-11-13T02:26:33.973Z
-current_date: 2026-11-13T02:26:33.973Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > A View that displays an image.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 This module cannot be used until the `ready` event of the `app` module is emitted.
 
@@ -43,11 +43,11 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
 
 > A View that displays an image.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `ImageView` inherits from [`View`](view.md).
 
@@ -63,7 +63,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
 
 Creates an ImageView.
 
@@ -77,7 +77,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=37.0.0 ``` ](https://github.com/electron/electron/pull/46760)[ ```markdown ^36.4.0 ``` ](https://github.com/electron/electron/pull/46760) | ```markdown API ADDED ``` |
 
 - `image` NativeImage
 

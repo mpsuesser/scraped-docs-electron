@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/notification
 title: "Notification"
 description: ""
-access_date: 2026-10-16T05:07:53.385Z
-current_date: 2026-10-16T05:07:53.385Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Create OS desktop notifications
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 > **Note:**
 > 
@@ -22,7 +22,7 @@ Process: [Main](../glossary.md#main-process)
 
 > Create OS desktop notifications
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 `Notification` is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
 

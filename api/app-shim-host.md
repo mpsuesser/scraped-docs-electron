@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app-shim-host
 title: "App Shim Host"
 description: ""
-access_date: 2026-10-21T07:43:23.286Z
-current_date: 2026-10-21T07:43:23.286Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Show windows under a separate app with its own Dock icon.
@@ -12,8 +12,9 @@ current_date: 2026-10-21T07:43:23.286Z
 > 
 > App shims are experimental. This API may change in a future Electron release.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 An app shim is a small macOS app, in its own bundle, that displays windows on behalf of your app. Your app still creates each window, loads its content and handles its events, but the native window belongs to the shim's process. As a result, the Dock, the app switcher, Mission Control and Stage Manager show the window under the shim's name and icon instead of your app's.
 

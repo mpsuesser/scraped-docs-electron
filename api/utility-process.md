@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/utility-process
 title: "Utility Process"
 description: ""
-access_date: 2026-10-14T06:34:15.573Z
-current_date: 2026-10-14T06:34:15.573Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 `utilityProcess` creates a child process with Node.js and Message ports enabled. It provides the equivalent of [`child_process.fork`](https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#child_processforkmodulepath-args-options) API from Node.js but instead uses [Services API](https://chromium.googlesource.com/chromium/src/+/main/docs/mojo_and_services.md) from Chromium to launch the child process.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 ## Methods
 

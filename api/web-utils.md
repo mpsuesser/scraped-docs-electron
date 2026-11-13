@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/web-utils
 title: "Web Utils"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > A utility layer to interact with Web API objects (Files, Blobs, etc.)
 
-Process: [Renderer](../glossary.md#renderer-process)
+Process [Renderer](../glossary.md#renderer-process)
 
 > **Info:**
 > 

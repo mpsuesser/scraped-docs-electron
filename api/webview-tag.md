@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/webview-tag
 title: "Webview Tag"
 description: ""
-access_date: 2026-10-30T18:16:24.207Z
-current_date: 2026-10-30T18:16:24.207Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 ## Warning
@@ -18,8 +18,9 @@ By default the `webview` tag is disabled in Electron >= 5. You need to enable th
 
 > Display external web content in an isolated frame and process.
 
-Process: [Renderer](../glossary.md#renderer-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Renderer](../glossary.md#renderer-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 Use the `webview` tag to embed 'guest' content (such as web pages) in your Electron app. The guest content is contained within the `webview` container. An embedded page within your app controls how the guest content is laid out and rendered.
 

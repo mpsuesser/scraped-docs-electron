@@ -2,13 +2,13 @@
 url: https://www.electronjs.org/docs/latest/api/auto-updater
 title: "Auto Updater"
 description: ""
-access_date: 2026-10-07T23:21:29.744Z
-current_date: 2026-10-07T23:21:29.744Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Enable apps to automatically update themselves.
 
-Process: [Main](../glossary.md#main-process)
+Process [Main](../glossary.md#main-process)
 
 **See also: [A detailed guide about how to implement updates in your application](../tutorial/updates.md).**
 

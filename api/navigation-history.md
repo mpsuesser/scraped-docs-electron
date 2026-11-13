@@ -2,14 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/navigation-history
 title: "Navigation History"
 description: ""
-access_date: 2026-08-03T19:38:49.815Z
-current_date: 2026-08-03T19:38:49.815Z
+access_date: 2026-11-13T03:17:29.133Z
+current_date: 2026-11-13T03:17:29.133Z
 ---
 
 > Manage a list of navigation entries, representing the user's browsing history within the application.
 
-Process: [Main](../glossary.md#main-process)  
-*This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.*
+Process [Main](../glossary.md#main-process)
+
+This class is not exported from the `'electron'` module. It is only available as a return value of other methods in the Electron API.
 
 Each [NavigationEntry](structures/navigation-entry.md) corresponds to a specific visited page. The indexing system follows a sequential order, where the entry for the earliest visited page is at index 0 and the entry for the most recent visited page is at index N.
 
