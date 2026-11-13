@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/cookies
 title: "Cookies"
 description: ""
-access_date: 2026-09-22T19:04:52.199Z
-current_date: 2026-09-22T19:04:52.199Z
+access_date: 2026-11-13T00:53:21.564Z
+current_date: 2026-11-13T00:53:21.564Z
 ---
 
 > Query and modify a session's cookies.
@@ -125,6 +125,6 @@ Returns `Promise<void>` - A promise which resolves when the cookie store has bee
 
 Writes any unwritten cookies data to disk.
 
-Cookies written by any method will not be written to disk immediately, but will be written every 30 seconds or 512 operations.
+Cookies written by any method will not be written to disk immediately, but will be written every 30 seconds or 512 operations, and when the app quits.
 
 Calling this method can cause the cookie to be written to disk immediately.
