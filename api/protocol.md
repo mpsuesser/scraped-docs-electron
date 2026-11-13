@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/protocol
 title: "Protocol"
 description: ""
-access_date: 2026-10-07T00:05:59.958Z
-current_date: 2026-10-07T00:05:59.958Z
+access_date: 2026-11-13T02:26:33.973Z
+current_date: 2026-11-13T02:26:33.973Z
 ---
 
 > Register a custom protocol and intercept existing protocol requests.
@@ -230,7 +230,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -252,7 +252,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -280,7 +280,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -300,7 +300,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -320,7 +320,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -373,7 +373,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 
@@ -387,7 +387,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 
@@ -399,7 +399,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -417,7 +417,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -435,7 +435,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -453,7 +453,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -471,7 +471,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 - `handler` Function
@@ -489,7 +489,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 
@@ -503,7 +503,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=25.0.0 ``` ](https://github.com/electron/electron/pull/36674) | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
+| ```markdown None ``` | [  `protocol.register*Protocol` and `protocol.intercept*Protocol` methods have been replaced with `protocol.handle`  ](../breaking-changes.md#deprecated-protocolunregisterinterceptbufferstringstreamfilehttpprotocol-and-protocolisprotocolregisteredintercepted) |
 
 - `scheme` string
 
