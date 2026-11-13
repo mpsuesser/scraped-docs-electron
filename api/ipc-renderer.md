@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/ipc-renderer
 title: "Ipc Renderer"
 description: ""
-access_date: 2026-11-13T12:10:26.297Z
-current_date: 2026-11-13T12:10:26.297Z
+access_date: 2026-11-13T16:16:57.442Z
+current_date: 2026-11-13T16:16:57.442Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=29.0.0 ``` ](https://github.com/electron/electron/pull/40330) | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
+| ```markdown None ``` | [  `ipcRenderer` can no longer be sent over the `contextBridge`  ](../breaking-changes.md#behavior-changed-ipcrenderer-can-no-longer-be-sent-over-the-contextbridge) |
 
 > Communicate asynchronously from a renderer process to the main process.
 
@@ -47,7 +47,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/39816) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `channel` string
 - `listener` Function
@@ -71,7 +71,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=28.0.0 ``` ](https://github.com/electron/electron/pull/39816) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `channel` string
 - `listener` Function
@@ -183,7 +183,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/22404) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 - `channel` string
 - `message` any
