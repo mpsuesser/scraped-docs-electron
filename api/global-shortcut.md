@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/global-shortcut
 title: "Global Shortcut"
 description: ""
-access_date: 2026-11-13T16:16:57.442Z
-current_date: 2026-11-13T16:16:57.442Z
+access_date: 2026-11-14T00:34:08.689Z
+current_date: 2026-11-14T00:34:08.689Z
 ---
 
 > Detect keyboard events when the application does not have keyboard focus.
@@ -149,7 +149,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=42.0.0 ``` ](https://github.com/electron/electron/pull/50425) | ```markdown API ADDED ``` |
 
 - `suspended` boolean - Whether global shortcut handling should be suspended.
 
@@ -163,6 +163,6 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=42.0.0 ``` ](https://github.com/electron/electron/pull/50425) | ```markdown API ADDED ``` |
 
 Returns `boolean` - Whether global shortcut handling is currently suspended.

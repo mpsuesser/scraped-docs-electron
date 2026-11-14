@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/crash-reporter
 title: "Crash Reporter"
 description: ""
-access_date: 2026-11-13T16:16:57.442Z
-current_date: 2026-11-13T16:16:57.442Z
+access_date: 2026-11-14T00:34:08.689Z
+current_date: 2026-11-14T00:34:08.689Z
 ---
 
 > Submit crash reports to a remote server.
@@ -42,10 +42,10 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Added `rateLimit` and `compress` options. |
-| ```markdown None ``` | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
-| ```markdown None ``` | [  Default value of `compress` option changed from `false` to `true`.  ](../breaking-changes.md#default-changed-crashreporterstart-compress-true-) |
-| ```markdown None ``` | The `submitURL` parameter is now optional when `uploadToServer` is `false`. |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23062) | Added `rateLimit` and `compress` options. |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23265) | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
+| [ ```markdown >=12.0.0 ``` ](https://github.com/electron/electron/pull/25288) | [  Default value of `compress` option changed from `false` to `true`.  ](../breaking-changes.md#default-changed-crashreporterstart-compress-true-) |
+| [ ```markdown >=13.0.0 ``` ](https://github.com/electron/electron/pull/28105) | The `submitURL` parameter is now optional when `uploadToServer` is `false`. |
 
 - `options` Object
 	- `submitURL` string (optional) - URL that crash reports will be sent to as POST. Required unless `uploadToServer` is `false`.
@@ -84,7 +84,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23265) | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
 
 Returns [CrashReport | null](structures/crash-report.md) - The date and ID of the crash report with the most recent upload time, from the list returned by [`getUploadedReports()`](#crashreportergetuploadedreports). If there are no crash reports at all, `null` is returned.
 
@@ -100,7 +100,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23265) | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
 
 Returns [CrashReport\[\]](structures/crash-report.md):
 
@@ -118,7 +118,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23265) | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
 
 Returns `boolean` - Whether reports should be submitted to the server. Set through the `start` method or `setUploadToServer`.
 
@@ -132,7 +132,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
+| [ ```markdown >=10.0.0 ``` ](https://github.com/electron/electron/pull/23265) | [  Deprecated calling this method in the renderer process.  ](../breaking-changes.md#deprecated-crashreporter-methods-in-the-renderer-process) |
 
 - `uploadToServer` boolean - Whether reports should be submitted to the server.
 

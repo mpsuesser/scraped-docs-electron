@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/content-tracing
 title: "Content Tracing"
 description: ""
-access_date: 2026-11-13T16:16:57.442Z
-current_date: 2026-11-13T16:16:57.442Z
+access_date: 2026-11-14T00:34:08.689Z
+current_date: 2026-11-14T00:34:08.689Z
 ---
 
 > Collect tracing data from Chromium to find performance bottlenecks and slow operations.
@@ -56,7 +56,7 @@ History
 | --- | --- |
 | ```markdown None ``` | The `options` parameter now accepts `TraceConfig` in addition to `TraceCategoriesAndOptions`. |
 | ```markdown None ``` | [  This function now returns a callback `Promise<void>`.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
-| ```markdown None ``` | Added the `nativeHeapProfiling` option to enable native heap profiling. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53349) | Added the `nativeHeapProfiling` option to enable native heap profiling. |
 
 - `options` ([TraceConfig](structures/trace-config.md) | [TraceCategoriesAndOptions](structures/trace-categories-and-options.md))
 
@@ -76,7 +76,7 @@ History
 | --- | --- |
 | ```markdown None ``` | [  This method now returns a Promise instead of using a callback function.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
 | ```markdown None ``` | The `resultFilePath` parameter is now optional. |
-| ```markdown None ``` | [  Trace data is now written in the Perfetto protobuf format. The legacy JSON format is no longer supported.  ](../breaking-changes.md#behavior-changed-contenttracing-recordings-use-the-perfetto-protobuf-format) |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53349) | [  Trace data is now written in the Perfetto protobuf format. The legacy JSON format is no longer supported.  ](../breaking-changes.md#behavior-changed-contenttracing-recordings-use-the-perfetto-protobuf-format) |
 
 - `resultFilePath` string (optional)
 
