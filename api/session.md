@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/session
 title: "Session"
 description: ""
-access_date: 2026-11-14T00:34:08.689Z
-current_date: 2026-11-14T00:34:08.689Z
+access_date: 2026-11-14T08:15:07.667Z
+current_date: 2026-11-14T08:15:07.667Z
 ---
 
 > Manage browser sessions, cookies, cache, proxy settings, etc.
@@ -85,7 +85,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| ```markdown None ``` | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -147,7 +147,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^44.3.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53666)[ ```markdown ^42.11.3 ``` ](https://github.com/electron/electron/pull/53666) | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
+| ```markdown None ``` | Added `details.frame` and `details.webContents`; emitted once per requesting document instead of once per path. |
 
 Returns:
 
@@ -221,7 +221,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^44.4.0 ``` ](https://github.com/electron/electron/pull/53685)[ ```markdown ^43.7.0 ``` ](https://github.com/electron/electron/pull/53685) | Added the trailing `frame` argument. |
+| ```markdown None ``` | Added the trailing `frame` argument. |
 
 Returns:
 
@@ -597,7 +597,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/51563) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 Returns:
 
@@ -634,7 +634,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=43.0.0 ``` ](https://github.com/electron/electron/pull/51255) | ```markdown API ADDED ``` |
+| ```markdown None ``` | ```markdown API ADDED ``` |
 
 Returns:
 
