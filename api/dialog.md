@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/dialog
 title: "Dialog"
 description: ""
-access_date: 2026-11-14T20:56:33.223Z
-current_date: 2026-11-14T20:56:33.223Z
+access_date: 2026-11-15T08:16:16.315Z
+current_date: 2026-11-15T08:16:16.315Z
 ---
 
 > Display native system dialogs for opening and saving files, alerting, etc.
@@ -259,8 +259,8 @@ History
 | Version(s) | Changes |
 | --- | --- |
 | ```markdown None ``` | [  This method now returns a Promise instead of using a callback function.  ](../breaking-changes.md#api-changed-callback-based-versions-of-promisified-apis) |
-| [ ```markdown >=15.0.0 ``` ](https://github.com/electron/electron/pull/26102) | Added the `signal` option. |
-| [ ```markdown >=16.0.0 ``` ](https://github.com/electron/electron/pull/30474)[ ```markdown ^15.1.0 ``` ](https://github.com/electron/electron/pull/30474) | Added the `textWidth` option. |
+| ```markdown None ``` | Added the `signal` option. |
+| ```markdown None ``` | Added the `textWidth` option. |
 
 - `window` [BaseWindow](base-window.md) (optional)
 - `options` Object
