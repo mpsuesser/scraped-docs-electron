@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/browser-window
 title: "Browser Window"
 description: ""
-access_date: 2026-11-16T19:49:55.291Z
-current_date: 2026-11-16T19:49:55.291Z
+access_date: 2026-11-16T20:07:32.809Z
+current_date: 2026-11-16T20:07:32.809Z
 ---
 
 > Create and control browser windows.
@@ -1124,7 +1124,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=31.0.0 ``` ](https://github.com/electron/electron/pull/41391) | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
+| ```markdown None ``` | [  `window.flashFrame(bool)` will flash dock icon continuously on macOS  ](../breaking-changes.md#behavior-changed-windowflashframebool-will-flash-dock-icon-continuously-on-macos) |
 
 - `flag` boolean
 
