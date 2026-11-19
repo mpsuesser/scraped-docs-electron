@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-11-19T00:24:06.663Z
-current_date: 2026-11-19T00:24:06.663Z
+access_date: 2026-11-19T01:38:48.209Z
+current_date: 2026-11-19T01:38:48.209Z
 ---
 
 > Control your application's event lifecycle.
@@ -447,7 +447,7 @@ Returns:
 - `workingDirectory` string - The second instance's working directory
 - `additionalData` unknown - A JSON object of additional data passed from the second instance
 
-This event will be emitted inside the primary instance of your application when a second instance has been executed and calls `app.requestSingleInstanceLock()`.
+This event will be emitted inside the primary instance of your application when a second instance has been executed and calls `app.requestSingleInstanceLock()`. An instance is considered a second instance if it shares the same user data directory (`app.getPath('userData')`) as the primary instance (and on Windows, the same executable name).
 
 `argv` is an Array of the second instance's command line arguments, and `workingDirectory` is its current working directory. Usually applications respond to this by making their primary window focused and non-minimized.
 
@@ -945,6 +945,8 @@ Returns `boolean`
 The return value of this method indicates whether or not this instance of your application successfully obtained the lock. If it failed to obtain the lock, you can assume that another instance of your application is already running with the lock and exit immediately.
 
 I.e. This method returns `true` if your process is the primary instance of your application and your app should continue loading. It returns `false` if your process should immediately quit as it has sent its parameters to another instance that has already acquired the lock.
+
+The single instance lock is scoped to the application's user data directory (`app.getPath('userData')`). Processes that share the same user data directory (and on Windows, the same executable name) will share the single instance lock. To run multiple independent instances of an application concurrently without triggering the single instance lock, set a different user data directory for each instance using [`app.setPath('userData', newPath)`](#appsetpathname-path) before calling `app.requestSingleInstanceLock()`.
 
 On macOS, the system enforces single instance automatically when users try to open a second instance of your app in Finder, and the `open-file` and `open-url` events will be emitted for that. However when users start your app in command line, the system's single instance mechanism will be bypassed, and you have to use this method to ensure single instance.
 
