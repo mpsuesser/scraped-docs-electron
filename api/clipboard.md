@@ -2,15 +2,15 @@
 url: https://www.electronjs.org/docs/latest/api/clipboard
 title: "Clipboard"
 description: ""
-access_date: 2026-11-23T00:22:31.429Z
-current_date: 2026-11-23T00:22:31.429Z
+access_date: 2026-11-23T08:20:25.644Z
+current_date: 2026-11-23T08:20:25.644Z
 ---
 
 History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=40.0.0 ``` ](https://github.com/electron/electron/pull/48877) | [  Using the `clipboard` API directly in the renderer process is deprecated.  ](../breaking-changes.md#deprecated-clipboard-api-access-from-renderer-processes) |
+| ```markdown None ``` | [  Using the `clipboard` API directly in the renderer process is deprecated.  ](../breaking-changes.md#deprecated-clipboard-api-access-from-renderer-processes) |
 
 > Perform copy and paste operations on the system clipboard.
 
