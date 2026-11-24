@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/system-preferences
 title: "System Preferences"
 description: ""
-access_date: 2026-11-13T03:17:29.133Z
-current_date: 2026-11-13T03:17:29.133Z
+access_date: 2026-11-24T20:43:52.799Z
+current_date: 2026-11-24T20:43:52.799Z
 ---
 
 > Get system preferences.
@@ -335,13 +335,23 @@ This user consent was not required until macOS 10.14 Mojave, so this method will
 
 ### systemPreferences.getAnimationSettings()
 
+History
+
+| Version(s) | Changes |
+| --- | --- |
+| ```markdown None ``` | Added `prefersAnimatedImagesStartPaused` to the returned object. |
+| ```markdown None ``` | ```markdown API ADDED ``` |
+
 Returns `Object`:
 
 - `shouldRenderRichAnimation` boolean - Returns true if rich animations should be rendered. Looks at session type (e.g. remote desktop) and accessibility settings to give guidance for heavy animations.
 - `scrollAnimationsEnabledBySystem` boolean - Determines on a per-platform basis whether scroll animations (e.g. produced by home/end key) should be enabled.
 - `prefersReducedMotion` boolean - Determines whether the user desires reduced motion based on platform APIs.
+- `prefersAnimatedImagesStartPaused` boolean - Determines whether the user prefers that animated images (e.g. GIFs) start paused, so they play only when the user chooses. On macOS 14 and later, this is `true` when the "Auto-play animated images" accessibility setting is off. Always `false` on Windows and Linux, which have no equivalent setting, and on earlier versions of macOS.
 
 Returns an object with system animation settings.
+
+To be notified when `prefersAnimatedImagesStartPaused` changes on macOS, pass `com.apple.accessibility.reduce.motion.autoplay.animated.images.status` (the value of [`AXAnimatedImagesEnabledDidChangeNotification`](https://developer.apple.com/documentation/accessibility/axanimatedimagesenableddidchangenotification)) to [`systemPreferences.subscribeLocalNotification()`](#systempreferencessubscribelocalnotificationevent-callback-macos).
 
 ## Properties
 
