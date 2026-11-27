@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/system-preferences
 title: "System Preferences"
 description: ""
-access_date: 2026-11-27T12:19:27.067Z
-current_date: 2026-11-27T12:19:27.067Z
+access_date: 2026-11-27T16:14:40.419Z
+current_date: 2026-11-27T16:14:40.419Z
 ---
 
 > Get system preferences.
@@ -339,7 +339,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown ^45.5.0 ``` ](https://github.com/electron/electron/pull/55805) | Added `prefersAnimatedImagesStartPaused` to the returned object. |
+| ```markdown None ``` | Added `prefersAnimatedImagesStartPaused` to the returned object. |
 | ```markdown None ``` | ```markdown API ADDED ``` |
 
 Returns `Object`:
