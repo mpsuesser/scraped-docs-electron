@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/safe-storage
 title: "Safe Storage"
 description: ""
-access_date: 2026-11-27T00:21:40.197Z
-current_date: 2026-11-27T00:21:40.197Z
+access_date: 2026-11-27T08:18:24.929Z
+current_date: 2026-11-27T08:18:24.929Z
 ---
 
 > Allows access to simple encryption and decryption of strings for storage on the local machine.
@@ -58,7 +58,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 Returns `boolean` - Whether encryption is available.
 
@@ -78,7 +78,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 - `plainText` string
 
@@ -94,7 +94,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/53670) | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
+| ```markdown None ``` | [ ```markdown API DEPRECATED ``` ](../breaking-changes.md#deprecated-safestorageisencryptionavailable-safestorageencryptstring-and-safestoragedecryptstring) |
 
 - `encrypted` Buffer
 
