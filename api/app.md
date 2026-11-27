@@ -2,8 +2,8 @@
 url: https://www.electronjs.org/docs/latest/api/app
 title: "App"
 description: ""
-access_date: 2026-11-26T16:18:34.617Z
-current_date: 2026-11-26T16:18:34.617Z
+access_date: 2026-11-27T00:21:40.197Z
+current_date: 2026-11-27T00:21:40.197Z
 ---
 
 > Control your application's event lifecycle.
@@ -1116,7 +1116,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | ```markdown API ADDED ``` |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/51563) | ```markdown API ADDED ``` |
 
 - `options` Object
 	- `touchID` Object (optional) - Enables the Touch ID / Secure Enclave platform authenticator for [Web Authentication](https://www.w3.org/TR/webauthn-2/) requests.
@@ -1296,7 +1296,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden`, `wasOpenedAsHidden` and `restoreState` fields from return value. |
 
 - `options` Object (optional)
 	- `type` string (optional) *macOS* - Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`. Defaults to `mainAppService`. See [app.setLoginItemSettings](app.md#appsetloginitemsettingssettings-macos-windows) for more information about each type.
@@ -1325,7 +1325,7 @@ History
 
 | Version(s) | Changes |
 | --- | --- |
-| ```markdown None ``` | Removed `openAsHidden` option. |
+| [ ```markdown >=45.0.0 ``` ](https://github.com/electron/electron/pull/52351) | Removed `openAsHidden` option. |
 
 > **Info:**
 > 
